@@ -142,4 +142,4 @@ reference:
   - calculate_overall_feature_importance
   - dynfeature
 development:
-  model: auto
+  mode: unreleased

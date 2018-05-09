@@ -28,7 +28,7 @@ reference <- pmap(packages, function(pkg_id, title, desc) {
 
 config <- list(
   reference=reference,
-  development = list(model = "auto")
+  development = list(mode = "unreleased")
 )
 
 yaml::write_yaml(config, "_pkgdown.yml")
