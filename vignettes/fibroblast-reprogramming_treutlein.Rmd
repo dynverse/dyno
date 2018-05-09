@@ -1,0 +1,65 @@
+---
+title: "Fibroblast reprogramming (Treutlein et al.)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Fibroblast reprogramming (Treutlein et al.)}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dyno)
+library(tidyverse)
+```
+
+First load the dataset
+
+```{r}
+data("fibroblast_reprogramming_treutlein")
+task <- fibroblast_reprogramming_treutlein
+```
+
+## Choosing the best method for this task
+```{r}
+
+```
+
+## Running the top methods
+Start up the dynmethods docker
+```{r}
+# start_dynmethods_docker()
+```
+
+```{r}
+prediction <- infer_trajectory(task, "slIngsht")
+```
+
+Root the trajectory
+
+```{r}
+prediction <- root_trajectory(prediction)
+```
+
+
+```{r}
+plot_dendro(prediction, grouping_assignment = task$grouping)
+plot_dimred(prediction, grouping_assignment = task$grouping, expression_source = task$expression)
+plot_graph(prediction, grouping_assignment = task$grouping)
+```
+
+```{r, fig.width=10, fig.height=10}
+plot_heatmap(prediction, task$expression, grouping_assignment = task$grouping, features_oi = 100)
+```
+
+```{r}
+cell_feature_importances <- calculate_cell_feature_importance(prediction, task$expression)
+
+cell_feature_importances <- cell_feature_importances %>% group_by(cell_id) %>% mutate(importance = importance/max(importance))
+
+plot_heatmap(prediction, task$expression, grouping_assignment = task$grouping, features_oi = 30, cell_feature_importances = cell_feature_importances)
+```
+

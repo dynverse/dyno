@@ -3,10 +3,22 @@ Package: dyno
 Title: Set of packages for doing trajectory inference on single-cell data
 Version: 0.1.0
 Authors@R: c(
-    person("Wouter", "Saelens", email = "wouter.saelens@ugent.be", role = c("aut", "cre")),
-    person("Robrecht", "Cannoodt", email = "rcannood@gmail.com", role = c("aut"))
+    person(
+      "Wouter", 
+      "Saelens", 
+      email = "wouter.saelens@ugent.be", 
+      role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0002-7114-6248")
+    ),
+    person(
+      "Robrecht", 
+      "Cannoodt", 
+      email = "rcannood@gmail.com", 
+      role = c("aut"),
+      comment = c(ORCID = "0000-0003-3641-729X")
+    )
   )
-Maintainer: wt53em@gmail.com
+Maintainer: Wouter Saelens <wt53em@gmail.com>
 Description: The dyno package automatically loads in packages to:
   select the best TI methods for a given problem (dynguidelines)
   run these methods locally or in a docker environment (dynmethods)

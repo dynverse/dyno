@@ -1,0 +1,20 @@
+---
+title: "Inferring trajectories using dyno"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Inferring trajectories using dyno}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(dyno)
+library(tidyverse)
+```
+
+
+
