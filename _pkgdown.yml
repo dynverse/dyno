@@ -3,7 +3,10 @@ reference:
   desc: dynguidelines
   contents:
   - dynguidelines
-  - hello
+  - guidelines_shiny
+  - methods
+  - priors
+  - questions
 - title: Running the methods
   desc: dynmethods
   contents:
@@ -67,7 +70,6 @@ reference:
   - reexports
   - set_cores
   - start_dynmethods_docker
-  - stop_dynmethods_docker
   - wrap_prediction_model
 - title: Toolbox to transform trajectory models
   desc: dynwrap
@@ -82,6 +84,7 @@ reference:
   - add_grouping_to_wrapper
   - add_linear_trajectory_to_wrapper
   - add_prior_information_to_wrapper
+  - add_root_using_expression
   - add_timing_checkpoint
   - add_timings_to_wrapper
   - add_trajectory_to_wrapper
@@ -96,6 +99,7 @@ reference:
   - dynwrap
   - generate_prior_information
   - get_cell_grouping
+  - get_expression
   - is_data_wrapper
   - is_wrapper_with_dimred
   - is_wrapper_with_expression
@@ -123,7 +127,6 @@ reference:
   - get_milestone_palette_names
   - linearise_cells
   - milestone_palette
-  - order_cells
   - plot_dendro
   - plot_dimred
   - plot_features

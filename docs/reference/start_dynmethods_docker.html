@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Start the dynmethods docker — start_dynmethods_docker • dyno</title>
+<title>Methods for working with the dynmethods docker — start_dynmethods_docker • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,10 @@
 
 
 
-<meta property="og:title" content="Start the dynmethods docker — start_dynmethods_docker" />
+<meta property="og:title" content="Methods for working with the dynmethods docker — start_dynmethods_docker" />
 
-<meta property="og:description" content="Make sure docker is installed and available through path" />
+<meta property="og:description" content="Make sure docker is installed and available through path, see https://docs.docker.com/install/.
+After running start_dynmethods_docker, methods can be run on the docker using x %&lt;-% ..." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -109,25 +110,36 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Start the dynmethods docker</h1>
+    <h1>Methods for working with the dynmethods docker</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrapper_docker.R'><code>R/wrapper_docker.R</code></a></small>
     <div class="hidden name"><code>start_dynmethods_docker.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Make sure docker is installed and available through path</p>
+    <p>Make sure docker is installed and available through path, see https://docs.docker.com/install/.
+After running <code>start_dynmethods_docker</code>, methods can be run on the docker using <code>x %&lt;-% ...</code></p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>start_dynmethods_docker</span>()</pre>
+    <pre class="usage"><span class='fu'>start_dynmethods_docker</span>()
+
+<span class='fu'>stop_dynmethods_docker</span>()
+
+<span class='fu'>start_dynmethods_docker</span>()</pre>
         
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>start_dynmethods_docker</span>()
+<span class='no'>tasks</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>dyntoy</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/dyntoy/topics/toy_tasks'>toy_tasks</a></span>[<span class='fl'>1</span>, ]
+<span class='no'>models</span> <span class='kw'>%&lt;-%</span> <span class='fu'><a href='infer_trajectory.html'>infer_trajectory</a></span>(<span class='no'>tasks</span>, <span class='fu'><a href='description_compone.html'>description_compone</a></span>())</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+            
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -30,7 +30,7 @@
 
 <meta property="og:title" content="Root trajectory — root_trajectory" />
 
-<meta property="og:description" content="Roots the trajectory by changing the directionality of all edges given a start cell" />
+<meta property="og:description" content="Roots the trajectory by changing the directionality of all edges given a root cell" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -116,12 +116,12 @@
 
     <div class="ref-description">
     
-    <p>Roots the trajectory by changing the directionality of all edges given a start cell</p>
+    <p>Roots the trajectory by changing the directionality of all edges given a root cell</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>root_trajectory</span>(<span class='no'>trajectory</span>, <span class='kw'>start_cell_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>start_milestone_id</span> <span class='kw'>=</span> <span class='no'>trajectory</span>$<span class='no'>root_milestone_id</span>)</pre>
+    <pre class="usage"><span class='fu'>root_trajectory</span>(<span class='no'>trajectory</span>, <span class='kw'>root_cell_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>root_milestone_id</span> <span class='kw'>=</span> <span class='no'>trajectory</span>$<span class='no'>root_milestone_id</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -131,12 +131,12 @@
       <td><p>the trajectory object</p></td>
     </tr>
     <tr>
-      <th>start_cell_id</th>
-      <td><p>The start cell id, not required if start_milestone_id is given</p></td>
+      <th>root_cell_id</th>
+      <td><p>The root cell id, not required if root_milestone_id is given</p></td>
     </tr>
     <tr>
-      <th>start_milestone_id</th>
-      <td><p>The start milestone id, not required if start_cell_id is given</p></td>
+      <th>root_milestone_id</th>
+      <td><p>The root milestone id, not required if root_cell_id is given</p></td>
     </tr>
     </table>
     

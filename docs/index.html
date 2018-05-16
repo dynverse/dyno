@@ -107,28 +107,51 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dyno)
 <span class="co">#&gt; Warning: replacing previous import 'dplyr::vars' by 'ggplot2::vars' when</span>
 <span class="co">#&gt; loading 'dynmethods'</span>
+<span class="kw">library</span>(tidyverse)
 
 <span class="kw">data</span>(<span class="st">"fibroblast_reprogramming_treutlein"</span>)
 task &lt;-<span class="st"> </span>fibroblast_reprogramming_treutlein</code></pre></div>
 <div id="selection-of-the-best-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#selection-of-the-best-methods" class="anchor"></a>Selection of the best methods</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">methods &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">"slngsht"</span>)</code></pre></div>
+<p>The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain task we use the results from <span class="citation">(Saelens et al. 2018)</span> (<a href="https://doi.org/10.1101/276907">doi</a>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">guidelines &lt;-<span class="st"> </span><span class="kw"><a href="reference/guidelines_shiny.html">guidelines_shiny</a></span>(task)
+methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(selected) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(method_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">first</span>()</code></pre></div>
+<div class="figure">
+<img src="reference/figures/dynguidelines.gif">
+</div>
 </div>
 <div id="running-the-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#running-the-methods" class="anchor"></a>Running the methods</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/start_dynmethods_docker.html">start_dynmethods_docker</a></span>()
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">start_dynmethods_docker</span>()
 
-model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectory.html">infer_trajectory</a></span>(task, methods)</code></pre></div>
+model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectory.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
 </div>
-<div id="selecting-relevant-features-and-plotting-the-trajectory" class="section level3">
+<div id="rooting-the-trajectory" class="section level3">
 <h3 class="hasAnchor">
-<a href="#selecting-relevant-features-and-plotting-the-trajectory" class="anchor"></a>Selecting relevant features and plotting the trajectory</h3>
+<a href="#rooting-the-trajectory" class="anchor"></a>Rooting the trajectory</h3>
+<p>Most methods (although not all) have no direct way of inferring the directionality of the trajectory. In this case, the trajectory should be “rooted” using some external information, for example by using a set of marker genes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="reference/add_root_using_expression.html">add_root_using_expression</a></span>(<span class="kw">c</span>(<span class="st">"Msn"</span>, <span class="st">"Tpm4"</span>, <span class="st">"Anxa1"</span>, <span class="st">"Timp1"</span>, <span class="st">"Vim"</span>), task<span class="op">$</span>expression) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="reference/root_trajectory.html">root_trajectory</a></span>()</code></pre></div>
+</div>
+<div id="plotting-the-trajectory" class="section level3">
+<h3 class="hasAnchor">
+<a href="#plotting-the-trajectory" class="anchor"></a>Plotting the trajectory</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(model, <span class="dt">expression_source =</span> task<span class="op">$</span>expression, <span class="dt">dimred_method =</span> dimred_mds, <span class="dt">grouping_assignment =</span> task<span class="op">$</span>grouping)</code></pre></div>
-<p><img src="reference/figures/README-unnamed-chunk-4-1.png" width="100%"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(model, <span class="dt">expression_source =</span> task<span class="op">$</span>expression, <span class="dt">grouping_assignment =</span> task<span class="op">$</span>grouping, <span class="dt">features_oi =</span> <span class="dv">50</span>)</code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
+</div>
+<div id="plotting-relevant-features" class="section level3">
+<h3 class="hasAnchor">
+<a href="#plotting-relevant-features" class="anchor"></a>Plotting relevant features</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(model, <span class="dt">expression_source =</span> task<span class="op">$</span>expression, <span class="dt">grouping_assignment =</span> task<span class="op">$</span>grouping, <span class="dt">features_oi =</span> <span class="dv">50</span>)</code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
+<div id="refs" class="references">
+<div id="ref-saelens_comparisonsinglecelltrajectory_2018">
+<p>Saelens, Wouter, Robrecht Cannoodt, Helena Todorov, and Yvan Saeys. 2018. “A Comparison of Single-Cell Trajectory Inference Methods: Towards More Accurate and Robust Tools.” <em>bioRxiv</em>, March, 276907. doi:<a href="https://doi.org/10.1101/276907">10.1101/276907</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>

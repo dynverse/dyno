@@ -25,7 +25,8 @@ task <- fibroblast_reprogramming_treutlein
 
 ## Choosing the best method for this task
 ```{r}
-
+guidelines <- guidelines(task, answers=list(multiple_disconnected="No", expect_topology="Yes", expected_topology="Bifurcating"))
+methods <- guidelines$methods %>% pull(method_id) %>% first()
 ```
 
 ## Running the top methods

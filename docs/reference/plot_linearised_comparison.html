@@ -58,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dyno</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
       </span>
     </div>
 
@@ -121,22 +121,22 @@
     </div>
 
     <pre class="usage"><span class='fu'>plot_linearised_comparison</span>(<span class='no'>traj1</span>, <span class='no'>traj2</span>, <span class='kw'>reorder</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>reorder_second_by</span> <span class='kw'>=</span> <span class='st'>"mapping"</span>)</pre>
+  <span class='kw'>reorder_second_by</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"mapping"</span>, <span class='st'>"optimisation"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>traj1</th>
-      <td><p>The first traj</p></td>
+      <td><p>The first trajectory</p></td>
     </tr>
     <tr>
       <th>traj2</th>
-      <td><p>The second traj</p></td>
+      <td><p>The second trajectory</p></td>
     </tr>
     <tr>
       <th>reorder</th>
-      <td><p>?? TODO: Zouter/wouters</p></td>
+      <td><p>Whether to reorder the trajectory</p></td>
     </tr>
     <tr>
       <th>margin</th>
@@ -144,7 +144,7 @@
     </tr>
     <tr>
       <th>reorder_second_by</th>
-      <td><p>?? TODO: Zouter/wouters</p></td>
+      <td><p>How to reorder the second trajectory, either by mapping the milestones from both trajectories (`mapping`), or by trying to correlate the orderings between the two trajectories (`optimisation`)</p></td>
     </tr>
     </table>
     

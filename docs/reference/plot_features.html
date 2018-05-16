@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plotting the features — plot_features • dyno</title>
+<title>Plotting a set of features in a line plot — plot_features • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Plotting the features — plot_features" />
+<meta property="og:title" content="Plotting a set of features in a line plot — plot_features" />
 
-<meta property="og:description" content="Plotting the features" />
+<meta property="og:description" content="Plotting a set of features in a line plot" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -58,7 +58,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dyno</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
       </span>
     </div>
 
@@ -109,27 +109,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plotting the features</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/plot_genes.R'><code>R/plot_genes.R</code></a></small>
+    <h1>Plotting a set of features in a line plot</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/plot_features.R'><code>R/plot_features.R</code></a></small>
     <div class="hidden name"><code>plot_features.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Plotting the features</p>
+    <p>Plotting a set of features in a line plot</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>plot_features</span>(<span class='no'>traj</span>, <span class='kw'>features_oi</span> <span class='kw'>=</span> <span class='fu'>sample</span>(<span class='fu'>colnames</span>(<span class='no'>traj</span>$<span class='no'>counts</span>), <span class='fu'>min</span>(<span class='fu'>c</span>(<span class='fl'>5</span>,
-  <span class='fu'>ncol</span>(<span class='no'>traj</span>$<span class='no'>counts</span>)))), <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_features</span>(<span class='no'>traj</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>, <span class='kw'>features_oi</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>0.02</span>, <span class='kw'>cell_feature_importances</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>traj</th>
-      <td><p>The traj</p></td>
-    </tr>
     <tr>
       <th>features_oi</th>
       <td><p>The features of interest</p></td>

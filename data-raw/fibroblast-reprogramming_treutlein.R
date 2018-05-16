@@ -7,9 +7,10 @@ cell_info <- df[, c(1:5)] %>% as.data.frame() %>% magrittr::set_rownames(df$cell
   rename(
     cell_id = cell_name,
     group_id = assignment
-  )
+  ) %>%
+  filter(group_id != "Fibroblast")
 
-expression <- expression[, expression %>% apply(2, sd) %>% sort() %>% tail(2000) %>% names]
+expression <- expression[cell_info$cell_id, expression %>% apply(2, sd) %>% sort() %>% tail(2000) %>% names]
 counts <- 2^expression-1
 
 fibroblast_reprogramming_treutlein <- wrap_data("id", rownames(expression)) %>%

@@ -29,7 +29,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">dyno</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
       </span>
     </div>
 
@@ -98,12 +98,12 @@
 <pre><code>## Loading required package: dynplot</code></pre>
 <pre><code>## Loading required package: dynwrap</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
-<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 2.2.1.9000     ✔ purrr   0.2.4     
 ## ✔ tibble  1.4.2          ✔ dplyr   0.7.4     
 ## ✔ tidyr   0.8.0          ✔ stringr 1.3.0     
 ## ✔ readr   1.1.1          ✔ forcats 0.3.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ✖ dplyr::vars()   masks ggplot2::vars()</code></pre>
@@ -113,6 +113,8 @@ task &lt;-<span class="st"> </span>fibroblast_reprogramming_treutlein</code></pr
 <div id="choosing-the-best-method-for-this-task" class="section level2">
 <h2 class="hasAnchor">
 <a href="#choosing-the-best-method-for-this-task" class="anchor"></a>Choosing the best method for this task</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">guidelines &lt;-<span class="st"> </span><span class="kw"><a href="../reference/guidelines_shiny.html">guidelines</a></span>(task, <span class="dt">answers=</span><span class="kw">list</span>(<span class="dt">multiple_disconnected=</span><span class="st">"No"</span>, <span class="dt">expect_topology=</span><span class="st">"Yes"</span>, <span class="dt">expected_topology=</span><span class="st">"Bifurcating"</span>))
+methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(method_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">first</span>()</code></pre></div>
 </div>
 <div id="running-the-top-methods" class="section level2">
 <h2 class="hasAnchor">
@@ -123,8 +125,8 @@ task &lt;-<span class="st"> </span>fibroblast_reprogramming_treutlein</code></pr
 <pre><code>## Using full covariance matrix</code></pre>
 <p>Root the trajectory</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">prediction &lt;-<span class="st"> </span><span class="kw"><a href="../reference/root_trajectory.html">root_trajectory</a></span>(prediction)</code></pre></div>
-<pre><code>## Start cell or milestone not provided, trying first outgoing milestone_id</code></pre>
-<pre><code>## Using '3' as root</code></pre>
+<pre><code>## root cell or milestone not provided, trying first outgoing milestone_id</code></pre>
+<pre><code>## Using '4' as root</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="../reference/plot_dendro.html">plot_dendro</a></span>(prediction, <span class="dt">grouping_assignment =</span> task<span class="op">$</span>grouping)</code></pre></div>
 <pre><code>## Coloring by grouping</code></pre>
 <p><img src="fibroblast-reprogramming_treutlein_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
