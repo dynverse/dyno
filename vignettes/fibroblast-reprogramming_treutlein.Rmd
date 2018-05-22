@@ -20,47 +20,54 @@ First load the dataset
 
 ```{r}
 data("fibroblast_reprogramming_treutlein")
-task <- fibroblast_reprogramming_treutlein
+
+task <- wrap_expression(
+  fibroblast_reprogramming_treutlein$counts,
+  fibroblast_reprogramming_treutlein$expression
+)
 ```
 
 ## Choosing the best method for this task
 ```{r}
-guidelines <- guidelines(task, answers=list(multiple_disconnected="No", expect_topology="Yes", expected_topology="Bifurcating"))
-methods <- guidelines$methods %>% pull(method_id) %>% first()
+guidelines <- guidelines(task, answers=list(multiple_disconnected="No", expect_topology="Yes", expected_topology="bifurcation"))
+methods <- guidelines$methods_selected %>% first()
+print(methods)
 ```
 
 ## Running the top methods
 Start up the dynmethods docker
 ```{r}
-# start_dynmethods_docker()
+start_dynmethods_docker()
 ```
 
 ```{r}
-prediction <- infer_trajectory(task, "slIngsht")
+model %<-% infer_trajectory(task, methods)
 ```
 
 Root the trajectory
 
 ```{r}
-prediction <- root_trajectory(prediction)
+model <- model %>% 
+  add_root_using_expression(c("Msn", "Tpm4", "Anxa1", "Timp1", "Vim"), task$expression) %>% 
+  root_trajectory()
 ```
 
 
 ```{r}
-plot_dendro(prediction, grouping_assignment = task$grouping)
-plot_dimred(prediction, grouping_assignment = task$grouping, expression_source = task$expression)
-plot_graph(prediction, grouping_assignment = task$grouping)
+plot_dendro(model, grouping_assignment = task$grouping)
+plot_dimred(model, expression_source = task$expression)
+plot_graph(model, grouping_assignment = task$grouping)
 ```
 
 ```{r, fig.width=10, fig.height=10}
-plot_heatmap(prediction, task$expression, grouping_assignment = task$grouping, features_oi = 100)
+plot_heatmap(model, task$expression, grouping_assignment = task$grouping, features_oi = 100)
 ```
 
 ```{r}
-cell_feature_importances <- calculate_cell_feature_importance(prediction, task$expression)
+cell_feature_importances <- calculate_cell_feature_importance(model, task$expression)
 
 cell_feature_importances <- cell_feature_importances %>% group_by(cell_id) %>% mutate(importance = importance/max(importance))
 
-plot_heatmap(prediction, task$expression, grouping_assignment = task$grouping, features_oi = 30, cell_feature_importances = cell_feature_importances)
+plot_heatmap(model, task$expression, grouping_assignment = task$grouping, features_oi = 30, cell_feature_importances = cell_feature_importances)
 ```
 

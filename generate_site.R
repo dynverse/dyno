@@ -35,4 +35,4 @@ yaml::write_yaml(config, "_pkgdown.yml")
 
 pkgdown::build_site(".", lazy=TRUE)
 
-dir_walk("./man", fs::file_delete)
+dir_walk("./man/", fs::file_delete)

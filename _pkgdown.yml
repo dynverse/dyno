@@ -3,7 +3,8 @@ reference:
   desc: dynguidelines
   contents:
   - dynguidelines
-  - guidelines_shiny
+  - guidelines
+  - is_guidelines
   - methods
   - priors
   - questions
