@@ -82,7 +82,7 @@ Several visualisation methods provide ways to biologically interpret trajectorie
 plot_dimred(model, expression_source = task$expression, grouping_assignment = task$grouping)
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="docs/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 ### Plotting relevant features
 
@@ -94,11 +94,15 @@ We integrate several methods to extract relevant genes from a trajectory.
 plot_heatmap(model, expression_source = task$expression, grouping_assignment = task$grouping, features_oi = 50)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="docs/figures/README-unnamed-chunk-6-1.png" width="100%" />
 
 #### Lineage/branch markers
 
+Available soon
+
 #### Genes important at bifurcation points
+
+Available soon
 
 References
 ----------
