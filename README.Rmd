@@ -38,7 +38,7 @@ library(tidyverse)
 data("fibroblast_reprogramming_treutlein")
 
 task <- wrap_data(cell_ids=rownames(fibroblast_reprogramming_treutlein$counts)) %>% 
-  add_expression_to_wrapper(fibroblast_reprogramming_treutlein$counts, fibroblast_reprogramming_treutlein$expression)
+  add_expression(fibroblast_reprogramming_treutlein$counts, fibroblast_reprogramming_treutlein$expression)
 ```
 
 Inferring and interpreting trajectories consists of five main steps

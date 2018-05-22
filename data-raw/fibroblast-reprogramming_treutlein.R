@@ -14,7 +14,7 @@ expression <- expression[cell_info$cell_id, expression %>% apply(2, sd) %>% sort
 counts <- 2^expression-1
 
 fibroblast_reprogramming_treutlein <- wrap_data("id", rownames(expression)) %>%
-  add_expression_to_wrapper(counts, expression) %>%
-  add_grouping_to_wrapper(unique(cell_info$group_id), set_names(cell_info$group_id, cell_info$cell_id))
+  add_expression(counts, expression) %>%
+  add_grouping(unique(cell_info$group_id), set_names(cell_info$group_id, cell_info$cell_id))
 
 usethis::use_data(fibroblast_reprogramming_treutlein, overwrite = TRUE)
