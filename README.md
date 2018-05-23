@@ -33,8 +33,10 @@ library(tidyverse)
 
 data("fibroblast_reprogramming_treutlein")
 
-task <- wrap_data(cell_ids=rownames(fibroblast_reprogramming_treutlein$counts)) %>% 
-  add_expression_to_wrapper(fibroblast_reprogramming_treutlein$counts, fibroblast_reprogramming_treutlein$expression)
+task <- wrap_expression(
+  counts = fibroblast_reprogramming_treutlein$counts,
+  expression = fibroblast_reprogramming_treutlein$expression
+)
 ```
 
 Inferring and interpreting trajectories consists of five main steps
@@ -70,8 +72,7 @@ Most methods (although not all) have no direct way of inferring the directionali
 
 ``` r
 model <- model %>% 
-  add_root_using_expression(c("Msn", "Tpm4", "Anxa1", "Timp1", "Vim"), task$expression) %>% 
-  root_trajectory()
+  add_root_using_expression(c("Msn", "Tpm4", "Anxa1", "Timp1", "Vim"), task$expression)
 ```
 
 ### Plotting the trajectory
@@ -82,7 +83,7 @@ Several visualisation methods provide ways to biologically interpret trajectorie
 plot_dimred(model, expression_source = task$expression, grouping_assignment = task$grouping)
 ```
 
-<img src="docs/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="docs/figures/README-dimred-1.png" width="100%" />
 
 ### Plotting relevant features
 
@@ -91,10 +92,10 @@ We integrate several methods to extract relevant genes from a trajectory.
 #### A global overview of the most predictive genes
 
 ``` r
-plot_heatmap(model, expression_source = task$expression, grouping_assignment = task$grouping, features_oi = 50)
+plot_heatmap(model, expression_source = task$expression, grouping_assignment = task$grouping, features_oi = 20)
 ```
 
-<img src="docs/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="docs/figures/README-heatmap-1.png" width="100%" />
 
 #### Lineage/branch markers
 
