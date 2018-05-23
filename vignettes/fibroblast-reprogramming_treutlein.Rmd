@@ -63,6 +63,8 @@ plot_graph(model, grouping_assignment = task$grouping)
 plot_heatmap(model, task$expression, grouping_assignment = task$grouping, features_oi = 100)
 ```
 
+
+
 ```{r}
 cell_feature_importances <- calculate_cell_feature_importance(model, task$expression)
 
@@ -71,3 +73,5 @@ cell_feature_importances <- cell_feature_importances %>% group_by(cell_id) %>% m
 plot_heatmap(model, task$expression, grouping_assignment = task$grouping, features_oi = 30, cell_feature_importances = cell_feature_importances)
 ```
 
+
+Let's say we are interested in genes which are specifically upregulated or downregulated in 
