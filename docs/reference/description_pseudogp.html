@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Description for pseudogp — description_pseudogp • dyno</title>
+<title>Inferring trajectories with pseudogp — description_pseudogp • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Description for pseudogp — description_pseudogp" />
+<meta property="og:title" content="Inferring trajectories with pseudogp — description_pseudogp" />
 
-<meta property="og:description" content="Description for pseudogp" />
+<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,18 +97,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Description for pseudogp</h1>
+    <h1>Inferring trajectories with pseudogp</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pseudogp.R'><code>R/ti_pseudogp.R</code></a></small>
     <div class="hidden name"><code>description_pseudogp.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Description for pseudogp</p>
+    <p>Arguments passed to this function will be used as default parameters for the method.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_pseudogp</span>()</pre>
+    <pre class="usage"><span class='fu'>description_pseudogp</span>(<span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>,
+  <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>), <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)</pre>
         
 
   </div>
@@ -134,7 +124,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

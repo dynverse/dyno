@@ -7,14 +7,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-  ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r child = '../README.Rmd'}
 ```
-
-```{r}
-library(dyno)
-library(tidyverse)
-```
-
 
 

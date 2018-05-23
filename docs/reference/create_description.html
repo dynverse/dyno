@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -121,7 +109,7 @@
     </div>
 
     <pre class="usage"><span class='fu'>create_description</span>(<span class='no'>name</span>, <span class='no'>short_name</span>, <span class='no'>package_loaded</span>, <span class='no'>package_required</span>, <span class='no'>par_set</span>,
-  <span class='no'>properties</span>, <span class='no'>run_fun</span>, <span class='no'>plot_fun</span>, <span class='kw'>override_runfun_params</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='no'>run_fun</span>, <span class='no'>plot_fun</span>, <span class='kw'>properties</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,20 +135,12 @@
       <td><p>A bunch of parameters created by <code><a href='http://www.rdocumentation.org/packages/ParamHelpers/topics/makeParamSet'>ParamHelpers::makeParamSet()</a></code></p></td>
     </tr>
     <tr>
-      <th>properties</th>
-      <td><p>Several descriptive properties of the method. WIP.</p></td>
-    </tr>
-    <tr>
       <th>run_fun</th>
       <td><p>A function to run the TI, needs to have 'counts' as its first param.</p></td>
     </tr>
     <tr>
       <th>plot_fun</th>
-      <td><p>A function to plot the results of a TI, needs to have 'prediction' as its first param.</p></td>
-    </tr>
-    <tr>
-      <th>override_runfun_params</th>
-      <td><p>Whether or not to override the default parameters
+      <td><p>A function to plot the results of a TI, needs to have 'prediction' as its first param.
 of <code>run_fun</code> with those described in <code>par_set</code>.</p></td>
     </tr>
     </table>
@@ -178,7 +158,7 @@ of <code>run_fun</code> with those described in <code>par_set</code>.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

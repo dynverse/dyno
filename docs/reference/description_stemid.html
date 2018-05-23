@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Description for StemID — description_stemid • dyno</title>
+<title>Inferring trajectories with StemID — description_stemid • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Description for StemID — description_stemid" />
+<meta property="og:title" content="Inferring trajectories with StemID — description_stemid" />
 
-<meta property="og:description" content="Description for StemID" />
+<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,18 +97,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Description for StemID</h1>
+    <h1>Inferring trajectories with StemID</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_stemid.R'><code>R/ti_stemid.R</code></a></small>
     <div class="hidden name"><code>description_stemid.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Description for StemID</p>
+    <p>Arguments passed to this function will be used as default parameters for the method.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_stemid</span>()</pre>
+    <pre class="usage"><span class='fu'>description_stemid</span>(<span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
+  <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>, <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>,
+  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
+  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>1e-10</span>,
+  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>40</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>1</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>0.01</span>)</pre>
         
 
   </div>
@@ -134,7 +127,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

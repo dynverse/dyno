@@ -5,44 +5,38 @@ reference:
   - dynguidelines
   - guidelines
   - is_guidelines
+  - label_capitalise
   - methods
   - priors
   - questions
+  - renderers
 - title: Running the methods
   desc: dynmethods
   contents:
+  - celltree
   - check_dependencies
   - check_dependency
   - create_description
   - description_angle
   - description_compone
-  - description_ctgibbs
-  - description_ctmaptpx
-  - description_ctvem
   - description_dpt
   - description_embeddr
   - description_error
   - description_gng
   - description_gpfates
   - description_identity
-  - description_manual
   - description_matcher
   - description_merlot
   - description_mfa
-  - description_mnclddr
-  - description_mnclica
   - description_mpath
   - description_ouija
   - description_ouijaflw
-  - description_paga
   - description_periodpc
   - description_phenopth
   - description_pseudogp
   - description_random
   - description_recat
   - description_scimitar
-  - description_scorpius
-  - description_scorpius_sparse
   - description_scoup
   - description_scuba
   - description_shuffle
@@ -55,8 +49,7 @@ reference:
   - description_topslam
   - description_tscan
   - description_waterfll
-  - description_wishbone
-  - description_wndrlst
+  - dimred
   - dynmethods
   - execute_method
   - execute_method_internal
@@ -67,32 +60,37 @@ reference:
   - install_dependencies
   - is_description
   - is_prediction
+  - monocle
+  - paga
   - plot_trajectory
   - reexports
+  - scorpius
   - set_cores
   - start_dynmethods_docker
+  - wishbone
   - wrap_prediction_model
 - title: Toolbox to transform trajectory models
   desc: dynwrap
   contents:
-  - add_cell_graph_to_wrapper
-  - add_cell_waypoints_to_wrapper
-  - add_cluster_graph_to_wrapper
-  - add_cyclic_trajectory_to_wrapper
-  - add_dimred_projection_to_wrapper
-  - add_dimred_to_wrapper
-  - add_expression_to_wrapper
-  - add_grouping_to_wrapper
-  - add_linear_trajectory_to_wrapper
-  - add_prior_information_to_wrapper
+  - add_cell_graph
+  - add_cell_waypoints
+  - add_cluster_graph
+  - add_cyclic_trajectory
+  - add_dimred
+  - add_dimred_projection
+  - add_expression
+  - add_grouping
+  - add_linear_trajectory
+  - add_prior_information
+  - add_pseudotime
+  - add_root
   - add_root_using_expression
   - add_timing_checkpoint
-  - add_timings_to_wrapper
-  - add_trajectory_to_wrapper
-  - add_waypoints_to_wrapper
+  - add_timings
+  - add_trajectory
+  - add_waypoints
   - calculate_average_by_group
   - calculate_average_by_milestone_percentages
-  - calculate_pseudotime
   - classify_milestone_network
   - compute_tented_geodesic_distances
   - convert_milestone_percentages_to_progressions
@@ -110,11 +108,15 @@ reference:
   - is_wrapper_with_trajectory
   - is_wrapper_with_waypoint_cells
   - is_wrapper_with_waypoints
-  - root_trajectory
+  - label_milestones
   - select_waypoint_cells
   - select_waypoints
   - simplify_igraph_network
+  - trajectory_type_dag
+  - trajectory_types
+  - trajectory_types_simplified
   - wrap_data
+  - wrap_expression
 - title: Visualising trajectories
   desc: dynplot
   contents:

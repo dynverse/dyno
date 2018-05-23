@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -110,7 +98,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Add root cell to wrapper using expression of features</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/root_trajectory.R'><code>R/root_trajectory.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_add_root.R'><code>R/wrap_add_root.R</code></a></small>
     <div class="hidden name"><code>add_root_using_expression.Rd</code></div>
     </div>
 
@@ -120,18 +108,23 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_root_using_expression</span>(<span class='no'>task</span>, <span class='no'>feature_ids</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>)</pre>
+    <pre class="usage"><span class='fu'>add_root_using_expression</span>(<span class='no'>trajectory</span>, <span class='no'>features_oi</span>,
+  <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>task</th>
-      <td><p>The task</p></td>
+      <th>trajectory</th>
+      <td><p>the trajectory object</p></td>
     </tr>
     <tr>
-      <th>feature_ids</th>
-      <td><p>The feature ids</p></td>
+      <th>features_oi</th>
+      <td><p>The feature ids which will be used to root</p></td>
+    </tr>
+    <tr>
+      <th>expression_source</th>
+      <td><p>Source of the expression, either a string or a matrix</p></td>
     </tr>
     </table>
     
@@ -148,7 +141,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

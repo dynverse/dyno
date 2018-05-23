@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -124,7 +112,8 @@
   <span class='kw'>clust</span> <span class='kw'>=</span> <span class='st'>"ward.D2"</span>, <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>0.02</span>, <span class='kw'>color_cells</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='no'>traj</span>$<span class='no'>milestone_percentages</span>,
   <span class='kw'>grouping_assignment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>cell_feature_importances</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>heatmap_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"tiled"</span>, <span class='st'>"dotted"</span>))</pre>
+  <span class='kw'>cell_feature_importances</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>heatmap_type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"tiled"</span>, <span class='st'>"dotted"</span>),
+  <span class='kw'>scale</span> <span class='kw'>=</span> <span class='kw pkg'>dynutils</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/dynutils/topics/scale_quantile'>scale_quantile</a></span>, <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,11 +128,15 @@
     </tr>
     <tr>
       <th>features_oi</th>
-      <td><p>features to plot, or the top number of features to select</p></td>
+      <td><p>The features of interest, either the number of features or a vector giving the names of the different features</p></td>
     </tr>
     <tr>
       <th>clust</th>
       <td><p>The method to cluster the features, or a hclust object</p></td>
+    </tr>
+    <tr>
+      <th>margin</th>
+      <td><p>The margin to add</p></td>
     </tr>
     <tr>
       <th>color_cells</th>
@@ -167,11 +160,19 @@
     </tr>
     <tr>
       <th>cell_feature_importances</th>
-      <td><p>The feature importances per cell</p></td>
+      <td><p>The importances of every feature in every cell, as returned by [dynfeature::calculate_cell_feature_importance()]</p></td>
     </tr>
     <tr>
       <th>heatmap_type</th>
       <td><p>The type of heatmap, either tiled or dotted</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Whether to rescale the expression, can be a function or boolean</p></td>
+    </tr>
+    <tr>
+      <th>label_milestones</th>
+      <td><p>Whether to plot the labels of the milestones, or alternatively a named character vector mapping milestone_ids to labels</p></td>
     </tr>
     </table>
     
@@ -188,7 +189,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

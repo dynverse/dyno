@@ -32,6 +32,10 @@ library(dyno)
 library(tidyverse)
 ```
 
+The whole trajectory inference workflow is divided in several steps:
+
+![toolkit](docs/figures/toolkit.png)
+
 ### Building the task
 
 The first step is to prepare the data for trajectory inference. We use both the counts and normalised expression as some TI methods are specifically built for one or the other

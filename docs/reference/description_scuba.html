@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Description for SCUBA — description_scuba • dyno</title>
+<title>Inferring trajectories with SCUBA — description_scuba • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Description for SCUBA — description_scuba" />
+<meta property="og:title" content="Inferring trajectories with SCUBA — description_scuba" />
 
-<meta property="og:description" content="Description for SCUBA" />
+<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,18 +97,20 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Description for SCUBA</h1>
+    <h1>Inferring trajectories with SCUBA</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scuba.R'><code>R/ti_scuba.R</code></a></small>
     <div class="hidden name"><code>description_scuba.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Description for SCUBA</p>
+    <p>Arguments passed to this function will be used as default parameters for the method.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_scuba</span>()</pre>
+    <pre class="usage"><span class='fu'>description_scuba</span>(<span class='kw'>rigorous_gap_stats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>N_dim</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+  <span class='kw'>low_gene_threshold</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>low_gene_fraction_max</span> <span class='kw'>=</span> <span class='fl'>0.7</span>, <span class='kw'>min_split</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
+  <span class='kw'>min_percentage_split</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</pre>
         
 
   </div>
@@ -134,7 +124,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

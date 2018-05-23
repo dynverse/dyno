@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -141,9 +129,9 @@
   <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span>
 )
 <span class='no'>gr</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>igraph</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame'>graph_from_data_frame</a></span>(<span class='no'>net</span>)
-<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 6521cc8 DNW- 2 1 -- 
+<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 6e88ceb DNW- 2 1 -- 
 #&gt; + attr: name (v/c), length (e/n), directed (e/l), weight (e/n)
-#&gt; + edge from 6521cc8 (vertex names):
+#&gt; + edge from 6e88ceb (vertex names):
 #&gt; [1] 1-&gt;3</div><div class='input'>
 <span class='no'>net</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
   <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>),
@@ -153,9 +141,9 @@
     <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span>
 )
 <span class='no'>gr</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>igraph</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame'>graph_from_data_frame</a></span>(<span class='no'>net</span>)
-<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH b7b0942 DNW- 2 2 -- 
+<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 9ee5e95 DNW- 2 2 -- 
 #&gt; + attr: name (v/c), length (e/n), directed (e/l), weight (e/n)
-#&gt; + edges from b7b0942 (vertex names):
+#&gt; + edges from 9ee5e95 (vertex names):
 #&gt; [1] 1-&gt;4 1-&gt;1</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -171,7 +159,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

@@ -4,6 +4,13 @@ Title: Set of packages for doing trajectory inference on single-cell data
 Version: 0.1.0
 Authors@R: c(
     person(
+      "Robrecht", 
+      "Cannoodt", 
+      email = "rcannood@gmail.com", 
+      role = c("aut"),
+      comment = c(ORCID = "0000-0003-3641-729X")
+    ),
+    person(
       "Wouter", 
       "Saelens", 
       email = "wouter.saelens@ugent.be", 
@@ -11,11 +18,11 @@ Authors@R: c(
       comment = c(ORCID = "0000-0002-7114-6248")
     ),
     person(
-      "Robrecht", 
-      "Cannoodt", 
-      email = "rcannood@gmail.com", 
-      role = c("aut"),
-      comment = c(ORCID = "0000-0003-3641-729X")
+      "Helena", 
+      "Todorov", 
+      email = "helena.todorov@ugent.com", 
+      role = c("ctb"),
+      comment = c(ORCID = "0000-0002-1594-8609")
     )
   )
 Maintainer: Wouter Saelens <wt53em@gmail.com>
