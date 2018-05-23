@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -120,7 +108,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>plot_onedim</span>(<span class='no'>traj</span>, <span class='kw'>color_cells</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"invisible"</span>, <span class='st'>"grouping"</span>, <span class='st'>"feature"</span>,
+    <pre class="usage"><span class='fu'>plot_onedim</span>(<span class='no'>traj</span>, <span class='kw'>color_cells</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"none"</span>, <span class='st'>"grouping"</span>, <span class='st'>"feature"</span>,
   <span class='st'>"milestone"</span>, <span class='st'>"pseudotime"</span>), <span class='kw'>milestone_network</span> <span class='kw'>=</span> <span class='no'>traj</span>$<span class='no'>milestone_network</span>,
   <span class='kw'>progressions</span> <span class='kw'>=</span> <span class='no'>traj</span>$<span class='no'>progressions</span>, <span class='kw'>grouping_assignment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>feature_oi</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
@@ -128,7 +116,8 @@
   <span class='kw'>milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>orientation</span> <span class='kw'>=</span> <span class='fl'>1</span>,
   <span class='kw'>margin</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>linearised</span> <span class='kw'>=</span> <span class='fu'><a href='linearise_cells.html'>linearise_cells</a></span>(<span class='no'>milestone_network</span>,
   <span class='no'>progressions</span>, <span class='no'>margin</span>, <span class='kw'>one_edge</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>quasirandom_width</span> <span class='kw'>=</span> <span class='fl'>0.2</span>,
-  <span class='kw'>plot_cells</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>plot_cells</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/label_milestones'>is_wrapper_with_milestone_labelling</a></span>(<span class='no'>traj</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -182,6 +171,14 @@
       <td><p>The milestone percentages</p></td>
     </tr>
     <tr>
+      <th>orientation</th>
+      <td><p>Whether to plot the connections in the top (1) or bottom (-1)</p></td>
+    </tr>
+    <tr>
+      <th>margin</th>
+      <td><p>The margin to add</p></td>
+    </tr>
+    <tr>
       <th>linearised</th>
       <td><p>The linearised milestone network and progressions</p></td>
     </tr>
@@ -192,6 +189,10 @@
     <tr>
       <th>plot_cells</th>
       <td><p>Whether to plot the cells</p></td>
+    </tr>
+    <tr>
+      <th>label_milestones</th>
+      <td><p>Whether to plot the labels of the milestones, or alternatively a named character vector mapping milestone_ids to labels</p></td>
     </tr>
     </table>
     
@@ -208,7 +209,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

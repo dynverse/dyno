@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Description for sincell — description_sincell • dyno</title>
+<title>Inferring trajectories with Sincell — description_sincell • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Description for sincell — description_sincell" />
+<meta property="og:title" content="Inferring trajectories with Sincell — description_sincell" />
 
-<meta property="og:description" content="Description for sincell" />
+<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,18 +97,22 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Description for sincell</h1>
+    <h1>Inferring trajectories with Sincell</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_sincell.R'><code>R/ti_sincell.R</code></a></small>
     <div class="hidden name"><code>description_sincell.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Description for sincell</p>
+    <p>Arguments passed to this function will be used as default parameters for the method.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_sincell</span>()</pre>
+    <pre class="usage"><span class='fu'>description_sincell</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
+  <span class='kw'>cluster_method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max_distance</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>shortest_rank_percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph_method</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
+  <span class='kw'>graph_using_cells_clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+  <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
         
 
   </div>
@@ -134,7 +126,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Description for SLICE — description_slice • dyno</title>
+<title>Inferring trajectories with SLICE — description_slice • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Description for SLICE — description_slice" />
+<meta property="og:title" content="Inferring trajectories with SLICE — description_slice" />
 
-<meta property="og:description" content="Description for SLICE" />
+<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -76,18 +76,6 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="../articles/fibroblast-reprogramming_treutlein.html">Fibroblast reprogramming (Treutlein et al.)</a>
-    </li>
-  </ul>
-</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -109,18 +97,21 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Description for SLICE</h1>
+    <h1>Inferring trajectories with SLICE</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slice.R'><code>R/ti_slice.R</code></a></small>
     <div class="hidden name"><code>description_slice.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Description for SLICE</p>
+    <p>Arguments passed to this function will be used as default parameters for the method.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_slice</span>()</pre>
+    <pre class="usage"><span class='fu'>description_slice</span>(<span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>,
+  <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>, <span class='kw'>ss.threshold</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>community.method</span> <span class='kw'>=</span> <span class='st'>"louvain"</span>,
+  <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100L</span>,
+  <span class='kw'>k.opt.method</span> <span class='kw'>=</span> <span class='st'>"firstmax"</span>)</pre>
         
 
   </div>
@@ -134,7 +125,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Wouter Saelens, Robrecht Cannoodt.</p>
+  <p>Developed by Robrecht Cannoodt, Wouter Saelens.</p>
 </div>
 
 <div class="pkgdown">

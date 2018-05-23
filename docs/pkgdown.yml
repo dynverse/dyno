@@ -3,5 +3,4 @@ pkgdown: 1.0.0
 pkgdown_sha: ~
 articles:
   dyno: dyno.html
-  fibroblast-reprogramming_treutlein: fibroblast-reprogramming_treutlein.html
 
