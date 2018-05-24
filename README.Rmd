@@ -86,6 +86,10 @@ model %<-% infer_trajectory(task, methods[[1]])
 
 ```{r, echo=FALSE}
 model <- infer_trajectory(task, methods[[1]])
+if(is.na(model)) {
+  print(attr(model, "summary")$error)
+  stop("Method errored")
+}
 ```
 
 
@@ -123,6 +127,7 @@ Examples include combining a dimensionality reduction, a trajectory model and a 
 ```{r dimred}
 plot_dimred(
   model, 
+  dimred = dimred_mds,
   expression_source = task$expression, 
   grouping_assignment = fibroblast_reprogramming_treutlein$grouping
 )
@@ -132,10 +137,26 @@ Similarly, the expression of a gene:
 ```{r dimred_expression}
 plot_dimred(
   model, 
+  dimred = dimred_mds,
   expression_source = task$expression,
   feature_oi = "Fn1"
 )
 ```
+
+Groups can also be visualised using a background color
+```{r dimred_groups}
+plot_dimred(
+  model, 
+  dimred = dimred_mds,
+  expression_source = task$expression, 
+  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
+  color_cells = "feature",
+  feature_oi = "Vim",
+  color_density = "grouping",
+  label_milestones = FALSE
+)
+```
+
 
 
 ### Plotting relevant features
@@ -198,7 +219,7 @@ plot_heatmap(
 ```{r, branching_point_dimred}
 space <- dimred_mds(task$expression)
 map(branching_point_features[1:12], function(feature_oi) {
-  plot_dimred(model, dimred_method = space, expression_source = task$expression, feature_oi = feature_oi, label_milestones = FALSE) +
+  plot_dimred(model, dimred = space, expression_source = task$expression, feature_oi = feature_oi, label_milestones = FALSE) +
     theme(legend.position = "none") +
     ggtitle(feature_oi)
 }) %>% patchwork::wrap_plots()
