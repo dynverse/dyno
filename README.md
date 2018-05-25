@@ -34,7 +34,7 @@ library(tidyverse)
 
 The whole trajectory inference workflow is divided in several steps:
 
-![toolkit](docs/figures/toolkit.png)
+![](docs/figures/toolkit.png)
 
 ### Building the task
 
@@ -69,6 +69,9 @@ start_dynmethods_docker()
 
 model %<-% infer_trajectory(task, methods[[1]])
 ```
+
+    #> Warning in if (is.na(model)) {: the condition has length > 1 and only the
+    #> first element will be used
 
 ### Making the trajectory interpretable
 
@@ -107,6 +110,7 @@ Examples include combining a dimensionality reduction, a trajectory model and a 
 ``` r
 plot_dimred(
   model, 
+  dimred = dimred_mds,
   expression_source = task$expression, 
   grouping_assignment = fibroblast_reprogramming_treutlein$grouping
 )
@@ -119,12 +123,30 @@ Similarly, the expression of a gene:
 ``` r
 plot_dimred(
   model, 
+  dimred = dimred_mds,
   expression_source = task$expression,
   feature_oi = "Fn1"
 )
 ```
 
 <img src="docs/figures/README-dimred_expression-1.png" width="100%" />
+
+Groups can also be visualised using a background color
+
+``` r
+plot_dimred(
+  model, 
+  dimred = dimred_mds,
+  expression_source = task$expression, 
+  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
+  color_cells = "feature",
+  feature_oi = "Vim",
+  color_density = "grouping",
+  label_milestones = FALSE
+)
+```
+
+<img src="docs/figures/README-dimred_groups-1.png" width="100%" />
 
 ### Plotting relevant features
 
@@ -191,7 +213,7 @@ plot_heatmap(
 ``` r
 space <- dimred_mds(task$expression)
 map(branching_point_features[1:12], function(feature_oi) {
-  plot_dimred(model, dimred_method = space, expression_source = task$expression, feature_oi = feature_oi, label_milestones = FALSE) +
+  plot_dimred(model, dimred = space, expression_source = task$expression, feature_oi = feature_oi, label_milestones = FALSE) +
     theme(legend.position = "none") +
     ggtitle(feature_oi)
 }) %>% patchwork::wrap_plots()
