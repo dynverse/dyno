@@ -108,9 +108,9 @@ Several visualisation methods provide ways to biologically interpret trajectorie
 Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:
 
 ``` r
+model <- model %>% add_dimred(dimred_mds, expression_source = task$expression)
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression, 
   grouping_assignment = fibroblast_reprogramming_treutlein$grouping
 )
@@ -123,7 +123,6 @@ Similarly, the expression of a gene:
 ``` r
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression,
   feature_oi = "Fn1"
 )
@@ -136,12 +135,11 @@ Groups can also be visualised using a background color
 ``` r
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression, 
-  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
   color_cells = "feature",
   feature_oi = "Vim",
   color_density = "grouping",
+  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
   label_milestones = FALSE
 )
 ```
@@ -163,6 +161,13 @@ plot_heatmap(
   grouping_assignment = task$grouping,
   features_oi = 50
 )
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
+
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
 ```
 
 <img src="docs/figures/README-heatmap-1.png" width="100%" />
@@ -186,6 +191,13 @@ plot_heatmap(
   expression_source = task$expression, 
   features_oi = neuron_features
 )
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
+
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
 ```
 
 <img src="docs/figures/README-branch-1.png" width="100%" />
@@ -206,6 +218,13 @@ plot_heatmap(
   expression_source = task$expression,
   features_oi = branching_point_features
 )
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
+
+#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
+#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
+#> this warning.
 ```
 
 <img src="docs/figures/README-branching_point-1.png" width="100%" />
@@ -220,6 +239,10 @@ map(branching_point_features[1:12], function(feature_oi) {
 ```
 
 <img src="docs/figures/README-branching_point_dimred-1.png" width="100%" />
+
+#### Locally important genes
+
+We can also extract the importance of a gene at each position within the trajectory.
 
 References
 ----------

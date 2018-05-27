@@ -125,9 +125,9 @@ Several visualisation methods provide ways to biologically interpret trajectorie
 
 Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:
 ```{r dimred}
+model <- model %>% add_dimred(dimred_mds, expression_source = task$expression)
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression, 
   grouping_assignment = fibroblast_reprogramming_treutlein$grouping
 )
@@ -137,7 +137,6 @@ Similarly, the expression of a gene:
 ```{r dimred_expression}
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression,
   feature_oi = "Fn1"
 )
@@ -147,12 +146,11 @@ Groups can also be visualised using a background color
 ```{r dimred_groups}
 plot_dimred(
   model, 
-  dimred = dimred_mds,
   expression_source = task$expression, 
-  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
   color_cells = "feature",
   feature_oi = "Vim",
   color_density = "grouping",
+  grouping_assignment = fibroblast_reprogramming_treutlein$grouping,
   label_milestones = FALSE
 )
 ```
@@ -224,5 +222,9 @@ map(branching_point_features[1:12], function(feature_oi) {
     ggtitle(feature_oi)
 }) %>% patchwork::wrap_plots()
 ```
+
+#### Locally important genes
+
+We can also extract the importance of a gene at each position within the trajectory. 
 
 ## References
