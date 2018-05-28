@@ -3,8 +3,8 @@ library(tidyverse)
 
 packages <- tribble(
   ~pkg_id, ~title, ~desc,
-  "dynguidelines", "Choosing the optimal method", " ",
-  "dynmethods", "Running the methods", " ",
+  "dynguidelines", "Choosing the optimal trajectory inference method", " ",
+  "dynmethods", "Running trajectory inference methods", " ",
   "dynwrap", "Toolbox to transform trajectory models", " ",
   "dynplot", "Visualising trajectories", " ",
   "dynfeature", "Extracting relevant features from a trajectory", " "

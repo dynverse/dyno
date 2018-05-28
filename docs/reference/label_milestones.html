@@ -113,7 +113,7 @@
 
 <span class='fu'>is_wrapper_with_milestone_labelling</span>(<span class='no'>traj</span>)
 
-<span class='fu'>get_milestone_labelling</span>(<span class='no'>traj</span>)</pre>
+<span class='fu'>get_milestone_labelling</span>(<span class='no'>traj</span>, <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,6 +133,10 @@
     <tr>
       <th>n_nearest_cells</th>
       <td><p>The number of nearest cells to use for extracting milestone expression</p></td>
+    </tr>
+    <tr>
+      <th>label_milestones</th>
+      <td><p>How to label the milestones. Can be TRUE (in which case the labels within the trajectory will be used), "all" (in which case both given labels as milestone_ids will be used), a named character vector, or FALSE</p></td>
     </tr>
     </table>
     

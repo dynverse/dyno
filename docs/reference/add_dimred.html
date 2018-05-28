@@ -30,7 +30,7 @@
 
 <meta property="og:title" content="Add a dimensionality reduction to a data wrapper — add_dimred" />
 
-<meta property="og:description" content="Add a dimensionality reduction to a data wrapper" />
+<meta property="og:description" content="TODO: add possibility to also dimred the milestones and segments" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,12 +104,16 @@
 
     <div class="ref-description">
     
-    <p>Add a dimensionality reduction to a data wrapper</p>
+    <p>TODO: add possibility to also dimred the milestones and segments</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>add_dimred</span>(<span class='no'>data_wrapper</span>, <span class='no'>dimred</span>, <span class='kw'>dimred_milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>dimred_trajectory_segments</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>dimred_trajectory_segments</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>, <span class='no'>...</span>)
+
+<span class='fu'>is_wrapper_with_dimred</span>(<span class='no'>data_wrapper</span>)
+
+<span class='fu'>get_dimred</span>(<span class='no'>data_wrapper</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -120,7 +124,7 @@
     </tr>
     <tr>
       <th>dimred</th>
-      <td><p>The dimensionality reduction matrix.</p></td>
+      <td><p>The dimensionality reduction matrix (with cell_ids as rownames) or function which will run the dimensionality reduction</p></td>
     </tr>
     <tr>
       <th>dimred_milestones</th>
@@ -129,6 +133,10 @@
     <tr>
       <th>dimred_trajectory_segments</th>
       <td><p>An optional dimensionality reduction of the trajectory segments.</p></td>
+    </tr>
+    <tr>
+      <th>expression_source</th>
+      <td><p>The source of expression, can be "counts", "expression", an expression matrix, or another data wrapper which contains expression</p></td>
     </tr>
     <tr>
       <th>...</th>

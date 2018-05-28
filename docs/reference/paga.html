@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with PAGA — description_paga • dyno</title>
+<title>Inferring trajectories with PAGA — ti_paga • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with PAGA — description_paga" />
+<meta property="og:title" content="Inferring trajectories with PAGA — ti_paga" />
 
-<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
+<meta property="og:description" content="Inferring trajectories with PAGA" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,17 +104,35 @@
 
     <div class="ref-description">
     
-    <p>Arguments passed to this function will be used as default parameters for the method.</p>
+    <p>Inferring trajectories with PAGA</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_paga</span>(<span class='kw'>n_neighbours</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>n_comps</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>2.5</span>)</pre>
-        
+    <pre class="usage"><span class='fu'>ti_paga</span>(<span class='kw'>n_neighbours</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>n_comps</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>2.5</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>n_neighbours</th>
+      <td><p>Number of neighbours for knn</p></td>
+    </tr>
+    <tr>
+      <th>n_comps</th>
+      <td><p>Number of principal components</p></td>
+    </tr>
+    <tr>
+      <th>resolution</th>
+      <td><p>Resolution of louvain clustering, which determines the granularity of the clustering. Higher values will result in more clusters.</p></td>
+    </tr>
+    </table>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
                 </ul>
 
   </div>

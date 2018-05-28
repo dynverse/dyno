@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SCORPIUS — description_scorpius • dyno</title>
+<title>Inferring trajectories with SCORPIUS — ti_scorpius • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with SCORPIUS — description_scorpius" />
+<meta property="og:title" content="Inferring trajectories with SCORPIUS — ti_scorpius" />
 
-<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
+<meta property="og:description" content="Inferring trajectories with SCORPIUS" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,21 +104,26 @@
 
     <div class="ref-description">
     
-    <p>Arguments passed to this function will be used as default parameters for the method.</p>
+    <p>Inferring trajectories with SCORPIUS</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_scorpius</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>,
+    <pre class="usage"><span class='fu'>ti_scorpius</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>,
   <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
   <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='fu'>description_scorpius_sparse</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
-  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>ti_scorpius_sparse</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>,
+  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
+  <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>distance_method</th>
+      <td><p>A character string indicating which correlation
+coefficient (or covariance) is to be computed. One of "pearson", "kendall", or "spearman".</p></td>
+    </tr>
     <tr>
       <th>ndim</th>
       <td><p>The number of dimensions in the new space.</p></td>

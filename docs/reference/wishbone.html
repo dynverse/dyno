@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Wanderlust/Wishbone — description_wishbone • dyno</title>
+<title>Inferring trajectories with Wanderlust/Wishbone — ti_wishbone • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Wanderlust/Wishbone — description_wishbone" />
+<meta property="og:title" content="Inferring trajectories with Wanderlust/Wishbone — ti_wishbone" />
 
-<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
+<meta property="og:description" content="Inferring trajectories with Wanderlust/Wishbone" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,23 +104,65 @@
 
     <div class="ref-description">
     
-    <p>Arguments passed to this function will be used as default parameters for the method.</p>
+    <p>Inferring trajectories with Wanderlust/Wishbone</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_wishbone</span>(<span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+    <pre class="usage"><span class='fu'>ti_wishbone</span>(<span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
   <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>,
   <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>method_name</span> <span class='kw'>=</span> <span class='st'>"wishbone"</span>)
 
-<span class='fu'>description_wndrlst</span>(<span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+<span class='fu'>ti_wanderlust</span>(<span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
   <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>branch</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>,
-  <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>method_name</span> <span class='kw'>=</span> <span class='st'>"wndrlst"</span>)</pre>
-        
+  <span class='kw'>normalize</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>method_name</span> <span class='kw'>=</span> <span class='st'>"wanderlust"</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>knn</th>
+      <td><p>Number of nearest neighbours for diffusion map</p></td>
+    </tr>
+    <tr>
+      <th>n_diffusion_components</th>
+      <td><p>Number of diffusion components</p></td>
+    </tr>
+    <tr>
+      <th>n_pca_components</th>
+      <td><p>Number of pca components</p></td>
+    </tr>
+    <tr>
+      <th>branch</th>
+      <td><p>Whether to find a branching (wishbone) or linear (wanderlust) trajectory</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Number of nearest neighbors for graph construction</p></td>
+    </tr>
+    <tr>
+      <th>num_waypoints</th>
+      <td><p>Number of waypoints to sample</p></td>
+    </tr>
+    <tr>
+      <th>normalize</th>
+      <td><p>Whether to normalize the data</p></td>
+    </tr>
+    <tr>
+      <th>epsilon</th>
+      <td><p>Gaussian standard deviation for converting distances to affinities, for diffusion map</p></td>
+    </tr>
+    <tr>
+      <th>method_name</th>
+      <td><p>Whether to use "wishbone" and "wanderlust", will influence the branch parameter</p></td>
+    </tr>
+    </table>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
                 </ul>
 
   </div>

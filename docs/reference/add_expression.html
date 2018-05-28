@@ -108,7 +108,11 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_expression</span>(<span class='no'>data_wrapper</span>, <span class='no'>counts</span>, <span class='no'>expression</span>, <span class='kw'>feature_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>add_expression</span>(<span class='no'>data_wrapper</span>, <span class='no'>counts</span>, <span class='no'>expression</span>, <span class='kw'>feature_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)
+
+<span class='fu'>is_wrapper_with_expression</span>(<span class='no'>data_wrapper</span>)
+
+<span class='fu'>get_expression</span>(<span class='no'>data_wrapper</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -123,15 +127,19 @@
     </tr>
     <tr>
       <th>expression</th>
-      <td><p>the normalised expression values with genes in columns and cells in rows</p></td>
+      <td><p>The normalised expression values with genes in columns and cells in rows</p></td>
     </tr>
     <tr>
       <th>feature_info</th>
-      <td><p>Optional meta-information pertaining the features</p></td>
+      <td><p>Optional meta-information of the features, a data.frame with at least feature_id as column</p></td>
     </tr>
     <tr>
       <th>...</th>
       <td><p>extra information to be stored in the wrapper</p></td>
+    </tr>
+    <tr>
+      <th>expression_source</th>
+      <td><p>The source of expression, can be "counts", "expression", an expression matrix, or another data wrapper which contains expression</p></td>
     </tr>
     </table>
     

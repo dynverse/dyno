@@ -1,5 +1,5 @@
 reference:
-- title: Choosing the optimal method
+- title: Choosing the optimal trajectory inference method
   desc: dynguidelines
   contents:
   - dynguidelines
@@ -10,56 +10,23 @@ reference:
   - priors
   - questions
   - renderers
-- title: Running the methods
+- title: Running trajectory inference methods
   desc: dynmethods
   contents:
   - celltree
   - check_dependencies
   - check_dependency
-  - create_description
-  - description_angle
-  - description_compone
-  - description_dpt
-  - description_embeddr
-  - description_error
-  - description_gng
-  - description_gpfates
-  - description_identity
-  - description_matcher
-  - description_merlot
-  - description_mfa
-  - description_mpath
-  - description_ouija
-  - description_ouijaflw
-  - description_periodpc
-  - description_phenopth
-  - description_pseudogp
-  - description_random
-  - description_recat
-  - description_scimitar
-  - description_scoup
-  - description_scuba
-  - description_shuffle
-  - description_sincell
-  - description_slice
-  - description_slicer
-  - description_slngsht
-  - description_stemid
-  - description_stemid2
-  - description_topslam
-  - description_tscan
-  - description_waterfll
+  - create_ti_method
   - dimred
   - dynmethods
-  - execute_method
   - execute_method_internal
   - execute_method_on_task
   - get_default_parameters
-  - get_descriptions
-  - infer_trajectory
+  - get_ti_methods
+  - infer_trajectories
   - install_dependencies
-  - is_description
   - is_prediction
+  - is_ti_method
   - monocle
   - paga
   - plot_trajectory
@@ -67,6 +34,38 @@ reference:
   - scorpius
   - set_cores
   - start_dynmethods_docker
+  - ti_angle
+  - ti_comp1
+  - ti_dpt
+  - ti_embeddr
+  - ti_error
+  - ti_gng
+  - ti_gpfates
+  - ti_identity
+  - ti_matcher
+  - ti_merlot
+  - ti_mfa
+  - ti_mpath
+  - ti_ouija
+  - ti_ouijaflow
+  - ti_periodpc
+  - ti_phenopath
+  - ti_pseudogp
+  - ti_random
+  - ti_recat
+  - ti_scimitar
+  - ti_scoup
+  - ti_scuba
+  - ti_shuffle
+  - ti_sincell
+  - ti_slice
+  - ti_slicer
+  - ti_slingshot
+  - ti_stemid
+  - ti_stemid2
+  - ti_topslam
+  - ti_tscan
+  - ti_waterfll
   - wishbone
   - wrap_prediction_model
 - title: Toolbox to transform trajectory models
@@ -98,10 +97,7 @@ reference:
   - dynwrap
   - generate_prior_information
   - get_cell_grouping
-  - get_expression
   - is_data_wrapper
-  - is_wrapper_with_dimred
-  - is_wrapper_with_expression
   - is_wrapper_with_grouping
   - is_wrapper_with_prior_information
   - is_wrapper_with_timings
@@ -109,6 +105,8 @@ reference:
   - is_wrapper_with_waypoint_cells
   - is_wrapper_with_waypoints
   - label_milestones
+  - prior_usages
+  - priors
   - select_waypoint_cells
   - select_waypoints
   - simplify_igraph_network
@@ -121,6 +119,7 @@ reference:
   desc: dynplot
   contents:
   - add_cell_coloring
+  - add_density_coloring
   - add_milestone_coloring
   - check_or_perform_dimred
   - dimred_trajectory
@@ -140,6 +139,7 @@ reference:
   - plot_strip
   - plot_topology
   - process_dynplot
+  - project_waypoints
   - theme_clean
   - theme_graph
 - title: Extracting relevant features from a trajectory

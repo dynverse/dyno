@@ -118,8 +118,12 @@ After running <code>start_dynmethods_docker</code>, methods can be run on the do
         
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>start_dynmethods_docker</span>()</div><div class='output co'>#&gt; <span class='error'>Error in socketConnection("localhost", port = port, server = TRUE, blocking = TRUE,     open = "a+b", timeout = timeout): reached elapsed time limit</span></div><div class='input'><span class='no'>tasks</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>dyntoy</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/dyntoy/topics/toy_tasks'>toy_tasks</a></span>[<span class='fl'>1</span>, ]
-<span class='no'>models</span> <span class='kw'>%&lt;-%</span> <span class='fu'><a href='infer_trajectory.html'>infer_trajectory</a></span>(<span class='no'>tasks</span>, <span class='fu'><a href='description_compone.html'>description_compone</a></span>())</div></pre>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='fu'>start_dynmethods_docker</span>()
+<span class='no'>tasks</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>dyntoy</span><span class='kw ns'>::</span><span class='no'><a href='http://www.rdocumentation.org/packages/dyntoy/topics/toy_tasks'>toy_tasks</a></span>[<span class='fl'>1</span>, ]
+<span class='no'>models</span> <span class='kw'>%&lt;-%</span> <span class='fu'><a href='infer_trajectories.html'>infer_trajectory</a></span>(<span class='no'>tasks</span>, <span class='fu'>ti_compone</span>())
+<span class='co'># }</span><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
