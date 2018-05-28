@@ -1,0 +1,34 @@
+language: r
+sudo: required
+dist: trusty
+bioc_required: true
+cache:
+  timeout: 2000
+  apt: true
+  directories:
+    - $HOME/.cache/pip
+    - $HOME/R/Library
+env:
+  global:
+    - R_MAX_NUM_DLLS=250
+addons:
+  apt:
+    packages:
+      - libgsl0-dev
+      - libsdl1.2-dev
+      - libreadline-dev
+      - imagemagick
+      - libfftw3-dev
+      - libudunits2-dev
+before_install:
+ - source <( curl --insecure https://raw.githubusercontent.com/dynverse/dynmethods/master/.travis_install_python.sh ) # use travis's own python
+install:
+ - pip3 install --user --upgrade --only-binary=numpy,scipy numpy scipy        # many packages
+ - pip3 install --user --upgrade umap                                         # umapr
+ - if [ `git branch | grep '* master' | wc -l` == 0 ]; then sed -i 's#\(dynverse/[^, ]*\)#\1@devel#' DESCRIPTION; fi
+ - R -e 'if ("devtools" %in% rownames(installed.packages())) update.packages(oldPkgs = "devtools", ask = FALSE) else install.packages("devtools")'
+ - R -e 'devtools::install_cran("covr")'
+ - R -e 'devtools::install_github(c("r-lib/rlang", "tidyverse/ggplot2"))'
+ - R -e 'setRepositories(ind = 1:2); devtools::install(dependencies = T, upgrade = T)'
+after_success:
+ - R -e 'covr::codecov()'
