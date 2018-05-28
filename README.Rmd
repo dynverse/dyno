@@ -86,7 +86,7 @@ model %<-% infer_trajectory(task, methods[[1]])
 
 ```{r, echo=FALSE}
 model <- infer_trajectory(task, methods[[1]])
-if(is.na(model)) {
+if(is.na(first(model))) {
   print(attr(model, "summary")$error)
   stop("Method errored")
 }

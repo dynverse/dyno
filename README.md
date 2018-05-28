@@ -70,9 +70,6 @@ start_dynmethods_docker()
 model %<-% infer_trajectory(task, methods[[1]])
 ```
 
-    #> Warning in if (is.na(model)) {: the condition has length > 1 and only the
-    #> first element will be used
-
 ### Making the trajectory interpretable
 
 In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.
@@ -161,13 +158,6 @@ plot_heatmap(
   grouping_assignment = task$grouping,
   features_oi = 50
 )
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
-
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
 ```
 
 <img src="docs/figures/README-heatmap-1.png" width="100%" />
@@ -191,13 +181,6 @@ plot_heatmap(
   expression_source = task$expression, 
   features_oi = neuron_features
 )
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
-
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
 ```
 
 <img src="docs/figures/README-branch-1.png" width="100%" />
@@ -218,13 +201,6 @@ plot_heatmap(
   expression_source = task$expression,
   features_oi = branching_point_features
 )
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
-
-#> Warning in filter_impl(.data, quo): hybrid evaluation forced for
-#> `row_number`. Please use dplyr::row_number() or library(dplyr) to remove
-#> this warning.
 ```
 
 <img src="docs/figures/README-branching_point-1.png" width="100%" />
