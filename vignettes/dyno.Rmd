@@ -1,13 +1,9 @@
 ---
-title: "Inferring trajectories using dyno"
+title: "Getting started with dyno"
+date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Inferring trajectories using dyno}
+  %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
 ---
-
-```{r child = '../README.Rmd'}
-```
-
-

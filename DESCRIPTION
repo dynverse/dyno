@@ -34,6 +34,7 @@ Description: The dyno package automatically loads in packages to:
   transform and work with the trajectory (dynwrap)
 License: GPL-3
 Depends: 
+    R (>= 3.4.0),
     dynfeature,
     dynguidelines,
     dynmethods,
@@ -50,3 +51,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 URL: https://github.com/dynverse/dyno
 BugReports: https://github.com/dynverse/dyno/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
