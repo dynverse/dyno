@@ -3,7 +3,7 @@ Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
 
 -   [Installation](#installation)
 -   [Trajectory inference workflow](#trajectory-inference-workflow)
-    -   [Building the task](#building-the-task)
+    -   [Preparing the data](#preparing-the-data)
     -   [Selecting the most optimal TI methods](#selecting-the-most-optimal-ti-methods)
     -   [Running the methods](#running-the-methods)
     -   [Making the trajectory interpretable](#making-the-trajectory-interpretable)
@@ -12,6 +12,8 @@ Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
 -   [References](#references)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Build Status](https://api.travis-ci.org/dynverse/dyno.svg)](https://travis-ci.org/dynverse/dyno)
+
 The dyno package guides the user through the full path of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
 
 Installation
@@ -36,9 +38,9 @@ The whole trajectory inference workflow is divided in several steps:
 
 ![](docs/figures/toolkit.png)
 
-### Building the task
+### Preparing the data
 
-The first step is to prepare the data for trajectory inference. We use both the counts and normalised expression as some TI methods are specifically built for one or the other
+The first step is to prepare the data for trajectory inference. `wrap_expression` requires both the counts and normalised expression as some TI methods are specifically built for one or the other
 
 ``` r
 data("fibroblast_reprogramming_treutlein")
@@ -51,7 +53,7 @@ task <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain task we use the results from (Saelens et al. 2018) ([doi](https://doi.org/10.1101/276907)).
+The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from (Saelens et al. 2018) ([doi](https://doi.org/10.1101/276907)).
 
 ``` r
 guidelines <- guidelines_shiny(task)
@@ -215,10 +217,6 @@ map(branching_point_features[1:12], function(feature_oi) {
 ```
 
 <img src="docs/figures/README-branching_point_dimred-1.png" width="100%" />
-
-#### Locally important genes
-
-We can also extract the importance of a gene at each position within the trajectory.
 
 References
 ----------
