@@ -1,10 +1,11 @@
 library(fs)
 library(tidyverse)
+library(pkgdown)
 
 packages <- tribble(
   ~pkg_id, ~title, ~desc,
-  "dynguidelines", "Choosing the optimal method", " ",
-  "dynmethods", "Running the methods", " ",
+  "dynguidelines", "Choosing the optimal trajectory inference method", " ",
+  "dynmethods", "Running trajectory inference methods", " ",
   "dynwrap", "Toolbox to transform trajectory models", " ",
   "dynplot", "Visualising trajectories", " ",
   "dynfeature", "Extracting relevant features from a trajectory", " "
@@ -33,6 +34,8 @@ config <- list(
 
 yaml::write_yaml(config, "_pkgdown.yml")
 
-pkgdown::build_site(".", lazy=TRUE)
+build_site(".", lazy=TRUE)
 
 dir_walk("./man/", fs::file_delete)
+
+

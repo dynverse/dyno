@@ -98,7 +98,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Run a method on a task with a set of parameters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrapper_execute_method.R'><code>R/wrapper_execute_method.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrapper_infer_trajectory.R'><code>R/wrapper_infer_trajectory.R</code></a></small>
     <div class="hidden name"><code>execute_method_on_task.Rd</code></div>
     </div>
 
@@ -120,11 +120,18 @@
     </tr>
     <tr>
       <th>method</th>
-      <td><p>The method to execute.</p></td>
+      <td><p>One or more methods. Must be one of:</p><ul>
+<li><p>an object or list of ti_... objects (e.g. <code><a href='paga.html'>ti_paga</a>()</code>),</p></li>
+<li><p>a character vector containing the names of methods to execute (e.g. <code>"scorpius"</code>), or</p></li>
+<li><p>a dynguidelines data frame.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>parameters</th>
-      <td><p>The parameters to evaluate with.</p></td>
+      <td><p>A set of parameters to be used during trajectory inference.
+A parameter set must be a named list of parameters.
+If multiple methods were provided in the <code>method</code> parameter,
+<code>parameters</code> must be an unnamed list of the same length.</p></td>
     </tr>
     <tr>
       <th>give_priors</th>

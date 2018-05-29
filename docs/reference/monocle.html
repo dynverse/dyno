@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Monocle — description_mnclddr • dyno</title>
+<title>Inferring trajectories with Monocle — ti_monocle_ddrtree • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Monocle — description_mnclddr" />
+<meta property="og:title" content="Inferring trajectories with Monocle — ti_monocle_ddrtree" />
 
-<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
+<meta property="og:description" content="Inferring trajectories with Monocle" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,22 +104,50 @@
 
     <div class="ref-description">
     
-    <p>Arguments passed to this function will be used as default parameters for the method.</p>
+    <p>Inferring trajectories with Monocle</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_mnclddr</span>(<span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"DDRTree"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+    <pre class="usage"><span class='fu'>ti_monocle_ddrtree</span>(<span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"DDRTree"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
   <span class='kw'>norm_method</span> <span class='kw'>=</span> <span class='st'>"vstExprs"</span>, <span class='kw'>auto_param_selection</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>description_mnclica</span>(<span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"ICA"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+<span class='fu'>ti_monocle_ica</span>(<span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"ICA"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
   <span class='kw'>norm_method</span> <span class='kw'>=</span> <span class='st'>"vstExprs"</span>)</pre>
-        
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>reduction_method</th>
+      <td><p>A character string specifying the algorithm to use for dimensionality reduction.</p></td>
+    </tr>
+    <tr>
+      <th>max_components</th>
+      <td><p>the dimensionality of the reduced space</p></td>
+    </tr>
+    <tr>
+      <th>norm_method</th>
+      <td><p>Determines how to transform expression values prior to reducing dimensionality</p></td>
+    </tr>
+    <tr>
+      <th>auto_param_selection</th>
+      <td><p>when this argument is set to TRUE (default), it will automatically calculate the proper value for the ncenter (number of centroids) parameters which will be passed into DDRTree call.</p></td>
+    </tr>
+    </table>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/monocle/topics/reduceDimension'>monocle::reduceDimension()</a></code>, <code><a href='http://www.rdocumentation.org/packages/monocle/topics/orderCells'>monocle::orderCells()</a></code></p></div>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#see-also">See also</a></li>
+          </ul>
 
   </div>
 </div>

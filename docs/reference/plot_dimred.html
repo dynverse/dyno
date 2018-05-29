@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Plot trajectory on dimensionality reduction — plot_dimred • dyno</title>
+<title>Plot the trajectory on dimensionality reduction — plot_dimred • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Plot trajectory on dimensionality reduction — plot_dimred" />
+<meta property="og:title" content="Plot the trajectory on dimensionality reduction — plot_dimred" />
 
-<meta property="og:description" content="Plot trajectory on dimensionality reduction" />
+<meta property="og:description" content="Plot the trajectory on dimensionality reduction" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,27 +97,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Plot trajectory on dimensionality reduction</h1>
+    <h1>Plot the trajectory on dimensionality reduction</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/plot_dimred.R'><code>R/plot_dimred.R</code></a></small>
     <div class="hidden name"><code>plot_dimred.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Plot trajectory on dimensionality reduction</p>
+    <p>Plot the trajectory on dimensionality reduction</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>plot_dimred</span>(<span class='no'>traj</span>, <span class='kw'>color_cells</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"none"</span>, <span class='st'>"grouping"</span>, <span class='st'>"feature"</span>,
-  <span class='st'>"milestone"</span>, <span class='st'>"pseudotime"</span>), <span class='kw'>color_density</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='st'>"milestone"</span>, <span class='st'>"pseudotime"</span>),
+  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/add_dimred'>is_wrapper_with_dimred</a></span>(<span class='no'>traj</span>), <span class='fl'>NA</span>,
+  <span class='fu'>ifelse</span>(<span class='fu'>length</span>(<span class='no'>traj</span>$<span class='no'>cell_ids</span>) <span class='kw'>&gt;</span> <span class='fl'>500</span>, <span class='no'>dimred_pca</span>, <span class='no'>dimred_mds</span>)),
+  <span class='kw'>plot_trajectory</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/is_wrapper_with_trajectory'>is_wrapper_with_trajectory</a></span>(<span class='no'>traj</span>) <span class='kw'>&amp;&amp;</span>
+  !<span class='no'>plot_milestone_network</span>, <span class='kw'>plot_milestone_network</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/label_milestones'>is_wrapper_with_milestone_labelling</a></span>(<span class='no'>traj</span>),
   <span class='kw'>grouping_assignment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>feature_oi</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>color_milestones</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"given"</span>), <span class='kw'>milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>,
-  <span class='kw'>plot_milestone_network</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/is_wrapper_with_trajectory'>is_wrapper_with_trajectory</a></span>(<span class='no'>traj</span>),
-  <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/label_milestones'>is_wrapper_with_milestone_labelling</a></span>(<span class='no'>traj</span>),
-  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='fu'>length</span>(<span class='no'>traj</span>$<span class='no'>cell_ids</span>) <span class='kw'>&gt;</span> <span class='fl'>500</span>, <span class='no'>dimred_pca</span>, <span class='no'>dimred_mds</span>),
-  <span class='kw'>padding</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>nbins</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>bw_factor</span> <span class='kw'>=</span> <span class='fl'>1</span>/<span class='fl'>15</span>)</pre>
+  <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>, <span class='kw'>color_density</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"none"</span>, <span class='st'>"grouping"</span>,
+  <span class='st'>"feature"</span>), <span class='kw'>padding</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>nbins</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>bw</span> <span class='kw'>=</span> <span class='fl'>0.2</span>,
+  <span class='kw'>density_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.3</span>, <span class='kw'>density_cutoff_label</span> <span class='kw'>=</span> <span class='no'>density_cutoff</span>/<span class='fl'>10</span>,
+  <span class='kw'>trajectory_projection_sd</span> <span class='kw'>=</span> <span class='fu'>sum</span>(<span class='no'>traj</span>$<span class='no'>milestone_network</span>$<span class='no'>length</span>) * <span class='fl'>0.05</span>,
+  <span class='kw'>n_arrows</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,6 +134,22 @@
     <tr>
       <th>color_cells</th>
       <td><p>How to color the cells</p></td>
+    </tr>
+    <tr>
+      <th>dimred</th>
+      <td><p>The dimensionality reduction matrix (with cell_ids as rownames) or function which will run the dimensionality reduction</p></td>
+    </tr>
+    <tr>
+      <th>plot_trajectory</th>
+      <td><p>Whether to plot the projected trajectory on the dimensionality reduction</p></td>
+    </tr>
+    <tr>
+      <th>plot_milestone_network</th>
+      <td><p>Whether to plot the projected milestone network on the dimensionality reduction</p></td>
+    </tr>
+    <tr>
+      <th>label_milestones</th>
+      <td><p>How to label the milestones. Can be TRUE (in which case the labels within the trajectory will be used), "all" (in which case both given labels as milestone_ids will be used), a named character vector, or FALSE</p></td>
     </tr>
     <tr>
       <th>grouping_assignment</th>
@@ -163,16 +184,38 @@
       <td><p>Source of the expression</p></td>
     </tr>
     <tr>
-      <th>plot_milestone_network</th>
-      <td><p>Whether to plot the milestone network</p></td>
+      <th>color_density</th>
+      <td><p>How to color density, can be "none", "grouping", or "feature"</p></td>
     </tr>
     <tr>
-      <th>label_milestones</th>
-      <td><p>Whether to plot the labels of the milestones, or alternatively a named character vector mapping milestone_ids to labels</p></td>
+      <th>padding</th>
+      <td><p>The padding in the edges to the plot, relative to the size of the plot</p></td>
     </tr>
     <tr>
-      <th>dimred_method</th>
-      <td><p>The dimred method or the dimensionality reduction (a dataframe containing at least Comp1, Comp2 and cell_id)</p></td>
+      <th>nbins</th>
+      <td><p>Number of bins for calculating the density</p></td>
+    </tr>
+    <tr>
+      <th>bw</th>
+      <td><p>Bandwidth, relative to the size of the plot</p></td>
+    </tr>
+    <tr>
+      <th>density_cutoff</th>
+      <td><p>Cutoff for density, the lower the larger the areas</p></td>
+    </tr>
+    <tr>
+      <th>density_cutoff_label</th>
+      <td><p>Cutoff for density for labelling, the lower the further way from cells</p></td>
+    </tr>
+    <tr>
+      <th>trajectory_projection_sd</th>
+      <td><p>The standard deviation of the gaussian kernel to be used for projecting the trajectory.
+This is in the order of maginature as the lengths of the milestone_network.
+The lower, the more closely the trajectory will follow the cells</p></td>
+    </tr>
+    <tr>
+      <th>n_arrows</th>
+      <td><p>Number of arrows to add to trajectory projection</p></td>
     </tr>
     </table>
     

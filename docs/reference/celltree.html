@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with cellTree — description_ctmaptpx • dyno</title>
+<title>Inferring trajectories with cellTree — ti_celltree_maptpx • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -28,9 +28,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with cellTree — description_ctmaptpx" />
+<meta property="og:title" content="Inferring trajectories with cellTree — ti_celltree_maptpx" />
 
-<meta property="og:description" content="Arguments passed to this function will be used as default parameters for the method." />
+<meta property="og:description" content="Inferring trajectories with cellTree" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,22 +104,21 @@
 
     <div class="ref-description">
     
-    <p>Arguments passed to this function will be used as default parameters for the method.</p>
+    <p>Inferring trajectories with cellTree</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>description_ctmaptpx</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"maptpx"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>,
-  <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>,
-  <span class='kw'>num_topics_lower</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>num_topics_upper</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>,
-  <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
+    <pre class="usage"><span class='fu'>ti_celltree_maptpx</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"maptpx"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
+  <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>, <span class='kw'>num_topics_lower</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>num_topics_upper</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
+  <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>, <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
 
-<span class='fu'>description_ctgibbs</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"Gibbs"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+<span class='fu'>ti_celltree_gibbs</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"Gibbs"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
   <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>, <span class='kw'>num_topics</span> <span class='kw'>=</span> <span class='fl'>4L</span>, <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>200</span>,
   <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)
 
-<span class='fu'>description_ctvem</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"VEM"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+<span class='fu'>ti_celltree_vem</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"VEM"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
   <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>, <span class='kw'>num_topics</span> <span class='kw'>=</span> <span class='fl'>4L</span>, <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>,
   <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)</pre>
@@ -127,6 +126,10 @@
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>method</th>
+      <td><p>LDA inference method to use. Can be any unique prefix of ‘maptpx’, ‘Gibbs’ or ‘VEM’ (defaults to ‘maptpx’)</p></td>
+    </tr>
     <tr>
       <th>sd_filter</th>
       <td><p>Standard-deviation threshold below which genes should be removed from the data.</p></td>
@@ -140,6 +143,11 @@ By default, this threshold is computed dynamically, based on the distance distri
       <th>width_scale_factor</th>
       <td><p>A scaling factor for the dynamically-computed distance threshold (ignored if absolute_width is provided).
 Higher values will result in less branches in the backbone tree, while lower values might lead to a large number of backbone branches.</p></td>
+    </tr>
+    <tr>
+      <th>outlier_tolerance_factor</th>
+      <td><p>Proportion of vertices, out of the total number of vertices divided by the total number of branches,
+that can be left at the end of the backbone tree-building algorithm.</p></td>
     </tr>
     <tr>
       <th>rooting_method</th>
@@ -168,11 +176,6 @@ Higher values will result in less branches in the backbone tree, while lower val
     <tr>
       <th>num_topics</th>
       <td><p>The number of topics to fit in the model.</p></td>
-    </tr>
-    <tr>
-      <th>outlier_distance_factor</th>
-      <td><p>Proportion of vertices, out of the total number of vertices divided by the total number of branches,
-that can be left at the end of the backbone tree-building algorithm.</p></td>
     </tr>
     </table>
     

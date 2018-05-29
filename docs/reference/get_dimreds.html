@@ -110,8 +110,6 @@
 
     <pre class="usage"><span class='fu'>dimred_pca</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 
-<span class='fu'>dimred_simlr</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>nclusters</span> <span class='kw'>=</span> <span class='fl'>4</span>)
-
 <span class='fu'>dimred_mds</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 
 <span class='fu'>dimred_mds_sammon</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
@@ -122,11 +120,13 @@
 
 <span class='fu'>dimred_tsne</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 
-<span class='fu'>dimred_dp</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>neigen</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>dimred_dp</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 
 <span class='fu'>dimred_ica</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 
 <span class='fu'>dimred_lle</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>)
+
+<span class='fu'>dimred_umap</span>(<span class='no'>x</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>n_neighbors</span> <span class='kw'>=</span> <span class='fl'>15L</span>)
 
 <span class='fu'>get_dimreds</span>()</pre>
     
@@ -142,12 +142,8 @@
       <td><p>Number of dimensions</p></td>
     </tr>
     <tr>
-      <th>nclusters</th>
-      <td><p>Number of clusters for simlr</p></td>
-    </tr>
-    <tr>
-      <th>neigen</th>
-      <td><p>Number of eigenvalues for diffusionMap</p></td>
+      <th>n_neighbors</th>
+      <td><p>numeric. The size of local neighborhood (in terms of number of neighboring sample points) used for manifold approximation. Larger values result in more global views of the manifold, while smaller values result in more local data being preserved. In general values should be in the range 2 to 100.</p></td>
     </tr>
     </table>
     
