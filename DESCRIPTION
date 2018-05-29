@@ -53,5 +53,6 @@ URL: https://github.com/dynverse/dyno
 BugReports: https://github.com/dynverse/dyno/issues
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
