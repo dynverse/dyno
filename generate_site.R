@@ -1,5 +1,6 @@
 library(fs)
 library(tidyverse)
+library(pkgdown)
 
 packages <- tribble(
   ~pkg_id, ~title, ~desc,
@@ -33,6 +34,8 @@ config <- list(
 
 yaml::write_yaml(config, "_pkgdown.yml")
 
-pkgdown::build_site(".", lazy=TRUE)
+build_site(".", lazy=TRUE)
 
 dir_walk("./man/", fs::file_delete)
+
+
