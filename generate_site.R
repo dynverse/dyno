@@ -16,7 +16,7 @@ reference <- pmap(packages, function(pkg_id, title, desc) {
 
   man_files <- dir_ls(pkg_dir)
 
-  walk(man_files, ~fs::file_copy(., paste0("./man/", fs::path_file(.)), overwrite=TRUE))
+  walk(man_files, ~fs::file_copy(., paste0("./man/", fs::path_file(.)), overwrite = TRUE))
 
   man_ids <- man_files %>% {.[str_which(., ".*\\.Rd")]} %>% fs::path_file() %>% str_extract("[^\\.]*")
 
@@ -28,13 +28,13 @@ reference <- pmap(packages, function(pkg_id, title, desc) {
 })
 
 config <- list(
-  reference=reference,
+  reference = reference,
   development = list(mode = "unreleased")
 )
 
 yaml::write_yaml(config, "_pkgdown.yml")
 
-build_site(".", lazy=TRUE)
+build_site(".", lazy = TRUE)
 
 dir_walk("./man/", fs::file_delete)
 
