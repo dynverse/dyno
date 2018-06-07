@@ -107,7 +107,7 @@ Several visualisation methods provide ways to biologically interpret trajectorie
 Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:
 
 ``` r
-model <- model %>% add_dimred(dimred_mds, expression_source = task$expression)
+model <- model %>% add_dimred(dyndimred::dimred_mds, expression_source = task$expression)
 plot_dimred(
   model, 
   expression_source = task$expression, 
@@ -157,7 +157,7 @@ At default, the overall most important genes are calculated when plotting a heat
 plot_heatmap(
   model,
   expression_source = task$expression,
-  grouping = task$grouping,
+  grouping = fibroblast_reprogramming_treutlein$grouping,
   features_oi = 50
 )
 ```
@@ -208,7 +208,7 @@ plot_heatmap(
 <img src="docs/figures/README-branching_point-1.png" width="100%" />
 
 ``` r
-space <- dimred_mds(task$expression)
+space <- dyndimred::dimred_mds(task$expression)
 map(branching_point_features[1:12], function(feature_oi) {
   plot_dimred(model, dimred = space, expression_source = task$expression, feature_oi = feature_oi, label_milestones = FALSE) +
     theme(legend.position = "none") +
