@@ -111,9 +111,9 @@ model <- model %>%
 Milestones can be labelled using marker genes. These labels can then be used for subsequent analyses and for visualisation.
 
 ```{r}
-model <- label_milestones(
+model <- label_milestones_markers(
   model,
-  list(
+  markers = list(
     MEF = c("Vim"),
     Myocyte = c("Myl1"),
     Neuron = c("Stmn3")
