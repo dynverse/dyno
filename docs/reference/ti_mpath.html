@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with Mpath — ti_mpath" />
 
-<meta property="og:description" content="Inferring trajectories with Mpath" />
+<meta property="og:description" content="Inferring trajectories with Mpath
+Will generate a trajectory using Mpath. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,22 +102,32 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Mpath</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mpath.R'><code>R/ti_mpath.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mpath.R'><code>R/ti_mpath.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_mpath.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with Mpath</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncomms11988'>Mpath</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/mpath'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_mpath</span>(<span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11L</span>,
+    <pre class="usage"><span class='fu'>ti_mpath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11</span>,
+  <span class='kw'>numcluster_null</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>diversity_cut</span> <span class='kw'>=</span> <span class='fl'>0.6</span>, <span class='kw'>size_cut</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
+
+<span class='fu'>ti_mpath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11</span>,
   <span class='kw'>numcluster_null</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>diversity_cut</span> <span class='kw'>=</span> <span class='fl'>0.6</span>, <span class='kw'>size_cut</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>distMethod</th>
       <td><p>the method for calculating dissimilarity between cells. distMethod can be one of "pearson", "kendall", "spearman" or "euclidean". Default is "euclidean".</p></td>
@@ -140,13 +154,27 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_mpath</p>
+<p>The original code of this method is available <a href='https://github.com/JinmiaoChenLab/Mpath'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1038/ncomms11988'>Chen, J., Schlitzer, A., Chakarov, S., Ginhoux, F., Poidinger, M., 2016. Mpath maps multi-branching single-cell trajectories revealing progenitor cell progression during development. Nature Communications 7, 11988.</a></p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

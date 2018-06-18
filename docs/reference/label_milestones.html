@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Label milestones based on highest expression of a set of markers — label_milestones • dyno</title>
+<title>Label milestones either manually (<code>label_milestones</code>) or using marker genes (<code>label_milestones_markers</code>) — label_milestones • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,17 +21,20 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Label milestones based on highest expression of a set of markers — label_milestones" />
+<meta property="og:title" content="Label milestones either manually (<code>label_milestones</code>) or using marker genes (<code>label_milestones_markers</code>) — label_milestones" />
 
-<meta property="og:description" content="Label milestones based on highest expression of a set of markers" />
+<meta property="og:description" content="Label milestones either manually (label_milestones) or using marker genes (label_milestones_markers)" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -97,34 +100,40 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Label milestones based on highest expression of a set of markers</h1>
+    <h1>Label milestones either manually (<code>label_milestones</code>) or using marker genes (<code>label_milestones_markers</code>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_label_milestones.R'><code>R/wrap_label_milestones.R</code></a></small>
     <div class="hidden name"><code>label_milestones.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Label milestones based on highest expression of a set of markers</p>
+    <p>Label milestones either manually (<code>label_milestones</code>) or using marker genes (<code>label_milestones_markers</code>)</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>label_milestones</span>(<span class='no'>traj</span>, <span class='no'>labelling</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>,
-  <span class='kw'>n_nearest_cells</span> <span class='kw'>=</span> <span class='fl'>20</span>)
+    <pre class="usage"><span class='fu'>label_milestones</span>(<span class='no'>trajectory</span>, <span class='no'>labelling</span>)
 
-<span class='fu'>is_wrapper_with_milestone_labelling</span>(<span class='no'>traj</span>)
+<span class='fu'>label_milestones_markers</span>(<span class='no'>trajectory</span>, <span class='no'>markers</span>,
+  <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>, <span class='kw'>n_nearest_cells</span> <span class='kw'>=</span> <span class='fl'>20</span>)
 
-<span class='fu'>get_milestone_labelling</span>(<span class='no'>traj</span>, <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+<span class='fu'>is_wrapper_with_milestone_labelling</span>(<span class='no'>trajectory</span>)
+
+<span class='fu'>get_milestone_labelling</span>(<span class='no'>trajectory</span>, <span class='kw'>label_milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>traj</th>
+      <th>trajectory</th>
       <td><p>The trajectory</p></td>
     </tr>
     <tr>
       <th>labelling</th>
-      <td><p>List containing for each new name of a milestone the genes which will be used as markers</p></td>
+      <td><p>Named character vector containing for a milestone a new label</p></td>
+    </tr>
+    <tr>
+      <th>markers</th>
+      <td><p>List containing for each label a list of marker genes</p></td>
     </tr>
     <tr>
       <th>expression_source</th>
@@ -136,7 +145,7 @@
     </tr>
     <tr>
       <th>label_milestones</th>
-      <td><p>How to label the milestones. Can be TRUE (in which case the labels within the trajectory will be used), "all" (in which case both given labels as milestone_ids will be used), a named character vector, or FALSE</p></td>
+      <td><p>How to label the milestones. Can be TRUE (in which case the labels within the trajectory will be used), "all" (in which case both given labels and milestone_ids will be used), a named character vector, or FALSE</p></td>
     </tr>
     </table>
     

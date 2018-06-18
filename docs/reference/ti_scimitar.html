@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SCIMITAR — ti_scimitar • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>scimitar</a> — ti_scimitar • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,17 +21,20 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Inferring trajectories with SCIMITAR — ti_scimitar" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>scimitar</a> — ti_scimitar" />
 
-<meta property="og:description" content="Inferring trajectories with SCIMITAR" />
+<meta property="og:description" content="Will generate a trajectory using scimitar. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -97,14 +100,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SCIMITAR</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scimitar.R'><code>R/ti_scimitar.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>scimitar</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_scimitar.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SCIMITAR</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1142/9789813207813_0053'>scimitar</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scimitar'>container</a>.</p>
     
     </div>
 
@@ -116,29 +119,44 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>covariance_type</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p><br />
+discrete; default: "diag"; possible values: diag, spherical, full</p></td>
     </tr>
     <tr>
       <th>degree</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p><br />
+integer; default: 3L; possible values between 1 and 20</p></td>
     </tr>
     <tr>
       <th>step_size</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p><br />
+numeric; default: 0.07; possible values between 0.01 and 0.1</p></td>
     </tr>
     <tr>
       <th>cov_estimator</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p><br />
+discrete; default: "corpcor"; possible values: identity, diag, sample, global, glasso, corpcor, average</p></td>
     </tr>
     <tr>
       <th>cov_reg</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p><br />
+numeric; default: 0.05; possible values between 0.01 and 0.1</p></td>
     </tr>
     <tr>
       <th>max_iter</th>
-      <td><p>Maximum number of iterations</p></td>
+      <td><p><br />
+integer; default: 3L; possible values between 1 and 20</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The original code of this method is available <a href='https://github.com/dimenwarper/scimitar'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1142/9789813207813_0053'>CORDERO, P., STUART, J.M., 2016. TRACING CO-REGULATORY NETWORK DYNAMICS IN NOISY, SINGLE-CELL TRANSCRIPTOME TRAJECTORIES. Biocomputing 2017.</a></p>
     
 
   </div>
@@ -146,7 +164,11 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

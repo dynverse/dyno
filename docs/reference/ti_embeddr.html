@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with Embeddr — ti_embeddr" />
 
-<meta property="og:description" content="Inferring trajectories with Embeddr" />
+<meta property="og:description" content="Inferring trajectories with Embeddr
+Will generate a trajectory using Embeddr. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,23 +102,34 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Embeddr</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_embeddr.R'><code>R/ti_embeddr.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_embeddr.R'><code>R/ti_embeddr.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_embeddr.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with Embeddr</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1101/027219'>Embeddr</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/embeddr'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_embeddr</span>(<span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>, <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>, <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>,
-  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_embeddr</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>, <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>, <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>,
+  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>)
+
+<span class='fu'>ti_embeddr</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>, <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>, <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>,
+  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>ndim</th>
       <td><p>Dimension of the embedded space, default is 2</p></td>
@@ -171,16 +186,26 @@ used is the degree matrix.</p></td>
       <td><p>a factor by which the curve can be extrapolated when
 points are projected.  Default is 2 (times the last segment
 length). The default is 0 for <code>smoother</code> equal to
-<code>"periodic.lowess"</code>.</p></td>
+<code>"periodic_lowess"</code>.</p></td>
     </tr>
     <tr>
       <th>smoother</th>
       <td><p>choice of smoother. The default is
-<code>"smooth.spline"</code>, and other choices are <code>"lowess"</code> and
-<code>"periodic.lowess"</code>. The latter allows one to fit closed curves.
+<code>"smooth_spline"</code>, and other choices are <code>"lowess"</code> and
+<code>"periodic_lowess"</code>. The latter allows one to fit closed curves.
 Beware, you may want to use <code>iter = 0</code> with <code>lowess()</code>.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_embeddr</p>
+<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/embeddr'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/027219'>Campbell, K., Ponting, C.P., Webber, C., 2015. Laplacian eigenmaps and principal curves for high resolution pseudotemporal ordering of single-cell RNA-seq profiles.</a></p>
     
 
   </div>
@@ -188,7 +213,11 @@ Beware, you may want to use <code>iter = 0</code> with <code>lowess()</code>.</p
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

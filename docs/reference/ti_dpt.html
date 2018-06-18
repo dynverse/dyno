@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with DPT — ti_dpt" />
 
-<meta property="og:description" content="Inferring trajectories with DPT" />
+<meta property="og:description" content="Inferring trajectories with DPT
+Will generate a trajectory using DPT. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,34 +102,45 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with DPT</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_dpt.R'><code>R/ti_dpt.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_dpt.R'><code>R/ti_dpt.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_dpt.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with DPT</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1038/nmeth.3971'>DPT</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/dpt'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_dpt</span>(<span class='kw'>sigma</span> <span class='kw'>=</span> <span class='st'>"local"</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>20L</span>,
-  <span class='kw'>density_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>n_local_lower</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>n_local_upper</span> <span class='kw'>=</span> <span class='fl'>7L</span>,
+    <pre class="usage"><span class='fu'>ti_dpt</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='st'>"local"</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>20</span>,
+  <span class='kw'>density_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>n_local_lower</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>n_local_upper</span> <span class='kw'>=</span> <span class='fl'>7</span>,
+  <span class='kw'>w_width</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)
+
+<span class='fu'>ti_dpt</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>sigma</span> <span class='kw'>=</span> <span class='st'>"local"</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>20</span>,
+  <span class='kw'>density_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>n_local_lower</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>n_local_upper</span> <span class='kw'>=</span> <span class='fl'>7</span>,
   <span class='kw'>w_width</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>sigma</th>
       <td><p>Diffusion scale parameter of the Gaussian kernel. A larger sigma might be necessary if the eigenvalues can not be found because of a singularity in the matrix. Must be one of:</p><ul>
 <li><p>A character vector: <code>"local"</code> (default) or <code>"global"</code>,</p></li>
-<li><p>a numeric global sigma -- a global sigma will be calculated using <code><a href='http://www.rdocumentation.org/packages/destiny/topics/find_sigmas'>find_sigmas</a></code></p></li>
-<li><p>or a <code><a href='http://www.rdocumentation.org/packages/destiny/topics/Sigmas-class'>Sigmas-class</a></code> object.</p></li>
+<li><p>a numeric global sigma -- a global sigma will be calculated using <code><a href='http://www.rdocumentation.org/packages/destiny/topics/find_sigmas'>destiny::find_sigmas()</a></code></p></li>
+<li><p>or a <code><a href='http://www.rdocumentation.org/packages/destiny/topics/Sigmas-class'>destiny::Sigmas-class()</a></code> object.</p></li>
 </ul></td>
     </tr>
     <tr>
       <th>distance</th>
-      <td><p>A <code><a href='http://www.rdocumentation.org/packages/stats/topics/dist'>dist</a></code> object, or a character vector specifying which distance metric to use. Allowed measures:</p><ul>
+      <td><p>A <code><a href='http://www.rdocumentation.org/packages/stats/topics/dist'>stats::dist()</a></code> object, or a character vector specifying which distance metric to use. Allowed measures:</p><ul>
 <li><p>Euclidean distance (default),</p></li>
 <li><p>cosine distance (1-corr(c_1, c_2)), or</p></li>
 <li><p>rank correlation distance (1-corr(rank(c_1), rank(c_2)))</p></li>
@@ -153,13 +168,27 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_dpt</p>
+<p>The original code of this method is available <a href='https://bioconductor.org/packages/release/bioc/html/destiny.html'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1038/nmeth.3971'>Haghverdi, L., Büttner, M., Wolf, F.A., Buettner, F., Theis, F.J., 2016. Diffusion pseudotime robustly reconstructs lineage branching. Nature Methods 13, 845–848.</a></p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

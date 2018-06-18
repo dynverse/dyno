@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a linear trajectory to a data wrapper — add_linear_trajectory • dyno</title>
+<title>Constructs a linear trajectory using the pseudotime values of each cell. — add_linear_trajectory • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,17 +21,20 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Add a linear trajectory to a data wrapper — add_linear_trajectory" />
+<meta property="og:title" content="Constructs a linear trajectory using the pseudotime values of each cell. — add_linear_trajectory" />
 
 <meta property="og:description" content="This function will generate the milestone_network and progressions." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -97,7 +100,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add a linear trajectory to a data wrapper</h1>
+    <h1>Constructs a linear trajectory using the pseudotime values of each cell.</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_add_linear_trajectory.R'><code>R/wrap_add_linear_trajectory.R</code></a></small>
     <div class="hidden name"><code>add_linear_trajectory.Rd</code></div>
     </div>
@@ -108,18 +111,18 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_linear_trajectory</span>(<span class='no'>data_wrapper</span>, <span class='no'>pseudotimes</span>, <span class='kw'>directed</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+    <pre class="usage"><span class='fu'>add_linear_trajectory</span>(<span class='no'>model</span>, <span class='no'>pseudotime</span>, <span class='kw'>directed</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>do_scale_minmax</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>data_wrapper</th>
-      <td><p>A data wrapper to extend upon.</p></td>
+      <th>model</th>
+      <td><p>The model to which a linear trajectory will be added.</p></td>
     </tr>
     <tr>
-      <th>pseudotimes</th>
+      <th>pseudotime</th>
       <td><p>A named vector of pseudo times.</p></td>
     </tr>
     <tr>
@@ -128,7 +131,7 @@
     </tr>
     <tr>
       <th>do_scale_minmax</th>
-      <td><p>Whether or not to scale the pseudotimes between [0,1].
+      <td><p>Whether or not to scale the pseudotime between 0 and 1.
 Otherwise, will assume the values are already within that range.</p></td>
     </tr>
     <tr>
@@ -137,13 +140,19 @@ Otherwise, will assume the values are already within that range.</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

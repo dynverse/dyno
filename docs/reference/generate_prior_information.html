@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -32,6 +34,7 @@
 
 <meta property="og:description" content="For example, what are the start cells, the end cells, to which milestone does each cell belong to." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -109,9 +112,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>generate_prior_information</span>(<span class='no'>cell_ids</span>, <span class='no'>milestone_ids</span>, <span class='no'>milestone_network</span>,
-  <span class='no'>milestone_percentages</span>, <span class='no'>progressions</span>, <span class='no'>divergence_regions</span>, <span class='no'>counts</span>,
-  <span class='kw'>feature_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cell_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>marker_logfc</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>marker_minpct</span> <span class='kw'>=</span> <span class='fl'>0.4</span>)</pre>
+  <span class='no'>milestone_percentages</span>, <span class='no'>progressions</span>, <span class='no'>divergence_regions</span>, <span class='no'>expression</span>,
+  <span class='kw'>feature_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cell_info</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>marker_fdr</span> <span class='kw'>=</span> <span class='fl'>0.005</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,8 +149,8 @@ regions between milestones (e.g. a bifurcation).
 Type: Data frame(divergence_id = character, milestone_id = character, is_start = logical).</p></td>
     </tr>
     <tr>
-      <th>counts</th>
-      <td><p>The counts with genes in columns and cells in rows</p></td>
+      <th>expression</th>
+      <td><p>The normalised expression values with genes in columns and cells in rows</p></td>
     </tr>
     <tr>
       <th>feature_info</th>
@@ -159,12 +161,8 @@ Type: Data frame(divergence_id = character, milestone_id = character, is_start =
       <td><p>Optional meta-information pertaining the cells.</p></td>
     </tr>
     <tr>
-      <th>marker_logfc</th>
-      <td><p>Marker genes require at least a X-fold log difference between groups of cells.</p></td>
-    </tr>
-    <tr>
-      <th>marker_minpct</th>
-      <td><p>Only test genes that are detected in a minimum fraction of cells between groups of cells.</p></td>
+      <th>marker_fdr</th>
+      <td><p>Maximal FDR value for a gene to be considered a marker</p></td>
     </tr>
     </table>
     

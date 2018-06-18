@@ -8,8 +8,8 @@
 <title>Set of packages for doing trajectory inference on single-cell data • dyno</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><meta property="og:title" content="Set of packages for doing trajectory inference on single-cell data">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script><meta property="og:title" content="Set of packages for doing trajectory inference on single-cell data">
 <meta property="og:description" content="The dyno package automatically loads in packages to:
   select the best TI methods for a given problem (dynguidelines)
   run these methods locally or in a docker environment (dynmethods)
@@ -122,6 +122,32 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">start_dynmethods_docker</span>()
 
 model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
+<pre><code>#&gt; E&gt; 
+#&gt; E&gt; Attaching package: ‘dplyr’
+#&gt; E&gt; 
+#&gt; E&gt; The following objects are masked from ‘package:stats’:
+#&gt; E&gt; 
+#&gt; E&gt;     filter, lag
+#&gt; E&gt; 
+#&gt; E&gt; The following objects are masked from ‘package:base’:
+#&gt; E&gt; 
+#&gt; E&gt;     intersect, setdiff, setequal, union
+#&gt; E&gt; 
+#&gt; E&gt; 
+#&gt; E&gt; Attaching package: ‘igraph’
+#&gt; E&gt; 
+#&gt; E&gt; The following objects are masked from ‘package:dplyr’:
+#&gt; E&gt; 
+#&gt; E&gt;     as_data_frame, groups, union
+#&gt; E&gt; 
+#&gt; E&gt; The following objects are masked from ‘package:stats’:
+#&gt; E&gt; 
+#&gt; E&gt;     decompose, spectrum
+#&gt; E&gt; 
+#&gt; E&gt; The following object is masked from ‘package:base’:
+#&gt; E&gt; 
+#&gt; E&gt;     union
+#&gt; E&gt;</code></pre>
 </div>
 <div id="making-the-trajectory-interpretable" class="section level3">
 <h3 class="hasAnchor">
@@ -138,9 +164,9 @@ model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><
 <h4 class="hasAnchor">
 <a href="#milestone-labelling" class="anchor"></a>Milestone labelling</h4>
 <p>Milestones can be labelled using marker genes. These labels can then be used for subsequent analyses and for visualisation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw"><a href="reference/label_milestones.html">label_milestones</a></span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw"><a href="reference/label_milestones.html">label_milestones_markers</a></span>(
   model,
-  <span class="kw">list</span>(
+  <span class="dt">markers =</span> <span class="kw">list</span>(
     <span class="dt">MEF =</span> <span class="kw">c</span>(<span class="st">"Vim"</span>),
     <span class="dt">Myocyte =</span> <span class="kw">c</span>(<span class="st">"Myl1"</span>),
     <span class="dt">Neuron =</span> <span class="kw">c</span>(<span class="st">"Stmn3"</span>)
@@ -153,11 +179,11 @@ model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><
 <a href="#plotting-the-trajectory" class="anchor"></a>Plotting the trajectory</h3>
 <p>Several visualisation methods provide ways to biologically interpret trajectories.</p>
 <p>Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/add_dimred.html">add_dimred</a></span>(dimred_mds, <span class="dt">expression_source =</span> task<span class="op">$</span>expression)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/add_dimred.html">add_dimred</a></span>(dyndimred<span class="op">::</span>dimred_mds, <span class="dt">expression_source =</span> task<span class="op">$</span>expression)
 <span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(
   model, 
   <span class="dt">expression_source =</span> task<span class="op">$</span>expression, 
-  <span class="dt">grouping_assignment =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping
+  <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping
 )</code></pre></div>
 <p><img src="figures/README-dimred-1.png" width="100%"></p>
 <p>Similarly, the expression of a gene:</p>
@@ -174,7 +200,7 @@ model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><
   <span class="dt">color_cells =</span> <span class="st">"feature"</span>,
   <span class="dt">feature_oi =</span> <span class="st">"Vim"</span>,
   <span class="dt">color_density =</span> <span class="st">"grouping"</span>,
-  <span class="dt">grouping_assignment =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping,
+  <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping,
   <span class="dt">label_milestones =</span> <span class="ot">FALSE</span>
 )</code></pre></div>
 <p><img src="figures/README-dimred_groups-1.png" width="100%"></p>
@@ -190,7 +216,7 @@ model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(
   model,
   <span class="dt">expression_source =</span> task<span class="op">$</span>expression,
-  <span class="dt">grouping_assignment =</span> task<span class="op">$</span>grouping,
+  <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping,
   <span class="dt">features_oi =</span> <span class="dv">50</span>
 )</code></pre></div>
 <p><img src="figures/README-heatmap-1.png" width="100%"></p>
@@ -228,7 +254,7 @@ branching_point_features &lt;-<span class="st"> </span>branch_feature_importance
   <span class="dt">features_oi =</span> branching_point_features
 )</code></pre></div>
 <p><img src="figures/README-branching_point-1.png" width="100%"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">space &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_dimreds.html">dimred_mds</a></span>(task<span class="op">$</span>expression)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">space &lt;-<span class="st"> </span>dyndimred<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dyndimred/topics/dimred">dimred_mds</a></span>(task<span class="op">$</span>expression)
 <span class="kw">map</span>(branching_point_features[<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>], <span class="cf">function</span>(feature_oi) {
   <span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(model, <span class="dt">dimred =</span> space, <span class="dt">expression_source =</span> task<span class="op">$</span>expression, <span class="dt">feature_oi =</span> feature_oi, <span class="dt">label_milestones =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">"none"</span>) <span class="op">+</span>

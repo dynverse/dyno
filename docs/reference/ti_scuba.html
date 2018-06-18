@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SCUBA — ti_scuba • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>scuba</a> — ti_scuba • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,17 +21,20 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Inferring trajectories with SCUBA — ti_scuba" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>scuba</a> — ti_scuba" />
 
-<meta property="og:description" content="Inferring trajectories with SCUBA" />
+<meta property="og:description" content="Will generate a trajectory using scuba. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -97,18 +100,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SCUBA</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scuba.R'><code>R/ti_scuba.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>scuba</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_scuba.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SCUBA</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1073/pnas.1408993111'>scuba</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scuba'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_scuba</span>(<span class='kw'>rigorous_gap_stats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>N_dim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>low_gene_threshold</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+    <pre class="usage"><span class='fu'>ti_scuba</span>(<span class='kw'>rigorous_gap_stats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>N_dim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>low_gene_threshold</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
   <span class='kw'>low_gene_fraction_max</span> <span class='kw'>=</span> <span class='fl'>0.7</span>, <span class='kw'>min_split</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
   <span class='kw'>min_percentage_split</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</pre>
     
@@ -117,29 +120,43 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>rigorous_gap_stats</th>
-      <td><p>Whether to use rigorous gap statistics to determine number of clusters</p></td>
+      <td><p>Whether to use rigorous gap statistics to determine number of clusters <br /></p></td>
     </tr>
     <tr>
       <th>N_dim</th>
-      <td><p>Number of TSNE dimensions</p></td>
+      <td><p>Number of TSNE dimensions <br />
+integer; default: 2L; possible values between 2 and 3</p></td>
     </tr>
     <tr>
       <th>low_gene_threshold</th>
-      <td><p>Threshold value for genes of low expression levels</p></td>
+      <td><p>Threshold value for genes of low expression levels <br />
+numeric; default: 1L; possible values between 0 and 5</p></td>
     </tr>
     <tr>
       <th>low_gene_fraction_max</th>
-      <td><p>Maximum fraction of lowly-expressed cells allowed for each gene</p></td>
+      <td><p>Maximum fraction of lowly-expressed cells allowed for each gene <br />
+numeric; default: 0.7; possible values between 0 and 1</p></td>
     </tr>
     <tr>
       <th>min_split</th>
-      <td><p>Lower threshold on the number of cells in a cluster for this cluster to be split.</p></td>
+      <td><p>Lower threshold on the number of cells in a cluster for this cluster to be split. <br />
+integer; default: 15L; possible values between 1 and 100</p></td>
     </tr>
     <tr>
       <th>min_percentage_split</th>
-      <td><p>Minimum fraction of cells in the smaller cluster during a bifurcation.</p></td>
+      <td><p>Minimum fraction of cells in the smaller cluster during a bifurcation. <br />
+numeric; default: 0.25; possible values between 0 and 1</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The original code of this method is available <a href='https://github.com/gcyuan/SCUBA'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1073/pnas.1408993111'>Marco, E., Karp, R.L., Guo, G., Robson, P., Hart, A.H., Trippa, L., Yuan, G.-C., 2014. Bifurcation analysis of single-cell gene expression data reveals epigenetic landscape. Proceedings of the National Academy of Sciences 111, E5643–E5650.</a></p>
     
 
   </div>
@@ -147,7 +164,11 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

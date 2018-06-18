@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -33,6 +35,7 @@
 <meta property="og:description" content="Note that the given data wrapper requires a trajectory and expression values
 to have been added already." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -110,10 +113,10 @@ to have been added already.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_prior_information</span>(<span class='no'>task</span>, <span class='kw'>start_cells</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_cells</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>grouping_assignment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>grouping_network</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>marker_feature_ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n_branches</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n_end_states</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>add_prior_information</span>(<span class='no'>task</span>, <span class='kw'>start_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>groups_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>groups_network</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>features_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>groups_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>start_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -123,36 +126,44 @@ to have been added already.</p>
       <td><p>A data wrapper to extend upon.</p></td>
     </tr>
     <tr>
-      <th>start_cells</th>
+      <th>start_id</th>
       <td><p>The start cells</p></td>
     </tr>
     <tr>
-      <th>end_cells</th>
+      <th>end_id</th>
       <td><p>The end cells</p></td>
     </tr>
     <tr>
-      <th>grouping_assignment</th>
+      <th>groups_id</th>
       <td><p>The grouping of cells, a dataframe with cell_id and group_id</p></td>
     </tr>
     <tr>
-      <th>grouping_network</th>
+      <th>groups_network</th>
       <td><p>The network between groups, a dataframe with from and to</p></td>
     </tr>
     <tr>
-      <th>marker_feature_ids</th>
+      <th>features_id</th>
       <td><p>The features (genes) important for the trajectory</p></td>
     </tr>
     <tr>
-      <th>n_branches</th>
+      <th>groups_n</th>
       <td><p>Number of branches</p></td>
     </tr>
     <tr>
-      <th>n_end_states</th>
+      <th>start_n</th>
+      <td><p>Number of start states</p></td>
+    </tr>
+    <tr>
+      <th>end_n</th>
       <td><p>Number of end states</p></td>
     </tr>
     <tr>
       <th>time</th>
       <td><p>The time for every cell</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether or not to print informative messages or not</p></td>
     </tr>
     </table>
     

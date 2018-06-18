@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -32,6 +34,7 @@
 
 <meta property="og:description" content="Return all TI ti_methods" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,7 +101,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Return all TI ti_methods</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrapper_get_ti_methods.R'><code>R/wrapper_get_ti_methods.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_infer_trajectory.R'><code>R/ti_infer_trajectory.R</code></a></small>
     <div class="hidden name"><code>get_ti_methods.Rd</code></div>
     </div>
 
@@ -108,7 +111,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_ti_methods</span>(<span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_ti_methods</span>(<span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>packages</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"dynwrap"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -116,6 +119,10 @@
     <tr>
       <th>as_tibble</th>
       <td><p>Whether or not to return the ti_methods as a tibble</p></td>
+    </tr>
+    <tr>
+      <th>packages</th>
+      <td><p>In which packages to look for ti methods</p></td>
     </tr>
     </table>
     

@@ -13,47 +13,50 @@ reference:
 - title: Running trajectory inference methods
   desc: dynmethods
   contents:
-  - celltree
   - check_dependencies
   - check_dependency
-  - create_ti_method
-  - dimred
   - dynmethods
-  - execute_method_internal
-  - execute_method_on_task
-  - get_default_parameters
-  - get_ti_methods
-  - infer_trajectories
   - install_dependencies
-  - is_prediction
-  - is_ti_method
-  - monocle
-  - paga
+  - methods
+  - methods_containerised
+  - methods_info
   - plot_trajectory
   - reexports
-  - scorpius
   - set_cores
   - start_dynmethods_docker
   - ti_angle
-  - ti_comp1
+  - ti_cellrouter
+  - ti_celltree_gibbs
+  - ti_celltree_maptpx
+  - ti_celltree_vem
   - ti_dpt
+  - ti_elpicycle
+  - ti_elpigraph
+  - ti_elpilinear
   - ti_embeddr
   - ti_error
   - ti_gng
   - ti_gpfates
+  - ti_grandprix
   - ti_identity
   - ti_matcher
   - ti_merlot
   - ti_mfa
+  - ti_monocle_ddrtree
+  - ti_monocle_ica
   - ti_mpath
   - ti_ouija
   - ti_ouijaflow
+  - ti_paga
+  - ti_pcreode
   - ti_periodpc
   - ti_phenopath
+  - ti_praga
   - ti_pseudogp
   - ti_random
   - ti_recat
   - ti_scimitar
+  - ti_scorpius
   - ti_scoup
   - ti_scuba
   - ti_shuffle
@@ -65,9 +68,9 @@ reference:
   - ti_stemid2
   - ti_topslam
   - ti_tscan
-  - ti_waterfll
-  - wishbone
-  - wrap_prediction_model
+  - ti_wanderlust
+  - ti_waterfall
+  - ti_wishbone
 - title: Toolbox to transform trajectory models
   desc: dynwrap
   contents:
@@ -77,6 +80,7 @@ reference:
   - add_cyclic_trajectory
   - add_dimred
   - add_dimred_projection
+  - add_end_state_probabilities
   - add_expression
   - add_grouping
   - add_linear_trajectory
@@ -88,33 +92,49 @@ reference:
   - add_timings
   - add_trajectory
   - add_waypoints
+  - allowed_inputs
+  - allowed_outputs
   - calculate_average_by_group
   - calculate_average_by_milestone_percentages
   - classify_milestone_network
   - compute_tented_geodesic_distances
   - convert_milestone_percentages_to_progressions
   - convert_progressions_to_milestone_percentages
+  - create_docker_ti_method
+  - create_singularity_ti_method
+  - create_ti_method
+  - determine_cell_trajectory_positions
   - dynwrap
+  - execute_method_internal
+  - execute_method_on_task
   - generate_prior_information
   - get_cell_grouping
+  - get_default_parameters
+  - get_ti_methods
+  - infer_trajectories
   - is_data_wrapper
-  - is_wrapper_with_grouping
+  - is_prediction
+  - is_ti_method
   - is_wrapper_with_prior_information
   - is_wrapper_with_timings
   - is_wrapper_with_trajectory
   - is_wrapper_with_waypoint_cells
   - is_wrapper_with_waypoints
   - label_milestones
+  - parse_parameter_definition
   - prior_usages
   - priors
   - select_waypoint_cells
   - select_waypoints
   - simplify_igraph_network
+  - ti_comp1
   - trajectory_type_dag
   - trajectory_types
   - trajectory_types_simplified
   - wrap_data
   - wrap_expression
+  - wrap_output
+  - wrap_prediction_model
 - title: Visualising trajectories
   desc: dynplot
   contents:
@@ -125,7 +145,6 @@ reference:
   - dimred_trajectory
   - dynplot
   - empty_plot
-  - get_dimreds
   - get_milestone_palette_names
   - linearise_cells
   - milestone_palette
