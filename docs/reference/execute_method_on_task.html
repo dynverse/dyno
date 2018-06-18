@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -32,6 +34,7 @@
 
 <meta property="og:description" content="Run a method on a task with a set of parameters" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,7 +101,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Run a method on a task with a set of parameters</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrapper_infer_trajectory.R'><code>R/wrapper_infer_trajectory.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_infer_trajectory.R'><code>R/ti_infer_trajectory.R</code></a></small>
     <div class="hidden name"><code>execute_method_on_task.Rd</code></div>
     </div>
 
@@ -121,7 +124,7 @@
     <tr>
       <th>method</th>
       <td><p>One or more methods. Must be one of:</p><ul>
-<li><p>an object or list of ti_... objects (e.g. <code><a href='paga.html'>ti_paga</a>()</code>),</p></li>
+<li><p>an object or list of ti_... objects (eg. <code><a href='ti_comp1.html'>ti_comp1()</a></code>)</p></li>
 <li><p>a character vector containing the names of methods to execute (e.g. <code>"scorpius"</code>), or</p></li>
 <li><p>a dynguidelines data frame.</p></li>
 </ul></td>
@@ -136,7 +139,7 @@ If multiple methods were provided in the <code>method</code> parameter,
     <tr>
       <th>give_priors</th>
       <td><p>All the priors a method is allowed to receive. Must be a subset of: <code>"start_milestones"</code>,
-<code>"start_cells"</code>, <code>"end_milestones"</code>, <code>"end_cells"</code>, <code>"grouping_assignment"</code> and <code>"grouping_network"</code></p></td>
+<code>"start_id"</code>, <code>"end_milestones"</code>, <code>"end_id"</code>, <code>"groups_id"</code> and <code>"groups_network"</code></p></td>
     </tr>
     <tr>
       <th>mc_cores</th>

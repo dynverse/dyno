@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with Slingshot — ti_slingshot" />
 
-<meta property="og:description" content="Inferring trajectories with Slingshot" />
+<meta property="og:description" content="Inferring trajectories with Slingshot
+Will generate a trajectory using Slingshot. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,23 +102,34 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Slingshot</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slingshot.R'><code>R/ti_slingshot.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slingshot.R'><code>R/ti_slingshot.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_slingshot.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with Slingshot</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1101/128843'>Slingshot</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slingshot'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slingshot</span>(<span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>nclus</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>drop.multi</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>,
-  <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>, <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_slingshot</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>nclus</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>thresh</span> <span class='kw'>=</span> -<span class='fl'>3</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
+  <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>)
+
+<span class='fu'>ti_slingshot</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>nclus</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>thresh</span> <span class='kw'>=</span> -<span class='fl'>3</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
+  <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>ndim</th>
       <td><p>The number of dimensions</p></td>
@@ -126,7 +141,7 @@
     <tr>
       <th>dimred</th>
       <td><p>A character vector specifying which dimensionality reduction method to use.
-See <code><a href='dimred.html'>list_dimred_methods</a></code> for the list of available dimensionality reduction methods.</p></td>
+See <a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred</a> for the list of available dimensionality reduction methods.</p></td>
     </tr>
     <tr>
       <th>shrink</th>
@@ -137,47 +152,43 @@ much to shrink branching lineages toward their average prior to the split.</p></
       <th>reweight</th>
       <td><p>logical, whether to allow cells shared between lineages to be
 reweighted during curve-fitting. If <code>TRUE</code>, cells shared between 
-lineages will be weighted by: distance to nearest curve / distance to
-curve.</p></td>
-    </tr>
-    <tr>
-      <th>drop.multi</th>
-      <td><p>logical, whether to drop shared cells from lineages which
-do not fit them well. If <code>TRUE</code>, shared cells with a distance to one 
-lineage above the 90th percentile and another below the 50th will be
-dropped from the further lineage.</p></td>
+lineages will be iteratively reweighted based on the quantiles of their 
+projection distances to each curve. See 'Details' for more.</p></td>
     </tr>
     <tr>
       <th>thresh</th>
-      <td><p>numeric, determines the convergence criterion. Percent change
-in the total distance from cells to their projections along curves must be
-less than <code>thresh</code>. Default is <code>0.001</code>, similar to 
-<code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code>.</p></td>
+      <td><p>numeric, determines the convergence criterion. Percent change in the total distance from cells to their projections along curves must be less than thresh. Default is 0.001, similar to principal.curve.</p></td>
     </tr>
     <tr>
       <th>maxit</th>
-      <td><p>numeric, maximum number of iterations, see 
-<code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code>.</p></td>
+      <td><p>numeric, maximum number of iterations, see principal.curve.</p></td>
     </tr>
     <tr>
       <th>stretch</th>
-      <td><p>numeric factor by which curves can be extrapolated beyond 
-endpoints. Default is <code>2</code>, see <code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code>.</p></td>
+      <td><p>numeric factor by which curves can be extrapolated beyond endpoints. Default is 2, see principal.curve.</p></td>
     </tr>
     <tr>
       <th>smoother</th>
-      <td><p>choice of scatter plot smoother. Same as 
-<code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code>, but <code>"lowess"</code> option is replaced with 
-<code>"loess"</code> for additional flexibility.</p></td>
+      <td><p>choice of scatter plot smoother. Same as principal.curve, but "lowess" option is replaced with "loess" for additional flexibility.</p></td>
     </tr>
     <tr>
       <th>shrink.method</th>
-      <td><p>character denoting how to determine the appropriate
-amount of shrinkage for a branching lineage. Accepted values are the same
+      <td><p>character denoting how to determine the appropriate 
+amount of shrinkage for a branching lineage. Accepted values are the same 
 as for <code>kernel</code> in <code>density</code> (default is <code>"cosine"</code>),
 as well as <code>"tricube"</code> and <code>"density"</code>. See 'Details' for more.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_slingshot</p>
+<p>The original code of this method is available <a href='https://github.com/kstreet13/slingshot'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/128843'>Street, K., Risso, D., Fletcher, R.B., Das, D., Ngai, J., Yosef, N., Purdom, E., Dudoit, S., 2017. Slingshot: Cell lineage and pseudotime inference for single-cell transcriptomics.</a></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -190,6 +201,10 @@ as well as <code>"tricube"</code> and <code>"density"</code>. See 'Details' for 
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#see-also">See also</a></li>
           </ul>
 

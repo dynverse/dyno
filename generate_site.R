@@ -14,7 +14,7 @@ packages <- tribble(
 reference <- pmap(packages, function(pkg_id, title, desc) {
   pkg_dir <- paste0("../", pkg_id, "/man/")
 
-  man_files <- dir_ls(pkg_dir)
+  man_files <- dir_ls(pkg_dir, regexp = ".*\\.Rd")
 
   walk(man_files, ~fs::file_copy(., paste0("./man/", fs::path_file(.)), overwrite=TRUE))
 
@@ -34,7 +34,7 @@ config <- list(
 
 yaml::write_yaml(config, "_pkgdown.yml")
 
-build_site(".", lazy=TRUE)
+build_site(".", lazy = TRUE, document = FALSE)
 
 dir_walk("./man/", fs::file_delete)
 

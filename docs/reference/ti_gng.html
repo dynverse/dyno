@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with Growing Neural Gas — ti_gng" />
 
-<meta property="og:description" content="Inferring trajectories with Growing Neural Gas" />
+<meta property="og:description" content="Inferring trajectories with Growing Neural Gas
+Will generate a trajectory using Growing Neural Gas. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,26 +102,36 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Growing Neural Gas</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_gng.R'><code>R/ti_gng.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_gng.R'><code>R/ti_gng.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_gng.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with Growing Neural Gas</p>
+<p>Will generate a trajectory using <a href='https://doi.org/https://github.com/rcannood/GNG'>Growing Neural Gas</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/gng'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_gng</span>(<span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8L</span>,
+    <pre class="usage"><span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>13.8155105579643</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>,
+  <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>13.8155105579643</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>,
   <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>dimred</th>
       <td><p>A character vector specifying which dimensionality reduction method to use.
-See <code><a href='dimred.html'>list_dimred_methods</a></code> for the list of available dimensionality reduction methods.</p></td>
+See <a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred</a> for the list of available dimensionality reduction methods.</p></td>
     </tr>
     <tr>
       <th>ndim</th>
@@ -137,13 +151,26 @@ See <code><a href='dimred.html'>list_dimred_methods</a></code> for the list of a
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_gng</p>
+<p>The original code of this method is available <a href='https://github.com/rcannood/GNG'>here</a>.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

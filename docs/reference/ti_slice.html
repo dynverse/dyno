@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with SLICE — ti_slice" />
 
-<meta property="og:description" content="Inferring trajectories with SLICE" />
+<meta property="og:description" content="Inferring trajectories with SLICE
+Will generate a trajectory using SLICE. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,24 +102,36 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with SLICE</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slice.R'><code>R/ti_slice.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slice.R'><code>R/ti_slice.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_slice.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with SLICE</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1093/nar/gkw1278'>SLICE</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slice'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slice</span>(<span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>, <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>,
+    <pre class="usage"><span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>, <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>,
   <span class='kw'>ss.threshold</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>community.method</span> <span class='kw'>=</span> <span class='st'>"louvain"</span>,
-  <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100L</span>,
+  <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100</span>,
+  <span class='kw'>k.opt.method</span> <span class='kw'>=</span> <span class='st'>"firstmax"</span>)
+
+<span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>, <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>,
+  <span class='kw'>ss.threshold</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>community.method</span> <span class='kw'>=</span> <span class='st'>"louvain"</span>,
+  <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100</span>,
   <span class='kw'>k.opt.method</span> <span class='kw'>=</span> <span class='st'>"firstmax"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>lm.method</th>
       <td><p>Select "clustering" based or "graph" based method to infer lineage model</p></td>
@@ -165,13 +181,27 @@ Only take effect when lm.method is "graph"</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_slice</p>
+<p>The original code of this method is available <a href='https://research.cchmc.org/pbge/slice.html'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1093/nar/gkw1278'>Guo, M., Bao, E.L., Wagner, M., Whitsett, J.A., Xu, Y., 2016. SLICE: determining cell differentiation and lineage based on single cell entropy. Nucleic Acids Research gkw1278.</a></p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

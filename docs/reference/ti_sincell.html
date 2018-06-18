@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with Sincell — ti_sincell" />
 
-<meta property="og:description" content="Inferring trajectories with Sincell" />
+<meta property="og:description" content="Inferring trajectories with Sincell
+Will generate a trajectory using Sincell. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,32 +102,45 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Sincell</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_sincell.R'><code>R/ti_sincell.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_sincell.R'><code>R/ti_sincell.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_sincell.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with Sincell</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1093/bioinformatics/btv368'>Sincell</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/sincell'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_sincell</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
-  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
-  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+    <pre class="usage"><span class='fu'>ti_sincell</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
+  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
+  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)
+
+<span class='fu'>ti_sincell</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
+  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
+  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3</span>,
   <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>distance_method</th>
-      <td><p>Distance method to be used. The available distances are the Euclidean distance (method="euclidean"), Manhattan distance (also called L1 distance, method="L1"), cosine distance (method="cosine") , distance based on Pearson (method="pearson") or Spearman (method="spearman") correlation coefficients, and distance based on Mutual Information (method="MI"). Intervals used to assess Mutual Information are indicated in the parameter “bins”.</p></td>
+      <td><p>Distance method to be used. The available distances are the Euclidean distance (method="euclidean"), Manhattan distance (also called L1 distance, method="L1"), cosine distance (method="cosine") , distance based on Pearson (method="pearson") or Spearman (method="spearman") correlation coefficients, and distance based on Mutual Information (method="MI"). Intervals used to assess Mutual Information are indicated in the parameter "bins".</p></td>
     </tr>
     <tr>
       <th>dimred_method</th>
-      <td><p>Dimensionality reduction algorithm to be used. Options are: Principal Component Analysis (method="PCA"), Independent Component Analysis (method="ICA"; using fastICA() function in fastICA package), t-Distributed Stochastic Neighbor Embedding (method="tSNE"; using Rtsne() function in Rtsne package with parameters tsne.perplexity=1 and tsne.theta=0.25), classical Multidimensional Scaling (method="classical-MDS"; using the cmdscale() function) and non-metric Multidimensional Scaling (method="nonmetric-MDS";using the isoMDS() function in MASS package). if method="PCA" is chosen, the proportion of variance explained by each of the principal axes is plotted. We note that Sincell makes use of the Rtsne implementation of the Barnes-Hut algorithm, which approximates the likelihood. The user should be aware that this is a less accurate version of t-SNE than e.g. the one used as basis of viSNE (Amir,E.D. et al. 2013, Nat Biotechnol 31, 545–552).</p></td>
+      <td><p>Dimensionality reduction algorithm to be used. Options are: Principal Component Analysis (method="PCA"), Independent Component Analysis (method="ICA"; using fastICA() function in fastICA package), t-Distributed Stochastic Neighbor Embedding (method="tSNE"; using Rtsne() function in Rtsne package with parameters tsne.perplexity=1 and tsne.theta=0.25), classical Multidimensional Scaling (method="classical-MDS"; using the cmdscale() function) and non-metric Multidimensional Scaling (method="nonmetric-MDS";using the isoMDS() function in MASS package). if method="PCA" is chosen, the proportion of variance explained by each of the principal axes is plotted. We note that Sincell makes use of the Rtsne implementation of the Barnes-Hut algorithm, which approximates the likelihood. The user should be aware that this is a less accurate version of t-SNE than e.g. the one used as basis of viSNE (Amir,E.D. et al. 2013, Nat Biotechnol 31, 545-552).</p></td>
     </tr>
     <tr>
       <th>clust.method</th>
@@ -170,6 +187,16 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_sincell</p>
+<p>The original code of this method is available <a href='https://github.com/Bioconductor-mirror/sincell'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1093/bioinformatics/btv368'>Juliá, M., Telenti, A., Rausell, A., 2015. Sincell: an R/Bioconductor package for statistical assessment of cell-state hierarchies from single-cell RNA-seq: Fig. 1. Bioinformatics 31, 3380–3382.</a></p>
+    
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_distanceObj'>sincell::sc_distanceObj()</a></code>, <code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_DimensionalityReductionObj'>sincell::sc_DimensionalityReductionObj()</a></code>, <code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_clusterObj'>sincell::sc_clusterObj()</a></code></p></div>
@@ -181,6 +208,10 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#see-also">See also</a></li>
           </ul>
 

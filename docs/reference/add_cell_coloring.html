@@ -21,9 +21,11 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
@@ -32,6 +34,7 @@
 
 <meta property="og:description" content="Add coloring" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -109,10 +112,10 @@
     </div>
 
     <pre class="usage"><span class='fu'>add_cell_coloring</span>(<span class='no'>cell_positions</span>, <span class='kw'>color_cells</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"none"</span>, <span class='st'>"grouping"</span>,
-  <span class='st'>"feature"</span>, <span class='st'>"milestone"</span>, <span class='st'>"pseudotime"</span>), <span class='no'>traj</span>, <span class='kw'>grouping_assignment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='st'>"feature"</span>, <span class='st'>"milestone"</span>, <span class='st'>"pseudotime"</span>), <span class='no'>traj</span>, <span class='kw'>grouping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>groups</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>feature_oi</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>expression_source</span> <span class='kw'>=</span> <span class='st'>"expression"</span>,
-  <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>color_milestones</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"given"</span>),
-  <span class='kw'>milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>color_milestones</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"auto"</span>, <span class='st'>"given"</span>, <span class='st'>"cubeHelix"</span>,
+  <span class='st'>"Set3"</span>, <span class='st'>"rainbow"</span>), <span class='kw'>milestones</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,8 +133,8 @@
       <td><p>The trajectory</p></td>
     </tr>
     <tr>
-      <th>grouping_assignment</th>
-      <td><p>Tibble containing the assignment of cells to groups of cells</p></td>
+      <th>grouping</th>
+      <td><p>The grouping of the cells</p></td>
     </tr>
     <tr>
       <th>groups</th>

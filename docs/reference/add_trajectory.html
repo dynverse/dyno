@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add a trajectory to a data wrapper — add_trajectory • dyno</title>
+<title>Define a trajectory model given its milestone network and milestone percentages or progressions — add_trajectory • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,17 +21,20 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Add a trajectory to a data wrapper — add_trajectory" />
+<meta property="og:title" content="Define a trajectory model given its milestone network and milestone percentages or progressions — add_trajectory" />
 
-<meta property="og:description" content="Add a trajectory to a data wrapper" />
+<meta property="og:description" content="Define a trajectory model given its milestone network and milestone percentages or progressions" />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -97,27 +100,27 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add a trajectory to a data wrapper</h1>
+    <h1>Define a trajectory model given its milestone network and milestone percentages or progressions</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_add_trajectory.R'><code>R/wrap_add_trajectory.R</code></a></small>
     <div class="hidden name"><code>add_trajectory.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Add a trajectory to a data wrapper</p>
+    <p>Define a trajectory model given its milestone network and milestone percentages or progressions</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_trajectory</span>(<span class='no'>data_wrapper</span>, <span class='no'>milestone_ids</span>, <span class='no'>milestone_network</span>,
-  <span class='no'>divergence_regions</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>progressions</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>add_trajectory</span>(<span class='no'>model</span>, <span class='kw'>milestone_ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>milestone_network</span>,
+  <span class='kw'>divergence_regions</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>progressions</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>data_wrapper</th>
-      <td><p>A data wrapper to extend upon.</p></td>
+      <th>model</th>
+      <td><p>The model to which the trajectory will be added.</p></td>
     </tr>
     <tr>
       <th>milestone_ids</th>
@@ -147,9 +150,13 @@ Type: Data frame(cell_id = character, from = character, to = character, percenta
     </tr>
     <tr>
       <th>...</th>
-      <td><p>extra information to be stored in the wrapper.</p></td>
+      <td><p>extra information to be stored in the model</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
     
 
   </div>
@@ -157,7 +164,9 @@ Type: Data frame(cell_id = character, from = character, to = character, percenta
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

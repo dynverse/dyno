@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with StemID2 — ti_stemid2" />
 
-<meta property="og:description" content="Inferring trajectories with StemID2" />
+<meta property="og:description" content="Inferring trajectories with StemID2
+Will generate a trajectory using StemID2. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,26 +102,40 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with StemID2</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_stemid2.R'><code>R/ti_stemid2.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_stemid2.R'><code>R/ti_stemid2.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_stemid2.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with StemID2</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1016/j.stem.2016.05.010'>StemID2</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/stemid2'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_stemid2</span>(<span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
+    <pre class="usage"><span class='fu'><a href='ti_stemid.html'>ti_stemid2</a></span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
   <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>, <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>,
-  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
-  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>1e-10</span>,
-  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>40</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>1</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>500</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>0.01</span>)</pre>
+  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
+  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
+  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)
+
+<span class='fu'><a href='ti_stemid.html'>ti_stemid2</a></span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
+  <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>, <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>,
+  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
+  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
+  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>clustnr</th>
       <td><p>maximum number of clusters for the computation of the gap statistic or derivation of the cluster number by the saturation criterion. Default is 30. If more major cell types are expected a higher number should be chosen.</p></td>
@@ -128,7 +146,7 @@
     </tr>
     <tr>
       <th>metric</th>
-      <td><p>the input data are transformed to a distance object. Distances can be computed based on different metrics. Possible values are "pearson", "spearman", "logpearson", "euclidean", "kendall", "maximum", "manhattan", "canberra", "binary" or "minkowski". Default is "pearson". In case of the correlation based methods, the distance is computed as 1 – correlation. K-medoids clustering is performed on this distance object.</p></td>
+      <td><p>the input data are transformed to a distance object. Distances can be computed based on different metrics. Possible values are "pearson", "spearman", "logpearson", "euclidean", "kendall", "maximum", "manhattan", "canberra", "binary" or "minkowski". Default is "pearson". In case of the correlation based methods, the distance is computed as 1 - correlation. K-medoids clustering is performed on this distance object.</p></td>
     </tr>
     <tr>
       <th>num_cluster_method</th>
@@ -200,13 +218,27 @@
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see <a href='ti_stemid.html'>ti_stemid2</a></p>
+<p>The original code of this method is available <a href='https://github.com/dgrun/RaceID3_StemID2'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1016/j.stem.2016.05.010'>Grün, D., Muraro, M.J., Boisset, J.-C., Wiebrands, K., Lyubimova, A., Dharmadhikari, G., van den Born, M., van Es, J., Jansen, E., Clevers, H., de Koning, E.J.P., van Oudenaarden, A., 2016. De Novo Prediction of Stem Cell Identity using Single-Cell Transcriptome Data. Cell Stem Cell 19, 266–277.</a></p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

@@ -21,17 +21,21 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 
 <meta property="og:title" content="Inferring trajectories with pseudogp — ti_pseudogp" />
 
-<meta property="og:description" content="Inferring trajectories with pseudogp" />
+<meta property="og:description" content="Inferring trajectories with pseudogp
+Will generate a trajectory using pseudogp. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -98,23 +102,36 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with pseudogp</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pseudogp.R'><code>R/ti_pseudogp.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pseudogp.R'><code>R/ti_pseudogp.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_pseudogp.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Inferring trajectories with pseudogp</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1371/journal.pcbi.1005212'>pseudogp</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/pseudogp'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_pseudogp</span>(<span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>), <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_pseudogp</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
+  <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>,
+  <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>),
+  <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)
+
+<span class='fu'>ti_pseudogp</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+  <span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
+  <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>,
+  <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>),
+  <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
     <tr>
       <th>smoothing_alpha</th>
       <td><p>The hyperparameter for the Gamma distribution that controls arc-length</p></td>
@@ -142,7 +159,7 @@
     <tr>
       <th>dimreds</th>
       <td><p>A character vector specifying which dimensionality reduction methods to use.
-See <code><a href='dimred.html'>list_dimred_methods</a></code> for the list of available dimensionality reduction methods.</p></td>
+See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred()</a></code> for the list of available dimensionality reduction methods.</p></td>
     </tr>
     <tr>
       <th>initialise_from</th>
@@ -153,6 +170,16 @@ pca from the first rather than combining them. If a particular representation is
 up to the user to re-order them.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_pseudogp</p>
+<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/pseudogp'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1371/journal.pcbi.1005212'>Campbell, K.R., Yau, C., 2016. Order Under Uncertainty: Robust Differential Expression Analysis Using Probabilistic Models for Pseudotime Inference. PLOS Computational Biology 12, e1005212.</a></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -165,6 +192,10 @@ up to the user to re-order them.</p></td>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#see-also">See also</a></li>
           </ul>
 
