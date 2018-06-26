@@ -19,7 +19,6 @@ reference:
   - install_dependencies
   - methods
   - methods_containerised
-  - methods_info
   - plot_trajectory
   - reexports
   - set_cores
@@ -35,6 +34,7 @@ reference:
   - ti_elpilinear
   - ti_embeddr
   - ti_error
+  - ti_fateid
   - ti_gng
   - ti_gpfates
   - ti_grandprix
@@ -57,6 +57,7 @@ reference:
   - ti_recat
   - ti_scimitar
   - ti_scorpius
+  - ti_scorpius_sparse
   - ti_scoup
   - ti_scuba
   - ti_shuffle
@@ -66,6 +67,7 @@ reference:
   - ti_slingshot
   - ti_stemid
   - ti_stemid2
+  - ti_stemnet
   - ti_topslam
   - ti_tscan
   - ti_wanderlust
@@ -74,6 +76,7 @@ reference:
 - title: Toolbox to transform trajectory models
   desc: dynwrap
   contents:
+  - add_branch_trajectory
   - add_cell_graph
   - add_cell_waypoints
   - add_cluster_graph
@@ -127,6 +130,7 @@ reference:
   - select_waypoint_cells
   - select_waypoints
   - simplify_igraph_network
+  - test_docker_installation
   - ti_comp1
   - trajectory_type_dag
   - trajectory_types

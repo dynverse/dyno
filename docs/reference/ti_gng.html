@@ -109,17 +109,15 @@ Will generate a trajectory using Growing Neural Gas. This method was wrapped ins
     <div class="ref-description">
     
     <p>Inferring trajectories with Growing Neural Gas</p>
-<p>Will generate a trajectory using <a href='https://doi.org/https://github.com/rcannood/GNG'>Growing Neural Gas</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/gng'>container</a>.</p>
+<p>Will generate a trajectory using <a href='https://doi.org/https://github.com/rcannood/gng'>Growing Neural Gas</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/gng'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>13.8155105579643</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>,
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>15000</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>13.8155105579643</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>,
-  <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>ti_gng</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>,
+  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>15000</span>, <span class='kw'>max_nodes</span> <span class='kw'>=</span> <span class='fl'>8</span>, <span class='kw'>apply_mst</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -158,7 +156,7 @@ See <a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyn
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This methods was first wrapped inside R, see ti_gng</p>
-<p>The original code of this method is available <a href='https://github.com/rcannood/GNG'>here</a>.</p>
+<p>The original code of this method is available <a href='https://github.com/rcannood/gng'>here</a>.</p>
     
 
   </div>

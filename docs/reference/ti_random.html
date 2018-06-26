@@ -32,7 +32,8 @@
 
 <meta property="og:title" content="Inferring trajectories with Control: random — ti_random" />
 
-<meta property="og:description" content="This control method will always produce a random trajectory." />
+<meta property="og:description" content="This control method will always produce a random trajectory.
+Will generate a trajectory using Control: random. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,26 +102,41 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Control: random</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_random.R'><code>R/ti_random.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_random.R'><code>R/ti_random.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_random.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>This control method will always produce a random trajectory.</p>
+<p>Will generate a trajectory using Control: random. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/random'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_random</span>(<span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_random</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)
+
+<span class='fu'>ti_random</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>dummy_param</th>
       <td><p>This parameter does not do anything.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The trajectory model</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_random</p>
     
 
   </div>
@@ -128,7 +144,11 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
 
   </div>
 </div>

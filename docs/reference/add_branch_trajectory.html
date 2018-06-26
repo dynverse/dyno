@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SLICER — ti_slicer • dyno</title>
+<title>Define a trajectory model given its branch network and the pseudotime of the cells on one of the branches — add_branch_trajectory • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with SLICER — ti_slicer" />
+<meta property="og:title" content="Define a trajectory model given its branch network and the pseudotime of the cells on one of the branches — add_branch_trajectory" />
 
-<meta property="og:description" content="Inferring trajectories with SLICER
-Will generate a trajectory using SLICER. This method was wrapped inside a container." />
+<meta property="og:description" content="Define a trajectory model given its branch network and the pseudotime of the cells on one of the branches" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,48 +100,50 @@ Will generate a trajectory using SLICER. This method was wrapped inside a contai
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SLICER</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slicer.R'><code>R/ti_slicer.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
-    <div class="hidden name"><code>ti_slicer.Rd</code></div>
+    <h1>Define a trajectory model given its branch network and the pseudotime of the cells on one of the branches</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_add_branch_trajectory.R'><code>R/wrap_add_branch_trajectory.R</code></a></small>
+    <div class="hidden name"><code>add_branch_trajectory.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SLICER</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1186/s13059-016-0975-3'>SLICER</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slicer'>container</a>.</p>
+    <p>Define a trajectory model given its branch network and the pseudotime of the cells on one of the branches</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-
-<span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
+    <pre class="usage"><span class='fu'>add_branch_trajectory</span>(<span class='no'>model</span>, <span class='no'>branch_network</span>, <span class='no'>branches</span>, <span class='no'>branch_progressions</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
+      <th>model</th>
+      <td><p>The model to which the trajectory will be added.</p></td>
     </tr>
     <tr>
-      <th>kmin</th>
-      <td><p>Smallest value of k to try</p></td>
+      <th>branch_network</th>
+      <td><p>The network between branches
+Type: Data frame(from = charactor, to = character)</p></td>
     </tr>
     <tr>
-      <th>m</th>
-      <td><p>intrinsic dimension of the data. This parameter mainly influences the visualisation of the results. The real intrinsic dimension will be calculated automaticly.</p></td>
+      <th>branches</th>
+      <td><p>The length and directedness of the branches
+Type: Data frame(branch_id = character, length = numeric, directed = logical)</p></td>
+    </tr>
+    <tr>
+      <th>branch_progressions</th>
+      <td><p>Specifies the progression of a cell along a transition in the branch network.
+Type: Data frame(cell_id = character, branch_id = character, percentage = numeric).</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>extra information to be stored in the model</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>The trajectory model</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This methods was first wrapped inside R, see ti_slicer</p>
-<p>The original code of this method is available <a href='https://github.com/jw156605/SLICER'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1186/s13059-016-0975-3'>Welch, J.D., Hartemink, A.J., Prins, J.F., 2016. SLICER: inferring branched, nonlinear cellular trajectories from single cell RNA-seq data. Genome Biology 17.</a></p>
     
 
   </div>
@@ -152,8 +153,6 @@ Will generate a trajectory using SLICER. This method was wrapped inside a contai
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

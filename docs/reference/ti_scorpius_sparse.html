@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SCORPIUS — ti_scorpius • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1101/079509'>SCORPIUS sparse</a> — ti_scorpius_sparse • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with SCORPIUS — ti_scorpius" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1101/079509'>SCORPIUS sparse</a> — ti_scorpius_sparse" />
 
-<meta property="og:description" content="Inferring trajectories with SCORPIUS
-Will generate a trajectory using SCORPIUS. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using SCORPIUS sparse. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,25 +100,24 @@ Will generate a trajectory using SCORPIUS. This method was wrapped inside a cont
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SCORPIUS</h1>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1101/079509'>SCORPIUS sparse</a></h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scorpius.R'><code>R/ti_scorpius.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
-    <div class="hidden name"><code>ti_scorpius.Rd</code></div>
+    <div class="hidden name"><code>ti_scorpius_sparse.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SCORPIUS</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1101/079509'>SCORPIUS</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scorpius'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/079509'>SCORPIUS sparse</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scorpius_sparse'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_scorpius</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+    <pre class="usage"><span class='fu'>ti_scorpius_sparse</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
   <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>ti_scorpius</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+<span class='fu'>ti_scorpius_sparse</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
   <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -170,7 +168,7 @@ for datasets with large amounts of cells.</p></td>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This methods was first wrapped inside R, see ti_scorpius</p>
+    <p>This methods was first wrapped inside R, see ti_scorpius_sparse</p>
 <p>The original code of this method is available <a href='https://github.com/rcannood/SCORPIUS'>here</a>.</p>
 <p>The method is described in: <a href='https://doi.org/10.1101/079509'>Cannoodt, R., Saelens, W., Sichien, D., Tavernier, S., Janssens, S., Guilliams, M., Lambrecht, B.N., De Preter, K., Saeys, Y., 2016. SCORPIUS improves trajectory inference and identifies novel modules in dendritic cell development.</a></p>
     

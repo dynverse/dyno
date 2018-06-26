@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SLICER — ti_slicer • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a> — ti_stemnet • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with SLICER — ti_slicer" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a> — ti_stemnet" />
 
-<meta property="og:description" content="Inferring trajectories with SLICER
-Will generate a trajectory using SLICER. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using STEMNET. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,36 +100,35 @@ Will generate a trajectory using SLICER. This method was wrapped inside a contai
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SLICER</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slicer.R'><code>R/ti_slicer.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
-    <div class="hidden name"><code>ti_slicer.Rd</code></div>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <div class="hidden name"><code>ti_stemnet.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SLICER</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1186/s13059-016-0975-3'>SLICER</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slicer'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/stemnet'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-
-<span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_stemnet</span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>lambda_auto</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lambda</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
+      <th>alpha</th>
+      <td><p>The elastic net mixing parameter of the ‘glmnet’ classifier. <br />
+numeric; default: 0.1; possible values between 0.001 and 10</p></td>
     </tr>
     <tr>
-      <th>kmin</th>
-      <td><p>Smallest value of k to try</p></td>
+      <th>lambda_auto</th>
+      <td><p>Whether to select the lambda by cross-validation <br /></p></td>
     </tr>
     <tr>
-      <th>m</th>
-      <td><p>intrinsic dimension of the data. This parameter mainly influences the visualisation of the results. The real intrinsic dimension will be calculated automaticly.</p></td>
+      <th>lambda</th>
+      <td><p>The lambda penalty of GLM. <br />
+numeric; default: 0.1; possible values between 0.05 and 1</p></td>
     </tr>
     </table>
     
@@ -140,9 +138,8 @@ Will generate a trajectory using SLICER. This method was wrapped inside a contai
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>This methods was first wrapped inside R, see ti_slicer</p>
-<p>The original code of this method is available <a href='https://github.com/jw156605/SLICER'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1186/s13059-016-0975-3'>Welch, J.D., Hartemink, A.J., Prins, J.F., 2016. SLICER: inferring branched, nonlinear cellular trajectories from single cell RNA-seq data. Genome Biology 17.</a></p>
+    <p>The original code of this method is available <a href='https://git.embl.de/velten/STEMNET'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1038/ncb3493'>Velten, L., Haas, S.F., Raffel, S., Blaszkiewicz, S., Islam, S., Hennig, B.P., Hirche, C., Lutz, C., Buss, E.C., Nowak, D., Boch, T., Hofmann, W.-K., Ho, A.D., Huber, W., Trumpp, A., Essers, M.A.G., Steinmetz, L.M., 2017. Human haematopoietic stem cell lineage commitment is a continuous process. Nature Cell Biology 19, 271–281.</a></p>
     
 
   </div>
