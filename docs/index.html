@@ -84,6 +84,13 @@
 <p>You can install dyno from github using:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"dynverse/dyno"</span>)</code></pre></div>
+<p>On linux, udunits2 has to be installed:</p>
+<ul>
+<li>debian/ubuntu: <code>sudo apt install libudunits2-dev</code>
+</li>
+<li>rhel/fedora/centos: <code>sudo dnf install udunits2 udunits2-devel</code>
+</li>
+</ul>
 </div>
 <div id="trajectory-inference-workflow" class="section level2">
 <h2 class="hasAnchor">
@@ -118,36 +125,11 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <div id="running-the-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#running-the-methods" class="anchor"></a>Running the methods</h3>
-<p>To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Furthermore, to avoid getting stuck in “dependency hell”, methods can be run within a docker, which will be automatically activated when running <code>start_dynmethods_docker</code> (for the installation of docker, see: <a href="https://docs.docker.com/install/" class="uri">https://docs.docker.com/install/</a>). We make use of the <a href="https://github.com/HenrikBengtsson/future">future</a> package, which also allows easy deployment of method execution on computing clusters and/or in parallel.</p>
+<p>To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Most methods are integrated within a docker environment, avoiding issues with the installation of dependencies.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">start_dynmethods_docker</span>()
 
 model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
-<pre><code>#&gt; E&gt; 
-#&gt; E&gt; Attaching package: ‘dplyr’
-#&gt; E&gt; 
-#&gt; E&gt; The following objects are masked from ‘package:stats’:
-#&gt; E&gt; 
-#&gt; E&gt;     filter, lag
-#&gt; E&gt; 
-#&gt; E&gt; The following objects are masked from ‘package:base’:
-#&gt; E&gt; 
-#&gt; E&gt;     intersect, setdiff, setequal, union
-#&gt; E&gt; 
-#&gt; E&gt; 
-#&gt; E&gt; Attaching package: ‘igraph’
-#&gt; E&gt; 
-#&gt; E&gt; The following objects are masked from ‘package:dplyr’:
-#&gt; E&gt; 
-#&gt; E&gt;     as_data_frame, groups, union
-#&gt; E&gt; 
-#&gt; E&gt; The following objects are masked from ‘package:stats’:
-#&gt; E&gt; 
-#&gt; E&gt;     decompose, spectrum
-#&gt; E&gt; 
-#&gt; E&gt; The following object is masked from ‘package:base’:
-#&gt; E&gt; 
-#&gt; E&gt;     union
-#&gt; E&gt;</code></pre>
+<pre><code>#&gt; NULL</code></pre>
 </div>
 <div id="making-the-trajectory-interpretable" class="section level3">
 <h3 class="hasAnchor">

@@ -113,21 +113,21 @@ Will generate a trajectory using StemID. This method was wrapped inside a contai
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_stemid</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
-  <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>, <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>,
-  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
-  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)
+    <pre class="usage"><span class='fu'>ti_stemid</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>,
+  <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>, <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>,
+  <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>, <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>,
+  <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>,
+  <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>,
+  <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pvalue_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>linkscore_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.2</span>)
 
-<span class='fu'>ti_stemid</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>,
-  <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>, <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>,
-  <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>,
-  <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>, <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>)</pre>
+<span class='fu'>ti_stemid</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>clustnr</span> <span class='kw'>=</span> <span class='fl'>30</span>,
+  <span class='kw'>bootnr</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"pearson"</span>, <span class='kw'>num_cluster_method</span> <span class='kw'>=</span> <span class='st'>"sat"</span>,
+  <span class='kw'>SE.method</span> <span class='kw'>=</span> <span class='st'>"Tibs2001SEmax"</span>, <span class='kw'>SE.factor</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>B.gap</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>cln</span> <span class='kw'>=</span> <span class='fl'>30</span>,
+  <span class='kw'>FUNcluster</span> <span class='kw'>=</span> <span class='st'>"kmedoids"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>outminc</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>outlg</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>probthr</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>thr_lower</span> <span class='kw'>=</span> -<span class='fl'>10</span>, <span class='kw'>thr_upper</span> <span class='kw'>=</span> -<span class='fl'>5</span>,
+  <span class='kw'>outdistquant</span> <span class='kw'>=</span> <span class='fl'>0.95</span>, <span class='kw'>nmode</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>pdishuf</span> <span class='kw'>=</span> <span class='fl'>2000</span>, <span class='kw'>pthr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>,
+  <span class='kw'>pethr</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>pvalue_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>linkscore_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.2</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -215,6 +215,14 @@ Will generate a trajectory using StemID. This method was wrapped inside a contai
     <tr>
       <th>pethr</th>
       <td><p>positive number. This number corresponds to the p-value threshold, which isused to determine for each link if it is populated by a number of cellssignificantly larger than expected for the randomized background distribution. This p-value threshold determines, which connections are considered validdifferentiation trajectories in the derived lineage tree.</p></td>
+    </tr>
+    <tr>
+      <th>pvalue_cutoff</th>
+      <td><p>Upper cutoff of p-value for determining significant edges</p></td>
+    </tr>
+    <tr>
+      <th>linkscore_cutoff</th>
+      <td><p>Lower cutoff of the linkscore for determining significant edges</p></td>
     </tr>
     </table>
     

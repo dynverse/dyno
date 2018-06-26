@@ -113,13 +113,13 @@ Will generate a trajectory using SLICE. This method was wrapped inside a contain
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+    <pre class="usage"><span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
   <span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>, <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>,
   <span class='kw'>ss.threshold</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>community.method</span> <span class='kw'>=</span> <span class='st'>"louvain"</span>,
   <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100</span>,
   <span class='kw'>k.opt.method</span> <span class='kw'>=</span> <span class='st'>"firstmax"</span>)
 
-<span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
+<span class='fu'>ti_slice</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
   <span class='kw'>lm.method</span> <span class='kw'>=</span> <span class='st'>"clustering"</span>, <span class='kw'>model.type</span> <span class='kw'>=</span> <span class='st'>"tree"</span>, <span class='kw'>ss.method</span> <span class='kw'>=</span> <span class='st'>"all"</span>,
   <span class='kw'>ss.threshold</span> <span class='kw'>=</span> <span class='fl'>0.25</span>, <span class='kw'>community.method</span> <span class='kw'>=</span> <span class='st'>"louvain"</span>,
   <span class='kw'>cluster.method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k.max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>100</span>,
@@ -142,9 +142,9 @@ Will generate a trajectory using SLICE. This method was wrapped inside a contain
     </tr>
     <tr>
       <th>ss.method</th>
-      <td><p>The method for defining core cell set for stable state detection:
-all - all the cells in a cluster constitute the core cell set;
-top - cells with scEntropy lower than the ss.threshold quantile of all the values in a cluster constitute the core cell set;
+      <td><p>The method for defining core cell set for stable state detection: 
+all - all the cells in a cluster constitute the core cell set; 
+top - cells with scEntropy lower than the ss.threshold quantile of all the values in a cluster constitute the core cell set; 
 pcst - cells with scEntropy lower than the ss.threshold quantile of all the values in a cluster constitute the prize nodes, linear prize-collecting steiner tree algorithm is used to approximate an optimal subnetwork, the cells in the subnetwork constitute the core cell set. Stable states are defined as the centroids of the core cell sets.</p></td>
     </tr>
     <tr>
@@ -153,10 +153,10 @@ pcst - cells with scEntropy lower than the ss.threshold quantile of all the valu
     </tr>
     <tr>
       <th>community.method</th>
-      <td><p>The method for network community detection.
-Most of the community detection methods implemented in the igraph package are supported,
-including "fast_greedy", "edge_betweenness", "label_prop", "leading_eigen","louvain","spinglass", "walktrap".
-If this parameter is set to "auto", the algorithm will perform all the community detection methods and select the one that generates the communities with best modularity.
+      <td><p>The method for network community detection. 
+Most of the community detection methods implemented in the igraph package are supported, 
+including "fast_greedy", "edge_betweenness", "label_prop", "leading_eigen","louvain","spinglass", "walktrap". 
+If this parameter is set to "auto", the algorithm will perform all the community detection methods and select the one that generates the communities with best modularity. 
 Only take effect when lm.method is "graph"</p></td>
     </tr>
     <tr>
@@ -169,15 +169,15 @@ Only take effect when lm.method is "graph"</p></td>
     </tr>
     <tr>
       <th>k.max</th>
-      <td><p>The "k.max" parameter of <code><a href='http://www.rdocumentation.org/packages/cluster/topics/clusGap'>clusGap</a></code>; used when k is NULL.</p></td>
+      <td><p>The "k.max" parameter of cluster::clusGap(); used when k is NULL.</p></td>
     </tr>
     <tr>
       <th>B</th>
-      <td><p>The "B" parameter of <code><a href='http://www.rdocumentation.org/packages/cluster/topics/clusGap'>clusGap</a></code>; used when k is NULL</p></td>
+      <td><p>The "B" parameter of cluster::clusGap(); used when k is NULL</p></td>
     </tr>
     <tr>
       <th>k.opt.method</th>
-      <td><p>The "method" parameter of <code><a href='http://www.rdocumentation.org/packages/cluster/topics/clusGap'>maxSE</a></code>; used when k is NULL</p></td>
+      <td><p>The "method" parameter of cluster::maxSE(); used when k is NULL</p></td>
     </tr>
     </table>
     

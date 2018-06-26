@@ -32,7 +32,8 @@
 
 <meta property="og:title" content="Inferring trajectories with Angle — ti_angle" />
 
-<meta property="og:description" content="Inferring trajectories with Angle" />
+<meta property="og:description" content="Inferring trajectories with Angle
+Will generate a trajectory using Angle. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -108,14 +109,13 @@
     <div class="ref-description">
     
     <p>Inferring trajectories with Angle</p>
+<p>Will generate a trajectory using Angle. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/angle'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)
+    <pre class="usage"><span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)
 
-<span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='st'>"stevedore"</span> <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()),
-  <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)</pre>
+<span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -135,6 +135,10 @@ See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimre
 
     <p>The trajectory model</p>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This methods was first wrapped inside R, see ti_angle</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -143,6 +147,8 @@ See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimre
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

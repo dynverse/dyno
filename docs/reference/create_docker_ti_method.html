@@ -101,7 +101,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Create a TI method from a docker image</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_create_image_method.R'><code>R/ti_create_image_method.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/container_create_method.R'><code>R/container_create_method.R</code></a></small>
     <div class="hidden name"><code>create_docker_ti_method.Rd</code></div>
     </div>
 
@@ -112,14 +112,12 @@
     </div>
 
     <pre class="usage"><span class='fu'>create_docker_ti_method</span>(<span class='no'>image</span>,
-  <span class='kw'>definition</span> <span class='kw'>=</span> <span class='fu'>extract_definition_from_docker_image</span>(<span class='no'>image</span>),
-  <span class='kw'>docker_client</span> <span class='kw'>=</span> <span class='kw pkg'>stevedore</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/stevedore/topics/docker_client'>docker_client</a></span>(), <span class='no'>...</span>)
+  <span class='kw'>definition</span> <span class='kw'>=</span> <span class='fu'>extract_definition_from_docker_image</span>(<span class='no'>image</span>), <span class='no'>...</span>)
 
 <span class='fu'>extract_definition_from_docker_image</span>(<span class='no'>image</span>,
-  <span class='kw'>definition_location</span> <span class='kw'>=</span> <span class='st'>"/code/definition.yml"</span>,
-  <span class='kw'>docker_client</span> <span class='kw'>=</span> <span class='kw pkg'>stevedore</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/stevedore/topics/docker_client'>docker_client</a></span>())
+  <span class='kw'>definition_location</span> <span class='kw'>=</span> <span class='st'>"/code/definition.yml"</span>)
 
-<span class='fu'>pull_docker_ti_method</span>(<span class='no'>image</span>, <span class='kw'>docker_client</span> <span class='kw'>=</span> <span class='kw pkg'>stevedore</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/stevedore/topics/docker_client'>docker_client</a></span>())</pre>
+<span class='fu'>pull_docker_ti_method</span>(<span class='no'>image</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,10 +130,6 @@
       <th>definition</th>
       <td><p>The method definition, a list containing the name, input, output and parameters of a method.
 Optional, as the definition file will be automatically loaded from the images <code>/code/definition.yml</code> using extract_definition_from_docker_image.</p></td>
-    </tr>
-    <tr>
-      <th>docker_client</th>
-      <td><p>Optional, a <code><a href='http://www.rdocumentation.org/packages/stevedore/topics/docker_client'>stevedore::docker_client()</a></code></p></td>
     </tr>
     <tr>
       <th>...</th>

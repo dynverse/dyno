@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wishbone</a> — ti_wishbone • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>Wishbone</a> — ti_wishbone • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wishbone</a> — ti_wishbone" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>Wishbone</a> — ti_wishbone" />
 
-<meta property="og:description" content="Will generate a trajectory using wishbone. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using Wishbone. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,19 +100,19 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wishbone</a></h1>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>Wishbone</a></h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_wishbone.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nbt.3569'>wishbone</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/wishbone'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nbt.3569'>Wishbone</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/wishbone'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_wishbone</span>(<span class='kw'>normalise</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
-  <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
+    <pre class="usage"><span class='fu'>ti_wishbone</span>(<span class='kw'>normalise</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>25L</span>, <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+  <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>25L</span>, <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
   <span class='kw'>branch</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -125,32 +125,32 @@
     <tr>
       <th>knn</th>
       <td><p>K-nearest neighbours for diffusion <br />
-integer; default: 15L; possible values between 2 and 100</p></td>
+integer; default: 25L; possible values between 15 and 100</p></td>
     </tr>
     <tr>
       <th>n_diffusion_components</th>
       <td><p>Number of diffusion components <br />
-integer; default: 2L; possible values between 2 and 20</p></td>
+integer; default: 3L; possible values between 3 and 20</p></td>
     </tr>
     <tr>
       <th>n_pca_components</th>
       <td><p>Number of pca components <br />
-integer; default: 15L; possible values between 2 and 30</p></td>
+integer; default: 30L; possible values between 15 and 100</p></td>
     </tr>
     <tr>
       <th>k</th>
       <td><p>K parameter <br />
-integer; default: 15L; possible values between 2 and 100</p></td>
+integer; default: 25L; possible values between 15 and 100</p></td>
     </tr>
     <tr>
       <th>num_waypoints</th>
       <td><p>Number of waypoints <br />
-integer; default: 250L; possible values between 2 and 500</p></td>
+integer; default: 250L; possible values between 100 and 500</p></td>
     </tr>
     <tr>
       <th>epsilon</th>
       <td><p>Epsilon <br />
-numeric; default: 1L; possible values between 0.1 and 10</p></td>
+numeric; default: 1L; possible values between 0.1 and 5</p></td>
     </tr>
     <tr>
       <th>branch</th>

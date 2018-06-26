@@ -26,6 +26,11 @@ You can install dyno from github using:
 devtools::install_github("dynverse/dyno")
 ```
 
+On linux, udunits2 has to be installed:
+
+-   debian/ubuntu: `sudo apt install libudunits2-dev`
+-   rhel/fedora/centos: `sudo dnf install udunits2 udunits2-devel`
+
 Trajectory inference workflow
 -----------------------------
 
@@ -64,13 +69,15 @@ methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first
 
 ### Running the methods
 
-To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Furthermore, to avoid getting stuck in "dependency hell", methods can be run within a docker, which will be automatically activated when running `start_dynmethods_docker` (for the installation of docker, see: <https://docs.docker.com/install/>). We make use of the [future](https://github.com/HenrikBengtsson/future) package, which also allows easy deployment of method execution on computing clusters and/or in parallel.
+To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Most methods are integrated within a docker environment, avoiding issues with the installation of dependencies.
 
 ``` r
 start_dynmethods_docker()
 
 model %<-% infer_trajectory(task, methods[[1]])
 ```
+
+    #> NULL
 
 ### Making the trajectory interpretable
 
@@ -90,9 +97,9 @@ model <- model %>%
 Milestones can be labelled using marker genes. These labels can then be used for subsequent analyses and for visualisation.
 
 ``` r
-model <- label_milestones(
+model <- label_milestones_markers(
   model,
-  list(
+  markers = list(
     MEF = c("Vim"),
     Myocyte = c("Myl1"),
     Neuron = c("Stmn3")

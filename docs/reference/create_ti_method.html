@@ -113,7 +113,9 @@
 
     <pre class="usage"><span class='fu'>create_ti_method</span>(<span class='no'>name</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>par_set</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>run_fun</span>,
   <span class='kw'>plot_fun</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>package_loaded</span> <span class='kw'>=</span> <span class='fu'>c</span>(), <span class='kw'>package_required</span> <span class='kw'>=</span> <span class='fu'>c</span>(),
-  <span class='kw'>short_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
+  <span class='kw'>short_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"algorithm"</span>, <span class='st'>"algorithm_test"</span>, <span class='st'>"control"</span>,
+  <span class='st'>"control_test"</span>), <span class='no'>...</span>, <span class='kw'>remotes_package</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='st'>"dynmethods"</span> <span class='kw'>%in%</span>
+  <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()), <span class='st'>"dynmethods"</span>, <span class='st'>"dynwrap"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,8 +154,16 @@ of <code>run_fun</code> with those described in <code>par_set</code>.</p></td>
       <td><p>A short name for the method, max 8 characters</p></td>
     </tr>
     <tr>
+      <th>type</th>
+      <td><p>The type of TI metod</p></td>
+    </tr>
+    <tr>
       <th>...</th>
       <td><p>Other information about the wrapper, eg. apt_dependencies</p></td>
+    </tr>
+    <tr>
+      <th>remotes_package</th>
+      <td><p>Package from which the remote locations of dependencies have to be extracted, eg. <code>dynmethods</code></p></td>
     </tr>
     </table>
     
