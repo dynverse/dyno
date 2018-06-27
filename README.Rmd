@@ -37,6 +37,15 @@ On linux, udunits2 has to be installed:
 - debian/ubuntu: `sudo apt install libudunits2-dev`
 - rhel/fedora/centos: `sudo dnf install udunits2 udunits2-devel`
 
+Although not required, we also highly recommend the installation of docker. See https://docs.docker.com/install for instructions. This will make it easy to run all available trajectory inference methods.
+
+You can test whether docker is correctly installed by:
+
+```{r, message = TRUE}
+dynwrap::test_docker_installation(detailed = TRUE)
+```
+
+
 ## Trajectory inference workflow
 ```{r}
 library(dyno)
@@ -83,11 +92,9 @@ methods <- guidelines$methods_selected
 
 ### Running the methods
 
-To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Most methods are integrated within a docker environment, avoiding issues with the installation of dependencies. 
+To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.
 
 ``` r
-start_dynmethods_docker()
-
 model %<-% infer_trajectory(task, methods[[1]])
 ```
 
