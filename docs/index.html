@@ -91,6 +91,18 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <li>rhel/fedora/centos: <code>sudo dnf install udunits2 udunits2-devel</code>
 </li>
 </ul>
+<p>Although not required, we also highly recommend the installation of docker. See <a href="https://docs.docker.com/install" class="uri">https://docs.docker.com/install</a> for instructions. This will make it easy to run all available trajectory inference methods.</p>
+<p>You can test whether docker is correctly installed by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dynwrap<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation">test_docker_installation</a></span>(<span class="dt">detailed =</span> <span class="ot">TRUE</span>)
+<span class="co">#&gt; ✔ Docker is installed</span>
+<span class="co">#&gt; ✔ Docker daemon is running</span>
+<span class="co">#&gt; ✔ Docker is at correct version (&gt;1.0): 1.37</span>
+<span class="co">#&gt; ✔ Docker is in linux mode</span>
+<span class="co">#&gt; ✔ Docker can pull images</span>
+<span class="co">#&gt; ✔ Docker can run image</span>
+<span class="co">#&gt; ✔ Docker can mount temporary volumes</span>
+<span class="co">#&gt; ✔ Docker test succesful ------------------------------------------------------------------</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div id="trajectory-inference-workflow" class="section level2">
 <h2 class="hasAnchor">
@@ -125,10 +137,8 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <div id="running-the-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#running-the-methods" class="anchor"></a>Running the methods</h3>
-<p>To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models. Most methods are integrated within a docker environment, avoiding issues with the installation of dependencies.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">start_dynmethods_docker</span>()
-
-model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
+<p>To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
 <pre><code>#&gt; NULL</code></pre>
 </div>
 <div id="making-the-trajectory-interpretable" class="section level3">
