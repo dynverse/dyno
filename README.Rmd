@@ -10,7 +10,7 @@ bibliography: docs/bibliography.bib
 
 [![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno)
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno)
-![Lifecycle is maturing](https://img.shields.io/badge/lifecycle-maturing-orange.svg)
+![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
