@@ -6,15 +6,15 @@ Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
     -   [Preparing the data](#preparing-the-data)
     -   [Selecting the most optimal TI methods](#selecting-the-most-optimal-ti-methods)
     -   [Running the methods](#running-the-methods)
-    -   [Making the trajectory interpretable](#making-the-trajectory-interpretable)
+    -   [Interpreting the trajectory biologically](#interpreting-the-trajectory-biologically)
     -   [Plotting the trajectory](#plotting-the-trajectory)
     -   [Plotting relevant features](#plotting-relevant-features)
 -   [References](#references)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Build Status](https://api.travis-ci.org/dynverse/dyno.svg)](https://travis-ci.org/dynverse/dyno)
+[![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno) ![Lifecycle is maturing](https://img.shields.io/badge/lifecycle-maturing-orange.svg)
 
-The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
+The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, over to the running of these methods, right to the interpretation and visualisation of the trajectories.
 
 Installation
 ------------
@@ -86,15 +86,13 @@ methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first
 
 ### Running the methods
 
-To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.
+All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to [have docker installed](#Installation).
 
 ``` r
-model %<-% infer_trajectory(task, methods[[1]])
+model <- infer_trajectory(task, "tscan")
 ```
 
-    #> NULL
-
-### Making the trajectory interpretable
+### Interpreting the trajectory biologically
 
 In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.
 

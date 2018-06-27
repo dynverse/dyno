@@ -8,7 +8,9 @@ bibliography: docs/bibliography.bib
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Build Status](https://api.travis-ci.org/dynverse/dyno.svg)](https://travis-ci.org/dynverse/dyno)
+[![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno)
+![Lifecycle is maturing](https://img.shields.io/badge/lifecycle-maturing-orange.svg)
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
@@ -21,7 +23,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
+The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, over to the running of these methods, right to the interpretation and visualisation of the trajectories.
 
 ## Installation
 
@@ -92,14 +94,14 @@ methods <- guidelines$methods_selected
 
 ### Running the methods
 
-To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.
+All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to [have docker installed](#Installation).
 
 ``` r
-model %<-% infer_trajectory(task, methods[[1]])
+model <- infer_trajectory(task, "tscan")
 ```
 
 ```{r, echo=FALSE}
-model <- infer_trajectory(task, methods[[1]])
+model <- infer_trajectory(task, "tscan")
 if(is.na(first(model))) {
   print(attr(model, "summary")$error)
   stop("Method errored")
@@ -107,7 +109,7 @@ if(is.na(first(model))) {
 ```
 
 
-### Making the trajectory interpretable
+### Interpreting the trajectory biologically
 
 In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.
 
