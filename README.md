@@ -15,7 +15,7 @@ Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
 
 The **dyno** package offers **end-users** a complete TI pipeline. It features:
 
--   a uniform interface to 50 [TI methods](https://github.com/dynverse/dynmethods),
+-   a uniform interface to 50 [TI methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
 -   an [interactive guideline tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods) to help the user select the most appropriate method,
 -   the [interpretation and visualisation of trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory), including colouring by gene expression or clusters, and
 -   downstream analyses such as the [identification of potential marker genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
@@ -223,12 +223,12 @@ You can install dyno from github using:
 devtools::install_github("dynverse/dyno")
 ```
 
-On Linux, you will need to install udunits and imagemagic:
+On Linux, you will need to install udunits and ImageMagick:
 
 -   Debian / Ubuntu / Linux Mint: `sudo apt-get install libudunits2-dev imagemagick`
 -   Fedora / CentOS / RHEL: `sudo dnf install udunits2-devel ImageMagick-c++-devel`
 
-Although not required, we also highly recommend you install Docker. This will make it easy to run all available trajectory inference methods. See <https://docs.docker.com/install> for instructions.
+Although not required, we also highly recommend you install [Docker](https://docs.docker.com/install). This will make it easy to run all available trajectory inference methods. See <https://docs.docker.com/install> for instructions.
 
 You can test whether docker is correctly installed by running:
 
