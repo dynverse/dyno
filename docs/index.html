@@ -76,8 +76,8 @@
     
     
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-<p>The dyno package guides the user through the full path of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.</p>
+<p><a href="https://travis-ci.org/dynverse/dyno"><img src="https://img.shields.io/travis/dynverse/dyno.svg?logo=travis" alt="Travis"></a> <a href="https://ci.appveyor.com/project/dynverse/dyno"><img src="https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <img src="https://img.shields.io/badge/lifecycle-maturing-orange.svg" alt="Lifecycle is maturing"></p>
+<p>The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, over to the running of these methods, right to the interpretation and visualisation of the trajectories.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -137,13 +137,12 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <div id="running-the-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#running-the-methods" class="anchor"></a>Running the methods</h3>
-<p>To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model <span class="op">%&lt;-%</span><span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, methods[[<span class="dv">1</span>]])</code></pre></div>
-<pre><code>#&gt; NULL</code></pre>
+<p>All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to <a href="#Installation">have docker installed</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, <span class="st">"tscan"</span>)</code></pre></div>
 </div>
-<div id="making-the-trajectory-interpretable" class="section level3">
+<div id="interpreting-the-trajectory-biologically" class="section level3">
 <h3 class="hasAnchor">
-<a href="#making-the-trajectory-interpretable" class="anchor"></a>Making the trajectory interpretable</h3>
+<a href="#interpreting-the-trajectory-biologically" class="anchor"></a>Interpreting the trajectory biologically</h3>
 <p>In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.</p>
 <div id="rooting" class="section level4">
 <h4 class="hasAnchor">
@@ -292,13 +291,7 @@ branching_point_features &lt;-<span class="st"> </span>branch_feature_importance
 </ul>
 </div>
 
-      <div class="dev-status">
-<h2>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://travis-ci.org/dynverse/dyno"><img src="https://api.travis-ci.org/dynverse/dyno.svg" alt="Build Status"></a></li>
-</ul>
-</div>
-</div>
+      </div>
 
 </div>
 

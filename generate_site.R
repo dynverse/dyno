@@ -38,4 +38,4 @@ build_site(".", lazy = TRUE, document = FALSE)
 
 dir_walk("./man/", fs::file_delete)
 
-
+devtools::document()

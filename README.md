@@ -1,52 +1,26 @@
 Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
 ================
 
--   [Installation](#installation)
 -   [Trajectory inference workflow](#trajectory-inference-workflow)
     -   [Preparing the data](#preparing-the-data)
     -   [Selecting the most optimal TI methods](#selecting-the-most-optimal-ti-methods)
     -   [Running the methods](#running-the-methods)
-    -   [Making the trajectory interpretable](#making-the-trajectory-interpretable)
+    -   [Interpreting the trajectory biologically](#interpreting-the-trajectory-biologically)
     -   [Plotting the trajectory](#plotting-the-trajectory)
-    -   [Plotting relevant features](#plotting-relevant-features)
--   [References](#references)
+    -   [Predicting and visualising genes of interest](#predicting-and-visualising-genes-of-interest)
+-   [Installation](#installation)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Build Status](https://api.travis-ci.org/dynverse/dyno.svg)](https://travis-ci.org/dynverse/dyno)
+[![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno) ![Lifecycle is maturing](https://img.shields.io/badge/lifecycle-maturing-orange.svg)
 
-The dyno package guides the user through the full path of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
+The **dyno** package offers **end-users** a complete TI pipeline. It features:
 
-Installation
-------------
+-   a uniform interface to 50 [TI methods](https://github.com/dynverse/dynmethods),
+-   an [interactive guideline tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods) to help the user select the most appropriate method,
+-   the [interpretation and visualisation of trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory), including colouring by gene expression or clusters, and
+-   downstream analyses such as the [identification of potential marker genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
 
-You can install dyno from github using:
-
-``` r
-# install.packages("devtools")
-devtools::install_github("dynverse/dyno")
-```
-
-On linux, udunits2 has to be installed:
-
--   debian/ubuntu: `sudo apt install libudunits2-dev`
--   rhel/fedora/centos: `sudo dnf install udunits2 udunits2-devel`
-
-Although not required, we also highly recommend the installation of docker. See <https://docs.docker.com/install> for instructions. This will make it easy to run all available trajectory inference methods.
-
-You can test whether docker is correctly installed by:
-
-``` r
-dynwrap::test_docker_installation(detailed = TRUE)
-#> ✔ Docker is installed
-#> ✔ Docker daemon is running
-#> ✔ Docker is at correct version (>1.0): 1.37
-#> ✔ Docker is in linux mode
-#> ✔ Docker can pull images
-#> ✔ Docker can run image
-#> ✔ Docker can mount temporary volumes
-#> ✔ Docker test succesful ------------------------------------------------------------------
-#> [1] TRUE
-```
+For information on how to install dyno, check out the [installation instructions below](https://github.com/dynverse/dyno#installation).
 
 Trajectory inference workflow
 -----------------------------
@@ -75,7 +49,7 @@ task <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from (Saelens et al. 2018) ([doi](https://doi.org/10.1101/276907)).
+The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from the [dynalysis](https://github.com/dynverse/dynalysis) benchmarking study.
 
 ``` r
 guidelines <- guidelines_shiny(task)
@@ -86,15 +60,13 @@ methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first
 
 ### Running the methods
 
-To make it easy to plot and interpret trajectories from different methods, we use wrappers for each method, transforming its input and output into common models.
+All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to [have docker installed](#Installation).
 
 ``` r
-model %<-% infer_trajectory(task, methods[[1]])
+model <- infer_trajectory(task, "tscan")
 ```
 
-    #> NULL
-
-### Making the trajectory interpretable
+### Interpreting the trajectory biologically
 
 In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.
 
@@ -119,7 +91,8 @@ model <- label_milestones_markers(
     Myocyte = c("Myl1"),
     Neuron = c("Stmn3")
   ),
-  task$expression)
+  task$expression
+)
 ```
 
 ### Plotting the trajectory
@@ -167,9 +140,9 @@ plot_dimred(
 
 <img src="docs/figures/README-dimred_groups-1.png" width="100%" />
 
-### Plotting relevant features
+### Predicting and visualising genes of interest
 
-We integrate several methods to extract relevant genes/features from a trajectory.
+We integrate several methods to extract candidate marker genes/features from a trajectory.
 
 #### A global overview of the most predictive genes
 
@@ -240,7 +213,34 @@ map(branching_point_features[1:12], function(feature_oi) {
 
 <img src="docs/figures/README-branching_point_dimred-1.png" width="100%" />
 
-References
-----------
+Installation
+------------
 
-Saelens, Wouter\*, Robrecht\* Cannoodt, Helena Todorov, and Yvan Saeys. 2018. “A Comparison of Single-Cell Trajectory Inference Methods: Towards More Accurate and Robust Tools.” *bioRxiv*, March, 276907. doi:[10.1101/276907](https://doi.org/10.1101/276907).
+You can install dyno from github using:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("dynverse/dyno")
+```
+
+On Linux, you will need to install udunits and imagemagic:
+
+-   Debian / Ubuntu / Linux Mint: `sudo apt-get install libudunits2-dev imagemagick`
+-   Fedora / CentOS / RHEL: `sudo dnf install udunits2-devel ImageMagick-c++-devel`
+
+Although not required, we also highly recommend you install Docker. This will make it easy to run all available trajectory inference methods. See <https://docs.docker.com/install> for instructions.
+
+You can test whether docker is correctly installed by running:
+
+``` r
+dynwrap::test_docker_installation(detailed = TRUE)
+#> ✔ Docker is installed
+#> ✔ Docker daemon is running
+#> ✔ Docker is at correct version (>1.0): 1.37
+#> ✔ Docker is in linux mode
+#> ✔ Docker can pull images
+#> ✔ Docker can run image
+#> ✔ Docker can mount temporary volumes
+#> ✔ Docker test succesful ------------------------------------------------------------------
+#> [1] TRUE
+```
