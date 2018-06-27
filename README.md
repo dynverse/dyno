@@ -14,7 +14,7 @@ Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" />
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 [![Build Status](https://api.travis-ci.org/dynverse/dyno.svg)](https://travis-ci.org/dynverse/dyno)
 
-The dyno package guides the user through the full path of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
+The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, to the running of these methods, right to the interpretation and visualisation of the trajectories.
 
 Installation
 ------------
