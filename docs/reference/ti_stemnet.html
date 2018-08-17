@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a> — ti_stemnet • dyno</title>
+<title>Inferring a trajectory inference using STEMNET — ti_stemnet • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a> — ti_stemnet" />
+<meta property="og:title" content="Inferring a trajectory inference using STEMNET — ti_stemnet" />
 
-<meta property="og:description" content="Will generate a trajectory using STEMNET. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using STEMNET.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,46 +104,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using STEMNET</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_stemnet.R'><code>R/ti_stemnet.R</code></a></small>
     <div class="hidden name"><code>ti_stemnet.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/stemnet'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/stemnet'>container</a>.
+The original code of this method is available
+<a href='https://git.embl.de/velten/STEMNET'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_stemnet</span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>lambda_auto</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lambda</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_stemnet</span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>lambda_auto</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lambda</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
+  <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>alpha</th>
-      <td><p>The elastic net mixing parameter of the ‘glmnet’ classifier. <br />
-numeric; default: 0.1; possible values between 0.001 and 10</p></td>
+      <td><p>numeric; The elastic net mixing parameter of the ‘glmnet’
+classifier. (default: <code>0.1</code>; range: from <code>0.001</code> to <code>10L</code>)</p></td>
     </tr>
     <tr>
       <th>lambda_auto</th>
-      <td><p>Whether to select the lambda by cross-validation <br /></p></td>
+      <td><p>logical; Whether to select the lambda by cross-validation</p></td>
     </tr>
     <tr>
       <th>lambda</th>
-      <td><p>The lambda penalty of GLM. <br />
-numeric; default: 0.1; possible values between 0.05 and 1</p></td>
+      <td><p>numeric; The lambda penalty of GLM. (default: <code>0.1</code>; range: from
+<code>0.05</code> to <code>1L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>force</th>
+      <td><p>logical; Do not use! This is a parameter to force FateID to run on
+benchmark datasets where not enough end groups are present.</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://git.embl.de/velten/STEMNET'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1038/ncb3493'>Velten, L., Haas, S.F., Raffel, S., Blaszkiewicz, S., Islam, S., Hennig, B.P., Hirche, C., Lutz, C., Buss, E.C., Nowak, D., Boch, T., Hofmann, W.-K., Ho, A.D., Huber, W., Trumpp, A., Essers, M.A.G., Steinmetz, L.M., 2017. Human haematopoietic stem cell lineage commitment is a continuous process. Nature Cell Biology 19, 271–281.</a></p>
+    <p>Velten, L., Haas, S.F., Raffel, S., Blaszkiewicz, S., Islam, S.,
+Hennig, B.P., Hirche, C., Lutz, C., Buss, E.C., Nowak, D., Boch, T., Hofmann,
+W.-K., Ho, A.D., Huber, W., Trumpp, A., Essers, M.A.G., Steinmetz, L.M., 2017.
+Human haematopoietic stem cell lineage commitment is a continuous process.
+Nature Cell Biology 19, 271–281.</p>
     
 
   </div>
@@ -150,7 +172,7 @@ numeric; default: 0.1; possible values between 0.05 and 1</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

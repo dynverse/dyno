@@ -16,7 +16,7 @@
    id="svg8"
    inkscape:version="0.92.3 (d244b95, 2018-08-02)"
    sodipodi:docname="toolkit.svg"
-   inkscape:export-filename="/home/wouters/thesis/projects/dynverse/dyno/man/img/toolkit.png"
+   inkscape:export-filename="/home/wouters/thesis/projects/dynverse/dyno/man/figures/toolkit.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -661,16 +661,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="257.03919"
-     inkscape:cy="284.01046"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="789.13478"
+     inkscape:cy="225.97726"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="983"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -690,7 +690,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1935,9 +1935,9 @@
              id="text13755"
              y="184.13623"
              x="367.67856"
-             style="font-style:normal;font-weight:normal;font-size:242.47445679px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:6.06186104"
+             style="font-style:normal;font-weight:normal;font-size:242.47445679px;line-height:1.25;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:6.06186104;-inkscape-font-specification:'DejaVu Sans';font-stretch:normal;font-variant:normal;"
              xml:space="preserve"><tspan
-               style="font-size:64.6598587px;stroke-width:6.06186104"
+               style="font-size:64.6598587px;stroke-width:6.06186104;-inkscape-font-specification:'DejaVu Sans';font-family:'DejaVu Sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
                y="184.13623"
                x="367.67856"
                id="tspan13753"
@@ -1952,9 +1952,9 @@
              id="text13755-2"
              y="365.99207"
              x="106.26109"
-             style="font-style:normal;font-weight:normal;font-size:242.47445679px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:6.06186104"
+             style="font-style:normal;font-weight:normal;font-size:242.47445679px;line-height:1.25;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:6.06186104;-inkscape-font-specification:'DejaVu Sans';font-stretch:normal;font-variant:normal;"
              xml:space="preserve"><tspan
-               style="font-size:64.6598587px;stroke-width:6.06186104"
+               style="font-size:64.6598587px;stroke-width:6.06186104;-inkscape-font-specification:'DejaVu Sans';font-family:'DejaVu Sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"
                y="365.99207"
                x="106.26109"
                id="tspan13753-0"

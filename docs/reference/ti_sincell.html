@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Sincell — ti_sincell • dyno</title>
+<title>Inferring a trajectory inference using Sincell — ti_sincell • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Sincell — ti_sincell" />
+<meta property="og:title" content="Inferring a trajectory inference using Sincell — ti_sincell" />
 
-<meta property="og:description" content="Inferring trajectories with Sincell
-Will generate a trajectory using Sincell. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+Sincell.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,105 +105,158 @@ Will generate a trajectory using Sincell. This method was wrapped inside a conta
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with Sincell</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_sincell.R'><code>R/ti_sincell.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Sincell</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_sincell.R'><code>R/ti_sincell.R</code></a></small>
     <div class="hidden name"><code>ti_sincell.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with Sincell</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1093/bioinformatics/btv368'>Sincell</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/sincell'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1093/bioinformatics/btv368'>Sincell</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/sincell'>container</a>.
+The original code of this method is available
+<a href='https://github.com/Cortalak/MCA_Sincell_0'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_sincell</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
-  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
-  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)
-
-<span class='fu'>ti_sincell</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
-  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
-  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_sincell</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>dimred_method</span> <span class='kw'>=</span> <span class='st'>"none"</span>,
+  <span class='kw'>clust.method</span> <span class='kw'>=</span> <span class='st'>"max.distance"</span>, <span class='kw'>mutual</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>max.distance</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>shortest.rank.percent</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>graph.algorithm</span> <span class='kw'>=</span> <span class='st'>"MST"</span>,
+  <span class='kw'>graph.using.cells.clustering</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>k_imc</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+  <span class='kw'>pct_leaf_node_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>distance_method</th>
-      <td><p>Distance method to be used. The available distances are the Euclidean distance (method="euclidean"), Manhattan distance (also called L1 distance, method="L1"), cosine distance (method="cosine") , distance based on Pearson (method="pearson") or Spearman (method="spearman") correlation coefficients, and distance based on Mutual Information (method="MI"). Intervals used to assess Mutual Information are indicated in the parameter "bins".</p></td>
+      <td><p>discrete; Distance method to be used. The available
+distances are the Euclidean distance (method="euclidean"), Manhattan distance
+(also called L1 distance, method="L1"), cosine distance (method="cosine") ,
+distance based on Pearson (method="pearson") or Spearman (method="spearman")
+correlation coefficients, and distance based on Mutual Information
+(method="MI"). Intervals used to assess Mutual Information are indicated in the
+parameter 'bins'. (default: <code>"euclidean"</code>; values: <code>"euclidean"</code>, <code>"cosine"</code>,
+<code>"pearson"</code>, <code>"spearman"</code>, <code>"L1"</code>, <code>"MI"</code>)</p></td>
     </tr>
     <tr>
       <th>dimred_method</th>
-      <td><p>Dimensionality reduction algorithm to be used. Options are: Principal Component Analysis (method="PCA"), Independent Component Analysis (method="ICA"; using fastICA() function in fastICA package), t-Distributed Stochastic Neighbor Embedding (method="tSNE"; using Rtsne() function in Rtsne package with parameters tsne.perplexity=1 and tsne.theta=0.25), classical Multidimensional Scaling (method="classical-MDS"; using the cmdscale() function) and non-metric Multidimensional Scaling (method="nonmetric-MDS";using the isoMDS() function in MASS package). if method="PCA" is chosen, the proportion of variance explained by each of the principal axes is plotted. We note that Sincell makes use of the Rtsne implementation of the Barnes-Hut algorithm, which approximates the likelihood. The user should be aware that this is a less accurate version of t-SNE than e.g. the one used as basis of viSNE (Amir,E.D. et al. 2013, Nat Biotechnol 31, 545-552).</p></td>
+      <td><p>discrete; Dimensionality reduction algorithm to be used.
+Options are: Principal Component Analysis (method="PCA"), Independent Component
+Analysis (method="ICA"; using fastICA() function in fastICA package),
+t-Distributed Stochastic Neighbor Embedding (method="tSNE"; using Rtsne()
+function in Rtsne package with parameters tsne.perplexity=1 and
+tsne.theta=0.25), classical Multidimensional Scaling (method="classical-MDS";
+using the cmdscale() function) and non-metric Multidimensional Scaling
+(method="nonmetric-MDS";using the isoMDS() function in MASS package). if
+method="PCA" is chosen, the proportion of variance explained by each of the
+principal axes is plotted. We note that Sincell makes use of the Rtsne
+implementation of the Barnes-Hut algorithm, which approximates the likelihood.
+The user should be aware that this is a less accurate version of t-SNE than
+e.g. the one used as basis of viSNE (Amir,E.D. et al. 2013, Nat Biotechnol 31,
+545-552). (default: <code>"none"</code>; values: <code>"none"</code>, <code>"PCA"</code>, <code>"ICA"</code>, <code>"tSNE"</code>,
+<code>"classical-MDS"</code>, <code>"nonmetric-MDS"</code>)</p></td>
     </tr>
     <tr>
       <th>clust.method</th>
-      <td><p>If clust.method="max.distance", clusters are defined as subgraphs generated by a maximum pair-wise distance cut-off, that is: from a totally connected graph where all cells are connected to each other, the algorithm only keeps pairs of cells connected by a distance lower than a given threshold.</p>
-<p>If clust.method="percent", clusters are defined as subgraphs generated by a given rank-percentile of the shortest pair-wise distances, that is; from a totally connected graph where all cells are connected to each other, the algorithm only keeps the top “x” percent of shortest pairwise distances as indicated by "shortest.rank.percent".</p>
-<p>If clust.method="knn", unsupervised K-Nearest Neighbors (K-NN) clustering is performed: From a totally disconnected graph where none of the cells are connected to each other, the algorithm connects each cell to its “k” nearest neighbors. If parameter "mutual=TRUE", Unsupervised K-Mutual Nearest Neighbours (K-MNN) clustering is performed, that is: only reciprocal k nearest neighbors are connected.</p>
-<p>If clust.method="k-medoids", clustering around medoids (a more robust version of k-means) is performed with function "pam" from package "cluster" on the distance matrix in mySincellObject[["cell2celldist"]] with a desired number of groups indicated in parameter "num.clusters"</p>
-<p>Hierarchical agglomerative clustering can be performed by internally calling function "hclust" where the agglomeration method is indicated in parameter "clust.method" as one of "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC). Clusters are obtained by cutting the tree produced by hclust with function cutree with a desired number of groups indicated in parameter "num.clusters"</p></td>
+      <td><p>discrete; If clust.method="max.distance", clusters are
+defined as subgraphs generated by a maximum pair-wise distance cut-off, that
+is: from a totally connected graph where all cells are connected to each other,
+the algorithm only keeps pairs of cells connected by a distance lower than a
+given threshold.If clust.method="percent", clusters are defined as subgraphs
+generated by a given rank-percentile of the shortest pair-wise distances, that
+is; from a totally connected graph where all cells are connected to each other,
+the algorithm only keeps the top 'x' percent of shortest pairwise distances as
+indicated by "shortest.rank.percent".If clust.method="knn", unsupervised
+K-Nearest Neighbors (K-NN) clustering is performed: From a totally disconnected
+graph where none of the cells are connected to each other, the algorithm
+connects each cell to its 'k' nearest neighbors. If parameter "mutual=TRUE",
+Unsupervised K-Mutual Nearest Neighbours (K-MNN) clustering is performed, that
+is: only reciprocal k nearest neighbors are connected.If
+clust.method="k-medoids", clustering around medoids (a more robust version of
+k-means) is performed with function "pam" from package "cluster" on the
+distance matrix in mySincellObject$cell2celldist with a desired number of
+groups indicated in parameter "num.clusters"Hierarchical agglomerative
+clustering can be performed by internally calling function "hclust" where the
+agglomeration method is indicated in parameter "clust.method" as one of
+"ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (=
+WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC). Clusters are obtained by
+cutting the tree produced by hclust with function cutree with a desired number
+of groups indicated in parameter "num.clusters" (default: <code>"max.distance"</code>;
+values: <code>"max.distance"</code>, <code>"percent"</code>, <code>"knn"</code>, <code>"k-medoids"</code>, <code>"ward.D"</code>,
+<code>"ward.D2"</code>, <code>"single"</code>, <code>"complete"</code>, <code>"average"</code>, <code>"mcquitty"</code>, <code>"median"</code>,
+<code>"centroid"</code>)</p></td>
     </tr>
     <tr>
       <th>mutual</th>
-      <td><p>If clust.method="knn" and "mutual=TRUE", Unsupervised K-Mutual Nearest Neighbours (K-MNN) clustering is performed, that is: only reciprocal k nearest neighbors are connected.</p></td>
+      <td><p>logical; If clust.method="knn" and "mutual=TRUE", Unsupervised
+K-Mutual Nearest Neighbours (K-MNN) clustering is performed, that is: only
+reciprocal k nearest neighbors are connected.</p></td>
     </tr>
     <tr>
       <th>max.distance</th>
-      <td><p>in max.distance algorithm, select up to which distance the points will be linked</p></td>
+      <td><p>numeric; In max.distance algorithm, select up to which
+distance the points will be linked (default: <code>0</code>; range: from <code>0</code> to <code>5</code>)</p></td>
     </tr>
     <tr>
       <th>k</th>
-      <td><p>If clust.method="knn", k is an integer specifying the number of nearest neighbors to consider in K-NN and K-KNN</p></td>
+      <td><p>integer; If clust.method="knn", k is an integer specifying the number
+of nearest neighbors to consider in K-NN and K-KNN (default: <code>3L</code>; range: from
+<code>1L</code> to <code>99L</code>)</p></td>
     </tr>
     <tr>
       <th>shortest.rank.percent</th>
-      <td><p>in percent algorithm, select the percent of shortest distances will be represented as links</p></td>
+      <td><p>numeric; In percent algorithm, select the percent
+of shortest distances will be represented as links (default: <code>10</code>; range: from
+<code>0</code> to <code>100</code>)</p></td>
     </tr>
     <tr>
       <th>graph.algorithm</th>
-      <td><p>Graph building algorithm to be used: the Minimum Spanning Tree 
-(graph.algorithm="MST"), the Maximum Similarity Spanning Tree 
-(graph.algorithm="SST") and the Iterative Mutual Clustering Graph 
-(graph.algorithm="IMC").</p></td>
+      <td><p>discrete; Graph building algorithm to be used: the
+Minimum Spanning Tree (graph.algorithm="MST"), the Maximum Similarity Spanning
+Tree (graph.algorithm="SST") and the Iterative Mutual Clustering Graph
+(graph.algorithm="IMC"). (default: <code>"MST"</code>; values: <code>"MST"</code>, <code>"SST"</code>,
+<code>"IMC"</code>)</p></td>
     </tr>
     <tr>
       <th>graph.using.cells.clustering</th>
-      <td><p>If graph.using.cells.clustering=TRUE and graph.algorithm="MST" or graph.algorithm="MST", a precalculated clustering of cells is used. The clustering of cells is taken from SincellObject[["cellsClustering"]] as calculated by function sc_clusterObj().</p></td>
+      <td><p>logical; If
+graph.using.cells.clustering=TRUE and graph.algorithm="MST" or
+graph.algorithm="MST", a precalculated clustering of cells is used. The
+clustering of cells is taken from SincellObject$cellsClustering as calculated
+by function sc_clusterObj().</p></td>
     </tr>
     <tr>
       <th>k_imc</th>
-      <td><p>If IMC algorithm is selected, the number of nearest neighbors used in the underlying K-Mutual Nearest Neighbour (K-MNN) algorithm is set to k.</p></td>
+      <td><p>integer; If IMC algorithm is selected, the number of nearest
+neighbors used in the underlying K-Mutual Nearest Neighbour (K-MNN) algorithm
+is set to k. (default: <code>3L</code>; range: from <code>1L</code> to <code>99L</code>)</p></td>
     </tr>
     <tr>
       <th>pct_leaf_node_cutoff</th>
-      <td><p>Leaf nodes are iteratively removed until the percentage of leaf nodes is below the given cutoff. Removed nodes are projected to their closest neighbour. This is to constrain the number of milestones being created.</p></td>
+      <td><p>numeric; Leaf nodes are iteratively removed until
+the percentage of leaf nodes is below the given cutoff. Removed nodes are
+projected to their closest neighbour. This is to constrain the number of
+milestones being created. (default: <code>0.5</code>; range: from <code>0.01</code> to <code>0.8</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_sincell</p>
-<p>The original code of this method is available <a href='https://github.com/Cortalak/MCA_Sincell_0'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1093/bioinformatics/btv368'>Juliá, M., Telenti, A., Rausell, A., 2015. Sincell: an R/Bioconductor package for statistical assessment of cell-state hierarchies from single-cell RNA-seq: Fig. 1. Bioinformatics 31, 3380–3382.</a></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_distanceObj'>sincell::sc_distanceObj()</a></code>, <code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_DimensionalityReductionObj'>sincell::sc_DimensionalityReductionObj()</a></code>, <code><a href='http://www.rdocumentation.org/packages/sincell/topics/sc_clusterObj'>sincell::sc_clusterObj()</a></code></p></div>
+    <p>Juliá, M., Telenti, A., Rausell, A., 2015. Sincell: an
+R/Bioconductor package for statistical assessment of cell-state hierarchies
+from single-cell RNA-seq: Fig. 1. Bioinformatics 31, 3380–3382.</p>
     
 
   </div>
@@ -210,9 +267,7 @@ Will generate a trajectory using Sincell. This method was wrapped inside a conta
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

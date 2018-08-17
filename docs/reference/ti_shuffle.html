@@ -33,8 +33,7 @@
 <meta property="og:title" content="Inferring trajectories with Control: shuffle — ti_shuffle" />
 
 <meta property="og:description" content="This control method will return the milestone network of the provided
-gold standard, but will shuffle the cell positions randomly.
-Will generate a trajectory using Control: shuffle. This method was wrapped inside a container." />
+gold standard, but will shuffle the cell positions randomly." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -103,7 +102,7 @@ Will generate a trajectory using Control: shuffle. This method was wrapped insid
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Inferring trajectories with Control: shuffle</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_shuffle.R'><code>R/ti_shuffle.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_shuffle.R'><code>R/ti_shuffle.R</code></a></small>
     <div class="hidden name"><code>ti_shuffle.Rd</code></div>
     </div>
 
@@ -111,34 +110,19 @@ Will generate a trajectory using Control: shuffle. This method was wrapped insid
     
     <p>This control method will return the milestone network of the provided
 gold standard, but will shuffle the cell positions randomly.</p>
-<p>Will generate a trajectory using Control: shuffle. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/shuffle'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_shuffle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)
-
-<span class='fu'>ti_shuffle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_shuffle</span>(<span class='kw'>dummy_param</span> <span class='kw'>=</span> <span class='fl'>0.5</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>dummy_param</th>
       <td><p>This parameter does not do anything.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>The trajectory model</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This methods was first wrapped inside R, see ti_shuffle</p>
     
 
   </div>
@@ -146,11 +130,7 @@ gold standard, but will shuffle the cell positions randomly.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-          </ul>
+                </ul>
 
   </div>
 </div>

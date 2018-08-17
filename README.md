@@ -1,4 +1,4 @@
-Inferring trajectories using dyno <img src="docs/dyno.gif" align="right" width="150px" />
+Inferring trajectories using dyno <img src="man/figures/dyno.gif" align="right" width="150px" />
 ================
 
 -   [Trajectory inference workflow](#trajectory-inference-workflow)
@@ -32,7 +32,7 @@ library(tidyverse)
 
 The whole trajectory inference workflow is divided in several steps:
 
-![](man/img/toolkit.png)
+![](man/figures/toolkit.png)
 
 ### Preparing the data
 
@@ -49,18 +49,18 @@ dataset <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from the [dynalysis](https://github.com/dynverse/dynalysis) benchmarking study.
+The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from the [dynbenchmark](https://github.com/dynverse/dynbenchmark) benchmarking study.
 
 ``` r
 guidelines <- guidelines_shiny(dataset)
 methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first()
 ```
 
-![](docs/dynguidelines.gif)
+![](man/figures/dynguidelines.gif)
 
 ### Running the methods
 
-All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to [have docker installed](#Installation).
+All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to [have docker installed](#Installation).
 
 ``` r
 model <- infer_trajectory(dataset, "projected_tscan")
@@ -110,7 +110,7 @@ plot_dimred(
 )
 ```
 
-<img src="man//README-dimred-1.png" width="100%" />
+<img src="man/figures/dimred-1.png" width="100%" />
 
 Similarly, the expression of a gene:
 
@@ -122,7 +122,7 @@ plot_dimred(
 )
 ```
 
-<img src="man//README-dimred_expression-1.png" width="100%" />
+<img src="man/figures/dimred_expression-1.png" width="100%" />
 
 Groups can also be visualised using a background color
 
@@ -138,7 +138,7 @@ plot_dimred(
 )
 ```
 
-<img src="man//README-dimred_groups-1.png" width="100%" />
+<img src="man/figures/dimred_groups-1.png" width="100%" />
 
 ### Predicting and visualising genes of interest
 
@@ -157,7 +157,7 @@ plot_heatmap(
 )
 ```
 
-<img src="man//README-heatmap-1.png" width="100%" />
+<img src="man/figures/heatmap-1.png" width="100%" />
 
 #### Lineage/branch markers
 
@@ -180,7 +180,7 @@ plot_heatmap(
 )
 ```
 
-<img src="man//README-branch-1.png" width="100%" />
+<img src="man/figures/branch-1.png" width="100%" />
 
 #### Genes important at bifurcation points
 
@@ -200,7 +200,7 @@ plot_heatmap(
 )
 ```
 
-<img src="man//README-branching_point-1.png" width="100%" />
+<img src="man/figures/branching_point-1.png" width="100%" />
 
 ``` r
 space <- dyndimred::dimred_mds(dataset$expression)
@@ -211,7 +211,7 @@ map(branching_point_features[1:12], function(feature_oi) {
 }) %>% patchwork::wrap_plots()
 ```
 
-<img src="man//README-branching_point_dimred-1.png" width="100%" />
+<img src="man/figures/branching_point_dimred-1.png" width="100%" />
 
 Installation
 ------------
@@ -228,7 +228,7 @@ On Linux, you will need to install udunits and ImageMagick:
 -   Debian / Ubuntu / Linux Mint: `sudo apt-get install libudunits2-dev imagemagick`
 -   Fedora / CentOS / RHEL: `sudo dnf install udunits2-devel ImageMagick-c++-devel`
 
-Although not required, we also highly recommend you install [Docker](https://docs.docker.com/install). This will make it easy to run all available trajectory inference methods. See <https://docs.docker.com/install> for instructions.
+[Docker](https://docs.docker.com/install) has to be installed to run TI methods. See <https://docs.docker.com/install> for instructions.
 
 You can test whether docker is correctly installed by running:
 
@@ -244,3 +244,5 @@ dynwrap::test_docker_installation(detailed = TRUE)
 #> ✔ Docker test successful -----------------------------------------------------------------
 #> [1] TRUE
 ```
+
+This command will give helpful tips if some parts of the installation are missing.

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with SCOUP — ti_scoup • dyno</title>
+<title>Inferring a trajectory inference using SCOUP — ti_scoup • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with SCOUP — ti_scoup" />
+<meta property="og:title" content="Inferring a trajectory inference using SCOUP — ti_scoup" />
 
-<meta property="og:description" content="Inferring trajectories with SCOUP
-Will generate a trajectory using SCOUP. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+SCOUP.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,80 +105,90 @@ Will generate a trajectory using SCOUP. This method was wrapped inside a contain
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with SCOUP</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scoup.R'><code>R/ti_scoup.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using SCOUP</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scoup.R'><code>R/ti_scoup.R</code></a></small>
     <div class="hidden name"><code>ti_scoup.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with SCOUP</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1186/s12859-016-1109-3'>SCOUP</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scoup'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1186/s12859-016-1109-3'>SCOUP</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/scoup'>container</a>.
+The original code of this method is available
+<a href='https://github.com/hmatsu1226/SCOUP'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_scoup</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>max_ite1</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>max_ite2</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>alpha_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>alpha_max</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>t_min</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>t_max</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>sigma_squared_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.01</span>)
-
-<span class='fu'>ti_scoup</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>max_ite1</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>max_ite2</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>alpha_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>alpha_max</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>t_min</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>t_max</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>sigma_squared_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.01</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_scoup</span>(<span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>max_ite1</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>max_ite2</span> <span class='kw'>=</span> <span class='fl'>100</span>,
+  <span class='kw'>alpha_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>alpha_max</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>t_min</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>t_max</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>sigma_squared_min</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>ndim</th>
-      <td><p>Number of pca dimensions</p></td>
+      <td><p>integer; Number of pca dimensions (default: <code>2L</code>; range: from <code>2L</code>
+to <code>20L</code>)</p></td>
     </tr>
     <tr>
       <th>max_ite1</th>
-      <td><p>Upper bound of EM iteration (without pseudo-time optimization). The detailed explanation is described in the supplementary text. (default is 1,000)</p></td>
+      <td><p>numeric; Upper bound of EM iteration (without pseudo-time
+optimization). The detailed explanation is described in the supplementary text.
+(default is 1,000) (default: <code>100</code>; range: from <code>2</code> to <code>5000</code>)</p></td>
     </tr>
     <tr>
       <th>max_ite2</th>
-      <td><p>Upper bound of EM iteration (including pseudo-time optimization) (default is 1,000).</p></td>
+      <td><p>numeric; Upper bound of EM iteration (including pseudo-time
+optimization) (default is 1,000). (default: <code>100</code>; range: from <code>2</code> to <code>5e+05</code>)</p></td>
     </tr>
     <tr>
       <th>alpha_min</th>
-      <td><p>Lower bound of alpha (default is 0.1)</p></td>
+      <td><p>numeric; Lower bound of alpha (default is 0.1) (default:
+<code>0.1</code>; range: from <code>0.001</code> to <code>10</code>)</p></td>
     </tr>
     <tr>
       <th>alpha_max</th>
-      <td><p>Upper bound of alpha (default is 100)</p></td>
+      <td><p>numeric; Upper bound of alpha (default is 100) (default:
+<code>100</code>; range: from <code>1</code> to <code>10000</code>)</p></td>
     </tr>
     <tr>
       <th>t_min</th>
-      <td><p>Lower bound of pseudo-time (default is 0.001)</p></td>
+      <td><p>numeric; Lower bound of pseudo-time (default is 0.001) (default:
+<code>0.001</code>; range: from <code>1e-05</code> to <code>1</code>)</p></td>
     </tr>
     <tr>
       <th>t_max</th>
-      <td><p>Upper bound of pseudo-time (default is 2.0)</p></td>
+      <td><p>numeric; Upper bound of pseudo-time (default is 2.0) (default:
+<code>2</code>; range: from <code>0.1</code> to <code>100</code>)</p></td>
     </tr>
     <tr>
       <th>sigma_squared_min</th>
-      <td><p>Lower bound of sigma squared (default is 0.1)</p></td>
+      <td><p>numeric; Lower bound of sigma squared (default is 0.1)
+(default: <code>0.1</code>; range: from <code>0.001</code> to <code>10</code>)</p></td>
     </tr>
     <tr>
       <th>thresh</th>
-      <td><p>Threshold</p></td>
+      <td><p>numeric; Threshold (default: <code>0.01</code>; range: from <code>0.01</code> to <code>10</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_scoup</p>
-<p>The original code of this method is available <a href='https://github.com/hmatsu1226/SCOUP'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1186/s12859-016-1109-3'>Matsumoto, H., Kiryu, H., 2016. SCOUP: a probabilistic model based on the Ornstein–Uhlenbeck process to analyze single-cell expression data during differentiation. BMC Bioinformatics 17.</a></p>
+    <p>Matsumoto, H., Kiryu, H., 2016. SCOUP: a probabilistic model based
+on the Ornstein–Uhlenbeck process to analyze single-cell expression data during
+differentiation. BMC Bioinformatics 17.</p>
     
 
   </div>
@@ -185,7 +199,7 @@ Will generate a trajectory using SCOUP. This method was wrapped inside a contain
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

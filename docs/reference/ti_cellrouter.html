@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a> — ti_cellrouter • dyno</title>
+<title>Inferring a trajectory inference using CellRouter — ti_cellrouter • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a> — ti_cellrouter" />
+<meta property="og:title" content="Inferring a trajectory inference using CellRouter — ti_cellrouter" />
 
-<meta property="og:description" content="Will generate a trajectory using CellRouter. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+CellRouter.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,101 +105,120 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using CellRouter</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_cellrouter.R'><code>R/ti_cellrouter.R</code></a></small>
     <div class="hidden name"><code>ti_cellrouter.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/cellrouter'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/cellrouter'>container</a>.
+The original code of this method is available
+<a href='https://github.com/edroaldo/cellrouter'>here</a>.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ti_cellrouter</span>(<span class='kw'>ndim_pca</span> <span class='kw'>=</span> <span class='fl'>20L</span>, <span class='kw'>ndim_tsne</span> <span class='kw'>=</span> <span class='fl'>11L</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>1000L</span>,
   <span class='kw'>cluster_method</span> <span class='kw'>=</span> <span class='st'>"graph.clustering"</span>, <span class='kw'>k_clustering</span> <span class='kw'>=</span> <span class='fl'>20L</span>,
   <span class='kw'>ndim_pca_clustering</span> <span class='kw'>=</span> <span class='fl'>20L</span>, <span class='kw'>k_knn</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>ndim_pca_knn</span> <span class='kw'>=</span> <span class='fl'>20L</span>,
-  <span class='kw'>sim_type</span> <span class='kw'>=</span> <span class='st'>"jaccard"</span>, <span class='kw'>distance_method_paths</span> <span class='kw'>=</span> <span class='st'>"graph"</span>, <span class='kw'>ranks</span> <span class='kw'>=</span> <span class='st'>"rank"</span>,
-  <span class='kw'>num_cells</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>neighs</span> <span class='kw'>=</span> <span class='fl'>3L</span>)</pre>
+  <span class='kw'>sim_type</span> <span class='kw'>=</span> <span class='st'>"jaccard"</span>, <span class='kw'>distance_method_paths</span> <span class='kw'>=</span> <span class='st'>"graph"</span>,
+  <span class='kw'>ranks</span> <span class='kw'>=</span> <span class='st'>"rank"</span>, <span class='kw'>num_cells</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>neighs</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>perplexity</span> <span class='kw'>=</span> <span class='fl'>30L</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>ndim_pca</th>
-      <td><p>Number of principlal components to compute <br />
-integer; default: 20L; possible values between 2 and 100</p></td>
+      <td><p>integer; Number of principlal components to compute (default:
+<code>20L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>ndim_tsne</th>
-      <td><p>Number of tsne dimensions to compute <br />
-integer; default: 11L; possible values between 2 and 100</p></td>
+      <td><p>integer; Number of tsne dimensions to compute (default: <code>11L</code>;
+range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>max_iter</th>
-      <td><p>Maximal number of tsne iterations <br />
-integer; default: 1000L; possible values between 100 and 100000</p></td>
+      <td><p>integer; Maximal number of tsne iterations (default: <code>1000L</code>;
+range: from <code>100L</code> to <code>100000L</code>)</p></td>
     </tr>
     <tr>
       <th>cluster_method</th>
-      <td><p>Method to use for clustering <br />
-discrete; default: "graph.clustering"; possible values: graph.clustering, model.clustering</p></td>
+      <td><p>discrete; Method to use for clustering (default:
+<code>"graph.clustering"</code>; values: <code>"graph.clustering"</code>, <code>"model.clustering"</code>)</p></td>
     </tr>
     <tr>
       <th>k_clustering</th>
-      <td><p>Number of nearest neighbors to build a k-nearest neighbors graph for clustering <br />
-integer; default: 20L; possible values between 2 and 1000</p></td>
+      <td><p>integer; Number of nearest neighbors to build a k-nearest
+neighbors graph for clustering (default: <code>20L</code>; range: from <code>2L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>ndim_pca_clustering</th>
-      <td><p>Number of PCA dimensions used for k-nearest neighbors graph for clustering <br />
-integer; default: 20L; possible values between 2 and 100</p></td>
+      <td><p>integer; Number of PCA dimensions used for k-nearest
+neighbors graph for clustering (default: <code>20L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>k_knn</th>
-      <td><p>Number of nearest neighbors to build a k-nearest neighbors graph for knn <br />
-integer; default: 10L; possible values between 2 and 1000</p></td>
+      <td><p>integer; Number of nearest neighbors to build a k-nearest
+neighbors graph for knn (default: <code>10L</code>; range: from <code>2L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>ndim_pca_knn</th>
-      <td><p>Number of PCA dimensions used for knn <br />
-integer; default: 20L; possible values between 2 and 100</p></td>
+      <td><p>integer; Number of PCA dimensions used for knn (default:
+<code>20L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>sim_type</th>
-      <td><p>Similarity type for knn <br />
-discrete; default: "jaccard"; possible values: jaccard</p></td>
+      <td><p>discrete; Similarity type for knn (default: <code>"jaccard"</code>;
+values: <code>"jaccard"</code>)</p></td>
     </tr>
     <tr>
       <th>distance_method_paths</th>
-      <td><p>Distance method for paths <br />
-discrete; default: "graph"; possible values: euclidean, maximum, manhattan, canberra, binary, graph</p></td>
+      <td><p>discrete; Distance method for paths (default:
+<code>"graph"</code>; values: <code>"euclidean"</code>, <code>"maximum"</code>, <code>"manhattan"</code>, <code>"canberra"</code>,
+<code>"binary"</code>, <code>"graph"</code>)</p></td>
     </tr>
     <tr>
       <th>ranks</th>
-      <td><p>How to rank the paths <br />
-discrete; default: "rank"; possible values: path_cost, path_flow, rank, length</p></td>
+      <td><p>discrete; How to rank the paths (default: <code>"rank"</code>; values:
+<code>"path_cost"</code>, <code>"path_flow"</code>, <code>"rank"</code>, <code>"length"</code>)</p></td>
     </tr>
     <tr>
       <th>num_cells</th>
-      <td><p>Trajectories should contain at least num.cells <br />
-integer; default: 3L; possible values between 3 and 100</p></td>
+      <td><p>integer; Trajectories should contain at least num.cells
+(default: <code>3L</code>; range: from <code>3L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>neighs</th>
-      <td><p>The size of the neighborhood in kNN graph used to smoothen kinetic profiles <br />
-integer; default: 3L; possible values between 2 and 100</p></td>
+      <td><p>integer; The size of the neighborhood in kNN graph used to
+smoothen kinetic profiles (default: <code>3L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>perplexity</th>
+      <td><p>numeric; Perplexity parameter for tsne (default: <code>30L</code>;
+range: from <code>5L</code> to <code>100L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/edroaldo/cellrouter'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1038/s41467-018-03214-y'>Lummertz da Rocha, E., Rowe, R.G., Lundin, V., Malleshaiah, M., Jha, D.K., Rambo, C.R., Li, H., North, T.E., Collins, J.J., Daley, G.Q., 2018. Reconstruction of complex single-cell trajectories using CellRouter. Nature Communications 9.</a></p>
+    <p>Lummertz da Rocha, E., Rowe, R.G., Lundin, V., Malleshaiah, M.,
+Jha, D.K., Rambo, C.R., Li, H., North, T.E., Collins, J.J., Daley, G.Q., 2018.
+Reconstruction of complex single-cell trajectories using CellRouter. Nature
+Communications 9.</p>
     
 
   </div>
@@ -205,7 +229,7 @@ integer; default: 3L; possible values between 2 and 100</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

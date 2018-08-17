@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Select the top methods, optionally based on a given task — answers_task • dyno</title>
+<title>Select the top methods, optionally based on a given dataset — guidelines • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Select the top methods, optionally based on a given task — answers_task" />
+<meta property="og:title" content="Select the top methods, optionally based on a given dataset — guidelines" />
 
-<meta property="og:description" content="Select the top methods, optionally based on a given task" />
+<meta property="og:description" content="Select the top methods, optionally based on a given dataset" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,37 +100,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Select the top methods, optionally based on a given task</h1>
+    <h1>Select the top methods, optionally based on a given dataset</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/guidelines.R'><code>R/guidelines.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/guidelines_prompt.R'><code>R/guidelines_prompt.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/guidelines_shiny.R'><code>R/guidelines_shiny.R</code></a></small>
     <div class="hidden name"><code>guidelines.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Select the top methods, optionally based on a given task</p>
+    <p>Select the top methods, optionally based on a given dataset</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>answers_task</span>(<span class='kw'>task</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'>list</span>())
+    <pre class="usage"><span class='fu'>guidelines</span>(<span class='kw'>dataset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'><a href='answer_questions.html'>answer_questions</a></span>(<span class='kw'>dataset</span> <span class='kw'>=</span>
+  <span class='no'>dataset</span>))
 
-<span class='fu'>guidelines</span>(<span class='kw'>task</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'>list</span>())
+<span class='fu'>guidelines_prompt</span>(<span class='kw'>dataset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'>list</span>())
 
-<span class='fu'>guidelines_prompt</span>(<span class='kw'>task</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'>list</span>())
-
-<span class='fu'>guidelines_shiny</span>(<span class='kw'>task</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'>list</span>())</pre>
+<span class='fu'>guidelines_shiny</span>(<span class='kw'>dataset</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>answers</span> <span class='kw'>=</span> <span class='fu'><a href='answer_questions.html'>answer_questions</a></span>(<span class='kw'>dataset</span> <span class='kw'>=</span>
+  <span class='no'>dataset</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>task</th>
-      <td><p>The task, optional</p></td>
+      <th>dataset</th>
+      <td><p>The dataset, optional</p></td>
     </tr>
     <tr>
       <th>answers</th>
-      <td><p>Optional, pre-provided answers to the different questions</p></td>
+      <td><p>Optional, pre-provided answers to the different questions. See [answer_questions()]</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns a dynguidelines::guidelines object, containing
+  - `methods`: Ordered tibble containing information about the selected methods
+  - `method_columns`: Information about what columns in methods are given and whether the were used for filtering or ordering
+  - `answers`: An answers object, can be further modified.
+  - `methods_selected`: Identifiers for all selected methods</p>
     
 
   </div>
@@ -138,7 +146,9 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

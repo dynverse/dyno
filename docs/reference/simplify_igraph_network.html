@@ -111,7 +111,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>, <span class='kw'>allow_duplicated_edges</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>, <span class='kw'>allow_duplicated_edges</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>allow_self_loops</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>force_keep</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>edge_points</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -123,6 +124,18 @@
     <tr>
       <th>allow_duplicated_edges</th>
       <td><p>Whether or not to allow duplicated edges between nodes.</p></td>
+    </tr>
+    <tr>
+      <th>allow_self_loops</th>
+      <td><p>Whether or not to allow self loops.</p></td>
+    </tr>
+    <tr>
+      <th>force_keep</th>
+      <td><p>Nodes that will not be removed under any condition</p></td>
+    </tr>
+    <tr>
+      <th>edge_points</th>
+      <td><p>Points that are on edges</p></td>
     </tr>
     </table>
     
@@ -136,9 +149,9 @@
   <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span>
 )
 <span class='no'>gr</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>igraph</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame'>graph_from_data_frame</a></span>(<span class='no'>net</span>)
-<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 2100ab4 DNW- 2 1 -- 
+<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH d8f0d57 DNW- 2 1 -- 
 #&gt; + attr: name (v/c), length (e/n), directed (e/l), weight (e/n)
-#&gt; + edge from 2100ab4 (vertex names):
+#&gt; + edge from d8f0d57 (vertex names):
 #&gt; [1] 1-&gt;3</div><div class='input'>
 <span class='no'>net</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
   <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>),
@@ -148,10 +161,22 @@
     <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span>
 )
 <span class='no'>gr</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>igraph</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame'>graph_from_data_frame</a></span>(<span class='no'>net</span>)
-<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 1351882 DNW- 2 2 -- 
+<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH e6cde76 DNW- 2 2 -- 
 #&gt; + attr: name (v/c), length (e/n), directed (e/l), weight (e/n)
-#&gt; + edges from 1351882 (vertex names):
-#&gt; [1] 1-&gt;4 1-&gt;1</div></pre>
+#&gt; + edges from e6cde76 (vertex names):
+#&gt; [1] 1-&gt;4 1-&gt;1</div><div class='input'>
+<span class='no'>net</span> <span class='kw'>&lt;-</span> <span class='fu'>data.frame</span>(
+  <span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>4</span>),
+   <span class='kw'>to</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>1</span>, <span class='fl'>5</span>),
+    <span class='kw'>length</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+    <span class='kw'>directed</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+    <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='no'>F</span>
+)
+<span class='no'>gr</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>igraph</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/igraph/topics/graph_from_data_frame'>graph_from_data_frame</a></span>(<span class='no'>net</span>)
+<span class='fu'>simplify_igraph_network</span>(<span class='no'>gr</span>)</div><div class='output co'>#&gt; IGRAPH 0d0c1d0 DNW- 3 2 -- 
+#&gt; + attr: name (v/c), length (e/n), directed (e/l), weight (e/n)
+#&gt; + edges from 0d0c1d0 (vertex names):
+#&gt; [1] 1-&gt;1 4-&gt;5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

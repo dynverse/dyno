@@ -118,15 +118,33 @@
       <tr>
         
         <td>
+          <p><code><a href="answer_questions.html">answer_questions()</a></code> </p>
+        </td>
+        <td><p>Provide answers to various questions</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="dynguidelines.html">dynguidelines</a></code> </p>
         </td>
         <td><p>Dynguidelines packages</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="guidelines.html">answers_task()</a></code> <code><a href="guidelines.html">guidelines()</a></code> <code><a href="guidelines.html">guidelines_prompt()</a></code> <code><a href="guidelines.html">guidelines_shiny()</a></code> </p>
+          <p><code><a href="get_questions.html">get_questions()</a></code> <code><a href="get_questions.html">get_question()</a></code> </p>
         </td>
-        <td><p>Select the top methods, optionally based on a given task</p></td>
+        <td><p>Load in the questions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="get_renderers.html">get_renderers()</a></code> </p>
+        </td>
+        <td><p>Get all renderers</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="guidelines.html">guidelines()</a></code> <code><a href="guidelines.html">guidelines_prompt()</a></code> <code><a href="guidelines.html">guidelines_shiny()</a></code> </p>
+        </td>
+        <td><p>Select the top methods, optionally based on a given dataset</p></td>
       </tr><tr>
         
         <td>
@@ -148,21 +166,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="priors.html">priors</a></code> </p>
+          <p><code><a href="shiny_server.html">shiny_server()</a></code> </p>
         </td>
-        <td><p>Metadata on priors</p></td>
+        <td><p>The shiny server</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="questions.html">questions</a></code> </p>
+          <p><code><a href="shiny_ui.html">shiny_ui()</a></code> </p>
         </td>
-        <td><p>The different questions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="renderers.html">renderers</a></code> </p>
-        </td>
-        <td><p>Renderers</p></td>
+        <td><p>Shiny user interface</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -174,27 +186,9 @@
       <tr>
         
         <td>
-          <p><code><a href="check_dependencies.html">check_dependencies()</a></code> </p>
-        </td>
-        <td><p>Check which packages need to be installed for all TI methods to function correctly</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="check_dependency.html">check_dependency()</a></code> </p>
-        </td>
-        <td><p>Check which packages need to be installed for a TI method to function correctly</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="dynmethods.html">dynmethods</a></code> </p>
         </td>
         <td><p>Wrappers for trajectory inference methods</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="install_dependencies.html">install_dependencies()</a></code> </p>
-        </td>
-        <td><p>Install dependencies for a method</p></td>
       </tr><tr>
         
         <td>
@@ -204,97 +198,85 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="methods_containerised.html">methods_containerised</a></code> </p>
+          <p><code><a href="ti_angle.html">ti_angle()</a></code> </p>
         </td>
-        <td><p>Metadata on the different containerised TI methods</p></td>
+        <td><p>Inferring a trajectory inference using Angle</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="plot_trajectory.html">plot_trajectory()</a></code> </p>
+          <p><code><a href="ti_calista.html">ti_calista()</a></code> </p>
         </td>
-        <td><p>Visualise a trajectory by the visualisation specific for the method that created it</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="reexports.html">reexports</a></code> </p>
-        </td>
-        <td><p>Objects exported from other packages</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="set_cores.html">set_cores()</a></code> </p>
-        </td>
-        <td><p>Helper function for nasty Python code</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="start_dynmethods_docker.html">start_dynmethods_docker()</a></code> <code><a href="start_dynmethods_docker.html">stop_dynmethods_docker()</a></code> <code><a href="start_dynmethods_docker.html">start_dynmethods_docker()</a></code> </p>
-        </td>
-        <td><p>Methods for working with the dynmethods docker</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ti_angle.html">ti_angle()</a></code> <code><a href="ti_angle.html">ti_angle()</a></code> </p>
-        </td>
-        <td><p>Inferring trajectories with Angle</p></td>
+        <td><p>Inferring a trajectory inference using CALISTA</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_cellrouter.html">ti_cellrouter()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1038/s41467-018-03214-y'>CellRouter</a></p></td>
+        <td><p>Inferring a trajectory inference using CellRouter</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_celltree_gibbs.html">ti_celltree_gibbs()</a></code> <code><a href="ti_celltree_gibbs.html">ti_celltree_gibbs()</a></code> </p>
+          <p><code><a href="ti_celltrails.html">ti_celltrails()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with gibbs</a></p></td>
+        <td><p>Inferring a trajectory inference using CellTrails</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_celltree_maptpx.html">ti_celltree_maptpx()</a></code> <code><a href="ti_celltree_maptpx.html">ti_celltree_maptpx()</a></code> </p>
+          <p><code><a href="ti_celltree_gibbs.html">ti_celltree_gibbs()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with cellTree</p></td>
+        <td><p>Inferring a trajectory inference using cellTree with gibbs</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_celltree_vem.html">ti_celltree_vem()</a></code> <code><a href="ti_celltree_vem.html">ti_celltree_vem()</a></code> </p>
+          <p><code><a href="ti_celltree_maptpx.html">ti_celltree_maptpx()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a></p></td>
+        <td><p>Inferring a trajectory inference using cellTree with maptpx</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_dpt.html">ti_dpt()</a></code> <code><a href="ti_dpt.html">ti_dpt()</a></code> </p>
+          <p><code><a href="ti_celltree_vem.html">ti_celltree_vem()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with DPT</p></td>
+        <td><p>Inferring a trajectory inference using cellTree with vem</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_comp1.html">ti_comp1()</a></code> </p>
+        </td>
+        <td><p>Inferring trajectories with Component 1</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_dpt.html">ti_dpt()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using DPT</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_elpicycle.html">ti_elpicycle()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cyclic</a></p></td>
+        <td><p>Inferring a trajectory inference using ElPiGraph cycle</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_elpigraph.html">ti_elpigraph()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph</a></p></td>
+        <td><p>Inferring a trajectory inference using ElPiGraph</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_elpilinear.html">ti_elpilinear()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph linear</a></p></td>
+        <td><p>Inferring a trajectory inference using ElPiGraph linear</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_embeddr.html">ti_embeddr()</a></code> <code><a href="ti_embeddr.html">ti_embeddr()</a></code> </p>
+          <p><code><a href="ti_embeddr.html">ti_embeddr()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Embeddr</p></td>
+        <td><p>Inferring a trajectory inference using Embeddr</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_error.html">ti_error()</a></code> <code><a href="ti_error.html">ti_error()</a></code> </p>
+          <p><code><a href="ti_error.html">ti_error()</a></code> </p>
         </td>
         <td><p>Inferring trajectories with Control: error</p></td>
       </tr><tr>
@@ -302,29 +284,29 @@
         <td>
           <p><code><a href="ti_fateid.html">ti_fateid()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a></p></td>
+        <td><p>Inferring a trajectory inference using FateID</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_gng.html">ti_gng()</a></code> <code><a href="ti_gng.html">ti_gng()</a></code> </p>
+          <p><code><a href="ti_forks.html">ti_forks()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Growing Neural Gas</p></td>
+        <td><p>Inferring a trajectory inference using FORKS</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_gpfates.html">ti_gpfates()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a></p></td>
+        <td><p>Inferring a trajectory inference using GPfates</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_grandprix.html">ti_grandprix()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/227843'>GrandPrix</a></p></td>
+        <td><p>Inferring a trajectory inference using GrandPrix</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_identity.html">ti_identity()</a></code> <code><a href="ti_identity.html">ti_identity()</a></code> </p>
+          <p><code><a href="ti_identity.html">ti_identity()</a></code> </p>
         </td>
         <td><p>Inferring trajectories with Control: identity</p></td>
       </tr><tr>
@@ -332,205 +314,229 @@
         <td>
           <p><code><a href="ti_matcher.html">ti_matcher()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a></p></td>
+        <td><p>Inferring a trajectory inference using MATCHER</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_merlot.html">ti_merlot()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/261768'>MERLoT</a></p></td>
+        <td><p>Inferring a trajectory inference using MERLoT</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_mfa.html">ti_mfa()</a></code> <code><a href="ti_mfa.html">ti_mfa()</a></code> </p>
+          <p><code><a href="ti_mfa.html">ti_mfa()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with mfa</p></td>
+        <td><p>Inferring a trajectory inference using mfa</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_monocle_ddrtree.html">ti_monocle_ddrtree()</a></code> <code><a href="ti_monocle_ddrtree.html">ti_monocle_ddrtree()</a></code> </p>
+          <p><code><a href="ti_monocle_ddrtree.html">ti_monocle_ddrtree()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Monocle v2</p></td>
+        <td><p>Inferring a trajectory inference using Monocle DDRTree</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_monocle_ica.html">ti_monocle_ica()</a></code> <code><a href="ti_monocle_ica.html">ti_monocle_ica()</a></code> </p>
+          <p><code><a href="ti_monocle_ica.html">ti_monocle_ica()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Monocle v1</p></td>
+        <td><p>Inferring a trajectory inference using Monocle ICA</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_mpath.html">ti_mpath()</a></code> <code><a href="ti_mpath.html">ti_mpath()</a></code> </p>
+          <p><code><a href="ti_mpath.html">ti_mpath()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Mpath</p></td>
+        <td><p>Inferring a trajectory inference using Mpath</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_ouija.html">ti_ouija()</a></code> <code><a href="ti_ouija.html">ti_ouija()</a></code> </p>
+          <p><code><a href="ti_ouija.html">ti_ouija()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with ouija</p></td>
+        <td><p>Inferring a trajectory inference using ouija</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_ouijaflow.html">ti_ouijaflow()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/060442'>ouijaflow</a></p></td>
+        <td><p>Inferring a trajectory inference using ouijaflow</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_paga.html">ti_paga()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/208819'>PAGA</a></p></td>
+        <td><p>Inferring a trajectory inference using PAGA</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_pcreode.html">ti_pcreode()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a></p></td>
+        <td><p>Inferring a trajectory inference using pCreode</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_periodpc.html">ti_periodpc()</a></code> <code><a href="ti_periodpc.html">ti_periodpc()</a></code> </p>
+          <p><code><a href="ti_periodpc.html">ti_periodpc()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Periodic PrinCurvee</p></td>
+        <td><p>Inferring a trajectory inference using Periodic PrinCurve</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_phenopath.html">ti_phenopath()</a></code> <code><a href="ti_phenopath.html">ti_phenopath()</a></code> </p>
+          <p><code><a href="ti_phenopath.html">ti_phenopath()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with PhenoPath</p></td>
+        <td><p>Inferring a trajectory inference using PhenoPath</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_praga.html">ti_praga()</a></code> </p>
+          <p><code><a href="ti_projected_dpt.html">ti_projected_dpt()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/208819'>projected PAGA</a></p></td>
+        <td><p>Inferring a trajectory inference using Projected DPT</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_pseudogp.html">ti_pseudogp()</a></code> <code><a href="ti_pseudogp.html">ti_pseudogp()</a></code> </p>
+          <p><code><a href="ti_projected_gng.html">ti_projected_gng()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with pseudogp</p></td>
+        <td><p>Inferring a trajectory inference using Projected GNG</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_random.html">ti_random()</a></code> <code><a href="ti_random.html">ti_random()</a></code> </p>
+          <p><code><a href="ti_projected_monocle.html">ti_projected_monocle()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using Projected Monocle</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_projected_paga.html">ti_projected_paga()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using Projected PAGA</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_projected_slingshot.html">ti_projected_slingshot()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using Projected Slingshot</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_projected_tscan.html">ti_projected_tscan()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using Projected TSCAN</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_pseudogp.html">ti_pseudogp()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using pseudogp</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_raceid_stemid.html">ti_raceid_stemid()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using RaceID / StemID</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_random.html">ti_random()</a></code> </p>
         </td>
         <td><p>Inferring trajectories with Control: random</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_recat.html">ti_recat()</a></code> <code><a href="ti_recat.html">ti_recat()</a></code> </p>
+          <p><code><a href="ti_recat.html">ti_recat()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with reCAT</p></td>
+        <td><p>Inferring a trajectory inference using reCAT</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_scimitar.html">ti_scimitar()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a></p></td>
+        <td><p>Inferring a trajectory inference using SCIMITAR</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_scorpius.html">ti_scorpius()</a></code> <code><a href="ti_scorpius.html">ti_scorpius()</a></code> </p>
+          <p><code><a href="ti_scorpius.html">ti_scorpius()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with SCORPIUS</p></td>
+        <td><p>Inferring a trajectory inference using SCORPIUS</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_scorpius_sparse.html">ti_scorpius_sparse()</a></code> <code><a href="ti_scorpius_sparse.html">ti_scorpius_sparse()</a></code> </p>
+          <p><code><a href="ti_scoup.html">ti_scoup()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/079509'>SCORPIUS sparse</a></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ti_scoup.html">ti_scoup()</a></code> <code><a href="ti_scoup.html">ti_scoup()</a></code> </p>
-        </td>
-        <td><p>Inferring trajectories with SCOUP</p></td>
+        <td><p>Inferring a trajectory inference using SCOUP</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_scuba.html">ti_scuba()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a></p></td>
+        <td><p>Inferring a trajectory inference using SCUBA</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_shuffle.html">ti_shuffle()</a></code> <code><a href="ti_shuffle.html">ti_shuffle()</a></code> </p>
+          <p><code><a href="ti_shuffle.html">ti_shuffle()</a></code> </p>
         </td>
         <td><p>Inferring trajectories with Control: shuffle</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_sincell.html">ti_sincell()</a></code> <code><a href="ti_sincell.html">ti_sincell()</a></code> </p>
+          <p><code><a href="ti_sincell.html">ti_sincell()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Sincell</p></td>
+        <td><p>Inferring a trajectory inference using Sincell</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_slice.html">ti_slice()</a></code> <code><a href="ti_slice.html">ti_slice()</a></code> </p>
+          <p><code><a href="ti_slice.html">ti_slice()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with SLICE</p></td>
+        <td><p>Inferring a trajectory inference using SLICE</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_slicer.html">ti_slicer()</a></code> <code><a href="ti_slicer.html">ti_slicer()</a></code> </p>
+          <p><code><a href="ti_slicer.html">ti_slicer()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with SLICER</p></td>
+        <td><p>Inferring a trajectory inference using SLICER</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_slingshot.html">ti_slingshot()</a></code> <code><a href="ti_slingshot.html">ti_slingshot()</a></code> </p>
+          <p><code><a href="ti_slingshot.html">ti_slingshot()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Slingshot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ti_stemid.html">ti_stemid()</a></code> <code><a href="ti_stemid.html">ti_stemid()</a></code> </p>
-        </td>
-        <td><p>Inferring trajectories with StemID</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ti_stemid2.html">ti_stemid2()</a></code> <code><a href="ti_stemid2.html">ti_stemid2()</a></code> </p>
-        </td>
-        <td><p>Inferring trajectories with StemID2</p></td>
+        <td><p>Inferring a trajectory inference using Slingshot</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_stemnet.html">ti_stemnet()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1038/ncb3493'>STEMNET</a></p></td>
+        <td><p>Inferring a trajectory inference using STEMNET</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_topslam.html">ti_topslam()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1101/057778'>topslam</a></p></td>
+        <td><p>Inferring a trajectory inference using topslam</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_tscan.html">ti_tscan()</a></code> <code><a href="ti_tscan.html">ti_tscan()</a></code> </p>
+          <p><code><a href="ti_tscan.html">ti_tscan()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with TSCAN</p></td>
+        <td><p>Inferring a trajectory inference using TSCAN</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_urd.html">ti_urd()</a></code> </p>
+        </td>
+        <td><p>Inferring a trajectory inference using URD</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_wanderlust.html">ti_wanderlust()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wanderlust</a></p></td>
+        <td><p>Inferring a trajectory inference using Wanderlust</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="ti_waterfall.html">ti_waterfall()</a></code> <code><a href="ti_waterfall.html">ti_waterfall()</a></code> </p>
+          <p><code><a href="ti_waterfall.html">ti_waterfall()</a></code> </p>
         </td>
-        <td><p>Inferring trajectories with Waterfall</p></td>
+        <td><p>Inferring a trajectory inference using Waterfall</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="ti_wishbone.html">ti_wishbone()</a></code> </p>
         </td>
-        <td><p>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>Wishbone</a></p></td>
+        <td><p>Inferring a trajectory inference using Wishbone</p></td>
       </tr>
     </tbody><tbody>
       <tr>
@@ -586,7 +592,7 @@
         <td>
           <p><code><a href="add_end_state_probabilities.html">add_end_state_probabilities()</a></code> </p>
         </td>
-        <td><p>Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities. If pseudotime values are not given, will use pseudotime already present in the model.</p></td>
+        <td><p>Multifurcating trajectory with end state probabilities</p></td>
       </tr><tr>
         
         <td>
@@ -704,6 +710,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="create_container_ti_method.html">create_container_ti_method()</a></code> </p>
+        </td>
+        <td><p>Creating a TI method from a docker repository</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="create_docker_ti_method.html">create_docker_ti_method()</a></code> <code><a href="create_docker_ti_method.html">extract_definition_from_docker_image()</a></code> <code><a href="create_docker_ti_method.html">pull_docker_ti_method()</a></code> </p>
         </td>
         <td><p>Create a TI method from a docker image</p></td>
@@ -728,6 +740,12 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="dimred_trajectory.html">dimred_trajectory()</a></code> <code><a href="dimred_trajectory.html">check_or_perform_dimred()</a></code> </p>
+        </td>
+        <td><p>Perform dimensionality reduction on a trajectory and the respective samples in order to plot it</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="dynwrap.html">dynwrap</a></code> </p>
         </td>
         <td><p>This R package contains the code for a common model of single-cell trajectories.</p></td>
@@ -740,9 +758,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="execute_method_on_task.html">execute_method_on_task()</a></code> </p>
+          <p><code><a href="execute_method_on_dataset.html">execute_method_on_dataset()</a></code> </p>
         </td>
-        <td><p>Run a method on a task with a set of parameters</p></td>
+        <td><p>Run a method on a dataset with a set of parameters</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="gather_cells_at_milestones.html">gather_cells_at_milestones()</a></code> </p>
+        </td>
+        <td><p>"Gather" cells to their closest milestones</p></td>
       </tr><tr>
         
         <td>
@@ -767,6 +791,18 @@
           <p><code><a href="get_ti_methods.html">get_ti_methods()</a></code> </p>
         </td>
         <td><p>Return all TI ti_methods</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="group_onto_nearest_milestones.html">group_onto_nearest_milestones()</a></code> </p>
+        </td>
+        <td><p>Grouping the cells onto the closest milestones</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="group_onto_trajectory_edges.html">group_onto_trajectory_edges()</a></code> </p>
+        </td>
+        <td><p>Grouping the cells onto their edges</p></td>
       </tr><tr>
         
         <td>
@@ -796,7 +832,7 @@
         <td>
           <p><code><a href="is_wrapper_with_prior_information.html">is_wrapper_with_prior_information()</a></code> </p>
         </td>
-        <td><p>Test whether an object is a task and contains prior information</p></td>
+        <td><p>Test whether an object is a dataset and contains prior information</p></td>
       </tr><tr>
         
         <td>
@@ -866,6 +902,18 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="simplify_trajectory.html">simplify_trajectory()</a></code> </p>
+        </td>
+        <td><p>Simplify a trajectory</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="simplify_trajectory_type.html">simplify_trajectory_type()</a></code> </p>
+        </td>
+        <td><p>Convert directed trajectory type to simplified versions</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="test_docker_installation.html">test_docker_installation()</a></code> </p>
         </td>
         <td><p>Tests whether docker is correctly installed and available</p></td>
@@ -875,6 +923,30 @@
           <p><code><a href="ti_comp1.html">ti_comp1()</a></code> </p>
         </td>
         <td><p>Inferring trajectories with Component 1</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_error.html">ti_error()</a></code> </p>
+        </td>
+        <td><p>Inferring trajectories with Control: error</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_identity.html">ti_identity()</a></code> </p>
+        </td>
+        <td><p>Inferring trajectories with Control: identity</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_random.html">ti_random()</a></code> </p>
+        </td>
+        <td><p>Inferring trajectories with Control: random</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ti_shuffle.html">ti_shuffle()</a></code> </p>
+        </td>
+        <td><p>Inferring trajectories with Control: shuffle</p></td>
       </tr><tr>
         
         <td>
@@ -946,18 +1018,6 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="check_or_perform_dimred.html">check_or_perform_dimred()</a></code> </p>
-        </td>
-        <td><p>Perform dimred trajectory if needed</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="dimred_trajectory.html">dimred_trajectory()</a></code> </p>
-        </td>
-        <td><p>Perform dimensionality reduction on a trajectory and the respective samples in order to plot it</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="dynplot.html">dynplot</a></code> </p>
         </td>
         <td><p>Plot all the trajectories</p></td>
@@ -997,6 +1057,12 @@
           <p><code><a href="plot_dimred.html">plot_dimred()</a></code> </p>
         </td>
         <td><p>Plot the trajectory on dimensionality reduction</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_edge_flips.html">plot_edge_flips()</a></code> </p>
+        </td>
+        <td><p>Plotting edge flips</p></td>
       </tr><tr>
         
         <td>
@@ -1068,7 +1134,7 @@
       <tr>
         <th colspan="2">
           <h2 id="section-extracting-relevant-features-from-a-trajectory" class="hasAnchor"><a href="#section-extracting-relevant-features-from-a-trajectory" class="anchor"></a>Extracting relevant features from a trajectory</h2>
-          <p class="section-desc"><p>dynfeature</p></p>
+          <p class="section-desc"><p>libraries/dynfeature</p></p>
         </th>
       </tr>
       <tr>

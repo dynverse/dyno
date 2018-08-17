@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Waterfall — ti_waterfall • dyno</title>
+<title>Inferring a trajectory inference using Waterfall — ti_waterfall • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Waterfall — ti_waterfall" />
+<meta property="og:title" content="Inferring a trajectory inference using Waterfall — ti_waterfall" />
 
-<meta property="og:description" content="Inferring trajectories with Waterfall
-Will generate a trajectory using Waterfall. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+Waterfall.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,46 +105,48 @@ Will generate a trajectory using Waterfall. This method was wrapped inside a con
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with Waterfall</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_waterfall.R'><code>R/ti_waterfall.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Waterfall</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_waterfall.R'><code>R/ti_waterfall.R</code></a></small>
     <div class="hidden name"><code>ti_waterfall.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with Waterfall</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1016/j.stem.2015.07.013'>Waterfall</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/waterfall'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1016/j.stem.2015.07.013'>Waterfall</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/waterfall'>container</a>.
+The original code of this method is available
+<a href='http://www.cell.com/cms/attachment/2038326541/2052521637/mmc9.zip'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_waterfall</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>num_clusters</span> <span class='kw'>=</span> <span class='fl'>10</span>)
-
-<span class='fu'>ti_waterfall</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>num_clusters</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_waterfall</span>(<span class='kw'>num_clusters</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
+      <th>num_clusters</th>
+      <td><p>integer; (default: <code>10</code>; range: from <code>2</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
-      <th>num_clusters</th>
-      <td><p>Number of clusters</p></td>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_waterfall</p>
-<p>The original code of this method is available <a href='http://www.cell.com/cms/attachment/2038326541/2052521637/mmc9.zip'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1016/j.stem.2015.07.013'>Shin, J., Berg, D.A., Zhu, Y., Shin, J.Y., Song, J., Bonaguidi, M.A., Enikolopov, G., Nauen, D.W., Christian, K.M., Ming, G., Song, H., 2015. Single-Cell RNA-Seq with Waterfall Reveals Molecular Cascades underlying Adult Neurogenesis. Cell Stem Cell 17, 360–372.</a></p>
+    <p>Shin, J., Berg, D.A., Zhu, Y., Shin, J.Y., Song, J., Bonaguidi,
+M.A., Enikolopov, G., Nauen, D.W., Christian, K.M., Ming, G., Song, H., 2015.
+Single-Cell RNA-Seq with Waterfall Reveals Molecular Cascades underlying Adult
+Neurogenesis. Cell Stem Cell 17, 360–372.</p>
     
 
   </div>
@@ -151,7 +157,7 @@ Will generate a trajectory using Waterfall. This method was wrapped inside a con
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

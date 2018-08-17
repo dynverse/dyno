@@ -111,8 +111,8 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_dimred_projection</span>(<span class='no'>model</span>, <span class='kw'>milestone_ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>milestone_network</span>, <span class='no'>dimred</span>,
-  <span class='no'>dimred_milestones</span>, <span class='kw'>grouping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>num_segments_per_edge</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>add_dimred_projection</span>(<span class='no'>model</span>, <span class='kw'>milestone_ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>milestone_network</span>,
+  <span class='no'>dimred</span>, <span class='no'>dimred_milestones</span>, <span class='kw'>grouping</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,10 +141,6 @@ Type: Data frame(from = character, to = character, length = numeric, directed = 
     <tr>
       <th>grouping</th>
       <td><p>A grouping of the cells, can be a named vector or a dataframe with group_id (character) and cell_id (character)</p></td>
-    </tr>
-    <tr>
-      <th>num_segments_per_edge</th>
-      <td><p>The number of pieces each milestone transition will be split info for the calculation of the percentages.</p></td>
     </tr>
     <tr>
       <th>...</th>
