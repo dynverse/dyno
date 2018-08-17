@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wanderlust</a> — ti_wanderlust • dyno</title>
+<title>Inferring a trajectory inference using Wanderlust — ti_wanderlust • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wanderlust</a> — ti_wanderlust" />
+<meta property="og:title" content="Inferring a trajectory inference using Wanderlust — ti_wanderlust" />
 
-<meta property="og:description" content="Will generate a trajectory using wanderlust. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+Wanderlust.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,72 +105,78 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nbt.3569'>wanderlust</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Wanderlust</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_wanderlust.R'><code>R/ti_wanderlust.R</code></a></small>
     <div class="hidden name"><code>ti_wanderlust.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nbt.3569'>wanderlust</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/wanderlust'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1016/j.cell.2014.04.005'>Wanderlust</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/wishbone'>container</a>.
+The original code of this method is available
+<a href='https://github.com/ManuSetty/wishbone'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_wanderlust</span>(<span class='kw'>branch</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>25L</span>, <span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>25L</span>,
-  <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>normalise</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_wanderlust</span>(<span class='kw'>normalise</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>knn</span> <span class='kw'>=</span> <span class='fl'>25L</span>,
+  <span class='kw'>n_diffusion_components</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>25L</span>,
+  <span class='kw'>num_waypoints</span> <span class='kw'>=</span> <span class='fl'>250L</span>, <span class='kw'>epsilon</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>branch</th>
-      <td><p>Whether to allow a single bifurcation within the trajectory (wishbone versus wanderlust) <br /></p></td>
-    </tr>
-    <tr>
-      <th>epsilon</th>
-      <td><p>Epsilon <br />
-numeric; default: 1L; possible values between 0.1 and 5</p></td>
-    </tr>
-    <tr>
-      <th>k</th>
-      <td><p>K parameter <br />
-integer; default: 25L; possible values between 15 and 100</p></td>
+      <th>normalise</th>
+      <td><p>logical;</p></td>
     </tr>
     <tr>
       <th>knn</th>
-      <td><p>K-nearest neighbours for diffusion <br />
-integer; default: 25L; possible values between 15 and 100</p></td>
+      <td><p>integer; K-nearest neighbours for diffusion (default: <code>25L</code>; range:
+from <code>15L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>n_diffusion_components</th>
-      <td><p>Number of diffusion components <br />
-integer; default: 3L; possible values between 3 and 20</p></td>
+      <td><p>integer; Number of diffusion components (default:
+<code>3L</code>; range: from <code>3L</code> to <code>20L</code>)</p></td>
     </tr>
     <tr>
       <th>n_pca_components</th>
-      <td><p>Number of pca components <br />
-integer; default: 30L; possible values between 15 and 100</p></td>
+      <td><p>integer; Number of pca components (default: <code>30L</code>;
+range: from <code>15L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
-      <th>normalise</th>
-      <td><p><br /></p></td>
+      <th>k</th>
+      <td><p>integer; K parameter (default: <code>25L</code>; range: from <code>15L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>num_waypoints</th>
-      <td><p>Number of waypoints <br />
-integer; default: 250L; possible values between 100 and 500</p></td>
+      <td><p>integer; Number of waypoints (default: <code>250L</code>; range: from
+<code>100L</code> to <code>500L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>epsilon</th>
+      <td><p>numeric; Epsilon (default: <code>1L</code>; range: from <code>0.1</code> to <code>5L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/ManuSetty/wishbone'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1038/nbt.3569'>Setty, M., Tadmor, M.D., Reich-Zeliger, S., Angel, O., Salame, T.M., Kathail, P., Choi, K., Bendall, S., Friedman, N., Pe’er, D., 2016. Wishbone identifies bifurcating developmental trajectories from single-cell data. Nature Biotechnology 34, 637–645.</a></p>
+    <p>Bendall, S.C., Davis, K.L., Amir, E.D., Tadmor, M.D., Simonds,
+E.F., Chen, T.J., Shenfeld, D.K., Nolan, G.P., Pe’er, D., 2014. Single-Cell
+Trajectory Detection Uncovers Progression and Regulatory Coordination in Human
+B Cell Development. Cell 157, 714–725.</p>
     
 
   </div>
@@ -176,7 +187,7 @@ integer; default: 250L; possible values between 100 and 500</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

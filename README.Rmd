@@ -68,7 +68,8 @@ methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first
 ```{r, echo=FALSE}
 # movie generated using vokoscreen
 # converted to gif using ffmpeg:
-# ffmpeg -i man/figures/dynguidelines.mkv -vf scale=1080:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 10 -loop 0 -layers OptimizeFrame -fuzz 10% - man/figures/dynguidelines.gif
+# ffmpeg -i ../dynguidelines/man/figures/demo.mkv -vf scale=1080:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 10 -loop 0 -layers OptimizeFrame -fuzz 10% - ../dynguidelines/man/figures/demo.gif
+# cp ../dynguidelines/man/figures/demo.gif man/figures/dynguidelines.gif
 
 guidelines <- guidelines(dataset, answer_questions(multiple_disconnected = FALSE, expect_topology = TRUE, expected_topology = "bifurcation"))
 methods <- guidelines$methods_selected

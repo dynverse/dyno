@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a> — ti_fateid • dyno</title>
+<title>Inferring a trajectory inference using FateID — ti_fateid • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a> — ti_fateid" />
+<meta property="og:title" content="Inferring a trajectory inference using FateID — ti_fateid" />
 
-<meta property="og:description" content="Will generate a trajectory using FateID. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using FateID.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,77 +104,117 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using FateID</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_fateid.R'><code>R/ti_fateid.R</code></a></small>
     <div class="hidden name"><code>ti_fateid.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/fateid'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nmeth.4662'>FateID</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/fateid'>container</a>.
+The original code of this method is available
+<a href='https://github.com/dgrun/FateID/'>here</a>.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ti_fateid</span>(<span class='kw'>reclassify</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>clthr</span> <span class='kw'>=</span> <span class='fl'>0.9</span>, <span class='kw'>nbfactor</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>q</span> <span class='kw'>=</span> <span class='fl'>0.75</span>,
-  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>minnr</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>minnrh</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>trthr</span> <span class='kw'>=</span> <span class='fl'>0.4</span>)</pre>
+  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='st'>"tsne"</span>, <span class='kw'>minnr</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>minnrh</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>trthr</span> <span class='kw'>=</span> <span class='fl'>0.4</span>,
+  <span class='kw'>force</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>reclassify</th>
-      <td><p>Whether to reclassify the cell grouping <br /></p></td>
+      <td><p>logical; Whether to reclassify the cell grouping</p></td>
     </tr>
     <tr>
       <th>clthr</th>
-      <td><p>Real number between zero and one. This is the threshold for the fraction of random forest votes required to assign a cell not contained within the target clusters to one of these clusters. The value of this parameter should be sufficiently high to only reclassify cells with a high-confidence assignment. Default value is 0.9. <br />
-numeric; default: 0.9; possible values between 0.1 and 1</p></td>
+      <td><p>numeric; Real number between zero and one. This is the threshold
+for the fraction of random forest votes required to assign a cell not contained
+within the target clusters to one of these clusters. The value of this
+parameter should be sufficiently high to only reclassify cells with a
+high-confidence assignment. Default value is 0.9. (default: <code>0.9</code>; range: from
+<code>0.1</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>nbfactor</th>
-      <td><p>Positive integer number. Determines the number of trees grown for each random forest. The number of trees is given by the number of columns of th training set multiplied by <code>nbfactor</code>. Default value is 5. <br />
-integer; default: 5L; possible values between 2 and 100</p></td>
+      <td><p>integer; Positive integer number. Determines the number of
+trees grown for each random forest. The number of trees is given by the number
+of columns of th training set multiplied by <code>nbfactor</code>. Default value is
+5. (default: <code>5L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>q</th>
-      <td><p>Q real value between zero and one. This number specifies a threshold used for feature selection based on importance sampling. A reduced expression table is generated containing only features with an importance larger than the q-quantile for at least one of the classes (i. e. target clusters). Default value is 0.75. <br />
-numeric; default: 0.75; possible values between 0 and 1</p></td>
+      <td><p>numeric; Q real value between zero and one. This number specifies a
+threshold used for feature selection based on importance sampling. A reduced
+expression table is generated containing only features with an importance
+larger than the q-quantile for at least one of the classes (i. e. target
+clusters). Default value is 0.75. (default: <code>0.75</code>; range: from <code>0L</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>k</th>
-      <td><p>Number of dimensions <br />
-integer; default: 3L; possible values between 2 and 100</p></td>
+      <td><p>integer; Number of dimensions (default: <code>3L</code>; range: from <code>2L</code> to
+<code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>m</th>
-      <td><p>Dimensionality reduction method to use. Can be tsne, cmd, dm or lle <br />
-discrete; default: "tsne"; possible values: tsne, cmd, dm, lle</p></td>
+      <td><p>discrete; Dimensionality reduction method to use. Can be tsne, cmd, dm
+or lle (default: <code>"tsne"</code>; values: <code>"tsne"</code>, <code>"cmd"</code>, <code>"dm"</code>, <code>"lle"</code>)</p></td>
     </tr>
     <tr>
       <th>minnr</th>
-      <td><p>Integer number of cells per target cluster to be selected for classification (test set) in each round of training. For each target cluster, the <code>minnr</code> cells with the highest similarity to a cell in the training set are selected for classification. If <code>z</code> is not <code>NULL</code> it is used as the similarity matrix for this step. Otherwise, <code>1-cor(x)</code> is used. Default value is 5. <br />
-integer; default: 5L; possible values between 2 and 100</p></td>
+      <td><p>integer; Integer number of cells per target cluster to be selected
+for classification (test set) in each round of training. For each target
+cluster, the <code>minnr</code> cells with the highest similarity to a cell in the
+training set are selected for classification. If <code>z</code> is not <code>NULL</code> it
+is used as the similarity matrix for this step. Otherwise, <code>1-cor(x)</code> is
+used. Default value is 5. (default: <code>5L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>minnrh</th>
-      <td><p>Integer number of cells from the training set used for classification. From each training set, the <code>minnrh</code> cells with the highest similarity to the training set are selected. If <code>z</code> is not <code>NULL</code> it is used as the similarity matrix for this step. Default value is 10. <br />
-integer; default: 10L; possible values between 2 and 100</p></td>
+      <td><p>integer; Integer number of cells from the training set used for
+classification. From each training set, the <code>minnrh</code> cells with the
+highest similarity to the training set are selected. If <code>z</code> is not
+<code>NULL</code> it is used as the similarity matrix for this step. Default value is
+10. (default: <code>10L</code>; range: from <code>2L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>trthr</th>
-      <td><p>Real value representing the threshold of the fraction of random forest votes required for the inclusion of a given cell for the computation of the principal curve. If <code>NULL</code> then only cells with a significant bias &gt;1 are included for each trajectory. The bias is computed as the ratio of the number of votes for a trajectory and the number of votes for the trajectory with the second largest number of votes. By this means only the trajectory with the largest number of votes will receive a bias &gt;1. The siginifcance is computed based on counting statistics on the difference in the number of votes. A significant bias requires a p-value &lt; 0.05. <br />
-numeric; default: 0.4; possible values between 0 and 1</p></td>
+      <td><p>numeric; Real value representing the threshold of the fraction of
+random forest votes required for the inclusion of a given cell for the
+computation of the principal curve. If <code>NULL</code> then only cells with a
+significant bias &gt;1 are included for each trajectory. The bias is computed as
+the ratio of the number of votes for a trajectory and the number of votes for
+the trajectory with the second largest number of votes. By this means only the
+trajectory with the largest number of votes will receive a bias &gt;1. The
+siginifcance is computed based on counting statistics on the difference in the
+number of votes. A significant bias requires a p-value &lt; 0.05. (default: <code>0.4</code>;
+range: from <code>0L</code> to <code>1L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>force</th>
+      <td><p>logical; Do not use! This is a parameter to force FateID to run on
+benchmark datasets where not enough end groups are present.</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://git.embl.de/velten/STEMNET'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1038/nmeth.4662'>Herman, J.S., Sagar, Grün, D., 2018. FateID infers cell fate bias in multipotent progenitors from single-cell RNA-seq data. Nature Methods 15, 379–386.</a></p>
+    <p>Herman, J.S., Sagar, Grün, D., 2018. FateID infers cell fate bias
+in multipotent progenitors from single-cell RNA-seq data. Nature Methods 15,
+379–386.</p>
     
 
   </div>
@@ -181,7 +225,7 @@ numeric; default: 0.4; possible values between 0 and 1</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

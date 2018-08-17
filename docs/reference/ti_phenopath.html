@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with PhenoPath — ti_phenopath • dyno</title>
+<title>Inferring a trajectory inference using PhenoPath — ti_phenopath • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with PhenoPath — ti_phenopath" />
+<meta property="og:title" content="Inferring a trajectory inference using PhenoPath — ti_phenopath" />
 
-<meta property="og:description" content="Inferring trajectories with PhenoPath
-Will generate a trajectory using PhenoPath. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using PhenoPath.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,70 +104,70 @@ Will generate a trajectory using PhenoPath. This method was wrapped inside a con
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with PhenoPath</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_phenopath.R'><code>R/ti_phenopath.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using PhenoPath</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_phenopath.R'><code>R/ti_phenopath.R</code></a></small>
     <div class="hidden name"><code>ti_phenopath.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with PhenoPath</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1101/159913'>PhenoPath</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/phenopath'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/159913'>PhenoPath</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/phenopath'>container</a>.
+The original code of this method is available
+<a href='https://github.com/kieranrcampbell/phenopath'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_phenopath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>40</span>,
-  <span class='kw'>z_init</span> <span class='kw'>=</span> <span class='st'>"1"</span>, <span class='kw'>model_mu</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>scale_y</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-
-<span class='fu'>ti_phenopath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>40</span>,
-  <span class='kw'>z_init</span> <span class='kw'>=</span> <span class='st'>"1"</span>, <span class='kw'>model_mu</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>scale_y</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_phenopath</span>(<span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>40L</span>, <span class='kw'>z_init</span> <span class='kw'>=</span> <span class='st'>"1"</span>, <span class='kw'>model_mu</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>scale_y</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>thin</th>
-      <td><p>The number of iterations to wait each time before
-re-calculating the elbo</p></td>
+      <td><p>integer; The number of iterations to wait each time
+beforere-calculating the elbo (default: <code>40L</code>; range: from <code>2L</code> to <code>500L</code>)</p></td>
     </tr>
     <tr>
       <th>z_init</th>
-      <td><p>The initialisation of the latent trajectory. Should be one of</p><ol>
-<li><p>A positive integer describing which principal component of the data should
-be used for initialisation (default 1), <em>or</em></p></li>
-<li><p>A numeric vector of length number of samples to be used 
-directly for initialisation, <em>or</em></p></li>
-<li><p>The text character <code>"random"</code>, for random initialisation 
-from a standard normal distribution.</p></li>
-</ol></td>
+      <td><p>discrete; The initialisation of the latent trajectory. Should be
+one of</p><ol>
+<li><p>A
+numeric vector of length number of samples to be used directly for
+initialisation, <em>or</em></p></li>
+<li><p>The text character <code>"random"</code>, for random
+initialisation from a standard normal distribution.</p></li>
+</ol><p>(default: <code>"1"</code>; values:
+<code>"1"</code>, <code>"2"</code>, <code>"3"</code>, <code>"4"</code>, <code>"5"</code>, <code>"random"</code>)</p></td>
     </tr>
     <tr>
       <th>model_mu</th>
-      <td><p>Logical - should a gene-specific intercept term be modelled?</p></td>
+      <td><p>logical; Logical - should a gene-specific intercept term be
+modelled?</p></td>
     </tr>
     <tr>
       <th>scale_y</th>
-      <td><p>Logical - should the expression matrix be centre scaled?</p></td>
+      <td><p>logical; Logical - should the expression matrix be centre
+scaled?</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_phenopath</p>
-<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/phenopath'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1101/159913'>Campbell, K., Yau, C., 2017. Uncovering genomic trajectories with heterogeneous genetic and environmental backgrounds across single-cells and populations.</a></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/phenopath/topics/phenopath'>phenopath::phenopath()</a></code>, <code><a href='http://www.rdocumentation.org/packages/phenopath/topics/clvm'>phenopath::clvm()</a></code></p></div>
+    <p>Campbell, K., Yau, C., 2017. Uncovering genomic trajectories with
+heterogeneous genetic and environmental backgrounds across single-cells and
+populations.</p>
     
 
   </div>
@@ -175,9 +178,7 @@ from a standard normal distribution.</p></li>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

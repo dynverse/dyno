@@ -122,8 +122,9 @@ The original code of this method is available
     </div>
 
     <pre class="usage"><span class='fu'>ti_celltrails</span>(<span class='kw'>threshold_dl</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>threshold_cov</span> <span class='kw'>=</span> <span class='fl'>0.05</span>,
-  <span class='kw'>threshold_ff</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>frac</span> <span class='kw'>=</span> <span class='fl'>100L</span>, <span class='kw'>min_size</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>min_feat</span> <span class='kw'>=</span> <span class='fl'>5L</span>,
-  <span class='kw'>max_pval</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>min_fc</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>l</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>threshold_ff</span> <span class='kw'>=</span> <span class='fl'>1.7</span>, <span class='kw'>min_expr</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>frac</span> <span class='kw'>=</span> <span class='fl'>100L</span>, <span class='kw'>min_size</span> <span class='kw'>=</span> <span class='fl'>0.01</span>,
+  <span class='kw'>min_feat</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>max_pval</span> <span class='kw'>=</span> <span class='fl'>1e-04</span>, <span class='kw'>min_fc</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>l</span> <span class='kw'>=</span> <span class='fl'>10L</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -141,8 +142,13 @@ between 0 and 1 (default: <code>0.05</code>; range: from <code>0L</code> to <cod
     </tr>
     <tr>
       <th>threshold_ff</th>
-      <td><p>numeric; A Z-score cutoff (default: <code>1L</code>; range: from <code>0L</code>
+      <td><p>numeric; A Z-score cutoff (default: <code>1.7</code>; range: from <code>0L</code>
 to <code>5L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>min_expr</th>
+      <td><p>numeric; Minimum average feature expression (default: <code>0L</code>;
+range: from <code>0L</code> to <code>2L</code>)</p></td>
     </tr>
     <tr>
       <th>frac</th>
@@ -171,7 +177,7 @@ computation. (default: <code>1e-04</code>; range: from <code>1e-07</code> to <co
     <tr>
       <th>min_fc</th>
       <td><p>numeric; Mimimum fold-change for differential expression
-computation (default: <code>2L</code>; range: from <code>1L</code> to <code>5L</code>)</p></td>
+computation (default: <code>2L</code>; range: from <code>0L</code> to <code>5L</code>)</p></td>
     </tr>
     <tr>
       <th>l</th>

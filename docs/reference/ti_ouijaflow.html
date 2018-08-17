@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1101/060442'>ouijaflow</a> — ti_ouijaflow • dyno</title>
+<title>Inferring a trajectory inference using ouijaflow — ti_ouijaflow • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1101/060442'>ouijaflow</a> — ti_ouijaflow" />
+<meta property="og:title" content="Inferring a trajectory inference using ouijaflow — ti_ouijaflow" />
 
-<meta property="og:description" content="Will generate a trajectory using ouijaflow. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using ouijaflow.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,37 +104,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1101/060442'>ouijaflow</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using ouijaflow</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_ouijaflow.R'><code>R/ti_ouijaflow.R</code></a></small>
     <div class="hidden name"><code>ti_ouijaflow.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/060442'>ouijaflow</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/ouijaflow'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/060442'>ouijaflow</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/ouijaflow'>container</a>.
+The original code of this method is available
+<a href='https://github.com/kieranrcampbell/ouija'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_ouijaflow</span>(<span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>1000L</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_ouijaflow</span>(<span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>1000L</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>iter</th>
-      <td><p><br />
-integer; default: 1000L; possible values between 2 and 50000</p></td>
+      <td><p>integer; (default: <code>1000L</code>; range: from <code>2L</code> to <code>50000L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/kieranrcampbell/ouija'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1101/060442'>Campbell, K.R., Yau, C., 2016. A descriptive marker gene approach to single-cell pseudotime inference.</a></p>
+    <p>Campbell, K.R., Yau, C., 2016. A descriptive marker gene approach
+to single-cell pseudotime inference.</p>
     
 
   </div>
@@ -141,7 +153,7 @@ integer; default: 1000L; possible values between 2 and 50000</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

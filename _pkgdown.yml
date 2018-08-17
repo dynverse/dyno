@@ -4,6 +4,7 @@ reference:
   contents:
   - answer_questions
   - dynguidelines
+  - get_answers_code
   - get_questions
   - get_renderers
   - guidelines

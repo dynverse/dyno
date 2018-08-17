@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with pseudogp — ti_pseudogp • dyno</title>
+<title>Inferring a trajectory inference using pseudogp — ti_pseudogp • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with pseudogp — ti_pseudogp" />
+<meta property="og:title" content="Inferring a trajectory inference using pseudogp — ti_pseudogp" />
 
-<meta property="og:description" content="Inferring trajectories with pseudogp
-Will generate a trajectory using pseudogp. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+pseudogp.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,89 +105,94 @@ Will generate a trajectory using pseudogp. This method was wrapped inside a cont
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with pseudogp</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pseudogp.R'><code>R/ti_pseudogp.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using pseudogp</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pseudogp.R'><code>R/ti_pseudogp.R</code></a></small>
     <div class="hidden name"><code>ti_pseudogp.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with pseudogp</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1371/journal.pcbi.1005212'>pseudogp</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/pseudogp'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1371/journal.pcbi.1005212'>pseudogp</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/pseudogp'>container</a>.
+The original code of this method is available
+<a href='https://github.com/kieranrcampbell/pseudogp'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_pseudogp</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>,
-  <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>),
-  <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)
-
-<span class='fu'>ti_pseudogp</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
-  <span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
-  <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>,
-  <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>),
-  <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_pseudogp</span>(<span class='kw'>smoothing_alpha</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>smoothing_beta</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>pseudotime_mean</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>pseudotime_var</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>chains</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+  <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100L</span>, <span class='kw'>dimreds</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>TRUE</span>, <span class='fl'>TRUE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>,
+  <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>, <span class='fl'>FALSE</span>), <span class='kw'>initialise_from</span> <span class='kw'>=</span> <span class='st'>"random"</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>smoothing_alpha</th>
-      <td><p>The hyperparameter for the Gamma distribution that controls arc-length</p></td>
+      <td><p>numeric; The hyperparameter for the Gamma distribution
+that controls arc-length (default: <code>10</code>; range: from <code>1</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
       <th>smoothing_beta</th>
-      <td><p>The hyperparameter for the Gamma distribution that controls arc-length</p></td>
+      <td><p>numeric; The hyperparameter for the Gamma distribution
+that controls arc-length (default: <code>3</code>; range: from <code>1</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
       <th>pseudotime_mean</th>
-      <td><p>The mean of the constrained normal prior on the pseudotimes</p></td>
+      <td><p>numeric; The mean of the constrained normal prior on the
+pseudotimes (default: <code>0.5</code>; range: from <code>0</code> to <code>1</code>)</p></td>
     </tr>
     <tr>
       <th>pseudotime_var</th>
-      <td><p>The variance of the constrained normal prior on the pseudotimes</p></td>
+      <td><p>numeric; The variance of the constrained normal prior on
+the pseudotimes (default: <code>1</code>; range: from <code>0.01</code> to <code>1</code>)</p></td>
     </tr>
     <tr>
       <th>chains</th>
-      <td><p>The number of chains for the MCMC trace</p></td>
+      <td><p>integer; The number of chains for the MCMC trace (default: <code>3L</code>;
+range: from <code>1L</code> to <code>20L</code>)</p></td>
     </tr>
     <tr>
       <th>iter</th>
-      <td><p>The number of iterations for the MCMC trace</p></td>
+      <td><p>integer; The number of iterations for the MCMC trace (default:
+<code>100L</code>; range: from <code>100L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>dimreds</th>
-      <td><p>A character vector specifying which dimensionality reduction methods to use.
-See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred()</a></code> for the list of available dimensionality reduction methods.</p></td>
+      <td><p>logical_vector; A character vector specifying which
+dimensionality reduction methods to use.See
+<code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred</a></code> for the list of available
+dimensionality reduction methods.</p></td>
     </tr>
     <tr>
       <th>initialise_from</th>
-      <td><p>How to initialise the MCMC chain. One of "random" (stan decides),
-"principal_curve", or "pca" (the first component of PCA rescaled is taken to be the pseudotimes).
-Note: if multiple representations are provided, <code>pseudogp</code> will take the principal curve or
-pca from the first rather than combining them. If a particular representation is required, it is
-up to the user to re-order them.</p></td>
+      <td><p>discrete; How to initialise the MCMC chain. One of
+"random" (stan decides),"principal_curve", or "pca" (the first component of PCA
+rescaled is taken to be the pseudotimes).Note: if multiple representations are
+provided, <code>pseudogp</code> will take the principal curve orpca from the first
+rather than combining them. If a particular representation is required, it isup
+to the user to re-order them. (default: <code>"random"</code>; values: <code>"random"</code>,
+<code>"principal_curve"</code>, <code>"pca"</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_pseudogp</p>
-<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/pseudogp'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1371/journal.pcbi.1005212'>Campbell, K.R., Yau, C., 2016. Order Under Uncertainty: Robust Differential Expression Analysis Using Probabilistic Models for Pseudotime Inference. PLOS Computational Biology 12, e1005212.</a></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/pseudogp/topics/fitPseudotime'>pseudogp::fitPseudotime()</a></code></p></div>
+    <p>Campbell, K.R., Yau, C., 2016. Order Under Uncertainty: Robust
+Differential Expression Analysis Using Probabilistic Models for Pseudotime
+Inference. PLOS Computational Biology 12, e1005212.</p>
     
 
   </div>
@@ -194,9 +203,7 @@ up to the user to re-order them.</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

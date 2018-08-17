@@ -115,15 +115,15 @@ container." />
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_projected_paga</span>(<span class='kw'>n_neighbors</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>n_comps</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>n_dcs</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
-  <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>2.5</span>, <span class='kw'>embedding_type</span> <span class='kw'>=</span> <span class='st'>"fa"</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_projected_paga</span>(<span class='kw'>n_neighbors</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>n_comps</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>n_dcs</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
+  <span class='kw'>resolution</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>embedding_type</span> <span class='kw'>=</span> <span class='st'>"fa"</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>n_neighbors</th>
-      <td><p>integer; Number of neighbours for knn (default: <code>30L</code>;
+      <td><p>integer; Number of neighbours for knn (default: <code>15L</code>;
 range: from <code>1L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
@@ -140,7 +140,7 @@ means no denoising. (default: <code>15L</code>; range: from <code>0L</code> to <
       <th>resolution</th>
       <td><p>numeric; Resolution of louvain clustering, which determines
 the granularity of the clustering. Higher values will result in more clusters.
-(default: <code>2.5</code>; range: from <code>0.1</code> to <code>10L</code>)</p></td>
+(default: <code>1L</code>; range: from <code>0.1</code> to <code>10L</code>)</p></td>
     </tr>
     <tr>
       <th>embedding_type</th>

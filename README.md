@@ -36,7 +36,7 @@ The whole trajectory inference workflow is divided in several steps:
 
 ### Preparing the data
 
-The first step is to prepare the data for trajectory inference. `wrap_expression` requires both the counts and normalised expression as some TI methods are specifically built for one or the other
+The first step is to prepare the data for trajectory inference using `wrap_expression`. It requires both the counts and normalised expression (with genes/features in columns) as some TI methods are specifically built for one or the other:
 
 ``` r
 data("fibroblast_reprogramming_treutlein")
@@ -49,7 +49,7 @@ dataset <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, personal preferences, and system requirements. We provide an interactive shiny app which can be used to easily select the best performing and scalable method for your dataset. This app uses the benchmarking results from [dynbenchmark](https://github.com/dynverse/dynbenchmark) ([doi:10.1101/276907](https://doi.org/10.1101/276907)).
+When the data is wrapped, the most performant and scalable set of tools can be selected using a shiny app. This app will select a set of methods which are predicted to produce the most optimal output given several user-dependent factors (such as prior expectations about the topology present in the data) and dataset-dependent factors (such as the size of the dataset). This app uses the benchmarking results from [dynbenchmark](https://github.com/dynverse/dynbenchmark) ([doi:10.1101/276907](https://doi.org/10.1101/276907)).
 
 ``` r
 guidelines <- guidelines_shiny(dataset)

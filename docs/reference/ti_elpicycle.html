@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cyclic</a> — ti_elpicycle • dyno</title>
+<title>Inferring a trajectory inference using ElPiGraph cycle — ti_elpicycle • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cyclic</a> — ti_elpicycle" />
+<meta property="og:title" content="Inferring a trajectory inference using ElPiGraph cycle — ti_elpicycle" />
 
-<meta property="og:description" content="Will generate a trajectory using ElPiGraph cyclic. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using ElPiGraph cycle.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,77 +104,83 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cyclic</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using ElPiGraph cycle</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_elpicycle.R'><code>R/ti_elpicycle.R</code></a></small>
     <div class="hidden name"><code>ti_elpicycle.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cyclic</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/elpicycle'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://github.com/Albluca/ElPiGraph.R'>ElPiGraph cycle</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/elpigraph'>container</a>.
+The original code of this method is available
+<a href='https://github.com/Albluca/ElPiGraph.R'>here</a>.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ti_elpicycle</span>(<span class='kw'>topology</span> <span class='kw'>=</span> <span class='st'>"cycle"</span>, <span class='kw'>NumNodes</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>NumEdges</span> <span class='kw'>=</span> <span class='fl'>100000L</span>,
-  <span class='kw'>InitNodes</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>Mu</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>Lambda</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>MaxNumberOfIterations</span> <span class='kw'>=</span> <span class='fl'>10L</span>,
-  <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>CenterData</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>InitNodes</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>Mu</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='kw'>Lambda</span> <span class='kw'>=</span> <span class='fl'>0.01</span>,
+  <span class='kw'>MaxNumberOfIterations</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>CenterData</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>topology</th>
-      <td><p>The kind of topology to detect <br />
-discrete; default: "cycle"; possible values: cycle</p></td>
+      <td><p>discrete; The kind of topology to detect (default: <code>"cycle"</code>;
+values: <code>"cycle"</code>)</p></td>
     </tr>
     <tr>
       <th>NumNodes</th>
-      <td><p>The number of nodes of the principal graph <br />
-integer; default: 50L; possible values between 2 and 1000</p></td>
+      <td><p>integer; The number of nodes of the principal graph (default:
+<code>50L</code>; range: from <code>2L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>NumEdges</th>
-      <td><p>The maximum number of edges <br />
-integer; default: 100000L; possible values between 2 and 100000</p></td>
+      <td><p>integer; The maximum number of edges (default: <code>100000L</code>;
+range: from <code>2L</code> to <code>100000L</code>)</p></td>
     </tr>
     <tr>
       <th>InitNodes</th>
-      <td><p>Number of points to include in the initial graph <br />
-integer; default: 2L; possible values between 2 and 1000</p></td>
+      <td><p>integer; Number of points to include in the initial graph
+(default: <code>2L</code>; range: from <code>2L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>Mu</th>
-      <td><p>Controls the elastic energy <br />
-numeric; default: 0.1; possible values between 0.001 and 1</p></td>
+      <td><p>numeric; Controls the elastic energy (default: <code>0.1</code>; range: from
+<code>0.001</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>Lambda</th>
-      <td><p>Controls the elastic energy <br />
-numeric; default: 0.01; possible values between 0.001 and 1</p></td>
+      <td><p>numeric; Controls the elastic energy (default: <code>0.01</code>; range:
+from <code>0.001</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>MaxNumberOfIterations</th>
-      <td><p>Maximum number of steps to embed the nodes <br />
-integer; default: 10L; possible values between 1 and 1000</p></td>
+      <td><p>integer; Maximum number of steps to embed the
+nodes (default: <code>10L</code>; range: from <code>1L</code> to <code>1000L</code>)</p></td>
     </tr>
     <tr>
       <th>eps</th>
-      <td><p>Minimal relative change in the position of the nodes to stop embedment <br />
-numeric; default: 0.01; possible values between 0.001 and 1</p></td>
+      <td><p>numeric; Minimal relative change in the position of the nodes to
+stop embedment (default: <code>0.01</code>; range: from <code>0.001</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>CenterData</th>
-      <td><p>Should data and initial node positions be centered? <br /></p></td>
+      <td><p>logical; Should data and initial node positions be centered?</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The original code of this method is available <a href='https://github.com/Albluca/ElPiGraph.R'>here</a>.</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
 
   </div>
@@ -180,8 +190,6 @@ numeric; default: 0.01; possible values between 0.001 and 1</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -116,9 +116,9 @@
   <span class='kw'>expect_cycles</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>expect_complex_tree</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>prior_information</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>n_cells</span> <span class='kw'>=</span> <span class='fl'>1000</span>, <span class='kw'>n_features</span> <span class='kw'>=</span> <span class='fl'>1000</span>,
   <span class='kw'>metric_importance</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0.25</span>, <span class='fl'>0.25</span>, <span class='fl'>0.25</span>, <span class='fl'>0.25</span>), <span class='kw'>dynmethods</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>docker</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>programming_interface</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>languages</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"python"</span>, <span class='st'>"C++"</span>, <span class='st'>"R"</span>), <span class='kw'>user_friendliness</span> <span class='kw'>=</span> <span class='fl'>60</span>,
-  <span class='kw'>running_time</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>n_methods</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
+  <span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>programming_interface</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>languages</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"python"</span>, <span class='st'>"C++"</span>, <span class='st'>"R"</span>),
+  <span class='kw'>user_friendliness</span> <span class='kw'>=</span> <span class='fl'>60</span>, <span class='kw'>running_time</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>n_methods</span> <span class='kw'>=</span> <span class='fl'>4</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,7 +169,7 @@
     </tr>
     <tr>
       <th>docker</th>
-      <td><p>Is docker installed? Defaults to TRUE</p></td>
+      <td><p>Is docker installed? Defaults to dynwrap::test_docker_installation()</p></td>
     </tr>
     <tr>
       <th>programming_interface</th>
