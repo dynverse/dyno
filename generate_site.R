@@ -36,6 +36,6 @@ yaml::write_yaml(config, "_pkgdown.yml")
 
 build_site(".", lazy = TRUE, document = FALSE)
 
-dir_walk("./man/", fs::file_delete)
+dir_walk("./man/", fs::file_delete, recursive = FALSE, type = "file")
 
 devtools::document()

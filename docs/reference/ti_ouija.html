@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using ouija — ti_ouija • dyno</title>
+<title>Inferring trajectories with ouija — ti_ouija • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using ouija — ti_ouija" />
+<meta property="og:title" content="Inferring trajectories with ouija — ti_ouija" />
 
-<meta property="og:description" content="Will generate a trajectory using ouija.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with ouija
+Will generate a trajectory using ouija. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,67 +101,69 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using ouija</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_ouija.R'><code>R/ti_ouija.R</code></a></small>
+    <h1>Inferring trajectories with ouija</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_ouija.R'><code>R/ti_ouija.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_ouija.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/060442'>ouija</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/ouija'>container</a>.
-The original code of this method is available
-<a href='https://github.com/kieranrcampbell/ouija'>here</a>.</p>
+    <p>Inferring trajectories with ouija</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1101/060442'>ouija</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/ouija'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_ouija</span>(<span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100L</span>, <span class='kw'>response_type</span> <span class='kw'>=</span> <span class='st'>"switch"</span>,
-  <span class='kw'>inference_type</span> <span class='kw'>=</span> <span class='st'>"hmc"</span>, <span class='kw'>normalise_expression</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_ouija</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>,
+  <span class='kw'>response_type</span> <span class='kw'>=</span> <span class='st'>"switch"</span>, <span class='kw'>inference_type</span> <span class='kw'>=</span> <span class='st'>"hmc"</span>,
+  <span class='kw'>normalise_expression</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>ti_ouija</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>100</span>,
+  <span class='kw'>response_type</span> <span class='kw'>=</span> <span class='st'>"switch"</span>, <span class='kw'>inference_type</span> <span class='kw'>=</span> <span class='st'>"hmc"</span>,
+  <span class='kw'>normalise_expression</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>iter</th>
-      <td><p>numeric; Number of iterations (default: <code>100L</code>; range: from <code>10L</code>
-to <code>1000L</code>)</p></td>
+      <td><p>Number of iterations</p></td>
     </tr>
     <tr>
       <th>response_type</th>
-      <td><p>discrete; A vector declaring whether each gene exhibits
-"switch" or "transient"expression. Defaults to "switch" for all genes (default:
-<code>"switch"</code>; values: <code>"switch"</code>, <code>"transient"</code>)</p></td>
+      <td><p>A vector declaring whether each gene exhibits "switch" or "transient"
+expression. Defaults to "switch" for all genes</p></td>
     </tr>
     <tr>
       <th>inference_type</th>
-      <td><p>discrete; The type of inference to be performed, either
-<code>hmc</code> for HamiltonianMonte Carlo or <code>vb</code> for ADVI (Variational
-Bayes). Note that HMC is typically more accuratebut VB will be orders of
-magnitude faster. (default: <code>"hmc"</code>; values: <code>"hmc"</code>, <code>"vb"</code>)</p></td>
+      <td><p>The type of inference to be performed, either <code>hmc</code> for Hamiltonian
+Monte Carlo or <code>vb</code> for ADVI (Variational Bayes). Note that HMC is typically more accurate
+but VB will be orders of magnitude faster.</p></td>
     </tr>
     <tr>
       <th>normalise_expression</th>
-      <td><p>logical; Logical, default TRUE. If TRUE the data is
-pre-normalisedso the average peak expression is approximately 1. This makes the
-strength parametersapproximately comparable between genes.</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>Logical, default TRUE. If TRUE the data is pre-normalised
+so the average peak expression is approximately 1. This makes the strength parameters
+approximately comparable between genes.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Campbell, K.R., Yau, C., 2016. A descriptive marker gene approach
-to single-cell pseudotime inference.</p>
+    <p>This methods was first wrapped inside R, see ti_ouija</p>
+<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/ouija'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/060442'>Campbell, K.R., Yau, C., 2016. A descriptive marker gene approach to single-cell pseudotime inference.</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/ouija/topics/ouija'>ouija::ouija()</a></code></p></div>
     
 
   </div>
@@ -175,7 +174,9 @@ to single-cell pseudotime inference.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
 
   </div>

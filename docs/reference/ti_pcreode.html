@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using pCreode — ti_pcreode • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a> — ti_pcreode • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,14 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using pCreode — ti_pcreode" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a> — ti_pcreode" />
 
-<meta property="og:description" content="Will generate a trajectory using
-pCreode.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Will generate a trajectory using pCreode. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,66 +100,58 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using pCreode</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_pcreode.R'><code>R/ti_pcreode.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_pcreode.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using
-<a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/pcreode'>container</a>.
-The original code of this method is available
-<a href='https://github.com/KenLauLab/pCreode'>here</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1016/j.cels.2017.10.012'>pCreode</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/pcreode'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_pcreode</span>(<span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>noise</span> <span class='kw'>=</span> <span class='fl'>8L</span>,
-  <span class='kw'>target</span> <span class='kw'>=</span> <span class='fl'>25L</span>, <span class='kw'>num_runs</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_pcreode</span>(<span class='kw'>n_pca_components</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>radius</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>noise</span> <span class='kw'>=</span> <span class='fl'>8L</span>, <span class='kw'>target</span> <span class='kw'>=</span> <span class='fl'>25L</span>,
+  <span class='kw'>num_runs</span> <span class='kw'>=</span> <span class='fl'>10L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>n_pca_components</th>
-      <td><p>integer; (default: <code>3L</code>; range: from <code>2L</code> to <code>10L</code>)</p></td>
+      <td><p><br />
+integer; default: 3L; possible values between 2 and 10</p></td>
     </tr>
     <tr>
       <th>radius</th>
-      <td><p>numeric; (default: <code>1L</code>; range: from <code>0.01</code> to <code>10L</code>)</p></td>
+      <td><p><br />
+numeric; default: 1L; possible values between 0.01 and 10</p></td>
     </tr>
     <tr>
       <th>noise</th>
-      <td><p>numeric; (default: <code>8L</code>; range: from <code>1L</code> to <code>20L</code>)</p></td>
+      <td><p><br />
+numeric; default: 8L; possible values between 1 and 20</p></td>
     </tr>
     <tr>
       <th>target</th>
-      <td><p>numeric; (default: <code>25L</code>; range: from <code>5L</code> to <code>100L</code>)</p></td>
+      <td><p><br />
+numeric; default: 25L; possible values between 5 and 100</p></td>
     </tr>
     <tr>
       <th>num_runs</th>
-      <td><p>integer; (default: <code>10L</code>; range: from <code>10L</code> to <code>1000L</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p><br />
+integer; default: 10L; possible values between 10 and 1000</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Herring, C.A., Banerjee, A., McKinley, E.T., Simmons, A.J., Ping,
-J., Roland, J.T., Franklin, J.L., Liu, Q., Gerdes, M.J., Coffey, R.J., Lau,
-K.S., 2018. Unsupervised Trajectory Analysis of Single-Cell RNA-Seq and Imaging
-Data Reveals Alternative Tuft Cell Origins in the Gut. Cell Systems 6,
-37–51.e9.</p>
+    <p>The original code of this method is available <a href='https://github.com/KenLauLab/pCreode'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1016/j.cels.2017.10.012'>Herring, C.A., Banerjee, A., McKinley, E.T., Simmons, A.J., Ping, J., Roland, J.T., Franklin, J.L., Liu, Q., Gerdes, M.J., Coffey, R.J., Lau, K.S., 2018. Unsupervised Trajectory Analysis of Single-Cell RNA-Seq and Imaging Data Reveals Alternative Tuft Cell Origins in the Gut. Cell Systems 6, 37–51.e9.</a></p>
     
 
   </div>
@@ -175,7 +162,7 @@ Data Reveals Alternative Tuft Cell Origins in the Gut. Cell Systems 6,
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

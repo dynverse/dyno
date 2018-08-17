@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using MERLoT — ti_merlot • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1101/261768'>MERLoT</a> — ti_merlot • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using MERLoT — ti_merlot" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1101/261768'>MERLoT</a> — ti_merlot" />
 
-<meta property="og:description" content="Will generate a trajectory using MERLoT.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Will generate a trajectory using MERLoT. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,131 +100,112 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using MERLoT</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_merlot.R'><code>R/ti_merlot.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1101/261768'>MERLoT</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_merlot.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/261768'>MERLoT</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/merlot'>container</a>.
-The original code of this method is available
-<a href='https://github.com/soedinglab/merlot'>here</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/261768'>MERLoT</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/merlot'>container</a>.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ti_merlot</span>(<span class='kw'>sigma</span> <span class='kw'>=</span> <span class='st'>"local"</span>, <span class='kw'>distance</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>20L</span>,
   <span class='kw'>density_norm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>n_local_lower</span> <span class='kw'>=</span> <span class='fl'>5L</span>, <span class='kw'>n_local_upper</span> <span class='kw'>=</span> <span class='fl'>7L</span>,
-  <span class='kw'>w_width</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>n_components_to_use</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>N_yk</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>lambda_0</span> <span class='kw'>=</span> <span class='fl'>1e-10</span>, <span class='kw'>mu_0</span> <span class='kw'>=</span> <span class='fl'>0.0025</span>, <span class='kw'>increaseFactor_mu</span> <span class='kw'>=</span> <span class='fl'>20</span>,
-  <span class='kw'>increaseFactor_lambda</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>FixEndpoints</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>w_width</span> <span class='kw'>=</span> <span class='fl'>0.01</span>, <span class='kw'>n_components_to_use</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>N_yk</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>lambda_0</span> <span class='kw'>=</span> <span class='fl'>1e-10</span>,
+  <span class='kw'>mu_0</span> <span class='kw'>=</span> <span class='fl'>0.0025</span>, <span class='kw'>increaseFactor_mu</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>increaseFactor_lambda</span> <span class='kw'>=</span> <span class='fl'>20</span>,
+  <span class='kw'>FixEndpoints</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>sigma</th>
-      <td><p>discrete; Diffusion scale parameter of the Gaussian kernel. A
-larger sigma might be necessary if the eigenvalues can not be found because of
-a singularity in the matrix. Must be one of:</p><ul>
-<li><p>a numeric global sigma -- a
-global sigma will be calculated using
-<code><a href='http://www.rdocumentation.org/packages/destiny/topics/find_sigmas'>destiny::find_sigmas()</a></code></p></li>
-<li><p>or a
-<code><a href='http://www.rdocumentation.org/packages/destiny/topics/Sigmas-class'>destiny::Sigmas-class()</a></code> object.</p></li>
-</ul><p>(default:
-<code>"local"</code>; values: <code>"local"</code>, <code>"global"</code>)</p></td>
+      <td><p>Diffusion scale parameter of the Gaussian kernel. A larger sigma might be necessary if the eigenvalues can not be found because of a singularity in the matrix. Must be one of:</p><ul>
+<li><p>a numeric global sigma -- a global sigma will be calculated using <code><a href='http://www.rdocumentation.org/packages/destiny/topics/find_sigmas'>destiny::find_sigmas()</a></code></p></li>
+<li><p>or a <code><a href='http://www.rdocumentation.org/packages/destiny/topics/Sigmas-class'>destiny::Sigmas-class()</a></code> object.</p></li>
+</ul><p><br />
+discrete; default: "local"; possible values: local, global</p></td>
     </tr>
     <tr>
       <th>distance</th>
-      <td><p>discrete; A <code><a href='http://www.rdocumentation.org/packages/stats/topics/dist'>stats::dist()</a></code> object, or
-a character vector specifying which distance metric to use. Allowed
-measures:</p><ul>
-<li><p>cosine distance
-(1-corr(c_1, c_2)), or</p></li>
-<li><p>rank correlation distance (1-corr(rank(c_1),
-rank(c_2)))</p></li>
-</ul><p>(default: <code>"euclidean"</code>; values: <code>"euclidean"</code>, <code>"cosine"</code>,
-<code>"rankcor"</code>)</p></td>
+      <td><p>A <code><a href='http://www.rdocumentation.org/packages/stats/topics/dist'>stats::dist()</a></code> object, or a character vector specifying which distance metric to use. Allowed measures:</p><ul>
+<li><p>cosine distance (1-corr(c_1, c_2)), or</p></li>
+<li><p>rank correlation distance (1-corr(rank(c_1), rank(c_2)))</p></li>
+</ul><p><br />
+discrete; default: "euclidean"; possible values: euclidean, cosine, rankcor</p></td>
     </tr>
     <tr>
       <th>ndim</th>
-      <td><p>integer; Number of eigenvectors/dimensions to return (default:
-<code>20L</code>; range: from <code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>Number of eigenvectors/dimensions to return <br />
+integer; default: 20L; possible values between 2 and 20</p></td>
     </tr>
     <tr>
       <th>density_norm</th>
-      <td><p>logical; Logical. If TRUE, use density normalisation</p></td>
+      <td><p>Logical. If TRUE, use density normalisation <br />
+logical; default: TRUE; possible values: TRUE, FALSE</p></td>
     </tr>
     <tr>
       <th>n_local_lower</th>
-      <td><p>integer; If sigma == 'local', the
-<code>n_local_lower</code>:<code>n_local_upper</code> nearest neighbor(s) determine(s) the
-local sigma (default: <code>5L</code>; range: from <code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>If sigma == 'local', the <code>n_local_lower</code>:<code>n_local_upper</code> nearest neighbor(s) determine(s) the local sigma <br />
+integer; default: 5L; possible values between 2 and 20</p></td>
     </tr>
     <tr>
       <th>n_local_upper</th>
-      <td><p>integer; See <code>n_local_lower</code> (default: <code>7L</code>; range:
-from <code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>See <code>n_local_lower</code> <br />
+integer; default: 7L; possible values between 2 and 20</p></td>
     </tr>
     <tr>
       <th>w_width</th>
-      <td><p>numeric; Window width to use for deciding the branch cutoff
-(default: <code>0.01</code>; range: from <code>1e-04</code> to <code>1</code>)</p></td>
+      <td><p>Window width to use for deciding the branch cutoff <br />
+numeric; default: 0.01; possible values between 1e-04 and 1</p></td>
     </tr>
     <tr>
       <th>n_components_to_use</th>
-      <td><p>integer; Which components to use in downstream
-analysis (default: <code>3</code>; range: from <code>2</code> to <code>20</code>)</p></td>
+      <td><p>Which components to use in downstream analysis <br />
+integer; default: 3; possible values between 2 and 20</p></td>
     </tr>
     <tr>
       <th>N_yk</th>
-      <td><p>integer; Number of nodes for the elastic principal tree (default:
-<code>100</code>; range: from <code>2</code> to <code>1000</code>)</p></td>
+      <td><p>Number of nodes for the elastic principal tree <br />
+integer; default: 100; possible values between 2 and 1000</p></td>
     </tr>
     <tr>
       <th>lambda_0</th>
-      <td><p>numeric; Principal elastic tree energy function parameter.
-(default: <code>1e-10</code>; range: from <code>1e-15</code> to <code>1e-04</code>)</p></td>
+      <td><p>Principal elastic tree energy function parameter. <br />
+numeric; default: 1e-10; possible values between 1e-15 and 1e-04</p></td>
     </tr>
     <tr>
       <th>mu_0</th>
-      <td><p>numeric; Principal elastic tree energy function parameter.
-(default: <code>0.0025</code>; range: from <code>5e-04</code> to <code>0.005</code>)</p></td>
+      <td><p>Principal elastic tree energy function parameter. <br />
+numeric; default: 0.0025; possible values between 5e-04 and 0.005</p></td>
     </tr>
     <tr>
       <th>increaseFactor_mu</th>
-      <td><p>numeric; Factor by which the mu will be increased for
-the embedding (default: <code>20</code>; range: from <code>2</code> to <code>50</code>)</p></td>
+      <td><p>Factor by which the mu will be increased for the embedding <br />
+numeric; default: 20; possible values between 2 and 50</p></td>
     </tr>
     <tr>
       <th>increaseFactor_lambda</th>
-      <td><p>numeric; Factor by which the mu will be increased
-for the embedding (default: <code>20</code>; range: from <code>2</code> to <code>50</code>)</p></td>
+      <td><p>Factor by which the mu will be increased for the embedding <br />
+numeric; default: 20; possible values between 2 and 50</p></td>
     </tr>
     <tr>
       <th>FixEndpoints</th>
-      <td><p>logical; Documentation not provided by authors</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>Documentation not provided by authors <br />
+logical; default: FALSE; possible values: TRUE, FALSE</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Parra, R.G., Papadopoulos, N., Ahumada-Arranz, L., El Kholtei, J.,
-Treutlein, B., Soeding, J., 2018. Reconstructing complex lineage trees from
-scRNA-seq data using MERLoT.</p>
+    <p>The original code of this method is available <a href='https://github.com/soedinglab/merlot'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/261768'>Parra, R.G., Papadopoulos, N., Ahumada-Arranz, L., El Kholtei, J., Treutlein, B., Soeding, J., 2018. Reconstructing complex lineage trees from scRNA-seq data using MERLoT.</a></p>
     
 
   </div>
@@ -239,7 +216,7 @@ scRNA-seq data using MERLoT.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

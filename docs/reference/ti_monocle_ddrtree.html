@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using Monocle DDRTree — ti_monocle_ddrtree • dyno</title>
+<title>Inferring trajectories with Monocle v2 — ti_monocle_ddrtree • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using Monocle DDRTree — ti_monocle_ddrtree" />
+<meta property="og:title" content="Inferring trajectories with Monocle v2 — ti_monocle_ddrtree" />
 
-<meta property="og:description" content="Will generate a trajectory using Monocle DDRTree.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with Monocle v2
+Will generate a trajectory using Monocle DDRTree. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,67 +101,64 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using Monocle DDRTree</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_monocle_ddrtree.R'><code>R/ti_monocle_ddrtree.R</code></a></small>
+    <h1>Inferring trajectories with Monocle v2</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_monocle.R'><code>R/ti_monocle.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_monocle_ddrtree.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/nmeth.4402'>Monocle DDRTree</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/monocle_ddrtree'>container</a>.
-The original code of this method is available
-<a href='https://github.com/cole-trapnell-lab/monocle-release'>here</a>.</p>
+    <p>Inferring trajectories with Monocle v2</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1038/nmeth.4402'>Monocle DDRTree</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/monocle_ddrtree'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_monocle_ddrtree</span>(<span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"DDRTree"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
-  <span class='kw'>norm_method</span> <span class='kw'>=</span> <span class='st'>"vstExprs"</span>, <span class='kw'>auto_param_selection</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_monocle_ddrtree</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"DDRTree"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>norm_method</span> <span class='kw'>=</span> <span class='st'>"vstExprs"</span>, <span class='kw'>auto_param_selection</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='fu'>ti_monocle_ddrtree</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>reduction_method</span> <span class='kw'>=</span> <span class='st'>"DDRTree"</span>, <span class='kw'>max_components</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>norm_method</span> <span class='kw'>=</span> <span class='st'>"vstExprs"</span>, <span class='kw'>auto_param_selection</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>reduction_method</th>
-      <td><p>discrete; A character string specifying the algorithm
-to use for dimensionality reduction. (default: <code>"DDRTree"</code>; values:
-<code>"DDRTree"</code>)</p></td>
+      <td><p>A character string specifying the algorithm to use for dimensionality reduction.</p></td>
     </tr>
     <tr>
       <th>max_components</th>
-      <td><p>integer; The dimensionality of the reduced space
-(default: <code>2L</code>; range: from <code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>the dimensionality of the reduced space</p></td>
     </tr>
     <tr>
       <th>norm_method</th>
-      <td><p>discrete; Determines how to transform expression values
-prior to reducing dimensionality (default: <code>"vstExprs"</code>; values: <code>"vstExprs"</code>,
-<code>"log"</code>, <code>"none"</code>)</p></td>
+      <td><p>Determines how to transform expression values prior to reducing dimensionality</p></td>
     </tr>
     <tr>
       <th>auto_param_selection</th>
-      <td><p>logical; When this argument is set to TRUE
-(default), it will automatically calculate the proper value for the ncenter
-(number of centroids) parameters which will be passed into DDRTree call.</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>when this argument is set to TRUE (default), it will automatically calculate the proper value for the ncenter (number of centroids) parameters which will be passed into DDRTree call.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Qiu, X., Mao, Q., Tang, Y., Wang, L., Chawla, R., Pliner, H.A.,
-Trapnell, C., 2017. Reversed graph embedding resolves complex single-cell
-trajectories. Nature Methods 14, 979–982.</p>
+    <p>This methods was first wrapped inside R, see ti_monocle_ddrtree</p>
+<p>The original code of this method is available <a href='https://github.com/cole-trapnell-lab/monocle-release'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1038/nmeth.4402'>Qiu, X., Mao, Q., Tang, Y., Wang, L., Chawla, R., Pliner, H.A., Trapnell, C., 2017. Reversed graph embedding resolves complex single-cell trajectories. Nature Methods 14, 979–982.</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/monocle/topics/reduceDimension'>monocle::reduceDimension()</a></code>, <code><a href='http://www.rdocumentation.org/packages/monocle/topics/orderCells'>monocle::orderCells()</a></code></p></div>
     
 
   </div>
@@ -175,7 +169,9 @@ trajectories. Nature Methods 14, 979–982.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
 
   </div>

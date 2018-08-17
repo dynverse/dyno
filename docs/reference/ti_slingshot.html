@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using Slingshot — ti_slingshot • dyno</title>
+<title>Inferring trajectories with Slingshot — ti_slingshot • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,14 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using Slingshot — ti_slingshot" />
+<meta property="og:title" content="Inferring trajectories with Slingshot — ti_slingshot" />
 
-<meta property="og:description" content="Will generate a trajectory using
-Slingshot.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with Slingshot
+Will generate a trajectory using Slingshot. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,101 +101,98 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using Slingshot</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slingshot.R'><code>R/ti_slingshot.R</code></a></small>
+    <h1>Inferring trajectories with Slingshot</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slingshot.R'><code>R/ti_slingshot.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_slingshot.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using
-<a href='https://doi.org/10.1186/s12864-018-4772-0'>Slingshot</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/slingshot'>container</a>.
-The original code of this method is available
-<a href='https://github.com/kstreet13/slingshot'>here</a>.</p>
+    <p>Inferring trajectories with Slingshot</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1101/128843'>Slingshot</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slingshot'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slingshot</span>(<span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>reassign</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>, <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>,
-  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_slingshot</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>nclus</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> -<span class='fl'>3</span>,
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
+  <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>)
+
+<span class='fu'>ti_slingshot</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+  <span class='kw'>nclus</span> <span class='kw'>=</span> <span class='fl'>5</span>, <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>reweight</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> -<span class='fl'>3</span>,
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>,
+  <span class='kw'>shrink.method</span> <span class='kw'>=</span> <span class='st'>"cosine"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
+      <th>ndim</th>
+      <td><p>The number of dimensions</p></td>
+    </tr>
+    <tr>
+      <th>nclus</th>
+      <td><p>Number of clusters</p></td>
+    </tr>
+    <tr>
+      <th>dimred</th>
+      <td><p>A character vector specifying which dimensionality reduction method to use.
+See <a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred</a> for the list of available dimensionality reduction methods.</p></td>
+    </tr>
+    <tr>
       <th>shrink</th>
-      <td><p>numeric; Logical or numeric between 0 and 1, determines whether
-and how much to shrink branching lineages toward their average prior to the
-split. (default: <code>1</code>; range: from <code>0</code> to <code>1</code>)</p></td>
+      <td><p>logical or numeric between 0 and 1, determines whether and how 
+much to shrink branching lineages toward their average prior to the split.</p></td>
     </tr>
     <tr>
       <th>reweight</th>
-      <td><p>logical; Logical, whether to allow cells shared between
-lineages to be reweighted during curve-fitting. If <code>TRUE</code>, cells shared
-between lineages will be weighted by: distance to nearest curve / distance to
-curve.</p></td>
-    </tr>
-    <tr>
-      <th>reassign</th>
-      <td><p>logical; Logical, whether to reassign cells to lineages at each
-iteration. If TRUE, cells will be added to a lineage when their projection
-distance to the curve is less than the median distance for all cells currently
-assigned to the lineage. Additionally, shared cells will be removed from a
-lineage if their projection distance to the curve is above the 90th percentile
-and their weight along the curve is less than 0.1.</p></td>
+      <td><p>logical, whether to allow cells shared between lineages to be
+reweighted during curve-fitting. If <code>TRUE</code>, cells shared between 
+lineages will be iteratively reweighted based on the quantiles of their 
+projection distances to each curve. See 'Details' for more.</p></td>
     </tr>
     <tr>
       <th>thresh</th>
-      <td><p>numeric; Numeric, determines the convergence criterion. Percent
-change in the total distance from cells to their projections along curves must
-be less than thresh. Default is 0.001, similar to principal.curve. (default:
-<code>0.001</code>; range: from <code>1e-05</code> to <code>1e+05</code>)</p></td>
+      <td><p>numeric, determines the convergence criterion. Percent change in the total distance from cells to their projections along curves must be less than thresh. Default is 0.001, similar to principal.curve.</p></td>
     </tr>
     <tr>
       <th>maxit</th>
-      <td><p>integer; Numeric, maximum number of iterations, see
-principal.curve. (default: <code>10L</code>; range: from <code>0L</code> to <code>50L</code>)</p></td>
+      <td><p>numeric, maximum number of iterations, see principal.curve.</p></td>
     </tr>
     <tr>
       <th>stretch</th>
-      <td><p>numeric; Numeric factor by which curves can be extrapolated
-beyond endpoints. Default is 2, see principal.curve. (default: <code>2</code>; range: from
-<code>0</code> to <code>5</code>)</p></td>
+      <td><p>numeric factor by which curves can be extrapolated beyond endpoints. Default is 2, see principal.curve.</p></td>
     </tr>
     <tr>
       <th>smoother</th>
-      <td><p>discrete; Choice of scatter plot smoother. Same as
-principal.curve, but "lowess" option is replaced with "loess" for additional
-flexibility. (default: <code>"smooth.spline"</code>; values: <code>"smooth.spline"</code>,
-<code>"loess"</code>, <code>"periodic.lowess"</code>)</p></td>
+      <td><p>choice of scatter plot smoother. Same as principal.curve, but "lowess" option is replaced with "loess" for additional flexibility.</p></td>
     </tr>
     <tr>
       <th>shrink.method</th>
-      <td><p>discrete; Character denoting how to determine the
-appropriate amount of shrinkage for a branching lineage. Accepted values are
-the same as for <code>kernel</code> in <code>density()</code> (default is <code>"cosine"</code>), as
-well as <code>"tricube"</code> and <code>"density"</code>. See 'Details' for more.
-(default: <code>"cosine"</code>; values: <code>"cosine"</code>, <code>"tricube"</code>, <code>"density"</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>character denoting how to determine the appropriate 
+amount of shrinkage for a branching lineage. Accepted values are the same 
+as for <code>kernel</code> in <code>density</code> (default is <code>"cosine"</code>),
+as well as <code>"tricube"</code> and <code>"density"</code>. See 'Details' for more.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Street, K., Risso, D., Fletcher, R.B., Das, D., Ngai, J., Yosef,
-N., Purdom, E., Dudoit, S., 2018. Slingshot: cell lineage and pseudotime
-inference for single-cell transcriptomics. BMC Genomics 19.</p>
+    <p>This methods was first wrapped inside R, see ti_slingshot</p>
+<p>The original code of this method is available <a href='https://github.com/kstreet13/slingshot'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/128843'>Street, K., Risso, D., Fletcher, R.B., Das, D., Ngai, J., Yosef, N., Purdom, E., Dudoit, S., 2017. Slingshot: Cell lineage and pseudotime inference for single-cell transcriptomics.</a></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/slingshot/topics/slingshot'>slingshot::slingshot()</a></code></p></div>
     
 
   </div>
@@ -210,7 +203,9 @@ inference for single-cell transcriptomics. BMC Genomics 19.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
+
+      <li><a href="#see-also">See also</a></li>
           </ul>
 
   </div>

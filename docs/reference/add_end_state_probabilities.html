@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Multifurcating trajectory with end state probabilities — add_end_state_probabilities • dyno</title>
+<title>Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities. If pseudotime values are not given, will use pseudotime already present in the model. — add_end_state_probabilities • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,9 @@
 
 
 
-<meta property="og:title" content="Multifurcating trajectory with end state probabilities — add_end_state_probabilities" />
+<meta property="og:title" content="Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities. If pseudotime values are not given, will use pseudotime already present in the model. — add_end_state_probabilities" />
 
-<meta property="og:description" content="Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities.
-If pseudotime values are not given, will use pseudotime already present in the model." />
+<meta property="og:description" content="This function will generate the milestone_network and progressions." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,27 +100,26 @@ If pseudotime values are not given, will use pseudotime already present in the m
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Multifurcating trajectory with end state probabilities</h1>
+    <h1>Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities. If pseudotime values are not given, will use pseudotime already present in the model.</h1>
     <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/wrap_add_end_state_probabilities.R'><code>R/wrap_add_end_state_probabilities.R</code></a></small>
     <div class="hidden name"><code>add_end_state_probabilities.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Constructs a multifurcating trajectory using the pseudotime values of each cell and their end state probabilities.
-If pseudotime values are not given, will use pseudotime already present in the model.</p>
+    <p>This function will generate the milestone_network and progressions.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_end_state_probabilities</span>(<span class='no'>model</span>, <span class='no'>end_state_probabilities</span>,
-  <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>do_scale_minmax</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>add_end_state_probabilities</span>(<span class='no'>model</span>, <span class='no'>end_state_probabilities</span>, <span class='kw'>pseudotime</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>do_scale_minmax</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>model</th>
-      <td><p>The model to which a multifurcating trajectory will be added.</p></td>
+      <td><p>The model to which a linear trajectory will be added.</p></td>
     </tr>
     <tr>
       <th>end_state_probabilities</th>
@@ -146,10 +144,6 @@ Otherwise, will assume the values are already within that range.</p></td>
 
     <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This function will generate the milestone_network and progressions.</p>
-    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -158,8 +152,6 @@ Otherwise, will assume the values are already within that range.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

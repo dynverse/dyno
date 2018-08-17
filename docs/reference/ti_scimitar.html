@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using SCIMITAR — ti_scimitar • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a> — ti_scimitar • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,14 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using SCIMITAR — ti_scimitar" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a> — ti_scimitar" />
 
-<meta property="og:description" content="Will generate a trajectory using
-SCIMITAR.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Will generate a trajectory using SCIMITAR. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,70 +100,63 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using SCIMITAR</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scimitar.R'><code>R/ti_scimitar.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_scimitar.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using
-<a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/scimitar'>container</a>.
-The original code of this method is available
-<a href='https://github.com/dimenwarper/scimitar'>here</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1142/9789813207813_0053'>SCIMITAR</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scimitar'>container</a>.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>ti_scimitar</span>(<span class='kw'>covariance_type</span> <span class='kw'>=</span> <span class='st'>"diag"</span>, <span class='kw'>degree</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>step_size</span> <span class='kw'>=</span> <span class='fl'>0.07</span>,
-  <span class='kw'>cov_estimator</span> <span class='kw'>=</span> <span class='st'>"corpcor"</span>, <span class='kw'>cov_reg</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
-  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>cov_estimator</span> <span class='kw'>=</span> <span class='st'>"corpcor"</span>, <span class='kw'>cov_reg</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>max_iter</span> <span class='kw'>=</span> <span class='fl'>3L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>covariance_type</th>
-      <td><p>discrete; (default: <code>"diag"</code>; values: <code>"diag"</code>,
-<code>"spherical"</code>, <code>"full"</code>)</p></td>
+      <td><p><br />
+discrete; default: "diag"; possible values: diag, spherical, full</p></td>
     </tr>
     <tr>
       <th>degree</th>
-      <td><p>integer; (default: <code>3L</code>; range: from <code>1L</code> to <code>20L</code>)</p></td>
+      <td><p><br />
+integer; default: 3L; possible values between 1 and 20</p></td>
     </tr>
     <tr>
       <th>step_size</th>
-      <td><p>numeric; (default: <code>0.07</code>; range: from <code>0.01</code> to <code>0.1</code>)</p></td>
+      <td><p><br />
+numeric; default: 0.07; possible values between 0.01 and 0.1</p></td>
     </tr>
     <tr>
       <th>cov_estimator</th>
-      <td><p>discrete; (default: <code>"corpcor"</code>; values: <code>"identity"</code>,
-<code>"diag"</code>, <code>"sample"</code>, <code>"global"</code>, <code>"glasso"</code>, <code>"corpcor"</code>, <code>"average"</code>)</p></td>
+      <td><p><br />
+discrete; default: "corpcor"; possible values: identity, diag, sample, global, glasso, corpcor, average</p></td>
     </tr>
     <tr>
       <th>cov_reg</th>
-      <td><p>numeric; (default: <code>0.05</code>; range: from <code>0.01</code> to <code>0.1</code>)</p></td>
+      <td><p><br />
+numeric; default: 0.05; possible values between 0.01 and 0.1</p></td>
     </tr>
     <tr>
       <th>max_iter</th>
-      <td><p>integer; (default: <code>3L</code>; range: from <code>1L</code> to <code>20L</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p><br />
+integer; default: 3L; possible values between 1 and 20</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>CORDERO, P., STUART, J.M., 2016. TRACING CO-REGULATORY NETWORK
-DYNAMICS IN NOISY, SINGLE-CELL TRANSCRIPTOME TRAJECTORIES. Biocomputing 2017.</p>
+    <p>The original code of this method is available <a href='https://github.com/dimenwarper/scimitar'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1142/9789813207813_0053'>CORDERO, P., STUART, J.M., 2016. TRACING CO-REGULATORY NETWORK DYNAMICS IN NOISY, SINGLE-CELL TRANSCRIPTOME TRAJECTORIES. Biocomputing 2017.</a></p>
     
 
   </div>
@@ -179,7 +167,7 @@ DYNAMICS IN NOISY, SINGLE-CELL TRANSCRIPTOME TRAJECTORIES. Biocomputing 2017.</p
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

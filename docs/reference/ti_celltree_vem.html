@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using cellTree with vem — ti_celltree_vem • dyno</title>
+<title>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a> — ti_celltree_vem • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,9 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using cellTree with vem — ti_celltree_vem" />
+<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a> — ti_celltree_vem" />
 
-<meta property="og:description" content="Will generate a trajectory using cellTree with vem.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Will generate a trajectory using cellTree with vem. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,83 +100,89 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using cellTree with vem</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_celltree_vem.R'><code>R/ti_celltree_vem.R</code></a></small>
+    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a></h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_celltree.R'><code>R/ti_celltree.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_celltree_vem.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/celltree_vem'>container</a>.
-The original code of this method is available
-<a href='https://bioconductor.org/packages/release/bioc/html/cellTree.html'>here</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1186/s12859-016-1175-6'>cellTree with vem</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/celltree_vem'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_celltree_vem</span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"VEM"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+    <pre class="usage"><span class='fu'>ti_celltree_vem</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"VEM"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
   <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
   <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>, <span class='kw'>num_topics</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>,
-  <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)
+
+<span class='fu'>ti_celltree_vem</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"VEM"</span>, <span class='kw'>sd_filter</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>absolute_width</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>width_scale_factor</span> <span class='kw'>=</span> <span class='fl'>1.5</span>, <span class='kw'>outlier_tolerance_factor</span> <span class='kw'>=</span> <span class='fl'>0.1</span>,
+  <span class='kw'>rooting_method</span> <span class='kw'>=</span> <span class='st'>"null"</span>, <span class='kw'>num_topics</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>tot_iter</span> <span class='kw'>=</span> <span class='fl'>1e+06</span>,
+  <span class='kw'>tolerance</span> <span class='kw'>=</span> <span class='fl'>1e-05</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>method</th>
-      <td><p>discrete; (default: <code>"VEM"</code>; values: <code>"VEM"</code>)</p></td>
+      <td><p>LDA inference method to use. Can be any unique prefix of ‘maptpx’, ‘Gibbs’ or ‘VEM’ (defaults to ‘maptpx’)</p></td>
     </tr>
     <tr>
       <th>sd_filter</th>
-      <td><p>numeric; (default: <code>0.5</code>; range: from <code>0.01</code> to <code>5</code>)</p></td>
+      <td><p>Standard-deviation threshold below which genes should be removed from the data.</p></td>
     </tr>
     <tr>
       <th>absolute_width</th>
-      <td><p>numeric; (default: <code>0</code>; range: from <code>NULL</code> to <code>NULL</code>)</p></td>
+      <td><p>Distance threshold below which a cell vertex is considered to be attached to a backbone vertex (see paper for more details).
+By default, this threshold is computed dynamically, based on the distance distribution for each branch.</p></td>
     </tr>
     <tr>
       <th>width_scale_factor</th>
-      <td><p>numeric; (default: <code>1.5</code>; range: from <code>0.1</code> to <code>100</code>)</p></td>
+      <td><p>A scaling factor for the dynamically-computed distance threshold (ignored if absolute_width is provided).
+Higher values will result in less branches in the backbone tree, while lower values might lead to a large number of backbone branches.</p></td>
     </tr>
     <tr>
       <th>outlier_tolerance_factor</th>
-      <td><p>numeric; (default: <code>0.1</code>; range: from <code>1e-04</code>
-to <code>1000</code>)</p></td>
+      <td><p>Proportion of vertices, out of the total number of vertices divided by the total number of branches,
+that can be left at the end of the backbone tree-building algorithm.</p></td>
     </tr>
     <tr>
       <th>rooting_method</th>
-      <td><p>discrete; (default: <code>"null"</code>; values: <code>"longest.path"</code>,
-<code>"center.start.group"</code>, <code>"average.start.group"</code>, <code>"null"</code>)</p></td>
+      <td><p>Method used to root the backbone tree. Must be one of: ‘null’, ‘longest.path’, ‘center.start.group’ or ‘average.start.group’.
+‘longest.path' picks one end of the longest shortest-path between two vertices.
+'center.start.group’ picks the vertex in the starting group with lowest mean-square-distance to the others.
+‘average.start.group’ creates a new artificial vertex, as the average of all cells in the starting group.
+‘null’ picks the best method based on the type of grouping and start group information available.</p></td>
     </tr>
     <tr>
       <th>num_topics</th>
-      <td><p>integer; (default: <code>4</code>; range: from <code>2</code> to <code>15</code>)</p></td>
+      <td><p>The number of topics to fit in the model.</p></td>
     </tr>
     <tr>
       <th>tot_iter</th>
-      <td><p>numeric; (default: <code>1e+06</code>; range: from <code>10000</code> to <code>1e+07</code>)</p></td>
+      <td><p>Number of iterations of the LDA inference.</p></td>
     </tr>
     <tr>
       <th>tolerance</th>
-      <td><p>numeric; (default: <code>1e-05</code>; range: from <code>1e-07</code> to <code>0.001</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>Tolerance values of the LDA inference.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>duVerle, D.A., Yotsukura, S., Nomura, S., Aburatani, H., Tsuda, K.,
-2016. CellTree: an R/bioconductor package to infer the hierarchical structure
-of cell populations from single-cell RNA-seq data. BMC Bioinformatics 17.</p>
+    <p>This methods was first wrapped inside R, see ti_celltree_vem</p>
+<p>The method is described in: <a href='https://doi.org/10.1186/s12859-016-1175-6'>duVerle, D.A., Yotsukura, S., Nomura, S., Aburatani, H., Tsuda, K., 2016. CellTree: an R/bioconductor package to infer the hierarchical structure of cell populations from single-cell RNA-seq data. BMC Bioinformatics 17.</a></p>
     
 
   </div>
@@ -191,7 +193,7 @@ of cell populations from single-cell RNA-seq data. BMC Bioinformatics 17.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

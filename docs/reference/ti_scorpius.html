@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using SCORPIUS — ti_scorpius • dyno</title>
+<title>Inferring trajectories with SCORPIUS — ti_scorpius • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using SCORPIUS — ti_scorpius" />
+<meta property="og:title" content="Inferring trajectories with SCORPIUS — ti_scorpius" />
 
-<meta property="og:description" content="Will generate a trajectory using SCORPIUS.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with SCORPIUS
+Will generate a trajectory using SCORPIUS. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,90 +101,78 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using SCORPIUS</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scorpius.R'><code>R/ti_scorpius.R</code></a></small>
+    <h1>Inferring trajectories with SCORPIUS</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scorpius.R'><code>R/ti_scorpius.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_scorpius.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/079509'>SCORPIUS</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/scorpius'>container</a>.
-The original code of this method is available
-<a href='https://github.com/rcannood/SCORPIUS'>here</a>.</p>
+    <p>Inferring trajectories with SCORPIUS</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1101/079509'>SCORPIUS</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scorpius'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_scorpius</span>(<span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3L</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4L</span>,
-  <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_scorpius</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='fu'>ti_scorpius</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>distance_method</span> <span class='kw'>=</span> <span class='st'>"spearman"</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
+  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth_spline"</span>, <span class='kw'>sparse</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>distance_method</th>
-      <td><p>discrete; A character string indicating which
-correlationcoefficient (or covariance) is to be computed. One of "pearson",
-"kendall", or "spearman". (default: <code>"spearman"</code>; values: <code>"spearman"</code>,
-<code>"pearson"</code>, <code>"kendall"</code>)</p></td>
+      <td><p>A character string indicating which correlation
+coefficient (or covariance) is to be computed. One of "pearson", "kendall", or "spearman".</p></td>
     </tr>
     <tr>
       <th>ndim</th>
-      <td><p>integer; The number of dimensions in the new space. (default: <code>3L</code>;
-range: from <code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>The number of dimensions in the new space.</p></td>
     </tr>
     <tr>
       <th>k</th>
-      <td><p>integer; The number of clusters to cluster the data into. (default:
-<code>4L</code>; range: from <code>1L</code> to <code>20L</code>)</p></td>
+      <td><p>The number of clusters to cluster the data into.</p></td>
     </tr>
     <tr>
       <th>thresh</th>
-      <td><p>numeric; <code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal_curve'>principal_curve</a></code> parameter:
-convergence threshhold on shortest distances to the curve (default: <code>0.001</code>;
-range: from <code>1e-05</code> to <code>1e+05</code>)</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code> parameter: convergence threshhold on shortest distances to the curve</p></td>
     </tr>
     <tr>
       <th>maxit</th>
-      <td><p>integer; <code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal_curve'>principal_curve</a></code> parameter:
-maximum number of iterations (default: <code>10L</code>; range: from <code>0L</code> to <code>50L</code>)</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code> parameter: maximum number of iterations</p></td>
     </tr>
     <tr>
       <th>stretch</th>
-      <td><p>numeric; <code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal_curve'>principal_curve</a></code> parameter: a
-factor by which the curve can be extrapolated when points are projected
-(default: <code>0</code>; range: from <code>0</code> to <code>5</code>)</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code> parameter: a factor by which the curve can be extrapolated when points are projected</p></td>
     </tr>
     <tr>
       <th>smoother</th>
-      <td><p>discrete; <code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal_curve'>principal_curve</a></code> parameter:
-choice of smoother (default: <code>"smooth_spline"</code>; values: <code>"smooth_spline"</code>,
-<code>"lowess"</code>, <code>"periodic_lowess"</code>)</p></td>
+      <td><p><code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>principal.curve</a></code> parameter: choice of smoother</p></td>
     </tr>
     <tr>
       <th>sparse</th>
-      <td><p>logical; Whether or not to use sparse MDS dimensionality
-reduction,for datasets with large amounts of cells.</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>Whether or not to use sparse MDS dimensionality reduction,
+for datasets with large amounts of cells.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Cannoodt, R., Saelens, W., Sichien, D., Tavernier, S., Janssens,
-S., Guilliams, M., Lambrecht, B.N., De Preter, K., Saeys, Y., 2016. SCORPIUS
-improves trajectory inference and identifies novel modules in dendritic cell
-development.</p>
+    <p>This methods was first wrapped inside R, see ti_scorpius</p>
+<p>The original code of this method is available <a href='https://github.com/rcannood/SCORPIUS'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1101/079509'>Cannoodt, R., Saelens, W., Sichien, D., Tavernier, S., Janssens, S., Guilliams, M., Lambrecht, B.N., De Preter, K., Saeys, Y., 2016. SCORPIUS improves trajectory inference and identifies novel modules in dendritic cell development.</a></p>
     
 
   </div>
@@ -198,7 +183,7 @@ development.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

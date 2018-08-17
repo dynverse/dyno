@@ -114,8 +114,8 @@
     <pre class="usage"><span class='fu'>compute_tented_geodesic_distances</span>(<span class='no'>trajectory</span>, <span class='kw'>waypoint_cells</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>waypoint_milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
 
-<span class='fu'>compute_tented_geodesic_distances_</span>(<span class='no'>cell_ids</span>, <span class='no'>milestone_ids</span>,
-  <span class='no'>milestone_network</span>, <span class='no'>milestone_percentages</span>, <span class='no'>divergence_regions</span>,
+<span class='fu'>compute_tented_geodesic_distances_</span>(<span class='no'>cell_ids</span>, <span class='no'>milestone_ids</span>, <span class='no'>milestone_network</span>,
+  <span class='no'>milestone_percentages</span>, <span class='no'>progressions</span>, <span class='no'>divergence_regions</span>,
   <span class='kw'>waypoint_cells</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>waypoint_milestone_percentages</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -151,6 +151,11 @@ Type: Data frame(from = character, to = character, length = numeric, directed = 
       <td><p>A data frame specifying what percentage milestone each cell
 consists of.
 Type: Data frame(cell_id = character, milestone_id = character, percentage = numeric).</p></td>
+    </tr>
+    <tr>
+      <th>progressions</th>
+      <td><p>Specifies the progression of a cell along a transition in the milestone_network.
+Type: Data frame(cell_id = character, from = character, to = character, percentage = numeric).</p></td>
     </tr>
     <tr>
       <th>divergence_regions</th>

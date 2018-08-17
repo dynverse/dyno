@@ -111,18 +111,17 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>infer_trajectories</span>(<span class='no'>dataset</span>, <span class='no'>method</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>give_priors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>mc_cores</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>capture_output</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+    <pre class="usage"><span class='fu'>infer_trajectories</span>(<span class='no'>task</span>, <span class='no'>method</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>give_priors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>mc_cores</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
-<span class='fu'>infer_trajectory</span>(<span class='no'>dataset</span>, <span class='no'>method</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='fu'>list</span>(),
-  <span class='kw'>give_priors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>mc_cores</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>infer_trajectory</span>(<span class='no'>task</span>, <span class='no'>method</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='fu'>list</span>(), <span class='kw'>give_priors</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>mc_cores</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>dataset</th>
+      <th>task</th>
       <td><p>One or more datasets, as created using dynwrap</p></td>
     </tr>
     <tr>
@@ -142,20 +141,16 @@ If multiple methods were provided in the <code>method</code> parameter,
     </tr>
     <tr>
       <th>give_priors</th>
-      <td><p>All the priors a method is allowed to receive.
-Must be a subset of all available priors (<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/priors'>priors</a></code>).</p></td>
+      <td><p>All the priors a method is allowed to receive. Must be a subset of: <code>"start_milestones"</code>,
+<code>"start_id"</code>, <code>"end_milestones"</code>, <code>"end_id"</code>, <code>"groups_id"</code> and <code>"groups_network"</code></p></td>
     </tr>
     <tr>
       <th>mc_cores</th>
-      <td><p>The number of cores to use, allowing to parallellise the different datasets</p></td>
+      <td><p>The number of cores to use, allowing to parallellise the different tasks</p></td>
     </tr>
     <tr>
       <th>verbose</th>
       <td><p>Whether or not to print information output</p></td>
-    </tr>
-    <tr>
-      <th>capture_output</th>
-      <td><p>Whether to capture the stdout and stderr produced by a method</p></td>
     </tr>
     <tr>
       <th>...</th>

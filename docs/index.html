@@ -76,15 +76,34 @@
     
     
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<p><a href="https://travis-ci.org/dynverse/dyno"><img src="https://img.shields.io/travis/dynverse/dyno.svg?logo=travis" alt="Travis"></a> <a href="https://ci.appveyor.com/project/dynverse/dyno"><img src="https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle"></p>
-<p>The <strong>dyno</strong> package offers <strong>end-users</strong> a complete TI pipeline. It features:</p>
+<p><a href="https://travis-ci.org/dynverse/dyno"><img src="https://img.shields.io/travis/dynverse/dyno.svg?logo=travis" alt="Travis"></a> <a href="https://ci.appveyor.com/project/dynverse/dyno"><img src="https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <img src="https://img.shields.io/badge/lifecycle-maturing-orange.svg" alt="Lifecycle is maturing"></p>
+<p>The dyno package guides the user through the full pipeline of trajectory inference (TI) on single-cell data, starting from the selection of the most optimal methods, over to the running of these methods, right to the interpretation and visualisation of the trajectories.</p>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>You can install dyno from github using:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"dynverse/dyno"</span>)</code></pre></div>
+<p>On linux, udunits2 has to be installed:</p>
 <ul>
-<li>a uniform interface to 57 <a href="https://github.com/dynverse/dynmethods#list-of-included-methods">TI methods</a>,</li>
-<li>an <a href="https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods">interactive guideline tool</a> to help the user select the most appropriate method,</li>
-<li>the <a href="https://github.com/dynverse/dyno#plotting-the-trajectory">interpretation and visualisation of trajectories</a>, including colouring by gene expression or clusters, and</li>
-<li>downstream analyses such as the <a href="https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest">identification of potential marker genes</a>.</li>
+<li>debian/ubuntu: <code>sudo apt install libudunits2-dev</code>
+</li>
+<li>rhel/fedora/centos: <code>sudo dnf install udunits2 udunits2-devel</code>
+</li>
 </ul>
-<p>For information on how to install dyno, check out the <a href="https://github.com/dynverse/dyno#installation">installation instructions below</a>.</p>
+<p>Although not required, we also highly recommend the installation of docker. See <a href="https://docs.docker.com/install" class="uri">https://docs.docker.com/install</a> for instructions. This will make it easy to run all available trajectory inference methods.</p>
+<p>You can test whether docker is correctly installed by:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dynwrap<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation">test_docker_installation</a></span>(<span class="dt">detailed =</span> <span class="ot">TRUE</span>)
+<span class="co">#&gt; ✔ Docker is installed</span>
+<span class="co">#&gt; ✔ Docker daemon is running</span>
+<span class="co">#&gt; ✔ Docker is at correct version (&gt;1.0): 1.37</span>
+<span class="co">#&gt; ✔ Docker is in linux mode</span>
+<span class="co">#&gt; ✔ Docker can pull images</span>
+<span class="co">#&gt; ✔ Docker can run image</span>
+<span class="co">#&gt; ✔ Docker can mount temporary volumes</span>
+<span class="co">#&gt; ✔ Docker test succesful ------------------------------------------------------------------</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+</div>
 <div id="trajectory-inference-workflow" class="section level2">
 <h2 class="hasAnchor">
 <a href="#trajectory-inference-workflow" class="anchor"></a>Trajectory inference workflow</h2>
@@ -92,7 +111,7 @@
 <span class="kw">library</span>(tidyverse)</code></pre></div>
 <p>The whole trajectory inference workflow is divided in several steps:</p>
 <div class="figure">
-<img src="reference/figures/toolkit.png">
+<img src="figures/toolkit.png">
 </div>
 <div id="preparing-the-data" class="section level3">
 <h3 class="hasAnchor">
@@ -100,7 +119,7 @@
 <p>The first step is to prepare the data for trajectory inference. <code>wrap_expression</code> requires both the counts and normalised expression as some TI methods are specifically built for one or the other</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">"fibroblast_reprogramming_treutlein"</span>)
 
-dataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/wrap_expression.html">wrap_expression</a></span>(
+task &lt;-<span class="st"> </span><span class="kw"><a href="reference/wrap_expression.html">wrap_expression</a></span>(
   <span class="dt">counts =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>counts,
   <span class="dt">expression =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>expression
 )</code></pre></div>
@@ -108,18 +127,18 @@ dataset &lt;-<span class="st"> </span><span class="kw"><a href="reference/wrap_e
 <div id="selecting-the-most-optimal-ti-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#selecting-the-most-optimal-ti-methods" class="anchor"></a>Selecting the most optimal TI methods</h3>
-<p>The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from the <a href="https://github.com/dynverse/dynbenchmark">dynbenchmark</a> benchmarking study.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">guidelines &lt;-<span class="st"> </span><span class="kw"><a href="reference/guidelines.html">guidelines_shiny</a></span>(dataset)
+<p>The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from <span class="citation">(Saelens et al. 2018)</span> (<a href="https://doi.org/10.1101/276907">doi</a>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">guidelines &lt;-<span class="st"> </span><span class="kw"><a href="reference/guidelines.html">guidelines_shiny</a></span>(task)
 methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(selected) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(method_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">first</span>()</code></pre></div>
 <div class="figure">
-<img src="reference/figures/dynguidelines.gif">
+<img src="dynguidelines.gif">
 </div>
 </div>
 <div id="running-the-methods" class="section level3">
 <h3 class="hasAnchor">
 <a href="#running-the-methods" class="anchor"></a>Running the methods</h3>
-<p>All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to <a href="#Installation">have docker installed</a>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(dataset, <span class="st">"projected_tscan"</span>)</code></pre></div>
+<p>All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is strongly recommended to <a href="#Installation">have docker installed</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span><span class="kw"><a href="reference/infer_trajectories.html">infer_trajectory</a></span>(task, <span class="st">"tscan"</span>)</code></pre></div>
 </div>
 <div id="interpreting-the-trajectory-biologically" class="section level3">
 <h3 class="hasAnchor">
@@ -130,7 +149,7 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <a href="#rooting" class="anchor"></a>Rooting</h4>
 <p>Most methods have no direct way of inferring the directionality of the trajectory. In this case, the trajectory should be “rooted” using some external information, for example by using a set of marker genes.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="reference/add_root_using_expression.html">add_root_using_expression</a></span>(<span class="kw">c</span>(<span class="st">"Vim"</span>), dataset<span class="op">$</span>expression)</code></pre></div>
+<span class="st">  </span><span class="kw"><a href="reference/add_root_using_expression.html">add_root_using_expression</a></span>(<span class="kw">c</span>(<span class="st">"Vim"</span>), task<span class="op">$</span>expression)</code></pre></div>
 </div>
 <div id="milestone-labelling" class="section level4">
 <h4 class="hasAnchor">
@@ -143,8 +162,7 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
     <span class="dt">Myocyte =</span> <span class="kw">c</span>(<span class="st">"Myl1"</span>),
     <span class="dt">Neuron =</span> <span class="kw">c</span>(<span class="st">"Stmn3"</span>)
   ),
-  dataset<span class="op">$</span>expression
-)</code></pre></div>
+  task<span class="op">$</span>expression)</code></pre></div>
 </div>
 </div>
 <div id="plotting-the-trajectory" class="section level3">
@@ -152,53 +170,53 @@ methods &lt;-<span class="st"> </span>guidelines<span class="op">$</span>methods
 <a href="#plotting-the-trajectory" class="anchor"></a>Plotting the trajectory</h3>
 <p>Several visualisation methods provide ways to biologically interpret trajectories.</p>
 <p>Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/add_dimred.html">add_dimred</a></span>(dyndimred<span class="op">::</span>dimred_mds, <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">model &lt;-<span class="st"> </span>model <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="reference/add_dimred.html">add_dimred</a></span>(dyndimred<span class="op">::</span>dimred_mds, <span class="dt">expression_source =</span> task<span class="op">$</span>expression)
 <span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(
   model, 
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression, 
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression, 
   <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping
 )</code></pre></div>
-<p><img src="reference/figures/dimred-1.png" width="100%"></p>
+<p><img src="figures/README-dimred-1.png" width="100%"></p>
 <p>Similarly, the expression of a gene:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(
   model, 
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression,
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression,
   <span class="dt">feature_oi =</span> <span class="st">"Fn1"</span>
 )</code></pre></div>
-<p><img src="reference/figures/dimred_expression-1.png" width="100%"></p>
+<p><img src="figures/README-dimred_expression-1.png" width="100%"></p>
 <p>Groups can also be visualised using a background color</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(
   model, 
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression, 
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression, 
   <span class="dt">color_cells =</span> <span class="st">"feature"</span>,
   <span class="dt">feature_oi =</span> <span class="st">"Vim"</span>,
   <span class="dt">color_density =</span> <span class="st">"grouping"</span>,
   <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping,
   <span class="dt">label_milestones =</span> <span class="ot">FALSE</span>
 )</code></pre></div>
-<p><img src="reference/figures/dimred_groups-1.png" width="100%"></p>
+<p><img src="figures/README-dimred_groups-1.png" width="100%"></p>
 </div>
-<div id="predicting-and-visualising-genes-of-interest" class="section level3">
+<div id="plotting-relevant-features" class="section level3">
 <h3 class="hasAnchor">
-<a href="#predicting-and-visualising-genes-of-interest" class="anchor"></a>Predicting and visualising genes of interest</h3>
-<p>We integrate several methods to extract candidate marker genes/features from a trajectory.</p>
+<a href="#plotting-relevant-features" class="anchor"></a>Plotting relevant features</h3>
+<p>We integrate several methods to extract relevant genes/features from a trajectory.</p>
 <div id="a-global-overview-of-the-most-predictive-genes" class="section level4">
 <h4 class="hasAnchor">
 <a href="#a-global-overview-of-the-most-predictive-genes" class="anchor"></a>A global overview of the most predictive genes</h4>
 <p>At default, the overall most important genes are calculated when plotting a heatmap.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(
   model,
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression,
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression,
   <span class="dt">grouping =</span> fibroblast_reprogramming_treutlein<span class="op">$</span>grouping,
   <span class="dt">features_oi =</span> <span class="dv">50</span>
 )</code></pre></div>
-<p><img src="reference/figures/heatmap-1.png" width="100%"></p>
+<p><img src="figures/README-heatmap-1.png" width="100%"></p>
 </div>
 <div id="lineagebranch-markers" class="section level4">
 <h4 class="hasAnchor">
 <a href="#lineagebranch-markers" class="anchor"></a>Lineage/branch markers</h4>
 <p>We can also extract features specific for a branch, eg. genes which change when a cell differentiates into a Neuron</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">branch_feature_importance &lt;-<span class="st"> </span><span class="kw"><a href="reference/calculate_overall_feature_importance.html">calculate_branch_feature_importance</a></span>(model, <span class="dt">expression_source=</span>dataset<span class="op">$</span>expression)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">branch_feature_importance &lt;-<span class="st"> </span><span class="kw"><a href="reference/calculate_overall_feature_importance.html">calculate_branch_feature_importance</a></span>(model, <span class="dt">expression_source=</span>task<span class="op">$</span>expression)
 
 neuron_features &lt;-<span class="st"> </span>branch_feature_importance <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">filter</span>(to <span class="op">==</span><span class="st"> </span><span class="kw">which</span>(model<span class="op">$</span>milestone_labelling <span class="op">==</span><span class="st">"Neuron"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -206,10 +224,10 @@ neuron_features &lt;-<span class="st"> </span>branch_feature_importance <span cl
 <span class="st">  </span><span class="kw">pull</span>(feature_id)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(
   model, 
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression, 
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression, 
   <span class="dt">features_oi =</span> neuron_features
 )</code></pre></div>
-<p><img src="reference/figures/branch-1.png" width="100%"></p>
+<p><img src="figures/README-branch-1.png" width="100%"></p>
 </div>
 <div id="genes-important-at-bifurcation-points" class="section level4">
 <h4 class="hasAnchor">
@@ -217,52 +235,34 @@ neuron_features &lt;-<span class="st"> </span>branch_feature_importance <span cl
 <p>We can also extract features which change at the branching point</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">branching_milestone &lt;-<span class="st"> </span>model<span class="op">$</span>milestone_network <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(from) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="kw">n</span>() <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(from) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">first</span>()
 
-branch_feature_importance &lt;-<span class="st"> </span><span class="kw"><a href="reference/calculate_overall_feature_importance.html">calculate_branching_point_feature_importance</a></span>(model, <span class="dt">expression_source=</span>dataset<span class="op">$</span>expression, <span class="dt">milestones_oi =</span> branching_milestone)
+branch_feature_importance &lt;-<span class="st"> </span><span class="kw"><a href="reference/calculate_overall_feature_importance.html">calculate_branching_point_feature_importance</a></span>(model, <span class="dt">expression_source=</span>task<span class="op">$</span>expression, <span class="dt">milestones_oi =</span> branching_milestone)
 
 branching_point_features &lt;-<span class="st"> </span>branch_feature_importance <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">top_n</span>(<span class="dv">20</span>, importance) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(feature_id)
 
 <span class="kw"><a href="reference/plot_heatmap.html">plot_heatmap</a></span>(
   model,
-  <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression,
+  <span class="dt">expression_source =</span> task<span class="op">$</span>expression,
   <span class="dt">features_oi =</span> branching_point_features
 )</code></pre></div>
-<p><img src="reference/figures/branching_point-1.png" width="100%"></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">space &lt;-<span class="st"> </span>dyndimred<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dyndimred/topics/dimred">dimred_mds</a></span>(dataset<span class="op">$</span>expression)
+<p><img src="figures/README-branching_point-1.png" width="100%"></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">space &lt;-<span class="st"> </span>dyndimred<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dyndimred/topics/dimred">dimred_mds</a></span>(task<span class="op">$</span>expression)
 <span class="kw">map</span>(branching_point_features[<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>], <span class="cf">function</span>(feature_oi) {
-  <span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(model, <span class="dt">dimred =</span> space, <span class="dt">expression_source =</span> dataset<span class="op">$</span>expression, <span class="dt">feature_oi =</span> feature_oi, <span class="dt">label_milestones =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+  <span class="kw"><a href="reference/plot_dimred.html">plot_dimred</a></span>(model, <span class="dt">dimred =</span> space, <span class="dt">expression_source =</span> task<span class="op">$</span>expression, <span class="dt">feature_oi =</span> feature_oi, <span class="dt">label_milestones =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">"none"</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">ggtitle</span>(feature_oi)
 }) <span class="op">%&gt;%</span><span class="st"> </span>patchwork<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/patchwork/topics/wrap_plots">wrap_plots</a></span>()</code></pre></div>
-<p><img src="reference/figures/branching_point_dimred-1.png" width="100%"></p>
+<p><img src="figures/README-branching_point_dimred-1.png" width="100%"></p>
 </div>
 </div>
 </div>
-<div id="installation" class="section level2">
+<div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install dyno from github using:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
-devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"dynverse/dyno"</span>)</code></pre></div>
-<p>On Linux, you will need to install udunits and ImageMagick:</p>
-<ul>
-<li>Debian / Ubuntu / Linux Mint: <code>sudo apt-get install libudunits2-dev imagemagick</code>
-</li>
-<li>Fedora / CentOS / RHEL: <code>sudo dnf install udunits2-devel ImageMagick-c++-devel</code>
-</li>
-</ul>
-<p><a href="https://docs.docker.com/install">Docker</a> has to be installed to run TI methods. See <a href="https://docs.docker.com/install" class="uri">https://docs.docker.com/install</a> for instructions.</p>
-<p>You can test whether docker is correctly installed by running:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dynwrap<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation">test_docker_installation</a></span>(<span class="dt">detailed =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; ✔ Docker is installed</span>
-<span class="co">#&gt; ✔ Docker daemon is running</span>
-<span class="co">#&gt; ✔ Docker is at correct version (&gt;1.0): 1.38</span>
-<span class="co">#&gt; ✔ Docker is in linux mode</span>
-<span class="co">#&gt; ✔ Docker can pull images</span>
-<span class="co">#&gt; ✔ Docker can run image</span>
-<span class="co">#&gt; ✔ Docker can mount temporary volumes</span>
-<span class="co">#&gt; ✔ Docker test successful -----------------------------------------------------------------</span>
-<span class="co">#&gt; [1] TRUE</span></code></pre></div>
-<p>This command will give helpful tips if some parts of the installation are missing.</p>
+<a href="#references" class="anchor"></a>References</h2>
+<div id="refs" class="references">
+<div id="ref-saelens_comparisonsinglecelltrajectory_2018">
+<p>Saelens, Wouter*, Robrecht* Cannoodt, Helena Todorov, and Yvan Saeys. 2018. “A Comparison of Single-Cell Trajectory Inference Methods: Towards More Accurate and Robust Tools.” <em>bioRxiv</em>, March, 276907. doi:<a href="https://doi.org/10.1101/276907">10.1101/276907</a>.</p>
+</div>
+</div>
 </div>
   </div>
 

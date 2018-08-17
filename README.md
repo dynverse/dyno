@@ -17,7 +17,7 @@ The **dyno** package offers **end-users** a complete TI pipeline. It features:
 
 -   a uniform interface to 57 [TI methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
 -   an [interactive guideline tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods) to help the user select the most appropriate method,
--   the [interpretation and visualisation of trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory), including colouring by gene expression or clusters, and
+-   [streamlined interpretation and visualisation of trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory), including colouring by gene expression or clusters, and
 -   downstream analyses such as the [identification of potential marker genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
 
 For information on how to install dyno, check out the [installation instructions below](https://github.com/dynverse/dyno#installation).
@@ -49,7 +49,7 @@ dataset <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, and personal preferences. To select the best methods given a certain dataset and user preferences, we use the results from the [dynbenchmark](https://github.com/dynverse/dynbenchmark) benchmarking study.
+The choice of method depends on several factors, such as prior expectations of the topology present in the data, dataset size, personal preferences, and system requirements. We provide an interactive shiny app which can be used to easily select the best performing and scalable method for your dataset. This app uses the benchmarking results from [dynbenchmark](https://github.com/dynverse/dynbenchmark) ([doi:10.1101/276907](https://doi.org/10.1101/276907)).
 
 ``` r
 guidelines <- guidelines_shiny(dataset)
@@ -60,10 +60,10 @@ methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first
 
 ### Running the methods
 
-All available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to [have docker installed](#Installation).
+We wrapped available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to [have docker installed](#Installation).
 
 ``` r
-model <- infer_trajectory(dataset, "projected_tscan")
+model <- infer_trajectory(dataset, first(methods))
 ```
 
 ### Interpreting the trajectory biologically

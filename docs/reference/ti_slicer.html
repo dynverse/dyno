@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using SLICER — ti_slicer • dyno</title>
+<title>Inferring trajectories with SLICER — ti_slicer • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,14 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using SLICER — ti_slicer" />
+<meta property="og:title" content="Inferring trajectories with SLICER — ti_slicer" />
 
-<meta property="og:description" content="Will generate a trajectory using
-SLICER.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with SLICER
+Will generate a trajectory using SLICER. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -105,54 +101,48 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using SLICER</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slicer.R'><code>R/ti_slicer.R</code></a></small>
+    <h1>Inferring trajectories with SLICER</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_slicer.R'><code>R/ti_slicer.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_slicer.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using
-<a href='https://doi.org/10.1186/s13059-016-0975-3'>SLICER</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/slicer'>container</a>.
-The original code of this method is available
-<a href='https://github.com/jw156605/SLICER'>here</a>.</p>
+    <p>Inferring trajectories with SLICER</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1186/s13059-016-0975-3'>SLICER</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/slicer'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_slicer</span>(<span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+
+<span class='fu'>ti_slicer</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>kmin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>m</span> <span class='kw'>=</span> <span class='fl'>2</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>kmin</th>
-      <td><p>integer; Smallest value of k to try (default: <code>10L</code>; range: from
-<code>2L</code> to <code>20L</code>)</p></td>
+      <td><p>Smallest value of k to try</p></td>
     </tr>
     <tr>
       <th>m</th>
-      <td><p>integer; Intrinsic dimension of the data. This parameter mainly
-influences the visualisation of the results. The real intrinsic dimension will
-be calculated automaticly.  (default: <code>2L</code>; range: from <code>2L</code> to <code>20L</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>intrinsic dimension of the data. This parameter mainly influences the visualisation of the results. The real intrinsic dimension will be calculated automaticly.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Welch, J.D., Hartemink, A.J., Prins, J.F., 2016. SLICER: inferring
-branched, nonlinear cellular trajectories from single cell RNA-seq data. Genome
-Biology 17.</p>
+    <p>This methods was first wrapped inside R, see ti_slicer</p>
+<p>The original code of this method is available <a href='https://github.com/jw156605/SLICER'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1186/s13059-016-0975-3'>Welch, J.D., Hartemink, A.J., Prins, J.F., 2016. SLICER: inferring branched, nonlinear cellular trajectories from single cell RNA-seq data. Genome Biology 17.</a></p>
     
 
   </div>
@@ -163,7 +153,7 @@ Biology 17.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using Mpath — ti_mpath • dyno</title>
+<title>Inferring trajectories with Mpath — ti_mpath • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,13 +30,10 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using Mpath — ti_mpath" />
+<meta property="og:title" content="Inferring trajectories with Mpath — ti_mpath" />
 
-<meta property="og:description" content="Will generate a trajectory using Mpath.
-This method was wrapped inside a
-container.
-The original code of this method is available
-here." />
+<meta property="og:description" content="Inferring trajectories with Mpath
+Will generate a trajectory using Mpath. This method was wrapped inside a container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -104,82 +101,68 @@ here." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using Mpath</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mpath.R'><code>R/ti_mpath.R</code></a></small>
+    <h1>Inferring trajectories with Mpath</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mpath.R'><code>R/ti_mpath.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
     <div class="hidden name"><code>ti_mpath.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncomms11988'>Mpath</a>.</p>
-<p>This method was wrapped inside a
-<a href='https://github.com/dynverse/dynmethods/tree/master/containers/mpath'>container</a>.
-The original code of this method is available
-<a href='https://github.com/JinmiaoChenLab/Mpath'>here</a>.</p>
+    <p>Inferring trajectories with Mpath</p>
+<p>Will generate a trajectory using <a href='https://doi.org/10.1038/ncomms11988'>Mpath</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/mpath'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_mpath</span>(<span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>,
-  <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11L</span>, <span class='kw'>numcluster_null</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>diversity_cut</span> <span class='kw'>=</span> <span class='fl'>0.6</span>,
-  <span class='kw'>size_cut</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_mpath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11</span>,
+  <span class='kw'>numcluster_null</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>diversity_cut</span> <span class='kw'>=</span> <span class='fl'>0.6</span>, <span class='kw'>size_cut</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
+
+<span class='fu'>ti_mpath</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(),
+  <span class='kw'>distMethod</span> <span class='kw'>=</span> <span class='st'>"euclidean"</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"kmeans"</span>, <span class='kw'>numcluster</span> <span class='kw'>=</span> <span class='fl'>11</span>,
+  <span class='kw'>numcluster_null</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>diversity_cut</span> <span class='kw'>=</span> <span class='fl'>0.6</span>, <span class='kw'>size_cut</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>docker</th>
+      <td><p>Whether to use the docker container or the R wrapper</p></td>
+    </tr>
+    <tr>
       <th>distMethod</th>
-      <td><p>discrete; The method for calculating dissimilarity between
-cells. distMethod can be one of "pearson", "kendall", "spearman" or
-"euclidean". Default is "euclidean". (default: <code>"euclidean"</code>; values:
-<code>"pearson"</code>, <code>"kendall"</code>, <code>"spearman"</code>, <code>"euclidean"</code>)</p></td>
+      <td><p>the method for calculating dissimilarity between cells. distMethod can be one of "pearson", "kendall", "spearman" or "euclidean". Default is "euclidean".</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>discrete; Method for distinguishing landmark clusters from
-non-landmark clusters.method can be "kmeans" or "diversity" or "size" or
-"diversity_size". When method="diversity", numlm needs to be specified. Default
-is "diversity_size". (default: <code>"kmeans"</code>; values: <code>"kmeans"</code>, <code>"diversity"</code>,
-<code>"size"</code>, <code>"diversity_size"</code>)</p></td>
+      <td><p>method for distinguishing landmark clusters from non-landmark clusters.method can be "kmeans" or "diversity" or "size" or "diversity_size". When method="diversity", numlm needs to be specified. Default is "diversity_size".</p></td>
     </tr>
     <tr>
       <th>numcluster</th>
-      <td><p>integer; Number of initial clusters (default: <code>11L</code>; range:
-from <code>3L</code> to <code>30L</code>)</p></td>
+      <td><p>number of initial clusters</p></td>
     </tr>
     <tr>
       <th>numcluster_null</th>
-      <td><p>logical; If TRUE, will automatically select the number
-of clusters</p></td>
+      <td><p>If TRUE, will automatically select the number of clusters</p></td>
     </tr>
     <tr>
       <th>diversity_cut</th>
-      <td><p>numeric; The cutoff value of diversity for differentiating
-landmark clusters from non-landmark clusters. The diversity of a landmark
-cluster must be below this cutoff. (default: <code>0.6</code>; range: from <code>0.1</code> to <code>1</code>)</p></td>
+      <td><p>the cutoff value of diversity for differentiating landmark clusters from non-landmark clusters. The diversity of a landmark cluster must be below this cutoff.</p></td>
     </tr>
     <tr>
       <th>size_cut</th>
-      <td><p>numeric; The cutoff value of size i.e. number of cells for
-differentiating landmark clusters from non-landmark clusters. The number of
-cells in a landmark cluster must be greater than this cutoff. (default: <code>0.05</code>;
-range: from <code>0.01</code> to <code>1</code>)</p></td>
-    </tr>
-    <tr>
-      <th>run_environment</th>
-      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
+      <td><p>the cutoff value of size i.e. number of cells for differentiating landmark clusters from non-landmark clusters. The number of cells in a landmark cluster must be greater than this cutoff.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A TI method wrapper to be used together with
-<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
+    <p>The trajectory model</p>
     
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Chen, J., Schlitzer, A., Chakarov, S., Ginhoux, F., Poidinger, M.,
-2016. Mpath maps multi-branching single-cell trajectories revealing progenitor
-cell progression during development. Nature Communications 7, 11988.</p>
+    <p>This methods was first wrapped inside R, see ti_mpath</p>
+<p>The original code of this method is available <a href='https://github.com/JinmiaoChenLab/Mpath'>here</a>.</p>
+<p>The method is described in: <a href='https://doi.org/10.1038/ncomms11988'>Chen, J., Schlitzer, A., Chakarov, S., Ginhoux, F., Poidinger, M., 2016. Mpath maps multi-branching single-cell trajectories revealing progenitor cell progression during development. Nature Communications 7, 11988.</a></p>
     
 
   </div>
@@ -190,7 +173,7 @@ cell progression during development. Nature Communications 7, 11988.</p>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#references">References</a></li>
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>
