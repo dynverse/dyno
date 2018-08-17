@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Angle — ti_angle • dyno</title>
+<title>Inferring a trajectory inference using Angle — ti_angle • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,11 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Angle — ti_angle" />
+<meta property="og:title" content="Inferring a trajectory inference using Angle — ti_angle" />
 
-<meta property="og:description" content="Inferring trajectories with Angle
-Will generate a trajectory using Angle. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using Angle.
+This method was wrapped inside a
+container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,43 +102,41 @@ Will generate a trajectory using Angle. This method was wrapped inside a contain
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with Angle</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_angle.R'><code>R/ti_angle.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Angle</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_angle.R'><code>R/ti_angle.R</code></a></small>
     <div class="hidden name"><code>ti_angle.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with Angle</p>
-<p>Will generate a trajectory using Angle. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/angle'>container</a>.</p>
+    <p>Will generate a trajectory using Angle.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/angle'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)
-
-<span class='fu'>ti_angle</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_angle</span>(<span class='kw'>dimred</span> <span class='kw'>=</span> <span class='st'>"pca"</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
+      <th>dimred</th>
+      <td><p>discrete; Which dimensionality reduction method to use. (default:
+<code>"pca"</code>; values: <code>"pca"</code>, <code>"mds"</code>, <code>"tsne"</code>, <code>"ica"</code>, <code>"lle"</code>,
+<code>"landmark_mds"</code>, <code>"mds_sammon"</code>, <code>"mds_isomds"</code>, <code>"mds_smacof"</code>, <code>"umap"</code>,
+<code>"dm_diffusionMap"</code>)</p></td>
     </tr>
     <tr>
-      <th>dimred</th>
-      <td><p>A character vector specifying which dimensionality reduction method to use.
-See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimred'>dyndimred::dimred()</a></code> for the list of available dimensionality reduction methods.</p></td>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This methods was first wrapped inside R, see ti_angle</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
 
   </div>
@@ -147,8 +146,6 @@ See <code><a href='http://www.rdocumentation.org/packages/dyndimred/topics/dimre
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a> — ti_gpfates • dyno</title>
+<title>Inferring a trajectory inference using GPfates — ti_gpfates • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a> — ti_gpfates" />
+<meta property="og:title" content="Inferring a trajectory inference using GPfates — ti_gpfates" />
 
-<meta property="og:description" content="Will generate a trajectory using GPfates. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+GPfates.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,48 +105,64 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using GPfates</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_gpfates.R'><code>R/ti_gpfates.R</code></a></small>
     <div class="hidden name"><code>ti_gpfates.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/gpfates'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1126/sciimmunol.aal2192'>GPfates</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/gpfates'>container</a>.
+The original code of this method is available
+<a href='https://github.com/Teichlab/GPfates'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_gpfates</span>(<span class='kw'>log_expression_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>, <span class='kw'>min_cells_expression_cutoff</span> <span class='kw'>=</span> <span class='fl'>0L</span>,
-  <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2L</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_gpfates</span>(<span class='kw'>log_expression_cutoff</span> <span class='kw'>=</span> <span class='fl'>0.5</span>,
+  <span class='kw'>min_cells_expression_cutoff</span> <span class='kw'>=</span> <span class='fl'>0L</span>, <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>log_expression_cutoff</th>
-      <td><p>The log expression cutoff <br />
-numeric; default: 0.5; possible values between 0.5 and 5</p></td>
+      <td><p>numeric; The log expression cutoff (default:
+<code>0.5</code>; range: from <code>0.5</code> to <code>5L</code>)</p></td>
     </tr>
     <tr>
       <th>min_cells_expression_cutoff</th>
-      <td><p>The min expression cutoff <br />
-numeric; default: 0L; possible values between 0 and 20</p></td>
+      <td><p>numeric; The min expression cutoff (default:
+<code>0L</code>; range: from <code>0L</code> to <code>20L</code>)</p></td>
     </tr>
     <tr>
       <th>ndim</th>
-      <td><p>Number of dimensions for dimensionality reduction <br />
-integer; default: 2L; possible values between 1 and 5</p></td>
+      <td><p>integer; Number of dimensions for dimensionality reduction
+(default: <code>2L</code>; range: from <code>1L</code> to <code>5L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/Teichlab/GPfates'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1126/sciimmunol.aal2192'>Lönnberg, T., Svensson, V., James, K.R., Fernandez-Ruiz, D., Sebina, I., Montandon, R., Soon, M.S.F., Fogg, L.G., Nair, A.S., Liligeto, U.N., Stubbington, M.J.T., Ly, L.-H., Bagger, F.O., Zwiessele, M., Lawrence, N.D., Souza-Fonseca-Guimaraes, F., Bunn, P.T., Engwerda, C.R., Heath, W.R., Billker, O., Stegle, O., Haque, A., Teichmann, S.A., 2017. Single-cell RNA-seq and computational analysis using temporal mixture modeling resolves TH1/TFHfate bifurcation in malaria. Science Immunology 2, eaal2192.</a></p>
+    <p>Lönnberg, T., Svensson, V., James, K.R., Fernandez-Ruiz, D.,
+Sebina, I., Montandon, R., Soon, M.S.F., Fogg, L.G., Nair, A.S., Liligeto,
+U.N., Stubbington, M.J.T., Ly, L.-H., Bagger, F.O., Zwiessele, M., Lawrence,
+N.D., Souza-Fonseca-Guimaraes, F., Bunn, P.T., Engwerda, C.R., Heath, W.R.,
+Billker, O., Stegle, O., Haque, A., Teichmann, S.A., 2017. Single-cell RNA-seq
+and computational analysis using temporal mixture modeling resolves TH1/TFHfate
+bifurcation in malaria. Science Immunology 2, eaal2192.</p>
     
 
   </div>
@@ -152,7 +173,7 @@ integer; default: 2L; possible values between 1 and 5</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

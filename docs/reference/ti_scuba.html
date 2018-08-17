@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a> — ti_scuba • dyno</title>
+<title>Inferring a trajectory inference using SCUBA — ti_scuba • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a> — ti_scuba" />
+<meta property="og:title" content="Inferring a trajectory inference using SCUBA — ti_scuba" />
 
-<meta property="og:description" content="Will generate a trajectory using SCUBA. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+SCUBA.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,63 +105,77 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using SCUBA</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_scuba.R'><code>R/ti_scuba.R</code></a></small>
     <div class="hidden name"><code>ti_scuba.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/scuba'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1073/pnas.1408993111'>SCUBA</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/scuba'>container</a>.
+The original code of this method is available
+<a href='https://github.com/gcyuan/SCUBA'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_scuba</span>(<span class='kw'>rigorous_gap_stats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>N_dim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>low_gene_threshold</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
-  <span class='kw'>low_gene_fraction_max</span> <span class='kw'>=</span> <span class='fl'>0.7</span>, <span class='kw'>min_split</span> <span class='kw'>=</span> <span class='fl'>15L</span>,
-  <span class='kw'>min_percentage_split</span> <span class='kw'>=</span> <span class='fl'>0.25</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_scuba</span>(<span class='kw'>rigorous_gap_stats</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>N_dim</span> <span class='kw'>=</span> <span class='fl'>2L</span>,
+  <span class='kw'>low_gene_threshold</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>low_gene_fraction_max</span> <span class='kw'>=</span> <span class='fl'>0.7</span>,
+  <span class='kw'>min_split</span> <span class='kw'>=</span> <span class='fl'>15L</span>, <span class='kw'>min_percentage_split</span> <span class='kw'>=</span> <span class='fl'>0.25</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>rigorous_gap_stats</th>
-      <td><p>Whether to use rigorous gap statistics to determine number of clusters <br /></p></td>
+      <td><p>logical; Whether to use rigorous gap statistics to
+determine number of clusters</p></td>
     </tr>
     <tr>
       <th>N_dim</th>
-      <td><p>Number of TSNE dimensions <br />
-integer; default: 2L; possible values between 2 and 3</p></td>
+      <td><p>integer; Number of TSNE dimensions (default: <code>2L</code>; range: from
+<code>2L</code> to <code>3L</code>)</p></td>
     </tr>
     <tr>
       <th>low_gene_threshold</th>
-      <td><p>Threshold value for genes of low expression levels <br />
-numeric; default: 1L; possible values between 0 and 5</p></td>
+      <td><p>numeric; Threshold value for genes of low expression
+levels (default: <code>1L</code>; range: from <code>0L</code> to <code>5L</code>)</p></td>
     </tr>
     <tr>
       <th>low_gene_fraction_max</th>
-      <td><p>Maximum fraction of lowly-expressed cells allowed for each gene <br />
-numeric; default: 0.7; possible values between 0 and 1</p></td>
+      <td><p>numeric; Maximum fraction of lowly-expressed cells
+allowed for each gene (default: <code>0.7</code>; range: from <code>0L</code> to <code>1L</code>)</p></td>
     </tr>
     <tr>
       <th>min_split</th>
-      <td><p>Lower threshold on the number of cells in a cluster for this cluster to be split. <br />
-integer; default: 15L; possible values between 1 and 100</p></td>
+      <td><p>integer; Lower threshold on the number of cells in a cluster
+for this cluster to be split. (default: <code>15L</code>; range: from <code>1L</code> to <code>100L</code>)</p></td>
     </tr>
     <tr>
       <th>min_percentage_split</th>
-      <td><p>Minimum fraction of cells in the smaller cluster during a bifurcation. <br />
-numeric; default: 0.25; possible values between 0 and 1</p></td>
+      <td><p>numeric; Minimum fraction of cells in the smaller
+cluster during a bifurcation. (default: <code>0.25</code>; range: from <code>0L</code> to <code>1L</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/gcyuan/SCUBA'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1073/pnas.1408993111'>Marco, E., Karp, R.L., Guo, G., Robson, P., Hart, A.H., Trippa, L., Yuan, G.-C., 2014. Bifurcation analysis of single-cell gene expression data reveals epigenetic landscape. Proceedings of the National Academy of Sciences 111, E5643–E5650.</a></p>
+    <p>Marco, E., Karp, R.L., Guo, G., Robson, P., Hart, A.H., Trippa, L.,
+Yuan, G.-C., 2014. Bifurcation analysis of single-cell gene expression data
+reveals epigenetic landscape. Proceedings of the National Academy of Sciences
+111, E5643–E5650.</p>
     
 
   </div>
@@ -167,7 +186,7 @@ numeric; default: 0.25; possible values between 0 and 1</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

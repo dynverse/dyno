@@ -113,16 +113,17 @@ to have been added already.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>add_prior_information</span>(<span class='no'>task</span>, <span class='kw'>start_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>add_prior_information</span>(<span class='no'>dataset</span>, <span class='kw'>start_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>groups_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>groups_network</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>features_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>groups_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>start_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>time</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>groups_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>start_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>end_n</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>timecourse_continuous</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>timecourse_discrete</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>task</th>
+      <th>dataset</th>
       <td><p>A data wrapper to extend upon.</p></td>
     </tr>
     <tr>
@@ -158,8 +159,12 @@ to have been added already.</p>
       <td><p>Number of end states</p></td>
     </tr>
     <tr>
-      <th>time</th>
+      <th>timecourse_continuous</th>
       <td><p>The time for every cell</p></td>
+    </tr>
+    <tr>
+      <th>timecourse_discrete</th>
+      <td><p>The time for every cell in groups</p></td>
     </tr>
     <tr>
       <th>verbose</th>

@@ -111,18 +111,29 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_ti_methods</span>(<span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>packages</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"dynwrap"</span>))</pre>
+    <pre class="usage"><span class='fu'>get_ti_methods</span>(<span class='kw'>method_ids</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>as_tibble</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>ti_packages</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='st'>"dynmethods"</span> <span class='kw'>%in%</span>
+  <span class='fu'>rownames</span>(<span class='kw pkg'>utils</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/utils/topics/installed.packages'>installed.packages</a></span>()), <span class='st'>"dynmethods"</span>, <span class='st'>"dynwrap"</span>),
+  <span class='kw'>evaluate</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>method_ids</th>
+      <td><p>The method identifiers. NULL if listing all methods</p></td>
+    </tr>
+    <tr>
       <th>as_tibble</th>
       <td><p>Whether or not to return the ti_methods as a tibble</p></td>
     </tr>
     <tr>
-      <th>packages</th>
+      <th>ti_packages</th>
       <td><p>In which packages to look for ti methods</p></td>
+    </tr>
+    <tr>
+      <th>evaluate</th>
+      <td><p>Automatically evaluate the functions</p></td>
     </tr>
     </table>
     

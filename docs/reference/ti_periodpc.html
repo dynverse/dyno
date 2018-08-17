@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Periodic PrinCurvee — ti_periodpc • dyno</title>
+<title>Inferring a trajectory inference using Periodic PrinCurve — ti_periodpc • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,11 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Periodic PrinCurvee — ti_periodpc" />
+<meta property="og:title" content="Inferring a trajectory inference using Periodic PrinCurve — ti_periodpc" />
 
-<meta property="og:description" content="Inferring trajectories with Periodic PrinCurvee
-Will generate a trajectory using Periodic PrinCurve. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using Periodic PrinCurve.
+This method was wrapped inside a
+container." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,52 +102,42 @@ Will generate a trajectory using Periodic PrinCurve. This method was wrapped ins
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with Periodic PrinCurvee</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_periodpc.R'><code>R/ti_periodpc.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Periodic PrinCurve</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_periodpc.R'><code>R/ti_periodpc.R</code></a></small>
     <div class="hidden name"><code>ti_periodpc.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with Periodic PrinCurvee</p>
-<p>Will generate a trajectory using Periodic PrinCurve. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/periodpc'>container</a>.</p>
+    <p>Will generate a trajectory using Periodic PrinCurve.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/periodpc'>container</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_periodpc</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>)
-
-<span class='fu'>ti_periodpc</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_periodpc</span>(<span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>ndim</th>
-      <td><p>The number of dimensions</p></td>
+      <td><p>integer; (default: <code>3</code>; range: from <code>2</code> to <code>10</code>)</p></td>
     </tr>
     <tr>
       <th>maxit</th>
-      <td><p>maximum number of iterations.</p></td>
+      <td><p>integer; (default: <code>10</code>; range: from <code>0</code> to <code>100</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>This methods was first wrapped inside R, see ti_periodpc</p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/princurve/topics/principal.curve'>princurve::principal.curve()</a></code></p></div>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
 
   </div>
@@ -156,10 +147,6 @@ Will generate a trajectory using Periodic PrinCurve. This method was wrapped ins
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
           </ul>
 
   </div>
