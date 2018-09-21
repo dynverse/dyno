@@ -3,10 +3,11 @@ sudo: required
 dist: trusty
 bioc_required: true
 cache: packages
+services:
+  - docker
 addons:
   apt:
     packages:
-    - libgsl0-dev                         # gsl > topicmodels > cellTree > dynmethods
     - libudunits2-dev                     # units > ggforce > ggraph > patchwork > dynplot
 install:
  - if [ `git branch | grep '* master' | wc -l` == 0 ]; then sed -i 's#\(dynverse/[^, ]*\)#\1@devel#' DESCRIPTION; fi
