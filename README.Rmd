@@ -62,7 +62,7 @@ When the data is wrapped, the most performant and scalable set of tools can be s
 
 ``` r
 guidelines <- guidelines_shiny(dataset)
-methods <- guidelines$methods_selected
+methods_selected <- guidelines$methods_selected
 ```
 
 ```{r, echo=FALSE}
@@ -72,7 +72,7 @@ methods <- guidelines$methods_selected
 # cp ../dynguidelines/man/figures/demo.gif man/figures/dynguidelines.gif
 
 guidelines <- guidelines(dataset, answer_questions(multiple_disconnected = FALSE, expect_topology = TRUE, expected_topology = "bifurcation"))
-methods <- guidelines$methods_selected[[1]]
+methods_selected <- guidelines$methods_selected
 ```
 
 ![](man/figures/dynguidelines.gif)
@@ -81,22 +81,20 @@ methods <- guidelines$methods_selected[[1]]
 
 ### Running the methods
 
-We wrapped all available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to [have docker installed](#installation).
+To run a method, it is currently necessary to [have docker installed](#installation). If that's the case, running a method is a one-step-process. We will run the first selected method here:
 
 ``` r
-model <- infer_trajectory(dataset, first(methods))
+model <- infer_trajectory(dataset, first(methods_selected))
 ```
 
 ```{r, echo=FALSE}
-model <- infer_trajectory(dataset, first(methods))
+model <- infer_trajectory(dataset, first(methods_selected))
 
 if (is.na(first(model))) {
   print(attr(model, "summary")$error)
   stop("Method errored")
 }
 ```
-
-
 
 ### Interpreting the trajectory biologically
 In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.

@@ -66,20 +66,19 @@ the dataset). This app uses the benchmarking results from
 
 ``` r
 guidelines <- guidelines_shiny(dataset)
-methods <- guidelines$methods_selected
+methods_selected <- guidelines$methods_selected
 ```
 
 ![](man/figures/dynguidelines.gif)
 
 ### Running the methods
 
-We wrapped all available methods were wrapped within a common interface,
-which makes running a method a one-step-process. For running the
-methods, it is currently necessary to [have docker
-installed](#installation).
+To run a method, it is currently necessary to [have docker
+installed](#installation). If that’s the case, running a method is a
+one-step-process. We will run the first selected method here:
 
 ``` r
-model <- infer_trajectory(dataset, first(methods))
+model <- infer_trajectory(dataset, first(methods_selected))
 ```
 
 ### Interpreting the trajectory biologically
