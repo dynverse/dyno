@@ -1,29 +1,32 @@
-Inferring trajectories using dyno <img src="man/figures/dyno.gif" align="right" width="150px" />
+Inferring trajectories using dyno
+<img src="man/figures/dyno.gif" align="right" width="150px" />
 ================
 
--   [Trajectory inference workflow](#trajectory-inference-workflow)
-    -   [Preparing the data](#preparing-the-data)
-    -   [Selecting the most optimal TI methods](#selecting-the-most-optimal-ti-methods)
-    -   [Running the methods](#running-the-methods)
-    -   [Interpreting the trajectory biologically](#interpreting-the-trajectory-biologically)
-    -   [Plotting the trajectory](#plotting-the-trajectory)
-    -   [Predicting and visualising genes of interest](#predicting-and-visualising-genes-of-interest)
--   [Installation](#installation)
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno) ![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 
-The **dyno** package offers **end-users** a complete TI pipeline. It features:
+[![Travis](https://img.shields.io/travis/dynverse/dyno.svg?logo=travis)](https://travis-ci.org/dynverse/dyno)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno)
+![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 
--   a uniform interface to 57 [TI methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
--   an [interactive guideline tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods) to help the user select the most appropriate method,
--   [streamlined interpretation and visualisation of trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory), including colouring by gene expression or clusters, and
--   downstream analyses such as the [identification of potential marker genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
+The **dyno** package offers **end-users** a complete TI pipeline. It
+features:
 
-For information on how to install dyno, check out the [installation instructions below](https://github.com/dynverse/dyno#installation).
+  - a uniform interface to 59 [TI
+    methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
+  - an [interactive guideline
+    tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods)
+    to help the user select the most appropriate method,
+  - [streamlined interpretation and visualisation of
+    trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory),
+    including colouring by gene expression or clusters, and
+  - downstream analyses such as the [identification of potential marker
+    genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
 
-Trajectory inference workflow
------------------------------
+For information on how to install dyno, check out the [installation
+instructions below](https://github.com/dynverse/dyno#installation).
+
+## Trajectory inference workflow
 
 ``` r
 library(dyno)
@@ -36,7 +39,10 @@ The whole trajectory inference workflow is divided in several steps:
 
 ### Preparing the data
 
-The first step is to prepare the data for trajectory inference using `wrap_expression`. It requires both the counts and normalised expression (with genes/features in columns) as some TI methods are specifically built for one or the other:
+The first step is to prepare the data for trajectory inference using
+`wrap_expression`. It requires both the counts and normalised expression
+(with genes/features in columns) as some TI methods are specifically
+built for one or the other:
 
 ``` r
 data("fibroblast_reprogramming_treutlein")
@@ -49,30 +55,43 @@ dataset <- wrap_expression(
 
 ### Selecting the most optimal TI methods
 
-When the data is wrapped, the most performant and scalable set of tools can be selected using a shiny app. This app will select a set of methods which are predicted to produce the most optimal output given several user-dependent factors (such as prior expectations about the topology present in the data) and dataset-dependent factors (such as the size of the dataset). This app uses the benchmarking results from [dynbenchmark](https://github.com/dynverse/dynbenchmark) ([doi:10.1101/276907](https://doi.org/10.1101/276907)).
+When the data is wrapped, the most performant and scalable set of tools
+can be selected using a shiny app. This app will select a set of methods
+which are predicted to produce the most optimal output given several
+user-dependent factors (such as prior expectations about the topology
+present in the data) and dataset-dependent factors (such as the size of
+the dataset). This app uses the benchmarking results from
+[dynbenchmark](https://github.com/dynverse/dynbenchmark)
+([doi:10.1101/276907](https://doi.org/10.1101/276907)).
 
 ``` r
 guidelines <- guidelines_shiny(dataset)
-methods <- guidelines$methods %>% filter(selected) %>% pull(method_id) %>% first()
+methods_selected <- guidelines$methods_selected
 ```
 
 ![](man/figures/dynguidelines.gif)
 
 ### Running the methods
 
-We wrapped available methods were wrapped within a common interface, which makes running a method a one-step-process. For running the methods, it is currently necessary to [have docker installed](#Installation).
+To run a method, it is currently necessary to [have docker
+installed](#installation). If that’s the case, running a method is a
+one-step-process. We will run the first selected method here:
 
 ``` r
-model <- infer_trajectory(dataset, first(methods))
+model <- infer_trajectory(dataset, first(methods_selected))
 ```
 
 ### Interpreting the trajectory biologically
 
-In most cases, some knowledge is present of the different start, end or intermediary states present in the data, and this can be used to adapt the trajectory so that it is easier to interpret.
+In most cases, some knowledge is present of the different start, end or
+intermediary states present in the data, and this can be used to adapt
+the trajectory so that it is easier to interpret.
 
 #### Rooting
 
-Most methods have no direct way of inferring the directionality of the trajectory. In this case, the trajectory should be "rooted" using some external information, for example by using a set of marker genes.
+Most methods have no direct way of inferring the directionality of the
+trajectory. In this case, the trajectory should be “rooted” using some
+external information, for example by using a set of marker genes.
 
 ``` r
 model <- model %>% 
@@ -81,7 +100,8 @@ model <- model %>%
 
 #### Milestone labelling
 
-Milestones can be labelled using marker genes. These labels can then be used for subsequent analyses and for visualisation.
+Milestones can be labelled using marker genes. These labels can then be
+used for subsequent analyses and for visualisation.
 
 ``` r
 model <- label_milestones_markers(
@@ -97,9 +117,12 @@ model <- label_milestones_markers(
 
 ### Plotting the trajectory
 
-Several visualisation methods provide ways to biologically interpret trajectories.
+Several visualisation methods provide ways to biologically interpret
+trajectories.
 
-Examples include combining a dimensionality reduction, a trajectory model and a cell clustering:
+Examples include combining a dimensionality reduction, a trajectory
+model and a cell
+clustering:
 
 ``` r
 model <- model %>% add_dimred(dyndimred::dimred_mds, expression_source = dataset$expression)
@@ -142,11 +165,13 @@ plot_dimred(
 
 ### Predicting and visualising genes of interest
 
-We integrate several methods to extract candidate marker genes/features from a trajectory.
+We integrate several methods to extract candidate marker genes/features
+from a trajectory.
 
 #### A global overview of the most predictive genes
 
-At default, the overall most important genes are calculated when plotting a heatmap.
+At default, the overall most important genes are calculated when
+plotting a heatmap.
 
 ``` r
 plot_heatmap(
@@ -155,16 +180,27 @@ plot_heatmap(
   grouping = fibroblast_reprogramming_treutlein$grouping,
   features_oi = 50
 )
+#> Generating forest 1/5
+#> Generating forest 2/5
+#> Generating forest 3/5
+#> Generating forest 4/5
+#> Generating forest 5/5
 ```
 
 <img src="man/figures/heatmap-1.png" width="100%" />
 
 #### Lineage/branch markers
 
-We can also extract features specific for a branch, eg. genes which change when a cell differentiates into a Neuron
+We can also extract features specific for a branch, eg. genes which
+change when a cell differentiates into a
+Neuron
 
 ``` r
 branch_feature_importance <- calculate_branch_feature_importance(model, expression_source=dataset$expression)
+#> Generating forest 1/4
+#> Generating forest 2/4
+#> Generating forest 3/4
+#> Generating forest 4/4
 
 neuron_features <- branch_feature_importance %>% 
   filter(to == which(model$milestone_labelling =="Neuron")) %>% 
@@ -184,12 +220,15 @@ plot_heatmap(
 
 #### Genes important at bifurcation points
 
-We can also extract features which change at the branching point
+We can also extract features which change at the branching
+point
 
 ``` r
 branching_milestone <- model$milestone_network %>% group_by(from) %>% filter(n() > 1) %>% pull(from) %>% first()
 
 branch_feature_importance <- calculate_branching_point_feature_importance(model, expression_source=dataset$expression, milestones_oi = branching_milestone)
+#> Processing milestone 1/1
+#> Generating forest 1/1
 
 branching_point_features <- branch_feature_importance %>% top_n(20, importance) %>% pull(feature_id)
 
@@ -213,8 +252,7 @@ map(branching_point_features[1:12], function(feature_oi) {
 
 <img src="man/figures/branching_point_dimred-1.png" width="100%" />
 
-Installation
-------------
+## Installation
 
 You can install dyno from github using:
 
@@ -225,10 +263,17 @@ devtools::install_github("dynverse/dyno")
 
 On Linux, you will need to install udunits and ImageMagick:
 
--   Debian / Ubuntu / Linux Mint: `sudo apt-get install libudunits2-dev imagemagick`
--   Fedora / CentOS / RHEL: `sudo dnf install udunits2-devel ImageMagick-c++-devel`
+  - Debian / Ubuntu / Linux Mint: `sudo apt-get install libudunits2-dev
+    imagemagick`
+  - Fedora / CentOS / RHEL: `sudo dnf install udunits2-devel
+    ImageMagick-c++-devel`
 
-[Docker](https://docs.docker.com/install) has to be installed to run TI methods. See <https://docs.docker.com/install> for instructions.
+[Docker](https://docs.docker.com/install) has to be installed to run TI
+methods. See <https://docs.docker.com/install> for instructions. For
+windows 10 you can install [Docker
+CE](https://store.docker.com/editions/community/docker-ce-desktop-windows),
+older windows installations require the [Docker
+toolbox](https://docs.docker.com/toolbox/overview/).
 
 You can test whether docker is correctly installed by running:
 
@@ -245,4 +290,5 @@ dynwrap::test_docker_installation(detailed = TRUE)
 #> [1] TRUE
 ```
 
-This command will give helpful tips if some parts of the installation are missing.
+This command will give helpful tips if some parts of the installation
+are missing.
