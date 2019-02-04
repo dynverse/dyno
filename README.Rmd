@@ -66,11 +66,6 @@ methods_selected <- guidelines$methods_selected
 ```
 
 ```{r, echo=FALSE}
-# movie generated using vokoscreen
-# converted to gif using ffmpeg:
-# ffmpeg -i ../dynguidelines/man/figures/demo.mkv -vf scale=1080:-1 -r 10 -f image2pipe -vcodec ppm - | convert -delay 10 -loop 0 -layers OptimizeFrame -fuzz 10% - ../dynguidelines/man/figures/demo.gif
-# cp ../dynguidelines/man/figures/demo.gif man/figures/dynguidelines.gif
-
 guidelines <- guidelines(dataset, answer_questions(multiple_disconnected = FALSE, expect_topology = TRUE, expected_topology = "bifurcation"))
 methods_selected <- guidelines$methods_selected
 ```
@@ -188,7 +183,7 @@ We can also extract features specific for a branch, eg. genes which change when 
 branch_feature_importance <- calculate_branch_feature_importance(model, expression_source=dataset$expression)
 
 neuron_features <- branch_feature_importance %>% 
-  filter(to == which(model$milestone_labelling =="Neuron")) %>% 
+  filter(to == names(model$milestone_labelling)[which(model$milestone_labelling =="Neuron")]) %>% 
   top_n(50, importance) %>% 
   pull(feature_id)
 ```
