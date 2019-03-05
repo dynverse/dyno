@@ -256,4 +256,5 @@ This command will give helpful tips if some parts of the installation are missin
 Dyno uses several R packages from Github and to do this it uses the GitHub API. By default, this API is limited to 60 requests. This can be easily increased by following the two steps that are recommended by `devtools::install_github`, namely:
 
 - Use `usethis::browse_github_pat()` to create a GitHub token
-- Use `usethis::edit_r_environ()` and add the token as `GITHUB_PAT`.
+- Use `usethis::edit_r_environ()` and add the environment variable with `GITHUB_PAT = 'your_github_token`. 
+- Restart R so that the GITHUB_PAT is read and reinstall dyno
