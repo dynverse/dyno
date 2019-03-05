@@ -111,15 +111,19 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>create_ti_method</span>(<span class='no'>name</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>par_set</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>run_fun</span>,
-  <span class='kw'>plot_fun</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>package_loaded</span> <span class='kw'>=</span> <span class='fu'>c</span>(), <span class='kw'>package_required</span> <span class='kw'>=</span> <span class='fu'>c</span>(),
-  <span class='kw'>short_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"algorithm"</span>, <span class='st'>"algorithm_test"</span>, <span class='st'>"control"</span>,
-  <span class='st'>"control_test"</span>), <span class='no'>...</span>, <span class='kw'>remotes_package</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='st'>"dynmethods"</span> <span class='kw'>%in%</span>
-  <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()), <span class='st'>"dynmethods"</span>, <span class='st'>"dynwrap"</span>))</pre>
+    <pre class="usage"><span class='fu'>create_ti_method</span>(<span class='no'>id</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='no'>id</span>, <span class='kw'>parameters</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>par_set</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='no'>run_fun</span>, <span class='kw'>plot_fun</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>package_loaded</span> <span class='kw'>=</span> <span class='fu'>c</span>(),
+  <span class='kw'>package_required</span> <span class='kw'>=</span> <span class='fu'>c</span>(), <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"algorithm"</span>, <span class='st'>"algorithm_test"</span>,
+  <span class='st'>"control"</span>, <span class='st'>"control_test"</span>), <span class='no'>...</span>, <span class='kw'>remotes_package</span> <span class='kw'>=</span> <span class='fu'>ifelse</span>(<span class='st'>"dynmethods"</span>
+  <span class='kw'>%in%</span> <span class='fu'>rownames</span>(<span class='fu'>installed.packages</span>()), <span class='st'>"dynmethods"</span>, <span class='st'>"dynwrap"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>id</th>
+      <td><p>A short name for the method, only lowercase characters allowed</p></td>
+    </tr>
     <tr>
       <th>name</th>
       <td><p>The name of the TI method</p></td>
@@ -138,8 +142,7 @@
     </tr>
     <tr>
       <th>plot_fun</th>
-      <td><p>A function to plot the results of a TI, needs to have 'prediction' as its first param.
-of <code>run_fun</code> with those described in <code>par_set</code>.</p></td>
+      <td><p>A function to plot the results of a TI, needs to have 'prediction' as its first param.</p></td>
     </tr>
     <tr>
       <th>package_loaded</th>
@@ -148,10 +151,6 @@ of <code>run_fun</code> with those described in <code>par_set</code>.</p></td>
     <tr>
       <th>package_required</th>
       <td><p>The packages that need to be installed before executing the method</p></td>
-    </tr>
-    <tr>
-      <th>short_name</th>
-      <td><p>A short name for the method, max 8 characters</p></td>
     </tr>
     <tr>
       <th>type</th>

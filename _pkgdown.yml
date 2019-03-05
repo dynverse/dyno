@@ -2,32 +2,30 @@ reference:
 - title: Choosing the optimal trajectory inference method
   desc: dynguidelines
   contents:
+  - answer_questions
   - dynguidelines
+  - get_answers_code
+  - get_questions
+  - get_renderers
   - guidelines
   - is_guidelines
   - label_capitalise
   - methods
-  - priors
-  - questions
-  - renderers
+  - shiny_server
+  - shiny_ui
 - title: Running trajectory inference methods
   desc: dynmethods
   contents:
-  - check_dependencies
-  - check_dependency
   - dynmethods
-  - install_dependencies
   - methods
-  - methods_containerised
-  - plot_trajectory
-  - reexports
-  - set_cores
-  - start_dynmethods_docker
   - ti_angle
+  - ti_calista
   - ti_cellrouter
+  - ti_celltrails
   - ti_celltree_gibbs
   - ti_celltree_maptpx
   - ti_celltree_vem
+  - ti_comp1
   - ti_dpt
   - ti_elpicycle
   - ti_elpigraph
@@ -35,7 +33,7 @@ reference:
   - ti_embeddr
   - ti_error
   - ti_fateid
-  - ti_gng
+  - ti_forks
   - ti_gpfates
   - ti_grandprix
   - ti_identity
@@ -51,13 +49,18 @@ reference:
   - ti_pcreode
   - ti_periodpc
   - ti_phenopath
-  - ti_praga
+  - ti_projected_dpt
+  - ti_projected_gng
+  - ti_projected_monocle
+  - ti_projected_paga
+  - ti_projected_slingshot
+  - ti_projected_tscan
   - ti_pseudogp
+  - ti_raceid_stemid
   - ti_random
   - ti_recat
   - ti_scimitar
   - ti_scorpius
-  - ti_scorpius_sparse
   - ti_scoup
   - ti_scuba
   - ti_shuffle
@@ -65,11 +68,10 @@ reference:
   - ti_slice
   - ti_slicer
   - ti_slingshot
-  - ti_stemid
-  - ti_stemid2
   - ti_stemnet
   - ti_topslam
   - ti_tscan
+  - ti_urd
   - ti_wanderlust
   - ti_waterfall
   - ti_wishbone
@@ -103,17 +105,22 @@ reference:
   - compute_tented_geodesic_distances
   - convert_milestone_percentages_to_progressions
   - convert_progressions_to_milestone_percentages
+  - create_container_ti_method
   - create_docker_ti_method
   - create_singularity_ti_method
   - create_ti_method
   - determine_cell_trajectory_positions
+  - dimred_trajectory
   - dynwrap
   - execute_method_internal
-  - execute_method_on_task
+  - execute_method_on_dataset
+  - gather_cells_at_milestones
   - generate_prior_information
   - get_cell_grouping
   - get_default_parameters
   - get_ti_methods
+  - group_onto_nearest_milestones
+  - group_onto_trajectory_edges
   - infer_trajectories
   - is_data_wrapper
   - is_prediction
@@ -130,8 +137,14 @@ reference:
   - select_waypoint_cells
   - select_waypoints
   - simplify_igraph_network
+  - simplify_trajectory
+  - simplify_trajectory_type
   - test_docker_installation
   - ti_comp1
+  - ti_error
+  - ti_identity
+  - ti_random
+  - ti_shuffle
   - trajectory_type_dag
   - trajectory_types
   - trajectory_types_simplified
@@ -145,8 +158,6 @@ reference:
   - add_cell_coloring
   - add_density_coloring
   - add_milestone_coloring
-  - check_or_perform_dimred
-  - dimred_trajectory
   - dynplot
   - empty_plot
   - get_milestone_palette_names
@@ -154,6 +165,7 @@ reference:
   - milestone_palette
   - plot_dendro
   - plot_dimred
+  - plot_edge_flips
   - plot_features
   - plot_graph
   - plot_heatmap
@@ -166,7 +178,7 @@ reference:
   - theme_clean
   - theme_graph
 - title: Extracting relevant features from a trajectory
-  desc: dynfeature
+  desc: libraries/dynfeature
   contents:
   - calculate_overall_feature_importance
   - dynfeature

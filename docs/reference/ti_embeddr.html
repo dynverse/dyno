@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with Embeddr — ti_embeddr • dyno</title>
+<title>Inferring a trajectory inference using Embeddr — ti_embeddr • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,13 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with Embeddr — ti_embeddr" />
+<meta property="og:title" content="Inferring a trajectory inference using Embeddr — ti_embeddr" />
 
-<meta property="og:description" content="Inferring trajectories with Embeddr
-Will generate a trajectory using Embeddr. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using Embeddr.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,111 +104,128 @@ Will generate a trajectory using Embeddr. This method was wrapped inside a conta
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with Embeddr</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_embeddr.R'><code>R/ti_embeddr.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using Embeddr</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_embeddr.R'><code>R/ti_embeddr.R</code></a></small>
     <div class="hidden name"><code>ti_embeddr.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with Embeddr</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1101/027219'>Embeddr</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/embeddr'>container</a>.</p>
+    <p>Will generate a trajectory using <a href='https://doi.org/10.1101/027219'>Embeddr</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/embeddr'>container</a>.
+The original code of this method is available
+<a href='https://github.com/kieranrcampbell/embeddr'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_embeddr</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>, <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>, <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>)
-
-<span class='fu'>ti_embeddr</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>, <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>0</span>,
-  <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>, <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>,
-  <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_embeddr</span>(<span class='kw'>ndim</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>kernel</span> <span class='kw'>=</span> <span class='st'>"nn"</span>, <span class='kw'>metric</span> <span class='kw'>=</span> <span class='st'>"correlation"</span>,
+  <span class='kw'>nn_pct</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>eps</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>t</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>symmetrize</span> <span class='kw'>=</span> <span class='st'>"mean"</span>,
+  <span class='kw'>measure_type</span> <span class='kw'>=</span> <span class='st'>"unorm"</span>, <span class='kw'>thresh</span> <span class='kw'>=</span> <span class='fl'>0.001</span>, <span class='kw'>maxit</span> <span class='kw'>=</span> <span class='fl'>10L</span>, <span class='kw'>stretch</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>smoother</span> <span class='kw'>=</span> <span class='st'>"smooth.spline"</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>ndim</th>
-      <td><p>Dimension of the embedded space, default is 2</p></td>
+      <td><p>integer; Dimension of the embedded space, default is 2 (default:
+<code>2L</code>; range: from <code>2L</code> to <code>10L</code>)</p></td>
     </tr>
     <tr>
       <th>kernel</th>
-      <td><p>The choice of kernel. 'nn' will give nearest neighbours, 'dist' gives minimum distance and
-'heat' gives a heat kernel. Discussed in detail in 'Laplacian Eigenmaps and Spectral Techniques for Embedding and Clustering',
-Belkin &amp; Niyogi</p></td>
+      <td><p>discrete; The choice of kernel. 'nn' will give nearest
+neighbours, 'dist' gives minimum distance and'heat' gives a heat kernel.
+Discussed in detail in 'Laplacian Eigenmaps and Spectral Techniques for
+Embedding and Clustering',Belkin &amp; Niyogi (default: <code>"nn"</code>; values: <code>"nn"</code>,
+<code>"dist"</code>, <code>"heat"</code>)</p></td>
     </tr>
     <tr>
       <th>metric</th>
-      <td><p>The metric with which to assess 'closeness' for nearest neighbour selection, one of
-'correlation' (pearson) or 'euclidean'. Default is 'correlation'.</p></td>
+      <td><p>discrete; The metric with which to assess 'closeness' for nearest
+neighbour selection, one of'correlation' (pearson) or 'euclidean'. Default is
+'correlation'. (default: <code>"correlation"</code>; values: <code>"correlation"</code>,
+<code>"euclidean"</code>, <code>"cosine"</code>)</p></td>
     </tr>
     <tr>
       <th>nn_pct</th>
-      <td><p>The percentage of cells to use as tge number of nearest neighbours if kernel == 'nn'.</p></td>
+      <td><p>numeric; The percentage of cells to use as tge number of nearest
+neighbours if kernel == 'nn'. (default: <code>0</code>; range: from <code>-2</code> to <code>1</code>)</p></td>
     </tr>
     <tr>
       <th>eps</th>
-      <td><p>Maximum distance parameter if kernel == 'dist'</p></td>
+      <td><p>numeric; Maximum distance parameter if kernel == 'dist' (default:
+<code>0</code>; range: from <code>-5</code> to <code>5</code>)</p></td>
     </tr>
     <tr>
       <th>t</th>
-      <td><p>'time' for heat kernel if kernel == 'heat'</p></td>
+      <td><p>numeric; 'time' for heat kernel if kernel == 'heat' (default: <code>0</code>;
+range: from <code>-5</code> to <code>5</code>)</p></td>
     </tr>
     <tr>
       <th>symmetrize</th>
-      <td><p>How to make the adjacency matrix symmetric. Note that slightly
-counterintuitively, node i having node j as a nearest neighbour doesn't guarantee node
-j has node i. There are several ways to get round this:</p><ul>
-<li><p><code>mean</code> If the above case occurs make the link weight 0.5 so the adjacency matrix becomes \(0.5(A + A')\)</p></li>
-<li><p><code>ceil</code> If the above case occurs set the link weight to 1 (ie take the ceiling of the mean case)</p></li>
-<li><p><code>floor</code> If the above case occurs set the link weight to 0 (ie take the floor of the mean case)</p></li>
-</ul></td>
+      <td><p>discrete; How to make the adjacency matrix symmetric. Note
+that slightlycounterintuitively, node i having node j as a nearest neighbour
+doesn't guarantee nodej has node i. There are several ways to get round
+this:</p><ul>
+<li><p><code>ceil</code> If the
+above case occurs set the link weight to 1 (ie take the ceiling of the mean
+case)</p></li>
+<li><p><code>floor</code> If the above case occurs set the link weight to 0 (ie
+take the floor of the mean case)</p></li>
+</ul><p>(default: <code>"mean"</code>; values: <code>"mean"</code>,
+<code>"ceil"</code>, <code>"floor"</code>)</p></td>
     </tr>
     <tr>
       <th>measure_type</th>
-      <td><p>Type of laplacian eigenmap, which corresponds to the constraint on the eigenvalue problem. If
-type is 'unorm' (default), then the graph measure used is the identity matrix, while if type is 'norm' then the measure
-used is the degree matrix.</p></td>
+      <td><p>discrete; Type of laplacian eigenmap, which corresponds to
+the constraint on the eigenvalue problem. Iftype is 'unorm' (default), then the
+graph measure used is the identity matrix, while if type is 'norm' then the
+measureused is the degree matrix. (default: <code>"unorm"</code>; values: <code>"unorm"</code>,
+<code>"norm"</code>)</p></td>
     </tr>
     <tr>
       <th>thresh</th>
-      <td><p>convergence threshold on shortest distances to the curve.</p></td>
+      <td><p>numeric; Convergence threshold on shortest distances to the
+curve. (default: <code>0.001</code>; range: from <code>1e-05</code> to <code>1e+05</code>)</p></td>
     </tr>
     <tr>
       <th>maxit</th>
-      <td><p>maximum number of iterations.</p></td>
+      <td><p>integer; Maximum number of iterations. (default: <code>10L</code>; range:
+from <code>0L</code> to <code>50L</code>)</p></td>
     </tr>
     <tr>
       <th>stretch</th>
-      <td><p>a factor by which the curve can be extrapolated when
-points are projected.  Default is 2 (times the last segment
-length). The default is 0 for <code>smoother</code> equal to
-<code>"periodic_lowess"</code>.</p></td>
+      <td><p>numeric; A factor by which the curve can be extrapolated
+whenpoints are projected.  Default is 2 (times the last segmentlength). The
+default is 0 for <code>smoother</code> equal to<code>"periodic_lowess"</code>. (default:
+<code>2</code>; range: from <code>0</code> to <code>5</code>)</p></td>
     </tr>
     <tr>
       <th>smoother</th>
-      <td><p>choice of smoother. The default is
-<code>"smooth_spline"</code>, and other choices are <code>"lowess"</code> and
-<code>"periodic_lowess"</code>. The latter allows one to fit closed curves.
-Beware, you may want to use <code>iter = 0</code> with <code>lowess()</code>.</p></td>
+      <td><p>discrete; Choice of smoother. The default
+is<code>"smooth_spline"</code>, and other choices are <code>"lowess"</code>
+and<code>"periodic_lowess"</code>. The latter allows one to fit closed curves.Beware,
+you may want to use <code>iter = 0</code> with <code>lowess()</code>. (default:
+<code>"smooth.spline"</code>; values: <code>"smooth.spline"</code>, <code>"lowess"</code>,
+<code>"periodic.lowess"</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_embeddr</p>
-<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/embeddr'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1101/027219'>Campbell, K., Ponting, C.P., Webber, C., 2015. Laplacian eigenmaps and principal curves for high resolution pseudotemporal ordering of single-cell RNA-seq profiles.</a></p>
+    <p>Campbell, K., Ponting, C.P., Webber, C., 2015. Laplacian eigenmaps
+and principal curves for high resolution pseudotemporal ordering of single-cell
+RNA-seq profiles.</p>
     
 
   </div>
@@ -216,7 +236,7 @@ Beware, you may want to use <code>iter = 0</code> with <code>lowess()</code>.</p
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

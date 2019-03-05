@@ -112,15 +112,17 @@
     </div>
 
     <pre class="usage"><span class='fu'>create_singularity_ti_method</span>(<span class='no'>image</span>,
-  <span class='kw'>definition</span> <span class='kw'>=</span> <span class='fu'>extract_definition_from_singularity_image</span>(<span class='no'>image</span>), <span class='no'>...</span>)
+  <span class='kw'>singularity_images_folder</span> <span class='kw'>=</span> <span class='fu'>get_default_singularity_images_folder</span>(),
+  <span class='kw'>definition</span> <span class='kw'>=</span> <span class='fu'>extract_definition_from_singularity_image</span>(<span class='no'>image</span>,
+  <span class='no'>singularity_images_folder</span>), <span class='no'>...</span>)
 
 <span class='fu'>extract_definition_from_singularity_image</span>(<span class='no'>image</span>,
+  <span class='kw'>singularity_images_folder</span> <span class='kw'>=</span> <span class='fu'>get_default_singularity_images_folder</span>(),
   <span class='kw'>definition_location</span> <span class='kw'>=</span> <span class='st'>"/code/definition.yml"</span>)
 
-<span class='fu'>pull_singularity_ti_method</span>(<span class='no'>image</span>,
-  <span class='kw'>singularity_image_file</span> <span class='kw'>=</span> <span class='fu'>paste0</span>(<span class='fu'>gsub</span>(<span class='st'>"[^\\/]*/([^\\:]*).*"</span>, <span class='st'>"\\1"</span>,
-  <span class='no'>image</span>), <span class='st'>".simg"</span>),
-  <span class='kw'>singularity_images_folder</span> <span class='kw'>=</span> <span class='fu'>options</span>(<span class='st'>"dynwrap_singularity_images_folder"</span>))</pre>
+<span class='fu'>pull_singularity_ti_method</span>(<span class='kw'>image</span> <span class='kw'>=</span> <span class='no'>image</span>,
+  <span class='kw'>singularity_images_folder</span> <span class='kw'>=</span> <span class='fu'>get_default_singularity_images_folder</span>(),
+  <span class='kw'>return_method</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,6 +130,10 @@
     <tr>
       <th>image</th>
       <td><p>The location of the singularity image file, eg. <code>comp1.simg</code>.</p></td>
+    </tr>
+    <tr>
+      <th>singularity_images_folder</th>
+      <td><p>The location of the folder containing the singularity images. By default, this will use either the DYNWRAP_SINGULARITY_IMAGES_FOLDER environment variable, the dynwrap_singularity_images_folder option, or the working directory.</p></td>
     </tr>
     <tr>
       <th>definition</th>
@@ -141,6 +147,10 @@ Optional, as the definition file will be automatically loaded from the images <c
     <tr>
       <th>definition_location</th>
       <td><p>The location of the definition file within the image</p></td>
+    </tr>
+    <tr>
+      <th>return_method</th>
+      <td><p>Whether to return the method (TRUE) or only pull the image (FALSE)</p></td>
     </tr>
     </table>
     

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a> — ti_matcher • dyno</title>
+<title>Inferring a trajectory inference using MATCHER — ti_matcher • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring a trajectory inference using <a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a> — ti_matcher" />
+<meta property="og:title" content="Inferring a trajectory inference using MATCHER — ti_matcher" />
 
-<meta property="og:description" content="Will generate a trajectory using MATCHER. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+MATCHER.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -100,42 +105,54 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring a trajectory inference using <a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a></h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using MATCHER</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_matcher.R'><code>R/ti_matcher.R</code></a></small>
     <div class="hidden name"><code>ti_matcher.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Will generate a trajectory using <a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/matcher'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1186/s13059-017-1269-0'>MATCHER</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/matcher'>container</a>.
+The original code of this method is available
+<a href='https://github.com/jw156605/MATCHER'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_matcher</span>(<span class='kw'>quantiles</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"linear"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_matcher</span>(<span class='kw'>quantiles</span> <span class='kw'>=</span> <span class='fl'>50L</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"linear"</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>quantiles</th>
-      <td><p>Quantiles How many quantiles to use when computing warp functions (integer) <br />
-integer; default: 50L; possible values between 2 and 500</p></td>
+      <td><p>integer; Quantiles How many quantiles to use when computing
+warp functions (integer) (default: <code>50L</code>; range: from <code>2L</code> to <code>500L</code>)</p></td>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>Gaussian process regression or linear interpolation? ("gp" or "linear) <br />
-discrete; default: "linear"; possible values: gp, linear</p></td>
+      <td><p>discrete; Gaussian process regression or linear interpolation?
+("gp" or "linear) (default: <code>"linear"</code>; values: <code>"gp"</code>, <code>"linear"</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>The original code of this method is available <a href='https://github.com/jw156605/MATCHER'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1186/s13059-017-1269-0'>Welch, J.D., Hartemink, A.J., Prins, J.F., 2017. MATCHER: manifold alignment reveals correspondence between single cell transcriptome and epigenome dynamics. Genome Biology 18.</a></p>
+    <p>Welch, J.D., Hartemink, A.J., Prins, J.F., 2017. MATCHER: manifold
+alignment reveals correspondence between single cell transcriptome and
+epigenome dynamics. Genome Biology 18.</p>
     
 
   </div>
@@ -146,7 +163,7 @@ discrete; default: "linear"; possible values: gp, linear</p></td>
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

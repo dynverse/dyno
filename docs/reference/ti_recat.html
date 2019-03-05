@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with reCAT — ti_recat • dyno</title>
+<title>Inferring a trajectory inference using reCAT — ti_recat • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with reCAT — ti_recat" />
+<meta property="og:title" content="Inferring a trajectory inference using reCAT — ti_recat" />
 
-<meta property="og:description" content="Inferring trajectories with reCAT
-Will generate a trajectory using reCAT. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+reCAT.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,76 +105,92 @@ Will generate a trajectory using reCAT. This method was wrapped inside a contain
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with reCAT</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_recat.R'><code>R/ti_recat.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using reCAT</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_recat.R'><code>R/ti_recat.R</code></a></small>
     <div class="hidden name"><code>ti_recat.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with reCAT</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.1038/s41467-017-00039-z'>reCAT</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/recat'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.1038/s41467-017-00039-z'>reCAT</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/recat'>container</a>.
+The original code of this method is available
+<a href='https://github.com/tinglab/reCAT'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_recat</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>TSPFold</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>beginNum</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>endNum</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>step_size</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>base_cycle_range_start</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-  <span class='kw'>base_cycle_range_end</span> <span class='kw'>=</span> <span class='fl'>9</span>, <span class='kw'>max_num</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>clustMethod</span> <span class='kw'>=</span> <span class='st'>"GMM"</span>)
-
-<span class='fu'>ti_recat</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>TSPFold</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='kw'>beginNum</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>endNum</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>step_size</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>base_cycle_range_start</span> <span class='kw'>=</span> <span class='fl'>6</span>,
-  <span class='kw'>base_cycle_range_end</span> <span class='kw'>=</span> <span class='fl'>9</span>, <span class='kw'>max_num</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>clustMethod</span> <span class='kw'>=</span> <span class='st'>"GMM"</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_recat</span>(<span class='kw'>TSPFold</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>beginNum</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>endNum</span> <span class='kw'>=</span> <span class='fl'>15</span>, <span class='kw'>step_size</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>base_cycle_range_start</span> <span class='kw'>=</span> <span class='fl'>6</span>, <span class='kw'>base_cycle_range_end</span> <span class='kw'>=</span> <span class='fl'>9</span>,
+  <span class='kw'>max_num</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>clustMethod</span> <span class='kw'>=</span> <span class='st'>"GMM"</span>, <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>TSPFold</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p>integer; No documentation provided by authors (default: <code>2</code>;
+range: from <code>2</code> to <code>10</code>)</p></td>
     </tr>
     <tr>
       <th>beginNum</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p>integer; No documentation provided by authors (default: <code>10</code>;
+range: from <code>2</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
       <th>endNum</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p>integer; No documentation provided by authors (default: <code>15</code>;
+range: from <code>2</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
       <th>step_size</th>
-      <td><p>Determines the number of k to skip in your consensus path, ie if step_size = 2, then reCAT would only calculate and merge the paths for k = 12, 14, 16, 18, ', n-2, n. We recommend step_size of up to a maximum of 5 while preserving the performance of reCAT. Usually a step_size of 2 (by default) would suffice and bigger steps are recommended for larger datasets (&gt;1000 cells) in order to reduce computational time.</p></td>
+      <td><p>integer; Determines the number of k to skip in your consensus
+path, ie ifstep_size = 2, then reCAT would only calculate and merge the paths
+fork = 12, 14, 16, 18, ..., n-2, n. We recommend step_size of up to a maximum
+of 5 while preserving the performance of reCAT. Usually a step_size of 2 (by
+default) would suffice and bigger steps are recommended for larger datasets
+(&gt;1000 cells) in order to reduce computational time. (default: <code>2</code>; range: from
+<code>2</code> to <code>20</code>)</p></td>
     </tr>
     <tr>
       <th>base_cycle_range_start</th>
-      <td><p>The minimal number of four k's for computing the reference cycle mentioned in the manuscript. Can be set to 6 or 7</p></td>
+      <td><p>integer; The minimal number of four k's for
+computing the reference cycle mentioned in the manuscript. Can be set to 6 or 7
+(default: <code>6</code>; range: from <code>6</code> to <code>7</code>)</p></td>
     </tr>
     <tr>
       <th>base_cycle_range_end</th>
-      <td><p>The maximal number of four k's for computing the reference cycle mentioned in the manuscript. Can be set to 6 or 7</p></td>
+      <td><p>integer; The maximal number of four k's for
+computing the reference cycle mentioned in the manuscript. Can be set to 6 or 7
+(default: <code>9</code>; range: from <code>9</code> to <code>10</code>)</p></td>
     </tr>
     <tr>
       <th>max_num</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p>integer; No documentation provided by authors (default: <code>300</code>;
+range: from <code>100</code> to <code>500</code>)</p></td>
     </tr>
     <tr>
       <th>clustMethod</th>
-      <td><p>No documentation provided by authors</p></td>
+      <td><p>discrete; No documentation provided by authors (default:
+<code>"GMM"</code>; values: <code>"GMM"</code>, <code>"Pam"</code>, <code>"Kmeans"</code>)</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_recat</p>
-<p>The original code of this method is available <a href='https://github.com/tinglab/reCAT'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.1038/s41467-017-00039-z'>Liu, Z., Lou, H., Xie, K., Wang, H., Chen, N., Aparicio, O.M., Zhang, M.Q., Jiang, R., Chen, T., 2017. Reconstructing cell cycle pseudo time-series via single-cell transcriptome data. Nature Communications 8.</a></p>
+    <p>Liu, Z., Lou, H., Xie, K., Wang, H., Chen, N., Aparicio, O.M.,
+Zhang, M.Q., Jiang, R., Chen, T., 2017. Reconstructing cell cycle pseudo
+time-series via single-cell transcriptome data. Nature Communications 8.</p>
     
 
   </div>
@@ -181,7 +201,7 @@ Will generate a trajectory using reCAT. This method was wrapped inside a contain
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>

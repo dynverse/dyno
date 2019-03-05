@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inferring trajectories with mfa — ti_mfa • dyno</title>
+<title>Inferring a trajectory inference using mfa — ti_mfa • dyno</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,10 +30,14 @@
 
 
 
-<meta property="og:title" content="Inferring trajectories with mfa — ti_mfa" />
+<meta property="og:title" content="Inferring a trajectory inference using mfa — ti_mfa" />
 
-<meta property="og:description" content="Inferring trajectories with mfa
-Will generate a trajectory using mfa. This method was wrapped inside a container." />
+<meta property="og:description" content="Will generate a trajectory using
+mfa.
+This method was wrapped inside a
+container.
+The original code of this method is available
+here." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -101,76 +105,79 @@ Will generate a trajectory using mfa. This method was wrapped inside a container
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Inferring trajectories with mfa</h1>
-    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mfa.R'><code>R/ti_mfa.R</code></a>, <a href='https://github.com/dynverse/dyno/blob/master/R/ti_container.R'><code>R/ti_container.R</code></a></small>
+    <h1>Inferring a trajectory inference using mfa</h1>
+    <small class="dont-index">Source: <a href='https://github.com/dynverse/dyno/blob/master/R/ti_mfa.R'><code>R/ti_mfa.R</code></a></small>
     <div class="hidden name"><code>ti_mfa.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Inferring trajectories with mfa</p>
-<p>Will generate a trajectory using <a href='https://doi.org/10.12688/wellcomeopenres.11087.1'>mfa</a>. This method was wrapped inside a <a href='https://github.com/dynverse/dynmethods/tree/master/containers/mfa'>container</a>.</p>
+    <p>Will generate a trajectory using
+<a href='https://doi.org/10.12688/wellcomeopenres.11087.1'>mfa</a>.</p>
+<p>This method was wrapped inside a
+<a href='https://github.com/dynverse/dynmethods/tree/master/containers/mfa'>container</a>.
+The original code of this method is available
+<a href='https://github.com/kieranrcampbell/mfa'>here</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>ti_mfa</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>2000</span>,
-  <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>pc_initialise</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>prop_collapse</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>scale_input</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>zero_inflation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='fu'>ti_mfa</span>(<span class='kw'>docker</span> <span class='kw'>=</span> <span class='kw pkg'>dynwrap</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/dynwrap/topics/test_docker_installation'>test_docker_installation</a></span>(), <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>2000</span>,
-  <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>pc_initialise</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>prop_collapse</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>scale_input</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>zero_inflation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>ti_mfa</span>(<span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>2L</span>, <span class='kw'>iter</span> <span class='kw'>=</span> <span class='fl'>2000L</span>, <span class='kw'>thin</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='kw'>pc_initialise</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
+  <span class='kw'>prop_collapse</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>scale_input</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>zero_inflation</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>run_environment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>docker</th>
-      <td><p>Whether to use the docker container or the R wrapper</p></td>
-    </tr>
-    <tr>
       <th>b</th>
-      <td><p>Number of branches to model</p></td>
+      <td><p>integer; Number of branches to model (default: <code>2L</code>; range: from <code>1L</code>
+to <code>10L</code>)</p></td>
     </tr>
     <tr>
       <th>iter</th>
-      <td><p>Number of MCMC iterations</p></td>
+      <td><p>integer; Number of MCMC iterations (default: <code>2000L</code>; range: from
+<code>20L</code> to <code>5000L</code>)</p></td>
     </tr>
     <tr>
       <th>thin</th>
-      <td><p>MCMC samples to thin</p></td>
+      <td><p>integer; MCMC samples to thin (default: <code>1L</code>; range: from <code>1L</code> to
+<code>20L</code>)</p></td>
     </tr>
     <tr>
       <th>pc_initialise</th>
-      <td><p>Which principal component to initialise pseudotimes to</p></td>
+      <td><p>integer; Which principal component to initialise
+pseudotimes to (default: <code>1L</code>; range: from <code>1L</code> to <code>5L</code>)</p></td>
     </tr>
     <tr>
       <th>prop_collapse</th>
-      <td><p>Proportion of Gibbs samples which should marginalise over c</p></td>
+      <td><p>numeric; Proportion of Gibbs samples which should
+marginalise over c (default: <code>0</code>; range: from <code>0</code> to <code>1</code>)</p></td>
     </tr>
     <tr>
       <th>scale_input</th>
-      <td><p>Logical. If true, input is scaled to have mean 0 variance 1</p></td>
+      <td><p>logical; Logical. If true, input is scaled to have mean 0
+variance 1</p></td>
     </tr>
     <tr>
       <th>zero_inflation</th>
-      <td><p>Logical, should zero inflation be enabled?</p></td>
+      <td><p>logical; Logical, should zero inflation be enabled?</p></td>
+    </tr>
+    <tr>
+      <th>run_environment</th>
+      <td><p>In which environment to run the method, can be <code>"docker"</code> or <code>"singularity"</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The trajectory model</p>
+    <p>A TI method wrapper to be used together with
+<code><a href='http://www.rdocumentation.org/packages/dynwrap/topics/infer_trajectories'>infer_trajectory</a></code></p>
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>This methods was first wrapped inside R, see ti_mfa</p>
-<p>The original code of this method is available <a href='https://github.com/kieranrcampbell/mfa'>here</a>.</p>
-<p>The method is described in: <a href='https://doi.org/10.12688/wellcomeopenres.11087.1'>Campbell, K.R., Yau, C., 2017. Probabilistic modeling of bifurcations in single-cell gene expression data using a Bayesian mixture of factor analyzers. Wellcome Open Research 2, 19.</a></p>
-    
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='http://www.rdocumentation.org/packages/mfa/topics/mfa'>mfa::mfa()</a></code></p></div>
+    <p>Campbell, K.R., Yau, C., 2017. Probabilistic modeling of
+bifurcations in single-cell gene expression data using a Bayesian mixture of
+factor analyzers. Wellcome Open Research 2, 19.</p>
     
 
   </div>
@@ -181,9 +188,7 @@ Will generate a trajectory using mfa. This method was wrapped inside a container
       
       <li><a href="#value">Value</a></li>
 
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>
