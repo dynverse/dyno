@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^\.travis
+^\.git
+^_pkgdown\.yml$
+^data-raw$
+^appveyor\.yml$
+^docs$
+^generate_site.R$
