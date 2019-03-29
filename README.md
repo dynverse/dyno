@@ -180,11 +180,6 @@ plot_heatmap(
   grouping = fibroblast_reprogramming_treutlein$grouping,
   features_oi = 50
 )
-#> Generating forest 1/5
-#> Generating forest 2/5
-#> Generating forest 3/5
-#> Generating forest 4/5
-#> Generating forest 5/5
 ```
 
 <img src="man/figures/heatmap-1.png" width="100%" />
@@ -197,13 +192,9 @@ Neuron
 
 ``` r
 branch_feature_importance <- calculate_branch_feature_importance(model, expression_source=dataset$expression)
-#> Generating forest 1/4
-#> Generating forest 2/4
-#> Generating forest 3/4
-#> Generating forest 4/4
 
 neuron_features <- branch_feature_importance %>% 
-  filter(to == which(model$milestone_labelling =="Neuron")) %>% 
+  filter(to == names(model$milestone_labelling)[which(model$milestone_labelling =="Neuron")]) %>% 
   top_n(50, importance) %>% 
   pull(feature_id)
 ```
@@ -227,8 +218,6 @@ point
 branching_milestone <- model$milestone_network %>% group_by(from) %>% filter(n() > 1) %>% pull(from) %>% first()
 
 branch_feature_importance <- calculate_branching_point_feature_importance(model, expression_source=dataset$expression, milestones_oi = branching_milestone)
-#> Processing milestone 1/1
-#> Generating forest 1/1
 
 branching_point_features <- branch_feature_importance %>% top_n(20, importance) %>% pull(feature_id)
 
@@ -281,7 +270,7 @@ You can test whether docker is correctly installed by running:
 dynwrap::test_docker_installation(detailed = TRUE)
 #> ✔ Docker is installed
 #> ✔ Docker daemon is running
-#> ✔ Docker is at correct version (>1.0): 1.38
+#> ✔ Docker is at correct version (>1.0): 1.39
 #> ✔ Docker is in linux mode
 #> ✔ Docker can pull images
 #> ✔ Docker can run image
@@ -293,13 +282,16 @@ dynwrap::test_docker_installation(detailed = TRUE)
 This command will give helpful tips if some parts of the installation
 are missing.
 
-
 ## Frequent installation problems
 
 ### `API rate limit exceeded`
 
-Dyno uses several R packages from Github and to do this it uses the GitHub API. By default, this API is limited to 60 requests. This can be easily increased by following the two steps that are recommended by `devtools::install_github`, namely:
+Dyno uses several R packages from Github and to do this it uses the
+GitHub API. By default, this API is limited to 60 requests. This can be
+easily increased by following the two steps that are recommended by
+`devtools::install_github`, namely:
 
-- Use `usethis::browse_github_pat()` to create a GitHub token
-- Use `usethis::edit_r_environ()` and add the environment variable with `GITHUB_PAT = 'your_github_token`. 
-- Restart R so that the GITHUB_PAT is read and reinstall dyno
+  - Use `usethis::browse_github_pat()` to create a GitHub token
+  - Use `usethis::edit_r_environ()` and add the environment variable
+    with `GITHUB_PAT = 'your_github_token`.
+  - Restart R so that the GITHUB\_PAT is read and reinstall dyno
