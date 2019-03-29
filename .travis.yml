@@ -1,18 +1,24 @@
 language: r
-sudo: required
 dist: trusty
-bioc_required: true
-cache: packages
-services:
-  - docker
 addons:
   apt:
     packages:
     - libudunits2-dev                     # units > ggforce > ggraph > patchwork > dynplot
+before_install:
+  - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
+cache:
+  directories:
+    - $HOME/R/Library
 install:
- - if [ `git branch | grep '* master' | wc -l` == 0 ]; then sed -i 's#\(dynverse/[^, ]*\)#\1@devel#' DESCRIPTION; fi
- - R -e 'if ("devtools" %in% rownames(installed.packages())) update.packages(oldPkgs = "devtools", ask = FALSE) else install.packages("devtools")'
- - R -e 'devtools::install_cran("covr")'
- - R -e 'setRepositories(ind = 1:2); devtools::install(dependencies = T, upgrade = T)'
-after_success:
- - R -e 'covr::codecov()'
+ - use_dynverse_devel
+ - install_cran devtools covr
+ - install_withdeps
+
+jobs:
+  include:
+    - stage: prepare cache
+      script:
+        - echo Skip
+      after_success:
+        - echo Skip
+    - stage: test
