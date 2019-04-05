@@ -1,16 +1,19 @@
 language: r
 dist: trusty
+
+cache:
+  directories:
+    - $HOME/.cache/hdf5
+    - $HOME/R/Library
 addons:
   apt:
     packages:
     - libudunits2-dev                     # units > ggforce > ggraph > patchwork > dynplot
 before_install:
   - source <(curl -sSL https://raw.githubusercontent.com/dynverse/travis_scripts/master/helper.sh)
-cache:
-  directories:
-    - $HOME/R/Library
+  - install_hdf5
+
 install:
- - install_hdf5
  - use_dynverse_devel
  - install_cran devtools covr
  - install_withdeps
