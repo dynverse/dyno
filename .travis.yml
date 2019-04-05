@@ -10,12 +10,20 @@ cache:
   directories:
     - $HOME/R/Library
 install:
+ - install_hdf5
  - use_dynverse_devel
  - install_cran devtools covr
  - install_withdeps
 
 jobs:
   include:
+    - stage: prepare hdf5
+      install:
+        - echo Skip
+      script:
+        - echo Skip
+      after_success:
+        - echo Skip
     - stage: prepare cache
       script:
         - echo Skip
