@@ -2,7 +2,6 @@
 output: 
   github_document:
     toc: TRUE
-bibliography: docs/bibliography.bib
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
