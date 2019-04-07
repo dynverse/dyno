@@ -1,7 +1,7 @@
 Type: Package
 Package: dyno
 Title: Set of packages for doing trajectory inference on single-cell data
-Version: 0.9.9
+Version: 0.1.1
 Authors@R: c(
     person(
       "Robrecht", 
@@ -35,17 +35,17 @@ Description: The dyno package automatically loads in packages to:
 License: GPL-3
 Depends: 
     R (>= 3.4.0),
-    dynfeature (>= 0.9.9),
-    dynguidelines (>= 0.9.9),
-    dynmethods (>= 0.9.9),
-    dynplot (>= 0.9.9),
-    dynwrap (>= 0.9.9)
-Remotes: 
-    dynverse/dynfeature,
-    dynverse/dynguidelines,
-    dynverse/dynmethods,
-    dynverse/dynplot,
-    dynverse/dynwrap
+    dynfeature (>= 1.0.0),
+    dynguidelines (>= 1.0.0),
+    dynmethods (>= 1.0.1),
+    dynplot (>= 1.0.0),
+    dynwrap (>= 1.0.0)
+Remotes:  
+    dynverse/dynfeature@master,
+    dynverse/dynguidelines@master,
+    dynverse/dynmethods@master,
+    dynverse/dynplot@master,
+    dynverse/dynwrap@master
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1

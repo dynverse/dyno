@@ -32,13 +32,19 @@ instructions, tutorials and documentation at
 
 ## Latest changes
 
-Check out `news(package = "dynwrap")` or [NEWS.md](inst/NEWS.md) for a
-full list of
+Check out `news(package = "dyno")` or [NEWS.md](inst/NEWS.md) for a full
+list of
 changes.
 
 <!-- This section gets automatically generated from inst/NEWS.md, and also generates inst/NEWS -->
 
-### Recent changes in dyno 0.1 (29-03-2019)
+### Recent changes in dyno 0.1.1 (06-04-2019)
+
+  - BUGFIX: Fixed example dataset
+
+  - MINOR CHANGE: Bumping version requirement of dynmethods to 1.0.1.
+
+### Recent changes in dyno 0.1.0 (29-03-2019)
 
   - Initial beta release of
 dyno

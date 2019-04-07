@@ -19,7 +19,6 @@ image: Visual Studio 2017
 
 build_script:
   - Rscript -e "install.packages('devtools', repos = 'http://cran.us.r-project.org')"
-  - Rscript -e "devtools::install_github('wesm/feather/R')"
   - travis-tool.sh install_deps
 
 test_script:

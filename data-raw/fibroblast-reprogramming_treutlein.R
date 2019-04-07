@@ -1,4 +1,5 @@
 library(tidyverse)
+library(dynwrap)
 
 url <- "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE67310&format=file&file=GSE67310%5FiN%5Fdata%5Flog2FPKM%5Fannotated.txt.gz"
 df <- read_tsv(url, col_types = cols(cell_name = "c", assignment = "c", experiment = "c", time_point = "c", .default = "d"))
@@ -15,6 +16,6 @@ counts <- 2^expression-1
 
 fibroblast_reprogramming_treutlein <- wrap_data("id", rownames(expression)) %>%
   add_expression(counts, expression) %>%
-  add_grouping(unique(cell_info$group_id), set_names(cell_info$group_id, cell_info$cell_id))
+  add_grouping(set_names(cell_info$group_id, cell_info$cell_id))
 
 usethis::use_data(fibroblast_reprogramming_treutlein, overwrite = TRUE)
