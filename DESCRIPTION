@@ -39,7 +39,7 @@ Depends:
     dynguidelines (>= 1.0.0),
     dynmethods (>= 1.0.1),
     dynplot (>= 1.0.0),
-    dynwrap (>= 1.0.0)
+    dynwrap (>= 1.0.1)
 Remotes:  
     dynverse/dynfeature@master,
     dynverse/dynguidelines@master,
