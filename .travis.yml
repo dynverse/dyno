@@ -16,6 +16,7 @@ before_install:
 install:
  - use_dynverse_devel
  - install_cran devtools covr
+ - install_dynverse
  - install_withdeps
 
 jobs:
