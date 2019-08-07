@@ -1,8 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<a href="https://travis-ci.org/dynverse/dyno"><img src="https://travis-ci.org/dynverse/dyno.svg" align="left"></a>
-<a href="https://codecov.io/gh/dynverse/dyno"> [![AppVeyor Build
+[![Build
+Status](https://travis-ci.org/dynverse/dynplot.svg?branch=master)](https://travis-ci.org/dynverse/dynplot)
+[![codecov](https://codecov.io/gh/dynverse/dyno/branch/master/graph/badge.svg)](https://codecov.io/gh/dynverse/dyno)
+[![AppVeyor Build
 Status](https://ci.appveyor.com/api/projects/status/github/dynverse/dyno?branch=master&svg=true)](https://ci.appveyor.com/project/dynverse/dyno)
 [**ℹ️ Tutorials**](https://dynverse.org)     [**ℹ️ Reference
 documentation**](https://dynverse.org/reference)
@@ -13,7 +15,7 @@ documentation**](https://dynverse.org/reference)
 The **dyno** package offers **end-users** a complete TI pipeline. It
 features:
 
-  - a uniform interface to 59 [TI
+  - a uniform interface to 60 [TI
     methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
   - an [interactive guideline
     tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods)
@@ -32,11 +34,10 @@ instructions, tutorials and documentation at
 
 ## Latest changes
 
-Check out `news(package = "dyno")` or [NEWS.md](inst/NEWS.md) for a full
-list of
-changes.
+Check out `news(package = "dyno")` or [NEWS.md](NEWS.md) for a full list
+of changes.
 
-<!-- This section gets automatically generated from inst/NEWS.md, and also generates inst/NEWS -->
+<!-- This section gets automatically generated from inst/NEWS.md -->
 
 ### Recent changes in dyno 0.1.1 (06-04-2019)
 
