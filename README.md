@@ -16,13 +16,13 @@ features:
   - a uniform interface to 59 [TI
     methods](https://github.com/dynverse/dynmethods#list-of-included-methods),
   - an [interactive guideline
-    tool](https://github.com/dynverse/dyno#selecting-the-most-optimal-ti-methods)
+    tool](https://github.com/dynverse/dynguidelines#selecting-the-most-optimal-ti-methods)
     to help the user select the most appropriate method,
   - [streamlined interpretation and visualisation of
-    trajectories](https://github.com/dynverse/dyno#plotting-the-trajectory),
+    trajectories](https://dynverse.org/reference/dynplot/plot_trajectory/plot_dimred/#examples),
     including colouring by gene expression or clusters, and
   - downstream analyses such as the [identification of potential marker
-    genes](https://github.com/dynverse/dyno#predicting-and-visualising-genes-of-interest).
+    genes](https://dynverse.org/reference/dynplot/plot_trajectory/plot_heatmap/#examples).
 
 **For information on how to use dyno, check out the installation
 instructions, tutorials and documentation at
