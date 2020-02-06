@@ -32,7 +32,7 @@ Description: The dyno package automatically loads in packages to:
   plot the predictions (dynplot)
   select relevant features (dynfeature)
   transform and work with the trajectory (dynwrap)
-License: GPL-3
+License: MIT + file LICENSE
 Depends: 
     R (>= 3.4.0),
     dynfeature (>= 1.0.0),
