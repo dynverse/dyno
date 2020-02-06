@@ -4,7 +4,7 @@
 \name{fibroblast_reprogramming_treutlein}
 \alias{fibroblast_reprogramming_treutlein}
 \title{Dataset containing trans-differentiating fibroblasts from [Treutlein et. al.(http://doi.org/10.1038/nature18323).}
-\format{An object of class \code{dynwrap::with_grouping} (inherits from \code{dynwrap::with_expression}, \code{dynwrap::data_wrapper}, \code{list}) of length 8.}
+\format{An object of class \code{dynwrap::with_grouping} (inherits from \code{dynwrap::with_expression}, \code{dynwrap::data_wrapper}, \code{list}) of length 9.}
 \source{
 [http://doi.org/10.1038/nature18323 (http://doi.org/10.1038/nature18323)]
 }

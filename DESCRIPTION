@@ -1,7 +1,7 @@
 Type: Package
 Package: dyno
 Title: Set of packages for doing trajectory inference on single-cell data
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R: c(
     person(
       "Robrecht", 
@@ -26,12 +26,7 @@ Authors@R: c(
     )
   )
 Maintainer: Wouter Saelens <wt53em@gmail.com>
-Description: The dyno package automatically loads in packages to:
-  select the best TI methods for a given problem (dynguidelines)
-  run these methods locally or in a docker environment (dynmethods)
-  plot the predictions (dynplot)
-  select relevant features (dynfeature)
-  transform and work with the trajectory (dynwrap)
+Description: Automatically loads in packages to related to performing a trajectory inference analysis. 
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.4.0),
@@ -41,14 +36,14 @@ Depends:
     dynplot (>= 1.0.0),
     dynwrap (>= 1.0.1)
 Remotes:  
-    dynverse/dynfeature@devel,
-    dynverse/dynguidelines@devel,
-    dynverse/dynmethods@devel,
-    dynverse/dynplot@devel,
-    dynverse/dynwrap@devel
+    dynverse/dynfeature@master,
+    dynverse/dynguidelines@master,
+    dynverse/dynmethods@master,
+    dynverse/dynplot@master,
+    dynverse/dynwrap@master
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 URL: https://github.com/dynverse/dyno
 BugReports: https://github.com/dynverse/dyno/issues
 Suggests: 

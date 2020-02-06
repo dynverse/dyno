@@ -1,3 +1,7 @@
+# dyno 0.1.2 (06-02-2020)
+
+* LICENSE: Change to MIT license.
+
 # dyno 0.1.1 (06-04-2019)
 
 * BUGFIX: Fixed example dataset
