@@ -3,6 +3,7 @@ library(dynwrap)
 
 url <- "https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE67310&format=file&file=GSE67310%5FiN%5Fdata%5Flog2FPKM%5Fannotated.txt.gz"
 df <- read_tsv(url, col_types = cols(cell_name = "c", assignment = "c", experiment = "c", time_point = "c", .default = "d"))
+
 expression <- df[, -c(1:5)] %>% as.matrix() %>% magrittr::set_rownames(df$cell_name)
 cell_info <- df[, c(1:5)] %>% as.data.frame() %>% magrittr::set_rownames(df$cell_name) %>%
   rename(
@@ -18,4 +19,4 @@ fibroblast_reprogramming_treutlein <- wrap_data("id", rownames(expression)) %>%
   add_expression(counts, expression) %>%
   add_grouping(set_names(cell_info$group_id, cell_info$cell_id))
 
-usethis::use_data(fibroblast_reprogramming_treutlein, overwrite = TRUE)
+usethis::use_data(fibroblast_reprogramming_treutlein, overwrite = TRUE, compress = "xz")
