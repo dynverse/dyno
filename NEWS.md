@@ -1,3 +1,7 @@
+# dyno 0.2.0
+
+* MINOR CHANGE: Bumping version requirements of dependencies.
+
 # dyno 0.1.2 (06-02-2020)
 
 * LICENSE: Change to MIT license.

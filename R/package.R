@@ -27,5 +27,6 @@ dyno <- function() {
   )
 }
 
+#' @importFrom babelwhale create_config
 #' @import dynfeature dynguidelines dynplot dynwrap dynmethods
 NULL

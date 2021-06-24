@@ -29,11 +29,12 @@ Authors@R: c(
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.4.0),
+    babelwhale (>= 1.0.3),
     dynfeature (>= 1.0.0),
     dynguidelines (>= 1.0.1),
     dynmethods (>= 1.0.5),
-    dynplot (>= 1.1.0),
-    dynwrap (>= 1.2.1)
+    dynplot (>= 1.1.1),
+    dynwrap (>= 1.2.2)
 Remotes:  
     dynverse/dynguidelines@devel,
     dynverse/dynmethods@devel
